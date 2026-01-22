@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../../../Official/SbWebsite/client/app/%28admin-panel%29/layout.tsx"],"sourcesContent":["export default function AdminPanelLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return <>{children}</>;\n}\n"],"names":[],"mappings":"wDAAe,SAAS,EAAiB,UACvC,CAAQ,CAGT,EACC,MAAO,CAAA,EAAA,EAAA,GAAA,EAAA,EAAA,QAAA,CAAA,UAAG,GACZ"}

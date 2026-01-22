@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00fb3d8c0f57b0831852eb6a04e1493af194a3af2e": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser"
+      },
+      "exportedName": "getAboutContent",
+      "filename": "Official/SbWebsite/client/app/actions/about.ts"
+    },
+    "405e078970def27525c7f2416c1e68e231e4e9d6ee": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser"
+      },
+      "exportedName": "updateAboutContent",
+      "filename": "Official/SbWebsite/client/app/actions/about.ts"
+    }
+  },
+  "edge": {}
+}

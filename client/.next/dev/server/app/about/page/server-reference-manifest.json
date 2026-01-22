@@ -1,0 +1,80 @@
+{
+  "node": {
+    "00280e1eb9e2dc0cf993b920628304e33fa32966f0": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/aboutImage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAllAboutImages",
+          "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc"
+      },
+      "exportedName": "getAllAboutImages",
+      "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+    },
+    "00ec85f77af6f862a592f0716993a5703efad85293": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/aboutImage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getAboutImage",
+          "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc"
+      },
+      "exportedName": "getAboutImage",
+      "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+    },
+    "4035d0d91de086002001ad12f2f45cadc02b27eba1": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/aboutImage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteAboutImage",
+          "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc"
+      },
+      "exportedName": "deleteAboutImage",
+      "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+    },
+    "40a5f178913a09d0b848c4b9f7d45d761aa0ed81f8": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/aboutImage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createAboutImage",
+          "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc"
+      },
+      "exportedName": "createAboutImage",
+      "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+    },
+    "60b1ca028569248f48dc67facec852137b74fa9f8e": {
+      "workers": {
+        "app/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/aboutImage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateAboutImage",
+          "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/about/page": "rsc"
+      },
+      "exportedName": "updateAboutImage",
+      "filename": "Official/SbWebsite/app/actions/aboutImage.ts"
+    }
+  },
+  "edge": {}
+}

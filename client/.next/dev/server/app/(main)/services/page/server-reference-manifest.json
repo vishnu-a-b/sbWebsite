@@ -1,0 +1,65 @@
+{
+  "node": {
+    "002cf5760abf88aa6b8fc73cd6cab4cd79ee331411": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/servicesPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getServices",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getServices",
+      "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    },
+    "40fcfeff4042241a1dd07c2ab0bfc2a4695a1bd6fa": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/servicesPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getServiceBySlug",
+      "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    },
+    "00348a37997fb0cb1281df8e3dcc8ec68209122254": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/servicesPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    },
+    "4034c5c2ed3289490e5760bb681accd335226edb7c": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/servicesPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "updateServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    }
+  },
+  "edge": {}
+}

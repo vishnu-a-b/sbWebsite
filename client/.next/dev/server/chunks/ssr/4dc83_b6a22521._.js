@@ -1,0 +1,38 @@
+module.exports = [
+"[project]/Official/SbWebsite/client/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function _interop_require_default(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+exports._ = _interop_require_default;
+}),
+"[project]/Official/SbWebsite/client/node_modules/clsx/dist/clsx.mjs [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "clsx",
+    ()=>clsx,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+function r(e) {
+    var t, f, n = "";
+    if ("string" == typeof e || "number" == typeof e) n += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+        var o = e.length;
+        for(t = 0; t < o; t++)e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    } else for(f in e)e[f] && (n && (n += " "), n += f);
+    return n;
+}
+function clsx() {
+    for(var e, t, f = 0, n = "", o = arguments.length; f < o; f++)(e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+    return n;
+}
+const __TURBOPACK__default__export__ = clsx;
+}),
+];
+
+//# sourceMappingURL=4dc83_b6a22521._.js.map

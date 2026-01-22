@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00c15bfa2fda5a87465abd52b1dddc0c50996892aa": {
+      "workers": {
+        "app/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getBanners",
+          "filename": "Official/SbWebsite/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/admin/banners/page": "action-browser"
+      },
+      "exportedName": "getBanners",
+      "filename": "Official/SbWebsite/app/actions/banner.ts"
+    },
+    "40dcde0d4a7b9823fb494641cb41baa3161fe09619": {
+      "workers": {
+        "app/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createBanner",
+          "filename": "Official/SbWebsite/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/admin/banners/page": "action-browser"
+      },
+      "exportedName": "createBanner",
+      "filename": "Official/SbWebsite/app/actions/banner.ts"
+    },
+    "6019bf9078edc66451a9d5ffab50122391d5de89b4": {
+      "workers": {
+        "app/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateBanner",
+          "filename": "Official/SbWebsite/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/admin/banners/page": "action-browser"
+      },
+      "exportedName": "updateBanner",
+      "filename": "Official/SbWebsite/app/actions/banner.ts"
+    },
+    "40ee5756bdf341a52fc1675aaddad91751c860a303": {
+      "workers": {
+        "app/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteBanner",
+          "filename": "Official/SbWebsite/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/admin/banners/page": "action-browser"
+      },
+      "exportedName": "deleteBanner",
+      "filename": "Official/SbWebsite/app/actions/banner.ts"
+    }
+  },
+  "edge": {}
+}

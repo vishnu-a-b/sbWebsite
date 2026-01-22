@@ -1,0 +1,65 @@
+{
+  "node": {
+    "006dd374314f756bd6aa97544917b3997663b11820": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 62992,
+          "async": false,
+          "exportedName": "getServices",
+          "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "getServices",
+      "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+    },
+    "40db25771f00592eadd28150cf3b9dc91ae8c6a106": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 62992,
+          "async": false,
+          "exportedName": "createService",
+          "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "createService",
+      "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+    },
+    "60c2b0dae7a1f4b488cc406c189c819f71b0483601": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 62992,
+          "async": false,
+          "exportedName": "updateService",
+          "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "updateService",
+      "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+    },
+    "4066dfc5bdcac6efad4b79cc063d4a23397a35dca5": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 62992,
+          "async": false,
+          "exportedName": "deleteService",
+          "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "deleteService",
+      "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,6 @@
+{
+  "/(admin-panel)/admin/benevity-projects/page": "app/(admin-panel)/admin/benevity-projects/page.js",
+  "/(main)/benevity/page": "app/(main)/benevity/page.js",
+  "/(main)/page": "app/(main)/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

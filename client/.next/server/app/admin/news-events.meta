@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(admin-panel)/layout,_N_T_/(admin-panel)/admin/layout,_N_T_/(admin-panel)/admin/news-events/layout,_N_T_/(admin-panel)/admin/news-events/page,_N_T_/admin/news-events"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGFkbWluLXBhbmVsKQ/admin/news-events/__PAGE__",
+    "/!KGFkbWluLXBhbmVsKQ/admin/news-events",
+    "/!KGFkbWluLXBhbmVsKQ/admin",
+    "/!KGFkbWluLXBhbmVsKQ",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00c7e4a1dd8f5db7d6e0c3809633d733b86640e204": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": 24428,
+          "async": false,
+          "exportedName": "getTeamMembers",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "getTeamMembers",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "4070aac954711e1581fb9815bb725f552fa21bbe43": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": 24428,
+          "async": false,
+          "exportedName": "createTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "createTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "60d7d1ee4e3d2b1217d6f9b789bd0c7a0bf13db164": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": 24428,
+          "async": false,
+          "exportedName": "updateTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "updateTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "408f48efe6cc0ae403ce144eba96168012ffbc7059": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": 24428,
+          "async": false,
+          "exportedName": "deleteTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "deleteTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    }
+  },
+  "edge": {}
+}

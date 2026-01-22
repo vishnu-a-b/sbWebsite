@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00ca061ef44aa147e27d10bb1e91d021f86ce8320e": {
+      "workers": {
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 74158,
+          "async": false,
+          "exportedName": "getAwards",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/awards/page": "action-browser"
+      },
+      "exportedName": "getAwards",
+      "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+    },
+    "408f1a8a311d89f646d4b4265ec7a26cfe7fb3338c": {
+      "workers": {
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 74158,
+          "async": false,
+          "exportedName": "createAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/awards/page": "action-browser"
+      },
+      "exportedName": "createAward",
+      "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+    },
+    "60e609b30585888a18175c68e123d9906abb78b10b": {
+      "workers": {
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 74158,
+          "async": false,
+          "exportedName": "updateAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/awards/page": "action-browser"
+      },
+      "exportedName": "updateAward",
+      "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+    },
+    "402541e06a6dff97d177402719971a940d16dca609": {
+      "workers": {
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 74158,
+          "async": false,
+          "exportedName": "deleteAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/awards/page": "action-browser"
+      },
+      "exportedName": "deleteAward",
+      "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+    }
+  },
+  "edge": {}
+}

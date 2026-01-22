@@ -1,0 +1,80 @@
+{
+  "node": {
+    "001370f321038c139482ec150441edf76a5fbee05c": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": 74701,
+          "async": false,
+          "exportedName": "getAllAboutImages",
+          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "getAllAboutImages",
+      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+    },
+    "00bb1377734a288404087dfcbe07374bef8b6194d3": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": 74701,
+          "async": false,
+          "exportedName": "getAboutImage",
+          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "getAboutImage",
+      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+    },
+    "400dc0662a13a0259f9664a596c3ed1ad82238f571": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": 74701,
+          "async": false,
+          "exportedName": "createAboutImage",
+          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "createAboutImage",
+      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+    },
+    "40f8c97812cc52cc070789c85c403114f1414f451f": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": 74701,
+          "async": false,
+          "exportedName": "deleteAboutImage",
+          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "deleteAboutImage",
+      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+    },
+    "60e66544d23b59c23b206e474bfaa83d1a38ef6281": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": 74701,
+          "async": false,
+          "exportedName": "updateAboutImage",
+          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "updateAboutImage",
+      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+    }
+  },
+  "edge": {}
+}

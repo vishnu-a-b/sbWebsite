@@ -1,0 +1,65 @@
+{
+  "node": {
+    "006a9f0136aa73ab59509fbd236d639f028e3c5a73": {
+      "workers": {
+        "app/(admin-panel)/admin/news-events/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/news-events/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/news-events/page": "action-browser"
+      },
+      "exportedName": "getNewsEvents",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    },
+    "4077e831e69624a025d475cb414c88243212d0532d": {
+      "workers": {
+        "app/(admin-panel)/admin/news-events/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/news-events/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/news-events/page": "action-browser"
+      },
+      "exportedName": "createNewsEvent",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    },
+    "606b2ab59755e4c353ee38820fa50ba87c9e092d60": {
+      "workers": {
+        "app/(admin-panel)/admin/news-events/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/news-events/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/news-events/page": "action-browser"
+      },
+      "exportedName": "updateNewsEvent",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    },
+    "404264ed05ca706caa993ab9005ec48128eeec96c3": {
+      "workers": {
+        "app/(admin-panel)/admin/news-events/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/news-events/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/news-events/page": "action-browser"
+      },
+      "exportedName": "deleteNewsEvent",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,65 @@
+{
+  "node": {
+    "00b88b7fcb699cde5201e240cde57fb6c9e8cd4353": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/team/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/team.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getTeamMembers",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "getTeamMembers",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "4096549a6bda028871a6af46b1dccfa8ab9bfcaa53": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/team/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/team.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "createTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "60cadab19737f150e9478a911e99c2fbf296f4c475": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/team/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/team.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "updateTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    },
+    "40eb1e179933a9a962ccb1a269ec9b0bd2841d2764": {
+      "workers": {
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/team/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/team.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteTeamMember",
+          "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "exportedName": "deleteTeamMember",
+      "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
+    }
+  },
+  "edge": {}
+}

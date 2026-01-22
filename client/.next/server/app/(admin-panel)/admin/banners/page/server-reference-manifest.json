@@ -1,0 +1,65 @@
+{
+  "node": {
+    "40b1a0fce55538418938d5229c099d2024cc3dba08": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "getBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "getBanners",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "40797285b2da184935ae23c309bb84a3cc6afcb9b7": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "createBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "createBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "60d270839c0a937488865b8378e0d6e79f40b33e4e": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "updateBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "updateBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "40e35b9199270eee0c7d67202b4ec0be96c5e4bc34": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "deleteBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "deleteBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    }
+  },
+  "edge": {}
+}

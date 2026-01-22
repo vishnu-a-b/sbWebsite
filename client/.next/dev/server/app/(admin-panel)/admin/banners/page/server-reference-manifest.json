@@ -1,0 +1,80 @@
+{
+  "node": {
+    "40f6ba3dddb8e52b6f8bc01b8bbadc68f2eeb42081": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "getBanners",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "40fd4c7ba1d56754a455a081d7e9b070cbdcb7041c": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "createBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "6017c0c14e570d4b0422e2cb988f9d0ef2f75a27c7": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "updateBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "40d61f42768c0b6e00960d54d27739190d1c3a43b0": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "deleteBanner",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "00466589239efd0a3cbf165bf63925cd5f8c851bd4": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "seedBenevityBanners",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    }
+  },
+  "edge": {}
+}

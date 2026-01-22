@@ -1,0 +1,50 @@
+{
+  "name": "temp_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "seed:gallery": "tsx --env-file=.env.local scripts/seedGallery.ts",
+    "seed:banners": "tsx --env-file=.env.local scripts/seedBanners.ts",
+    "seed:about": "tsx --env-file=.env.local scripts/seedAboutImages.ts",
+    "seed:all": "tsx --env-file=.env.local scripts/seedAll.ts",
+    "add:video": "tsx --env-file=.env.local scripts/addVideoBanner.ts",
+    "video:first": "tsx --env-file=.env.local scripts/makeVideoFirst.ts"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "@studio-freight/lenis": "^1.0.42",
+    "autoplay": "^0.0.4",
+    "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.26.2",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.17",
+    "lucide-react": "^0.562.0",
+    "mongoose": "^9.1.2",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hook-form": "^7.70.0",
+    "server-only": "^0.0.1",
+    "swiper": "^12.0.3",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^16.4.5",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.7.0",
+    "typescript": "^5"
+  }
+}

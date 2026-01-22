@@ -1,0 +1,50 @@
+{
+  "node": {
+    "00d283fbac00f619033fb47b98cf0954e13951e25b": {
+      "workers": {
+        "app/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getServices",
+          "filename": "Official/SbWebsite/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/services/page": "rsc"
+      },
+      "exportedName": "getServices",
+      "filename": "Official/SbWebsite/app/actions/service.ts"
+    },
+    "40c66cef4b1b8f2055e5ca84c1857e210b02cfcc1a": {
+      "workers": {
+        "app/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteService",
+          "filename": "Official/SbWebsite/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/services/page": "rsc"
+      },
+      "exportedName": "deleteService",
+      "filename": "Official/SbWebsite/app/actions/service.ts"
+    },
+    "40ed8dcea7ddd6ce6186a901f890c269ba50a64af8": {
+      "workers": {
+        "app/services/page": {
+          "moduleId": "[project]/Official/SbWebsite/.next-internal/server/app/services/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/app/actions/service.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createService",
+          "filename": "Official/SbWebsite/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/services/page": "rsc"
+      },
+      "exportedName": "createService",
+      "filename": "Official/SbWebsite/app/actions/service.ts"
+    }
+  },
+  "edge": {}
+}
