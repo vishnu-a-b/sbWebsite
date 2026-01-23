@@ -17,16 +17,22 @@ module.exports = [
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api") || 'http://localhost:5001';
+const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5001") || 'http://127.0.0.1:5001';
 async function getAwards() {
     try {
-        const response = await fetch(`${API_URL}/api/awards/admin`, {
+        const url = `${API_URL}/api/awards/admin`;
+        console.log('[Awards] Fetching from:', url);
+        const response = await fetch(url, {
             cache: 'no-store'
         });
+        console.log('[Awards] Response status:', response.status);
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[Awards] Error response:', errorText);
             throw new Error('Failed to fetch awards');
         }
         const data = await response.json();
+        console.log('[Awards] Fetched awards count:', data.awards?.length);
         return data.awards || [];
     } catch (error) {
         console.error('Error fetching awards:', error);

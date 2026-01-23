@@ -1,4 +1,4 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { IBannerDocument } from '../banner/banner.model.js';
 import { IFeaturedProjectDocument } from '../featured-project/featured-project.model.js';
 

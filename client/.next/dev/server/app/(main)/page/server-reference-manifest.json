@@ -270,6 +270,21 @@
       "exportedName": "getNewsEvents",
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
     },
+    "008f53e67ac4e27504b246a8bc906708dafdbf9ec1": {
+      "workers": {
+        "app/(main)/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getPublicNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/page": "rsc"
+      },
+      "exportedName": "getPublicNewsEvents",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    },
     "404264ed05ca706caa993ab9005ec48128eeec96c3": {
       "workers": {
         "app/(main)/page": {

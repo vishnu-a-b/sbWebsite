@@ -1,5 +1,49 @@
 {
   "node": {
+    "00079c28e89cb4e91bdd03590ed50ac388823ade0c": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": 84818,
+          "async": false,
+          "exportedName": "getAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        },
+        "app/(main)/about/page": {
+          "moduleId": 97084,
+          "async": false,
+          "exportedName": "getAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser",
+        "app/(main)/about/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/about.ts",
+      "exportedName": "getAboutContent"
+    },
+    "40219cd4be3543d79675f9788b312971d2d56c6311": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": 84818,
+          "async": false,
+          "exportedName": "updateAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        },
+        "app/(main)/about/page": {
+          "moduleId": 97084,
+          "async": false,
+          "exportedName": "updateAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser",
+        "app/(main)/about/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/about.ts",
+      "exportedName": "updateAboutContent"
+    },
     "00ca061ef44aa147e27d10bb1e91d021f86ce8320e": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
@@ -7,10 +51,17 @@
           "async": false,
           "exportedName": "getAwards",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getAwards",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/awards/page": "action-browser"
+        "app/(admin-panel)/admin/awards/page": "action-browser",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "getAwards"
@@ -22,10 +73,17 @@
           "async": false,
           "exportedName": "createAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "createAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/awards/page": "action-browser"
+        "app/(admin-panel)/admin/awards/page": "action-browser",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "createAward"
@@ -37,10 +95,17 @@
           "async": false,
           "exportedName": "updateAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "updateAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/awards/page": "action-browser"
+        "app/(admin-panel)/admin/awards/page": "action-browser",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "updateAward"
@@ -52,10 +117,17 @@
           "async": false,
           "exportedName": "deleteAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "deleteAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/awards/page": "action-browser"
+        "app/(admin-panel)/admin/awards/page": "action-browser",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "deleteAward"
@@ -69,13 +141,13 @@
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "getBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/page": {
-          "moduleId": 27370,
+          "moduleId": 48940,
           "async": false,
           "exportedName": "getBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -98,13 +170,13 @@
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "createBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/page": {
-          "moduleId": 27370,
+          "moduleId": 48940,
           "async": false,
           "exportedName": "createBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -127,13 +199,13 @@
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "updateBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/page": {
-          "moduleId": 27370,
+          "moduleId": 48940,
           "async": false,
           "exportedName": "updateBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -156,13 +228,13 @@
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "deleteBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
         },
         "app/(main)/page": {
-          "moduleId": 27370,
+          "moduleId": 48940,
           "async": false,
           "exportedName": "deleteBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -176,6 +248,207 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "deleteBanner"
     },
+    "00709c903ef0f94aefe62a5a782b91c5ea609bc679": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts",
+      "exportedName": "seedBenevityBanners"
+    },
+    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(admin-panel)/admin/projects/page": {
+          "moduleId": 73654,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/projects/page": "action-browser",
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc",
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
+      "exportedName": "getProjects"
+    },
+    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(admin-panel)/admin/projects/page": {
+          "moduleId": 73654,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/projects/page": "action-browser",
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc",
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
+      "exportedName": "createProject"
+    },
+    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(admin-panel)/admin/projects/page": {
+          "moduleId": 73654,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/projects/page": "action-browser",
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc",
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
+      "exportedName": "updateProject"
+    },
+    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(admin-panel)/admin/projects/page": {
+          "moduleId": 73654,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/projects/page": "action-browser",
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc",
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
+      "exportedName": "deleteProject"
+    },
     "008b6f0eb9837c9e9ba9e95247581147e8d61431b6": {
       "workers": {
         "app/(admin-panel)/admin/news-events/page": {
@@ -183,10 +456,31 @@
           "async": false,
           "exportedName": "getNewsEvents",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
+          "async": false,
+          "exportedName": "getNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "getNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/news-events/page": "action-browser"
+        "app/(admin-panel)/admin/news-events/page": "action-browser",
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "getNewsEvents"
@@ -198,10 +492,31 @@
           "async": false,
           "exportedName": "createNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
+          "async": false,
+          "exportedName": "createNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "createNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "createNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/news-events/page": "action-browser"
+        "app/(admin-panel)/admin/news-events/page": "action-browser",
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "createNewsEvent"
@@ -213,10 +528,31 @@
           "async": false,
           "exportedName": "updateNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
+          "async": false,
+          "exportedName": "updateNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "updateNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "updateNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/news-events/page": "action-browser"
+        "app/(admin-panel)/admin/news-events/page": "action-browser",
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "updateNewsEvent"
@@ -228,78 +564,83 @@
           "async": false,
           "exportedName": "deleteNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
+          "async": false,
+          "exportedName": "deleteNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "deleteNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "deleteNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/news-events/page": "action-browser"
+        "app/(admin-panel)/admin/news-events/page": "action-browser",
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "deleteNewsEvent"
     },
-    "0031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+    "0097772b03c89fa728c20a5f8f03fca816c4fa0888": {
       "workers": {
-        "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 26373,
           "async": false,
-          "exportedName": "getProjects",
-          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+          "exportedName": "getServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        },
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "getServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/projects/page": "action-browser"
+        "app/(admin-panel)/admin/services/page": "action-browser",
+        "app/(main)/services/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
-      "exportedName": "getProjects"
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts",
+      "exportedName": "getServicesPageContent"
     },
-    "404aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+    "40a470356aa7609e428d9c38099633aaea61a324de": {
       "workers": {
-        "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 26373,
           "async": false,
-          "exportedName": "createProject",
-          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+          "exportedName": "updateServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        },
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "updateServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
         }
       },
       "layer": {
-        "app/(admin-panel)/admin/projects/page": "action-browser"
+        "app/(admin-panel)/admin/services/page": "action-browser",
+        "app/(main)/services/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
-      "exportedName": "createProject"
-    },
-    "604a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
-      "workers": {
-        "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
-          "async": false,
-          "exportedName": "updateProject",
-          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
-        }
-      },
-      "layer": {
-        "app/(admin-panel)/admin/projects/page": "action-browser"
-      },
-      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
-      "exportedName": "updateProject"
-    },
-    "40bae16c5b18520b556320f365cdc9c1b1a703904d": {
-      "workers": {
-        "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
-          "async": false,
-          "exportedName": "deleteProject",
-          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
-        }
-      },
-      "layer": {
-        "app/(admin-panel)/admin/projects/page": "action-browser"
-      },
-      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
-      "exportedName": "deleteProject"
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts",
+      "exportedName": "updateServicesPageContent"
     },
     "006dd374314f756bd6aa97544917b3997663b11820": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -314,7 +655,7 @@
     "40db25771f00592eadd28150cf3b9dc91ae8c6a106": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "createService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -329,7 +670,7 @@
     "60c2b0dae7a1f4b488cc406c189c819f71b0483601": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "updateService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -344,7 +685,7 @@
     "4066dfc5bdcac6efad4b79cc063d4a23397a35dca5": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "deleteService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -419,13 +760,19 @@
     "003f50ae0e7113f8a26e01c4d28d8dc245b0856c30": {
       "workers": {
         "app/(main)/page": {
-          "moduleId": 27370,
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getServices",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        },
+        "app/(main)/services/[slug]/page": {
+          "moduleId": 33795,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/service.ts"
         },
         "app/(main)/services/page": {
-          "moduleId": 7642,
+          "moduleId": 57972,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/service.ts"
@@ -433,85 +780,142 @@
       },
       "layer": {
         "app/(main)/page": "rsc",
+        "app/(main)/services/[slug]/page": "rsc",
         "app/(main)/services/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/service.ts",
       "exportedName": "getServices"
     },
-    "001370f321038c139482ec150441edf76a5fbee05c": {
+    "40c4811317dd7334572a00427ee0e11577b9df84e8": {
       "workers": {
-        "app/(main)/about/page": {
-          "moduleId": 74701,
+        "app/(main)/page": {
+          "moduleId": 48940,
           "async": false,
-          "exportedName": "getAllAboutImages",
-          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        },
+        "app/(main)/services/[slug]/page": {
+          "moduleId": 33795,
+          "async": false,
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        },
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
         }
       },
       "layer": {
-        "app/(main)/about/page": "rsc"
+        "app/(main)/page": "rsc",
+        "app/(main)/services/[slug]/page": "rsc",
+        "app/(main)/services/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts",
-      "exportedName": "getAllAboutImages"
+      "filename": "Official/SbWebsite/client/app/actions/service.ts",
+      "exportedName": "getServiceBySlug"
     },
-    "00bb1377734a288404087dfcbe07374bef8b6194d3": {
+    "409c3e8cb2694e4c38e73cb36dcb2037d81ecc44a6": {
       "workers": {
-        "app/(main)/about/page": {
-          "moduleId": 74701,
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
           "async": false,
-          "exportedName": "getAboutImage",
-          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+          "exportedName": "getProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "getProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
         }
       },
       "layer": {
-        "app/(main)/about/page": "rsc"
+        "app/(main)/benevity/page": "rsc",
+        "app/(main)/page": "rsc",
+        "app/(main)/projects/[id]/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts",
-      "exportedName": "getAboutImage"
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
+      "exportedName": "getProject"
     },
-    "400dc0662a13a0259f9664a596c3ed1ad82238f571": {
+    "40537865e789065c8ba3736fdfa5e5142c793f8163": {
       "workers": {
-        "app/(main)/about/page": {
-          "moduleId": 74701,
+        "app/(main)/page": {
+          "moduleId": 48940,
           "async": false,
-          "exportedName": "createAboutImage",
-          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+          "exportedName": "getAward",
+          "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
         }
       },
       "layer": {
-        "app/(main)/about/page": "rsc"
+        "app/(main)/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts",
-      "exportedName": "createAboutImage"
+      "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
+      "exportedName": "getAward"
     },
-    "40f8c97812cc52cc070789c85c403114f1414f451f": {
+    "008c1ce485684d66a2d506182f33e1d88fd366d7c6": {
       "workers": {
-        "app/(main)/about/page": {
-          "moduleId": 74701,
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
           "async": false,
-          "exportedName": "deleteAboutImage",
-          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+          "exportedName": "getPublicNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "getPublicNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getPublicNewsEvents",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(main)/about/page": "rsc"
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts",
-      "exportedName": "deleteAboutImage"
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
+      "exportedName": "getPublicNewsEvents"
     },
-    "60e66544d23b59c23b206e474bfaa83d1a38ef6281": {
+    "40aa091f1f7b32c0cd5b6a5d28f1bf0129931b3641": {
       "workers": {
-        "app/(main)/about/page": {
-          "moduleId": 74701,
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
           "async": false,
-          "exportedName": "updateAboutImage",
-          "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts"
+          "exportedName": "getNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/news-events/page": {
+          "moduleId": 90890,
+          "async": false,
+          "exportedName": "getNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        },
+        "app/(main)/page": {
+          "moduleId": 48940,
+          "async": false,
+          "exportedName": "getNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
-        "app/(main)/about/page": "rsc"
+        "app/(main)/news-events/[id]/page": "rsc",
+        "app/(main)/news-events/page": "rsc",
+        "app/(main)/page": "rsc"
       },
-      "filename": "Official/SbWebsite/client/app/actions/aboutImage.ts",
-      "exportedName": "updateAboutImage"
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
+      "exportedName": "getNewsEvent"
     }
   },
   "edge": {},

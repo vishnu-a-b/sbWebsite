@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+export const dynamic = 'force-dynamic';
 
 interface GalleryImage {
   _id: string;

@@ -1,9 +1,24 @@
 {
   "node": {
+    "00709c903ef0f94aefe62a5a782b91c5ea609bc679": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "seedBenevityBanners",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
     "40797285b2da184935ae23c309bb84a3cc6afcb9b7": {
       "workers": {
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "createBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -18,7 +33,7 @@
     "40b1a0fce55538418938d5229c099d2024cc3dba08": {
       "workers": {
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "getBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -33,7 +48,7 @@
     "40e35b9199270eee0c7d67202b4ec0be96c5e4bc34": {
       "workers": {
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "deleteBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -48,7 +63,7 @@
     "60d270839c0a937488865b8378e0d6e79f40b33e4e": {
       "workers": {
         "app/(main)/benevity/page": {
-          "moduleId": 2761,
+          "moduleId": 92969,
           "async": false,
           "exportedName": "updateBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -59,6 +74,81 @@
       },
       "exportedName": "updateBanner",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "getProjects",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "409c3e8cb2694e4c38e73cb36dcb2037d81ecc44a6": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "getProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "getProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "createProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "deleteProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+      "workers": {
+        "app/(main)/benevity/page": {
+          "moduleId": 92969,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/benevity/page": "rsc"
+      },
+      "exportedName": "updateProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
     }
   },
   "edge": {}

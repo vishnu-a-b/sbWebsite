@@ -191,3 +191,701 @@
 [00:08:44.424] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/benevity/projects"
 [00:08:44.746] Server  LOG     getProjects: Received data count: 2
 [00:08:44.747] Server  LOG     ProjectsSection (benevity): fetched projects count: 2
+[00:28:35.785] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[00:28:35.786] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[00:28:35.853] Server  LOG     getServices: Fetched 9 services
+[00:28:45.858] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[00:28:45.905] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[00:28:45.907] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[00:28:45.932] Server  LOG     [Awards] Response status: 200
+[00:28:45.933] Server  LOG     getProjects: Received data count: 3
+[00:28:45.933] Server  LOG     [Awards] Fetched awards count: 6
+[00:28:45.933] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[00:28:45.943] Server  LOG     ✓ Compiled in 0ms
+[00:30:52.610] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:30:57.330] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[00:30:57.331] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[00:30:57.562] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[00:30:58.302] Server  LOG     getServices: Fetched 9 services
+[00:31:07.355] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[00:31:07.446] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[00:31:07.450] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[00:31:07.928] Server  LOG     [Awards] Response status: 200
+[00:31:07.931] Server  LOG     [Awards] Fetched awards count: 6
+[00:31:07.984] Server  LOG     getProjects: Received data count: 3
+[00:31:07.984] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[00:31:08.469] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:31:08.602] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:31:16.121] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:18:07.142] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:18:10.150] Server  LOG     getServices: Fetched 9 services
+[17:18:10.152] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:18:20.175] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[17:18:20.528] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[17:24:26.032] Server  LOG     ✓ Compiled in 2.7s
+[17:24:28.123] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:28.123] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:28.472] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:24:28.660] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:28.660] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:28.668] Server  LOG     ✓ Compiled in 20ms
+[17:24:29.107] Server  LOG     getServices: Fetched 9 services
+[17:24:29.170] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/benevity/projects/admin"
+[17:24:29.457] Server  LOG     getProjects: Received data count: 3
+[17:24:31.245] Server  LOG     getServices: Fetched 9 services
+[17:24:38.195] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:24:38.295] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:24:38.297] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:24:38.340] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:24:38.665] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:24:38.699] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:24:38.701] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:24:38.778] Server  LOG     getProjects: Received data count: 3
+[17:24:38.779] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:24:38.782] Server  LOG     [Awards] Response status: 200
+[17:24:38.782] Server  LOG     [Awards] Fetched awards count: 6
+[17:24:39.109] Server  LOG     getProjects: Received data count: 3
+[17:24:39.109] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:24:39.136] Server  LOG     [Awards] Response status: 200
+[17:24:39.136] Server  LOG     [Awards] Fetched awards count: 6
+[17:24:41.760] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:24:41.907] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:24:51.621] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:51.622] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:51.704] Server  LOG     getServices: Fetched 9 services
+[17:24:52.765] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:52.766] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:52.958] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:24:53.040] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.040] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.053] Server  LOG     getServices: Fetched 9 services
+[17:24:53.114] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.114] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.224] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.225] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.235] Server  LOG     getServices: Fetched 9 services
+[17:24:53.255] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.255] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.271] Server  LOG     getServices: Fetched 9 services
+[17:24:53.346] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.347] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.359] Server  LOG     getServices: Fetched 9 services
+[17:24:53.463] Server  LOG     ✓ Compiled in 3.7s
+[17:24:53.506] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:24:53.506] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:24:53.743] Server  LOG     getServices: Fetched 9 services
+[17:24:53.749] Server  LOG     getServices: Fetched 9 services
+[17:24:54.114] Server  LOG     getServices: Fetched 9 services
+[17:25:00.394] Server  LOG     ✓ Compiled in 159ms
+[17:25:00.518] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:00.519] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:01.253] Server  LOG     getServices: Fetched 9 services
+[17:25:01.664] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:01.705] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:01.707] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:01.826] Server  LOG     [Awards] Response status: 200
+[17:25:01.837] Server  LOG     getProjects: Received data count: 3
+[17:25:01.838] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:01.838] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:02.823] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:02.920] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:02.930] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.094] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.180] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.181] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.197] Server  LOG     [Awards] Response status: 200
+[17:25:03.202] Server  LOG     getProjects: Received data count: 3
+[17:25:03.203] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.203] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:03.207] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.271] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.286] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.300] Server  LOG     getProjects: Received data count: 3
+[17:25:03.301] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:03.336] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.337] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.407] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.438] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.441] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.463] Server  LOG     [Awards] Response status: 200
+[17:25:03.476] Server  LOG     getProjects: Received data count: 3
+[17:25:03.476] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.477] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:03.486] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.487] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.493] Server  LOG     [Awards] Response status: 200
+[17:25:03.494] Server  LOG     getProjects: Received data count: 3
+[17:25:03.494] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.494] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:03.510] Server  LOG     ✓ Compiled in 1258ms
+[17:25:03.525] Server  LOG     [Awards] Response status: 200
+[17:25:03.525] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.571] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.572] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.576] Server  LOG     [Awards] Response status: 200
+[17:25:03.577] Server  LOG     getProjects: Received data count: 3
+[17:25:03.577] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.577] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:03.604] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:03.659] Server  LOG     ✓ Compiled in 0ms
+[17:25:03.672] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:03.673] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:03.721] Server  LOG     [Awards] Response status: 200
+[17:25:03.722] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:03.725] Server  LOG     getProjects: Received data count: 3
+[17:25:03.725] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:04.249] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:04.250] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:04.344] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:04.344] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:04.356] Server  LOG     getServices: Fetched 9 services
+[17:25:04.591] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:25:04.644] Server  LOG     [Awards] Response status: 200
+[17:25:04.645] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:04.658] Server  LOG     getProjects: Received data count: 3
+[17:25:04.659] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:04.662] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
+[17:25:04.859] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/benevity/projects/admin"
+[17:25:04.871] Server  LOG     getServices: Fetched 9 services
+[17:25:05.146] Server  LOG     getProjects: Received data count: 3
+[17:25:10.553] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:10.598] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:10.606] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:10.648] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:25:11.073] Server  LOG     [Awards] Response status: 200
+[17:25:11.073] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:11.092] Server  LOG     getProjects: Received data count: 3
+[17:25:11.092] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:14.313] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:14.364] Server  ERROR   ⨯ ReferenceError: AwardsSection is not defined
+[17:25:14.367] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:14.408] Server  ERROR   ⨯ ReferenceError: AwardsSection is not defined
+[17:25:15.167] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:25:15.167] Browser ERROR   uncaughtError: ReferenceError: AwardsSection is not defined
+[17:25:19.160] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[17:25:19.194] Server  LOG     ✓ Compiled in 444ms
+[17:25:19.601] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:19.601] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:19.625] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/%5Broot-of-the-server%5D__442443f0._.css
+[17:25:19.722] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:25:20.315] Server  LOG     getServices: Fetched 9 services
+[17:25:28.623] Server  LOG     ✓ Compiled in 91ms
+[17:25:28.647] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[17:25:28.886] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/%5Broot-of-the-server%5D__442443f0._.css
+[17:25:29.623] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:25:29.672] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:25:29.673] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:25:30.224] Server  LOG     [Awards] Response status: 200
+[17:25:30.224] Server  LOG     [Awards] Fetched awards count: 6
+[17:25:30.228] Server  LOG     getProjects: Received data count: 3
+[17:25:30.228] Server  LOG     ProjectsSection (featured): fetched projects count: 3
+[17:25:30.699] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:25:30.813] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:25:42.556] Server  LOG     ✓ Compiled in 170ms
+[17:25:50.980] Server  LOG     ✓ Compiled in 591ms
+[17:25:51.364] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:51.365] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:51.400] Server  LOG     getServices: Fetched 9 services
+[17:25:51.425] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:51.425] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:51.430] Server  LOG     getServices: Fetched 9 services
+[17:25:58.119] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:58.119] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:58.191] Server  LOG     getServices: Fetched 9 services
+[17:25:58.207] Server  LOG     ✓ Compiled in 522ms
+[17:25:58.256] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:25:58.256] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:25:58.278] Server  LOG     getServices: Fetched 9 services
+[17:26:01.418] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:01.456] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:01.498] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:01.509] Server  LOG     [Awards] Response status: 200
+[17:26:01.511] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:01.529] Server  ERROR   ⨯ ReferenceError: getProjects is not defined
+[17:26:01.536] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:01.552] Server  LOG     [Awards] Response status: 200
+[17:26:01.553] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:01.568] Server  ERROR   ⨯ ReferenceError: getProjects is not defined
+[17:26:08.191] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:08.242] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:08.244] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:08.256] Server  LOG     [Awards] Response status: 200
+[17:26:08.258] Server  LOG     getProjects: Received data count: 3
+[17:26:08.258] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:08.310] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:08.325] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:08.326] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:08.331] Server  LOG     [Awards] Response status: 200
+[17:26:08.331] Server  LOG     getProjects: Received data count: 3
+[17:26:08.331] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:10.108] Server  LOG     ✓ Compiled in 678ms
+[17:26:10.222] Browser ERROR   ./Official/SbWebsite/client/components/Navbar.tsx:98:7
+Parsing ecmascript source code failed
+   96 |         </div>
+   97 |       )}
+>  98 |     </nav>
+      |       ^^^
+   99 |   );
+  100 | }
+  101 |
+
+Expected corresponding JSX closing tag for <motion.nav>
+
+Import trace:
+  Server Component:
+    ./Official/SbWebsite/client/components/Navbar.tsx
+    ./Official/SbWebsite/client/app/(main)/layout.tsx
+[17:26:11.259] Browser ERROR   ./Official/SbWebsite/client/components/Navbar.tsx:98:7
+Parsing ecmascript source code failed
+   96 |         </div>
+   97 |       )}
+>  98 |     </nav>
+      |       ^^^
+   99 |   );
+  100 | }
+  101 |
+
+Expected corresponding JSX closing tag for <motion.nav>
+
+Import trace:
+  Server Component:
+    ./Official/SbWebsite/client/components/Navbar.tsx
+    ./Official/SbWebsite/client/app/(main)/layout.tsx
+[17:26:15.838] Server  LOG     ✓ Compiled in 621ms
+[17:26:16.535] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:26:16.540] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:26:16.605] Server  LOG     getServices: Fetched 9 services
+[17:26:16.741] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:26:16.741] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:26:16.759] Server  LOG     getServices: Fetched 9 services
+[17:26:16.897] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:26:16.897] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:26:16.906] Server  LOG     getServices: Fetched 9 services
+[17:26:25.396] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:26:25.396] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:26:25.427] Server  LOG     getServices: Fetched 9 services
+[17:26:26.606] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:26.739] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:26.741] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:26.750] Server  LOG     [Awards] Response status: 200
+[17:26:26.758] Server  LOG     getProjects: Received data count: 3
+[17:26:26.758] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:26.770] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:26.812] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:26.813] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:26.822] Server  LOG     [Awards] Response status: 200
+[17:26:26.823] Server  LOG     getProjects: Received data count: 3
+[17:26:26.823] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:26.904] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:26.913] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:26.914] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:26.922] Server  LOG     [Awards] Response status: 200
+[17:26:26.922] Server  LOG     getProjects: Received data count: 3
+[17:26:26.922] Server  LOG     [Awards] Fetched awards count: 6
+[17:26:35.429] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:26:35.482] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:26:35.486] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:26:35.496] Server  LOG     [Awards] Response status: 200
+[17:26:35.497] Server  LOG     getProjects: Received data count: 3
+[17:26:35.497] Server  LOG     [Awards] Fetched awards count: 6
+[17:29:02.861] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:29:51.102] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:29:51.102] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:29:51.258] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:29:51.928] Server  LOG     getServices: Fetched 9 services
+[17:29:55.305] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:29:55.306] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:29:56.064] Server  LOG     getServices: Fetched 9 services
+[17:30:01.128] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:30:01.216] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:30:01.217] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:30:01.694] Server  LOG     [Awards] Response status: 200
+[17:30:01.695] Server  LOG     [Awards] Fetched awards count: 6
+[17:30:01.698] Server  LOG     getProjects: Received data count: 3
+[17:30:05.318] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:30:05.330] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:30:05.331] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:30:05.698] Server  LOG     [Awards] Response status: 200
+[17:30:05.699] Server  LOG     [Awards] Fetched awards count: 6
+[17:30:05.701] Server  LOG     getProjects: Received data count: 3
+[17:30:06.192] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:30:06.321] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:30:50.419] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:32:07.811] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:32:07.812] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:32:07.857] Server  LOG     getServices: Fetched 9 services
+[17:32:13.581] Server  LOG     ✓ Compiled in 215ms
+[17:32:14.266] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:32:14.266] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:32:14.383] Server  LOG     getServices: Fetched 9 services
+[17:32:17.866] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:32:17.899] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:32:17.901] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:32:17.912] Server  LOG     [Awards] Response status: 200
+[17:32:17.914] Server  LOG     getProjects: Received data count: 3
+[17:32:17.914] Server  LOG     [Awards] Fetched awards count: 6
+[17:32:24.425] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:32:24.513] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:32:24.518] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:32:24.544] Server  LOG     [Awards] Response status: 200
+[17:32:24.547] Server  LOG     getProjects: Received data count: 3
+[17:32:24.547] Server  LOG     [Awards] Fetched awards count: 6
+[17:33:02.857] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:33:02.858] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:33:03.030] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:33:03.765] Server  LOG     getServices: Fetched 9 services
+[17:33:08.277] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:33:08.277] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:33:08.950] Server  LOG     getServices: Fetched 9 services
+[17:33:12.879] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:33:12.957] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:33:12.958] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:33:13.130] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:33:13.130] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:33:13.420] Server  LOG     [Awards] Response status: 200
+[17:33:13.421] Server  LOG     [Awards] Fetched awards count: 6
+[17:33:13.424] Server  LOG     getProjects: Received data count: 3
+[17:33:13.693] Server  LOG     getServices: Fetched 9 services
+[17:33:16.372] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:33:16.373] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:33:16.930] Server  LOG     getServices: Fetched 9 services
+[17:33:18.284] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:33:18.307] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:33:18.308] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:33:18.624] Server  LOG     getProjects: Received data count: 3
+[17:33:18.658] Server  LOG     [Awards] Response status: 200
+[17:33:18.659] Server  LOG     [Awards] Fetched awards count: 6
+[17:33:23.156] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:33:23.189] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:33:23.190] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:33:23.611] Server  LOG     [Awards] Response status: 200
+[17:33:23.612] Server  LOG     [Awards] Fetched awards count: 6
+[17:33:23.616] Server  LOG     getProjects: Received data count: 3
+[17:33:26.385] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:33:26.394] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:33:26.395] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:33:26.788] Server  LOG     [Awards] Response status: 200
+[17:33:26.788] Server  LOG     [Awards] Fetched awards count: 6
+[17:33:26.791] Server  LOG     getProjects: Received data count: 3
+[17:33:27.297] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:33:27.297] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:33:30.036] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:39:47.954] Server  LOG     ✓ Compiled in 313ms
+[17:40:02.853] Server  LOG     ✓ Compiled in 504ms
+[17:40:05.956] Server  LOG     ○ Compiling /news-events ...
+[17:40:09.760] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:40:11.179] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:40:15.863] Server  LOG     ✓ Compiled in 327ms
+[17:40:30.715] Server  LOG     ✓ Compiled in 459ms
+[17:42:18.089] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:42:18.089] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:42:18.327] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:42:18.932] Server  LOG     getServices: Fetched 9 services
+[17:42:28.126] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:42:28.273] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:42:28.275] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:42:28.696] Server  ERROR   Error fetching news/event: Error: Failed to fetch news/event
+[17:42:28.707] Server  ERROR   ⨯ Error: Failed to fetch news/event
+[17:42:28.746] Server  LOG     [Awards] Response status: 200
+[17:42:28.747] Server  LOG     [Awards] Fetched awards count: 6
+[17:42:28.752] Server  LOG     getProjects: Received data count: 3
+[17:42:28.879] Browser ERROR   uncaughtError: Error: Failed to fetch news/event
+[17:42:29.553] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:42:29.554] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:42:29.554] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:45:11.081] Server  LOG     ✓ Compiled in 2.3s
+[17:45:11.192] Browser ERROR   ./Official/SbWebsite/client/components/Navbar.tsx:2:10
+Ecmascript file had an error
+  1 | import Link from 'next/link';
+> 2 | import { useState } from 'react';
+    |          ^^^^^^^^
+  3 | import { Menu, X, Heart } from 'lucide-react';
+  4 | import { Button } from './ui/Button';
+  5 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./Official/SbWebsite/client/components/Navbar.tsx
+    ./Official/SbWebsite/client/app/(main)/layout.tsx
+[17:45:12.251] Browser ERROR   ./Official/SbWebsite/client/components/Navbar.tsx:2:10
+Ecmascript file had an error
+  1 | import Link from 'next/link';
+> 2 | import { useState } from 'react';
+    |          ^^^^^^^^
+  3 | import { Menu, X, Heart } from 'lucide-react';
+  4 | import { Button } from './ui/Button';
+  5 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./Official/SbWebsite/client/components/Navbar.tsx
+    ./Official/SbWebsite/client/app/(main)/layout.tsx
+[17:45:26.167] Server  LOG     ✓ Finished filesystem cache database compaction in 10.0s
+[17:45:27.059] Server  LOG     ✓ Compiled in 749ms
+[17:45:31.367] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:45:31.367] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:45:31.686] Server  LOG     getServices: Fetched 9 services
+[17:45:31.833] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:45:31.834] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:45:31.852] Server  LOG     getServices: Fetched 9 services
+[17:45:31.914] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:45:31.914] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:45:31.932] Server  LOG     getServices: Fetched 9 services
+[17:45:32.038] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:45:32.039] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:45:32.081] Server  LOG     getServices: Fetched 9 services
+[17:45:32.214] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:45:32.214] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:45:32.233] Server  LOG     getServices: Fetched 9 services
+[17:45:41.700] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:45:41.784] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:45:41.787] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:45:41.807] Server  LOG     [Awards] Response status: 200
+[17:45:41.812] Server  LOG     getProjects: Received data count: 3
+[17:45:41.812] Server  LOG     [Awards] Fetched awards count: 6
+[17:45:41.871] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:45:41.971] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:45:41.986] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:45:41.987] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:45:42.012] Server  LOG     [Awards] Response status: 200
+[17:45:42.016] Server  LOG     getProjects: Received data count: 3
+[17:45:42.016] Server  LOG     [Awards] Fetched awards count: 6
+[17:45:42.066] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:45:42.174] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:45:42.174] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:45:42.222] Server  LOG     [Awards] Response status: 200
+[17:45:42.223] Server  LOG     getProjects: Received data count: 3
+[17:45:42.223] Server  LOG     [Awards] Fetched awards count: 6
+[17:45:42.229] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:45:42.257] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:45:42.258] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:45:42.267] Server  LOG     [Awards] Response status: 200
+[17:45:42.269] Server  LOG     getProjects: Received data count: 3
+[17:45:42.269] Server  LOG     [Awards] Fetched awards count: 6
+[17:45:42.303] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:45:42.304] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:45:42.317] Server  LOG     [Awards] Response status: 200
+[17:45:42.318] Server  LOG     getProjects: Received data count: 3
+[17:45:42.318] Server  LOG     [Awards] Fetched awards count: 6
+[17:48:57.669] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:48:57.669] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:48:58.279] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:48:58.964] Server  LOG     getServices: Fetched 9 services
+[17:49:07.771] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:49:07.897] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:49:07.904] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:49:08.383] Server  LOG     getProjects: Received data count: 3
+[17:49:08.411] Server  LOG     [Awards] Response status: 200
+[17:49:08.412] Server  LOG     [Awards] Fetched awards count: 6
+[17:49:09.309] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:49:09.468] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:50:05.047] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[17:50:26.533] Server  ERROR   Error fetching news/event: Error: Failed to fetch news/event
+[17:50:26.546] Server  ERROR   ⨯ Error: Failed to fetch news/event
+[17:50:26.686] Browser ERROR   uncaughtError: Error: Failed to fetch news/event
+[17:52:43.712] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[17:52:45.409] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[17:52:59.527] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[17:52:59.527] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[17:53:00.204] Server  LOG     getServices: Fetched 9 services
+[17:53:09.591] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[17:53:09.675] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[17:53:09.676] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[17:53:10.035] Server  LOG     getProjects: Received data count: 3
+[17:53:10.060] Server  LOG     [Awards] Response status: 200
+[17:53:10.061] Server  LOG     [Awards] Fetched awards count: 6
+[17:53:10.316] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[17:53:15.816] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[18:21:59.454] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:21:59.457] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:21:59.891] Server  LOG     getServices: Fetched 9 services
+[18:21:59.907] Server  LOG     ✓ Compiled in 4s
+[18:22:00.055] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:22:00.055] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:22:00.063] Server  LOG     getServices: Fetched 9 services
+[18:22:00.106] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:22:00.106] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:22:00.115] Server  LOG     getServices: Fetched 9 services
+[18:22:00.164] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:22:00.164] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:22:00.179] Server  LOG     getServices: Fetched 9 services
+[18:22:00.260] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:22:00.261] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:22:00.280] Server  LOG     getServices: Fetched 9 services
+[18:22:09.900] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:22:09.972] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:22:09.976] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:22:09.986] Server  LOG     [Awards] Response status: 200
+[18:22:09.992] Server  LOG     getProjects: Received data count: 3
+[18:22:09.992] Server  LOG     [Awards] Fetched awards count: 6
+[18:22:10.331] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:22:10.332] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:22:10.334] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:22:10.335] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:22:10.351] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:22:10.352] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:22:10.360] Server  LOG     [Awards] Response status: 200
+[18:22:10.362] Server  LOG     getProjects: Received data count: 3
+[18:22:10.362] Server  LOG     [Awards] Fetched awards count: 6
+[18:22:10.376] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:22:10.377] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:22:10.391] Server  LOG     [Awards] Response status: 200
+[18:22:10.396] Server  LOG     getProjects: Received data count: 3
+[18:22:10.396] Server  LOG     [Awards] Fetched awards count: 6
+[18:22:10.497] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:22:10.498] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:22:10.512] Server  LOG     [Awards] Response status: 200
+[18:22:10.513] Server  LOG     getProjects: Received data count: 3
+[18:22:10.513] Server  LOG     [Awards] Fetched awards count: 6
+[18:22:10.527] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:22:10.528] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:22:10.537] Server  LOG     [Awards] Response status: 200
+[18:22:10.546] Server  LOG     getProjects: Received data count: 3
+[18:22:10.546] Server  LOG     [Awards] Fetched awards count: 6
+[18:48:25.017] Server  LOG     ✓ Compiled in 293ms
+[18:48:34.551] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:48:34.551] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:48:34.612] Server  LOG     getServices: Fetched 9 services
+[18:48:34.624] Server  LOG     ✓ Compiled in 286ms
+[18:48:35.485] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:48:35.486] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:48:35.613] Server  LOG     getServices: Fetched 9 services
+[18:48:44.623] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:48:44.709] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:48:44.711] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:48:44.718] Server  LOG     [Awards] Response status: 200
+[18:48:44.720] Server  LOG     getProjects: Received data count: 3
+[18:48:44.720] Server  LOG     [Awards] Fetched awards count: 6
+[18:48:45.579] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:48:45.616] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:48:45.619] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:48:45.642] Server  LOG     [Awards] Response status: 200
+[18:48:45.645] Server  LOG     getProjects: Received data count: 3
+[18:48:45.645] Server  LOG     [Awards] Fetched awards count: 6
+[18:49:01.555] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:49:01.556] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:49:01.698] Server  LOG     getServices: Fetched 9 services
+[18:49:01.704] Server  LOG     ✓ Compiled in 226ms
+[18:49:01.749] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:49:01.749] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:49:01.756] Server  LOG     getServices: Fetched 9 services
+[18:49:11.714] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:49:11.748] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:49:11.753] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:49:11.765] Server  LOG     [Awards] Response status: 200
+[18:49:11.767] Server  LOG     getProjects: Received data count: 3
+[18:49:11.767] Server  LOG     [Awards] Fetched awards count: 6
+[18:49:11.785] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:49:11.811] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:49:11.812] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:49:11.869] Server  LOG     [Awards] Response status: 200
+[18:49:11.870] Server  LOG     getProjects: Received data count: 3
+[18:49:11.870] Server  LOG     [Awards] Fetched awards count: 6
+[18:50:36.628] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[18:50:37.696] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[18:50:45.228] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:50:45.228] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:50:45.268] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[18:50:46.056] Server  LOG     getServices: Fetched 9 services
+[18:50:51.181] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:50:51.182] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:50:51.775] Server  LOG     getServices: Fetched 9 services
+[18:50:55.248] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:50:55.283] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:50:55.284] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:50:55.677] Server  LOG     getProjects: Received data count: 3
+[18:50:55.683] Server  LOG     [Awards] Response status: 200
+[18:50:55.683] Server  LOG     [Awards] Fetched awards count: 6
+[18:51:01.191] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:51:01.212] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:51:01.213] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:51:01.559] Server  LOG     [Awards] Response status: 200
+[18:51:01.560] Server  LOG     [Awards] Fetched awards count: 6
+[18:51:01.592] Server  LOG     getProjects: Received data count: 3
+[18:51:02.079] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[18:51:02.079] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[18:51:25.354] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[18:52:57.722] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[18:53:13.612] Server  LOG     ✓ Finished filesystem cache database compaction in 13.0s
+[18:53:21.248] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:53:21.249] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:53:21.916] Server  LOG     getServices: Fetched 9 services
+[18:53:22.884] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:53:22.884] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:53:23.482] Server  LOG     getServices: Fetched 9 services
+[18:53:31.282] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:53:31.302] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:53:31.305] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:53:31.668] Server  LOG     [Awards] Response status: 200
+[18:53:31.669] Server  LOG     [Awards] Fetched awards count: 6
+[18:53:31.717] Server  LOG     getProjects: Received data count: 3
+[18:53:32.897] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:53:32.978] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:53:32.980] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:53:33.281] Server  LOG     [Awards] Response status: 200
+[18:53:33.282] Server  LOG     [Awards] Fetched awards count: 6
+[18:53:33.303] Server  LOG     getProjects: Received data count: 3
+[18:56:10.392] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:56:10.393] Server  LOG     Fetching services from: http://127.0.0.1:5001/api/services
+[18:56:11.042] Server  LOG     getServices: Fetched 9 services
+[18:56:20.455] Server  ERROR   Failed to fetch banners MongooseError: Operation `banners.find()` buffering timed out after 10000ms
+[18:56:20.538] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?showOnFirstFace=true"
+[18:56:20.541] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:56:20.941] Server  LOG     [Awards] Response status: 200
+[18:56:20.943] Server  LOG     [Awards] Fetched awards count: 6
+[18:56:20.974] Server  LOG     getProjects: Received data count: 3
+[18:56:21.613] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[18:56:21.614] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[18:57:48.591] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[18:57:55.718] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:57:56.085] Server  LOG     [Awards] Response status: 200
+[18:57:56.086] Server  LOG     [Awards] Fetched awards count: 6
+[18:57:56.101] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:57:56.386] Server  LOG     [Awards] Response status: 200
+[18:57:56.386] Server  LOG     [Awards] Fetched awards count: 6
+[18:57:56.404] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:57:56.699] Server  LOG     [Awards] Response status: 200
+[18:57:56.699] Server  LOG     [Awards] Fetched awards count: 6
+[18:57:56.729] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5001/api/awards/admin"
+[18:57:57.158] Server  LOG     [Awards] Response status: 200
+[18:57:57.158] Server  LOG     [Awards] Fetched awards count: 6
+[18:58:03.331] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?"
+[18:58:03.701] Server  LOG     getProjects: Received data count: 3
+[18:58:03.719] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?"
+[18:58:04.003] Server  LOG     getProjects: Received data count: 3
+[18:58:04.016] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?"
+[18:58:04.300] Server  LOG     getProjects: Received data count: 3
+[18:58:04.315] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5001/api/projects?"
+[18:58:04.599] Server  LOG     getProjects: Received data count: 3
+[18:58:12.017] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:58:22.038] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[18:58:22.103] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5001/api/services/admin
+[18:58:22.825] Server  LOG     [CMS] Fetched 9 services
+[18:58:22.847] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:58:32.897] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[18:58:33.031] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5001/api/services/admin
+[18:58:33.612] Server  LOG     [CMS] Fetched 9 services
+[18:58:33.636] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:58:43.644] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[18:58:43.744] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5001/api/services/admin
+[18:58:44.367] Server  LOG     [CMS] Fetched 9 services
+[18:58:44.398] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:58:54.414] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[18:58:54.560] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5001/api/services/admin
+[18:58:55.134] Server  LOG     [CMS] Fetched 9 services
+[18:59:28.119] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:59:38.140] Server  ERROR   Failed to fetch about content MongooseError: Operation `abouts.findOne()` buffering timed out after 10000ms
+[18:59:38.291] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:59:48.302] Server  ERROR   Failed to fetch about content MongooseError: Operation `abouts.findOne()` buffering timed out after 10000ms
+[18:59:48.409] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[18:59:58.431] Server  ERROR   Failed to fetch about content MongooseError: Operation `abouts.findOne()` buffering timed out after 10000ms
+[18:59:58.532] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[19:00:08.547] Server  ERROR   Failed to fetch about content MongooseError: Operation `abouts.findOne()` buffering timed out after 10000ms

@@ -32,9 +32,10 @@ async function getProjects(filter) {
                 }
             } else {
                 // Main projects
-                // If filter exists but not showOnBenevity, assume public filter usage
-                // But traditionally:
                 url = `${API_URL}/api/projects?`;
+                if (filter.showOnFirstFace) {
+                    url += `showOnFirstFace=true`;
+                }
             }
         }
         console.log('getProjects: Fetching from URL:', url);

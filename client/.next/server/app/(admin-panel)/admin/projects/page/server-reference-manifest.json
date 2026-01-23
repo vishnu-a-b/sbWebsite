@@ -1,6 +1,6 @@
 {
   "node": {
-    "0031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
       "workers": {
         "app/(admin-panel)/admin/projects/page": {
           "moduleId": 73654,
@@ -15,7 +15,7 @@
       "exportedName": "getProjects",
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
     },
-    "404aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
       "workers": {
         "app/(admin-panel)/admin/projects/page": {
           "moduleId": 73654,
@@ -30,7 +30,7 @@
       "exportedName": "createProject",
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
     },
-    "604a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
       "workers": {
         "app/(admin-panel)/admin/projects/page": {
           "moduleId": 73654,
@@ -45,7 +45,7 @@
       "exportedName": "updateProject",
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
     },
-    "40bae16c5b18520b556320f365cdc9c1b1a703904d": {
+    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
       "workers": {
         "app/(admin-panel)/admin/projects/page": {
           "moduleId": 73654,

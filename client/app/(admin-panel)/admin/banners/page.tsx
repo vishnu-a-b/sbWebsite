@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -8,7 +8,7 @@ import { Plus, Video, Image as ImageIcon, Edit, Trash2, Database } from 'lucide-
 import RevealAnimation from '@/components/RevealAnimation';
 import BannerForm from '@/components/admin/BannerForm';
 
-export default function BannersPage() {
+function BannersContent() {
   const searchParams = useSearchParams();
   const locationParam = searchParams.get('location');
   const currentLocation = locationParam === 'benevity' ? 'benevity' : 'home';
@@ -286,5 +286,19 @@ export default function BannersPage() {
         </Card>
       </RevealAnimation>
     </div>
+  );
+}
+
+export default function BannersPage() {
+  return (
+    <Suspense fallback={
+      <div className="p-8">
+        <div className="flex items-center justify-center h-96">
+          <div className="text-lg text-gray-600">Initializing...</div>
+        </div>
+      </div>
+    }>
+      <BannersContent />
+    </Suspense>
   );
 }

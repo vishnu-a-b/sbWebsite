@@ -1,0 +1,65 @@
+{
+  "node": {
+    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser"
+      },
+      "exportedName": "getProjects",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser"
+      },
+      "exportedName": "createProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser"
+      },
+      "exportedName": "updateProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 45026,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser"
+      },
+      "exportedName": "deleteProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    }
+  },
+  "edge": {}
+}

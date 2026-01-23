@@ -1,6 +1,15 @@
 {
+  "/(admin-panel)/admin/about/page": "app/(admin-panel)/admin/about/page.js",
+  "/(admin-panel)/admin/awards/page": "app/(admin-panel)/admin/awards/page.js",
   "/(admin-panel)/admin/benevity-projects/page": "app/(admin-panel)/admin/benevity-projects/page.js",
+  "/(admin-panel)/admin/news-events/page": "app/(admin-panel)/admin/news-events/page.js",
+  "/(admin-panel)/admin/projects/page": "app/(admin-panel)/admin/projects/page.js",
+  "/(admin-panel)/admin/services/page": "app/(admin-panel)/admin/services/page.js",
   "/(main)/benevity/page": "app/(main)/benevity/page.js",
+  "/(main)/news-events/[id]/page": "app/(main)/news-events/[id]/page.js",
+  "/(main)/news-events/page": "app/(main)/news-events/page.js",
   "/(main)/page": "app/(main)/page.js",
+  "/(main)/projects/[id]/page": "app/(main)/projects/[id]/page.js",
+  "/(main)/services/page": "app/(main)/services/page.js",
   "/_not-found/page": "app/_not-found/page.js"
 }

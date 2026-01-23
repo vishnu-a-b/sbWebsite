@@ -17,19 +17,24 @@ module.exports = [
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api") || 'http://localhost:5001';
+const RAW_API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5001") || 'http://127.0.0.1:5001';
+const API_URL = RAW_API_URL.includes('localhost') ? RAW_API_URL.replace('localhost', '127.0.0.1') : RAW_API_URL;
 async function getServices() {
     try {
-        const response = await fetch(`${API_URL}/api/services/admin`, {
+        const url = `${API_URL}/api/services/admin`;
+        console.log(`[CMS] Fetching services from: ${url}`);
+        const response = await fetch(url, {
             cache: 'no-store'
         });
         if (!response.ok) {
+            console.error(`[CMS] Failed to fetch services: ${response.status} ${response.statusText}`);
             throw new Error('Failed to fetch services');
         }
         const data = await response.json();
+        console.log(`[CMS] Fetched ${data.services?.length} services`);
         return data.services || [];
     } catch (error) {
-        console.error('Error fetching services:', error);
+        console.error('[CMS] Error fetching services:', error);
         return [];
     }
 }

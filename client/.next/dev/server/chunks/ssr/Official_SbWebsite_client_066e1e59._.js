@@ -146,7 +146,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api") || 'http://127.0.0.1:5001';
+const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5001") || 'http://127.0.0.1:5001';
 async function getBanners(location) {
     await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])();
     try {
@@ -343,9 +343,10 @@ async function getProjects(filter) {
                 }
             } else {
                 // Main projects
-                // If filter exists but not showOnBenevity, assume public filter usage
-                // But traditionally:
                 url = `${API_URL}/api/projects?`;
+                if (filter.showOnFirstFace) {
+                    url += `showOnFirstFace=true`;
+                }
             }
         }
         console.log('getProjects: Fetching from URL:', url);

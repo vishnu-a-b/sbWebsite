@@ -1,9 +1,39 @@
 {
   "node": {
+    "0097772b03c89fa728c20a5f8f03fca816c4fa0888": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 26373,
+          "async": false,
+          "exportedName": "getServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "getServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    },
+    "40a470356aa7609e428d9c38099633aaea61a324de": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 26373,
+          "async": false,
+          "exportedName": "updateServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "updateServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    },
     "006dd374314f756bd6aa97544917b3997663b11820": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -18,7 +48,7 @@
     "40db25771f00592eadd28150cf3b9dc91ae8c6a106": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "createService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -33,7 +63,7 @@
     "60c2b0dae7a1f4b488cc406c189c819f71b0483601": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "updateService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -48,7 +78,7 @@
     "4066dfc5bdcac6efad4b79cc063d4a23397a35dca5": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 62992,
+          "moduleId": 26373,
           "async": false,
           "exportedName": "deleteService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"

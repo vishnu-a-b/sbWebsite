@@ -7,9 +7,12 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2 text-primary">
-              <Heart className="h-6 w-6" fill="currentColor" />
-              <span className="text-lg font-bold">Shanthibhavan</span>
+            <Link href="/" className="flex items-center space-x-2">
+              <img src="/logo/logo.png" alt="Shanthibhavan Logo" className="h-16 w-auto" />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-primary leading-tight">Shanthibhavan</span>
+                <span className="text-xs font-semibold text-primary/70">Palliative Hospital</span>
+              </div>
             </Link>
             <p className="text-sm">
               India's first no-bill palliative hospital. Providing compassionate care with dignity and love.

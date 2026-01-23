@@ -20,6 +20,24 @@ export async function getNewsEvents() {
   }
 }
 
+export async function getPublicNewsEvents() {
+  try {
+    const response = await fetch(`${API_URL}/api/news-events`, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch public news/events');
+    }
+
+    const data = await response.json();
+    return data.items || [];
+  } catch (error) {
+    console.error('Error fetching public news/events:', error);
+    return [];
+  }
+}
+
 export async function getNewsEvent(id: string) {
   try {
     const response = await fetch(`${API_URL}/api/news-events/${id}`, {

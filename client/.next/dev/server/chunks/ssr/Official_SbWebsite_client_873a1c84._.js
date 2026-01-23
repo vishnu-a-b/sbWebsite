@@ -607,7 +607,7 @@ async function deleteAward(id) {
 "[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"006a9f0136aa73ab59509fbd236d639f028e3c5a73":"getNewsEvents","404264ed05ca706caa993ab9005ec48128eeec96c3":"deleteNewsEvent","4077e831e69624a025d475cb414c88243212d0532d":"createNewsEvent","40c764cb9af46b645450e47624b84550c384cb0a25":"getNewsEvent","606b2ab59755e4c353ee38820fa50ba87c9e092d60":"updateNewsEvent"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"006a9f0136aa73ab59509fbd236d639f028e3c5a73":"getNewsEvents","008f53e67ac4e27504b246a8bc906708dafdbf9ec1":"getPublicNewsEvents","404264ed05ca706caa993ab9005ec48128eeec96c3":"deleteNewsEvent","4077e831e69624a025d475cb414c88243212d0532d":"createNewsEvent","40c764cb9af46b645450e47624b84550c384cb0a25":"getNewsEvent","606b2ab59755e4c353ee38820fa50ba87c9e092d60":"updateNewsEvent"},"",""] */ __turbopack_context__.s([
     "createNewsEvent",
     ()=>createNewsEvent,
     "deleteNewsEvent",
@@ -616,6 +616,8 @@ async function deleteAward(id) {
     ()=>getNewsEvent,
     "getNewsEvents",
     ()=>getNewsEvents,
+    "getPublicNewsEvents",
+    ()=>getPublicNewsEvents,
     "updateNewsEvent",
     ()=>updateNewsEvent
 ]);
@@ -635,6 +637,21 @@ async function getNewsEvents() {
         return data.items || [];
     } catch (error) {
         console.error('Error fetching news/events:', error);
+        return [];
+    }
+}
+async function getPublicNewsEvents() {
+    try {
+        const response = await fetch(`${API_URL}/api/news-events`, {
+            cache: 'no-store'
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch public news/events');
+        }
+        const data = await response.json();
+        return data.items || [];
+    } catch (error) {
+        console.error('Error fetching public news/events:', error);
         return [];
     }
 }
@@ -708,12 +725,14 @@ async function deleteNewsEvent(id) {
 ;
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
     getNewsEvents,
+    getPublicNewsEvents,
     getNewsEvent,
     createNewsEvent,
     updateNewsEvent,
     deleteNewsEvent
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getNewsEvents, "006a9f0136aa73ab59509fbd236d639f028e3c5a73", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPublicNewsEvents, "008f53e67ac4e27504b246a8bc906708dafdbf9ec1", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getNewsEvent, "40c764cb9af46b645450e47624b84550c384cb0a25", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createNewsEvent, "4077e831e69624a025d475cb414c88243212d0532d", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateNewsEvent, "606b2ab59755e4c353ee38820fa50ba87c9e092d60", null);
@@ -750,6 +769,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 ;
+;
 }),
 "[project]/Official/SbWebsite/client/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -763,6 +783,8 @@ __turbopack_context__.s([
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$banner$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["seedBenevityBanners"],
     "006a9f0136aa73ab59509fbd236d639f028e3c5a73",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$cms$2f$newsEvents$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getNewsEvents"],
+    "008f53e67ac4e27504b246a8bc906708dafdbf9ec1",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$cms$2f$newsEvents$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPublicNewsEvents"],
     "401baa188168c2aad0ace2f1d47e6d9e7614f343af",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$cms$2f$awards$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteAward"],
     "40370a69f6c648776340f6ec959c680c4fa03c1f5c",

@@ -2,7 +2,7 @@ module.exports = [
 "[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"006a9f0136aa73ab59509fbd236d639f028e3c5a73":"getNewsEvents","404264ed05ca706caa993ab9005ec48128eeec96c3":"deleteNewsEvent","4077e831e69624a025d475cb414c88243212d0532d":"createNewsEvent","40c764cb9af46b645450e47624b84550c384cb0a25":"getNewsEvent","606b2ab59755e4c353ee38820fa50ba87c9e092d60":"updateNewsEvent"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"006a9f0136aa73ab59509fbd236d639f028e3c5a73":"getNewsEvents","008f53e67ac4e27504b246a8bc906708dafdbf9ec1":"getPublicNewsEvents","404264ed05ca706caa993ab9005ec48128eeec96c3":"deleteNewsEvent","4077e831e69624a025d475cb414c88243212d0532d":"createNewsEvent","40c764cb9af46b645450e47624b84550c384cb0a25":"getNewsEvent","606b2ab59755e4c353ee38820fa50ba87c9e092d60":"updateNewsEvent"},"",""] */ __turbopack_context__.s([
     "createNewsEvent",
     ()=>createNewsEvent,
     "deleteNewsEvent",
@@ -11,13 +11,15 @@ module.exports = [
     ()=>getNewsEvent,
     "getNewsEvents",
     ()=>getNewsEvents,
+    "getPublicNewsEvents",
+    ()=>getPublicNewsEvents,
     "updateNewsEvent",
     ()=>updateNewsEvent
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api") || 'http://localhost:5000';
+const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5001") || 'http://127.0.0.1:5001';
 async function getNewsEvents() {
     try {
         const response = await fetch(`${API_URL}/api/news-events/admin`, {
@@ -27,9 +29,24 @@ async function getNewsEvents() {
             throw new Error('Failed to fetch news/events');
         }
         const data = await response.json();
-        return data.newsEvents || [];
+        return data.items || [];
     } catch (error) {
         console.error('Error fetching news/events:', error);
+        return [];
+    }
+}
+async function getPublicNewsEvents() {
+    try {
+        const response = await fetch(`${API_URL}/api/news-events`, {
+            cache: 'no-store'
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch public news/events');
+        }
+        const data = await response.json();
+        return data.items || [];
+    } catch (error) {
+        console.error('Error fetching public news/events:', error);
         return [];
     }
 }
@@ -103,12 +120,14 @@ async function deleteNewsEvent(id) {
 ;
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
     getNewsEvents,
+    getPublicNewsEvents,
     getNewsEvent,
     createNewsEvent,
     updateNewsEvent,
     deleteNewsEvent
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getNewsEvents, "006a9f0136aa73ab59509fbd236d639f028e3c5a73", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getPublicNewsEvents, "008f53e67ac4e27504b246a8bc906708dafdbf9ec1", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getNewsEvent, "40c764cb9af46b645450e47624b84550c384cb0a25", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createNewsEvent, "4077e831e69624a025d475cb414c88243212d0532d", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateNewsEvent, "606b2ab59755e4c353ee38820fa50ba87c9e092d60", null);

@@ -35,7 +35,7 @@ const app: Express = express();
 connectDB();
 
 // Middleware
-app.use((req, res, next) => {
+app.use((req, _res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} | Origin: ${req.headers.origin}`);
   next();
 });

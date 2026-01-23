@@ -3,7 +3,7 @@
     "003f50ae0e7113f8a26e01c4d28d8dc245b0856c30": {
       "workers": {
         "app/(main)/services/page": {
-          "moduleId": 7642,
+          "moduleId": 57972,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/service.ts"
@@ -14,6 +14,51 @@
       },
       "exportedName": "getServices",
       "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    },
+    "40c4811317dd7334572a00427ee0e11577b9df84e8": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getServiceBySlug",
+      "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    },
+    "0097772b03c89fa728c20a5f8f03fca816c4fa0888": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "getServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    },
+    "40a470356aa7609e428d9c38099633aaea61a324de": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 57972,
+          "async": false,
+          "exportedName": "updateServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "updateServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
     }
   },
   "edge": {}

@@ -1,0 +1,80 @@
+{
+  "node": {
+    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+      "workers": {
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "exportedName": "getProjects",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "409c3e8cb2694e4c38e73cb36dcb2037d81ecc44a6": {
+      "workers": {
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "getProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "exportedName": "getProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+      "workers": {
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "exportedName": "createProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
+      "workers": {
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "exportedName": "deleteProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    },
+    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+      "workers": {
+        "app/(main)/projects/[id]/page": {
+          "moduleId": 44345,
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/projects/[id]/page": "rsc"
+      },
+      "exportedName": "updateProject",
+      "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+    }
+  },
+  "edge": {}
+}

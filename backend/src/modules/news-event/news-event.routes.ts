@@ -74,12 +74,30 @@ router.get('/admin', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
+// GET news/event by ID
+router.get('/:id', async (req: Request<{ id: string }>, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const item: INewsEventDocument | null = await NewsEvent.findById(id).exec();
+
+    if (!item) {
+      res.status(404).json({ success: false, error: 'News/Event not found' });
+      return;
+    }
+
+    res.json({ success: true, newsEvent: item });
+  } catch (error) {
+    console.error('Error fetching news/event:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch news/event' });
+  }
+});
+
 // CREATE new news/event
 router.post('/', async (req: Request<{}, {}, NewsEventRequestBody>, res: Response): Promise<void> => {
   try {
     const itemData: NewsEventRequestBody = req.body;
     const newItem: INewsEventDocument = await NewsEvent.create(itemData);
-    res.status(201).json({ success: true, item: newItem });
+    res.status(201).json({ success: true, newsEvent: newItem });
   } catch (error) {
     console.error('Error creating news/event:', error);
     res.status(500).json({ success: false, error: 'Failed to create news/event' });
@@ -98,7 +116,7 @@ router.put('/:id', async (req: Request<{ id: string }, {}, NewsEventRequestBody>
       return;
     }
 
-    res.json({ success: true, item: updatedItem });
+    res.json({ success: true, newsEvent: updatedItem });
   } catch (error) {
     console.error('Error updating news/event:', error);
     res.status(500).json({ success: false, error: 'Failed to update news/event' });

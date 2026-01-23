@@ -198,6 +198,132 @@ Beyond treatment, we provide comprehensive patient education on kidney health, d
         showOnFirstFace: true,
         startDate: new Date('2022-06-01'),
         expiryDate: new Date('2030-12-31')
+      },
+       {
+        projectName: "Children's Palliative Support Program",
+        shortDescription: "Specialized pediatric palliative care focusing on the unique needs of children with life-limiting conditions.",
+        fullDescription: `Our Children's Palliative Support Program provides holistic care for children facing serious illnesses. We focus on symptom management, emotional support for the child and family, and improving quality of life through play therapy and specialized medical care.
+        
+        The program is staffed by a multidisciplinary team including pediatricians, child life specialists, and psychologists who understand the unique developmental and emotional needs of children. We work closely with families to provide care both in our hospital facility and through home visits.
+        
+        By providing specialized support, we help children and their families navigate the challenges of serious illness with dignity, compassion, and hope.`,
+        featuredImage: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200",
+        gallery: [
+          "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=800"
+        ],
+        priority: 7,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-01-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: "Elderly Care & Companion Initiative",
+        shortDescription: "Dedicated support for homebound elderly patients, providing medical assistance and emotional companionship.",
+        fullDescription: `The Elderly Care & Companion Initiative is designed to support our aging population who may be isolated or facing chronic health challenges. Our team provides regular medical check-ups, medication management, and essential companionship to elderly individuals in their homes.
+        
+        We recognize the importance of social connection and psychological well-being for the elderly. Our volunteers and staff spend quality time with patients, engaging in conversations, helping with light tasks, and ensuring they feel valued and cared for.
+        
+        This program has significantly reduced loneliness and improved the overall health outcomes for hundreds of elderly patients in our community, allowing them to age with grace and dignity in the comfort of their own homes.`,
+        featuredImage: "https://images.unsplash.com/photo-1581578731522-7455051463c7?auto=format&fit=crop&q=80&w=1200",
+        gallery: [
+          "https://images.unsplash.com/photo-1544161515-4af6b1d4970a?auto=format&fit=crop&q=80&w=800"
+        ],
+        priority: 6,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-05-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: "Free Medical Equipment Library",
+        shortDescription: "Lending essential medical equipment like oxygen concentrators and hospital beds to families in need.",
+        fullDescription: `The Free Medical Equipment Library is a unique initiative that provides essential medical equipment to patients who cannot afford to purchase it. We lend items such as oxygen concentrators, hospital beds, wheelchairs, and air mattresses for use at home.
+        
+        Many palliative care patients require specialized equipment to manage their symptoms and maintain comfort at home. By providing these items for free, we remove a significant financial burden from families and enable better home-based care.
+        
+        Our equipment is regularly sanitized and maintained by our technical team. We also provide training to family caregivers on how to use the equipment safely and effectively, ensuring the best possible care for the patient.`,
+        featuredImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200",
+        gallery: [
+          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=800"
+        ],
+        priority: 5,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-02-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: '"Joy\'s Touch" Emergency Response',
+        shortDescription: 'Our rapid-response emergency system designed specifically for palliative care patients at home.',
+        fullDescription: `"Joy's Touch" is a proprietary emergency response system developed by Shanthibhavan. It provides palliative care patients with a simple one-touch device to alert our medical team in case of emergencies at home. 
+        
+        When the alert is triggered, our 24/7 command center immediately coordinates with the nearest home care vehicle and providing medical guidance over the phone until help arrives. This system has significantly reduced hospital readmissions and improved patient safety.
+        
+        The program is named in memory of one of our earliest supporters and represents our commitment to using technology to enhance the "human touch" in palliative care.`,
+        featuredImage: 'https://images.unsplash.com/photo-1587350859743-4e6f66367375?auto=format&fit=crop&q=80&w=1200',
+        gallery: [
+          'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800'
+        ],
+        priority: 4,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-08-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: 'Community Kitchen & Nutrition Program',
+        shortDescription: 'Providing nutritious, specialized meals to hospital inpatients and underprivileged home care patients.',
+        fullDescription: `Good nutrition is a cornerstone of recovery and quality of life. Our Community Kitchen & Nutrition Program prepares over 300 meals daily, tailored to the specific dietary needs of palliative and renal patients. 
+        
+        We provide these meals free of charge to all our inpatients and deliver specialized meal kits to underprivileged patients being cared for at home. Our nutritionists work closely with our medical team to ensure that every patient receives the nourishment they need to manage their condition effectively.
+        
+        The kitchen is staffed by local volunteers and professional cooks who follow the highest standards of hygiene and nutrition. This initiative ensures that no patient at Shanthibhavan ever faces the burden of food insecurity while dealing with serious illness.`,
+        featuredImage: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=1200',
+        gallery: [
+          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800'
+        ],
+        priority: 3,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-04-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: 'Patient Rehabilitation & Physio Center',
+        shortDescription: 'Specialized physiotherapy and rehabilitation services to improve mobility and independence.',
+        fullDescription: `Our Rehabilitation & Physio Center focuses on helping patients regain mobility, manage pain, and achieve the highest possible level of independence. We offer specialized physiotherapy sessions, occupational therapy, and assistive device training.
+        
+        Many of our patients suffer from strokes, neurological disorders, or the physical decline associated with terminal illness. Our team of experienced physiotherapists develops personalized rehabilitation plans aimed at improving quality of life and facilitating easier home-based care.
+        
+        The center is equipped with modern rehabilitation equipment and provides a supportive environment where patients can work towards their recovery goals at their own pace.`,
+        featuredImage: 'https://images.unsplash.com/photo-1576091160291-24707684074c?auto=format&fit=crop&q=80&w=1200',
+        gallery: [
+          'https://images.unsplash.com/photo-1586773860418-d3b9a8ec81a2?auto=format&fit=crop&q=80&w=800'
+        ],
+        priority: 2,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-06-01'),
+        expiryDate: new Date('2030-12-31')
+      },
+      {
+        projectName: 'Remote Healthcare Monitoring',
+        shortDescription: 'Utilizing tele-palliative care solutions to monitor and support patients in remote areas.',
+        fullDescription: `Our Remote Healthcare Monitoring initiative leverages tele-medicine technology to provide care to patients in the most remote corners of our district. We provide patients and their families with tablets and wearable devices that transmit vital health data to our hospital command center.
+        
+        This allows our medical team to monitor symptoms, vital signs, and medication adherence in real-time, providing immediate interventions before issues escalate. Patients can also have video consultations with their doctors and nurses, reducing the need for stressful and expensive travel.
+        
+        This program has been a lifeline for homebound patients, ensuring they stay connected to professional care regardless of their physical location.`,
+        featuredImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200',
+        gallery: [
+          'https://images.unsplash.com/photo-1584036561566-baf245f966cc?auto=format&fit=crop&q=80&w=800'
+        ],
+        priority: 1,
+        isActive: true,
+        showOnFirstFace: true,
+        startDate: new Date('2023-09-01'),
+        expiryDate: new Date('2030-12-31')
       }
     ];
 

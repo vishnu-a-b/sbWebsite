@@ -59,6 +59,21 @@
       },
       "exportedName": "deleteBanner",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+    },
+    "00709c903ef0f94aefe62a5a782b91c5ea609bc679": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 21083,
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "seedBenevityBanners",
+      "filename": "Official/SbWebsite/client/app/actions/banner.ts"
     }
   },
   "edge": {}

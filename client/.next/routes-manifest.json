@@ -20,7 +20,32 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/news-events/[id]",
+      "regex": "^/news\\-events/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/news\\-events/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/projects/[id]",
+      "regex": "^/projects/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/projects/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/services/[slug]",
+      "regex": "^/services/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/services/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -69,6 +94,12 @@
       "regex": "^/admin/banners(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/admin/banners(?:/)?$"
+    },
+    {
+      "page": "/admin/benevity-projects",
+      "regex": "^/admin/benevity\\-projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/benevity\\-projects(?:/)?$"
     },
     {
       "page": "/admin/homepage",
@@ -137,6 +168,12 @@
       "namedRegex": "^/api/contact(?:/)?$"
     },
     {
+      "page": "/api/debug-backend",
+      "regex": "^/api/debug\\-backend(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/debug\\-backend(?:/)?$"
+    },
+    {
       "page": "/api/gallery",
       "regex": "^/api/gallery(?:/)?$",
       "routeKeys": {},
@@ -201,6 +238,12 @@
       "regex": "^/gallery(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/gallery(?:/)?$"
+    },
+    {
+      "page": "/news-events",
+      "regex": "^/news\\-events(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news\\-events(?:/)?$"
     },
     {
       "page": "/services",

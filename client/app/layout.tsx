@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
+import CustomCursor from "@/components/CustomCursor";
+import NoiseOverlay from "@/components/NoiseOverlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,9 +44,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased min-h-screen flex flex-col`}
       >
-        <SmoothScroll />
-        <ScrollProgress />
-        {children}
+        <SmoothScroll>
+          <ScrollProgress />
+          <CustomCursor />
+          <NoiseOverlay />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

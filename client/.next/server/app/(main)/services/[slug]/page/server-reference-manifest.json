@@ -1,0 +1,35 @@
+{
+  "node": {
+    "003f50ae0e7113f8a26e01c4d28d8dc245b0856c30": {
+      "workers": {
+        "app/(main)/services/[slug]/page": {
+          "moduleId": 33795,
+          "async": false,
+          "exportedName": "getServices",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/[slug]/page": "rsc"
+      },
+      "exportedName": "getServices",
+      "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    },
+    "40c4811317dd7334572a00427ee0e11577b9df84e8": {
+      "workers": {
+        "app/(main)/services/[slug]/page": {
+          "moduleId": 33795,
+          "async": false,
+          "exportedName": "getServiceBySlug",
+          "filename": "Official/SbWebsite/client/app/actions/service.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/[slug]/page": "rsc"
+      },
+      "exportedName": "getServiceBySlug",
+      "filename": "Official/SbWebsite/client/app/actions/service.ts"
+    }
+  },
+  "edge": {}
+}
