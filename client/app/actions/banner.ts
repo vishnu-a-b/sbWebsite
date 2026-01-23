@@ -1,27 +1,24 @@
 'use server';
 
-import connectToDatabase from "@/lib/db";
-import Banner from "@/models/Banner";
-
 import API_BASE_URL from '@/lib/api';
 
 export async function getBanners(location?: string) {
-  await connectToDatabase();
   try {
-    const filter: any = {};
+    const url = new URL(`${API_BASE_URL}/banner`);
     if (location) {
-      if (location === 'home') {
-        // For backward compatibility, include banners with no location set
-        filter.$or = [{ location: 'home' }, { location: { $exists: false } }];
-      } else {
-        filter.location = location;
-      }
-    } else {
-      // If no location specified, maybe fetch all? Or default to home?
-      // Let's keep it as "fetch all" if no location provided, as it was before.
+      url.searchParams.append('location', location);
     }
-    const banners = await Banner.find(filter).sort({ order: 1 }).lean();
-    return JSON.parse(JSON.stringify(banners));
+    
+    const response = await fetch(url.toString(), {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch banners: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.banners || [];
   } catch (error) {
     console.error("Failed to fetch banners", error);
     return [];
@@ -29,12 +26,21 @@ export async function getBanners(location?: string) {
 }
 
 export async function createBanner(data: any) {
-  await connectToDatabase();
   try {
-    // Set default location if not provided
-    if (!data.location) data.location = 'home';
-    const banner = await Banner.create(data);
-    return JSON.parse(JSON.stringify(banner));
+    const response = await fetch(`${API_BASE_URL}/banner`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to create banner: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result.banner;
   } catch (error) {
     console.error("Failed to create banner", error);
     throw error;
@@ -42,10 +48,21 @@ export async function createBanner(data: any) {
 }
 
 export async function updateBanner(id: string, data: any) {
-  await connectToDatabase();
   try {
-    const banner = await Banner.findByIdAndUpdate(id, data, { new: true });
-    return JSON.parse(JSON.stringify(banner));
+    const response = await fetch(`${API_BASE_URL}/banner/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to update banner: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result.banner;
   } catch (error) {
     console.error("Failed to update banner", error);
     throw error;
@@ -53,9 +70,15 @@ export async function updateBanner(id: string, data: any) {
 }
 
 export async function deleteBanner(id: string) {
-  await connectToDatabase();
   try {
-    await Banner.findByIdAndDelete(id);
+    const response = await fetch(`${API_BASE_URL}/banner/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete banner: ${response.status}`);
+    }
+
     return { success: true };
   } catch (error) {
     console.error("Failed to delete banner", error);
