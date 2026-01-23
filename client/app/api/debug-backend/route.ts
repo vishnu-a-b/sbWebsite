@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import API_BASE_URL from '@/lib/api';
 
 export async function GET() {
-  const targetUrl = 'http://127.0.0.1:5001/api/benevity/projects';
+  const targetUrl = `${API_BASE_URL}/benevity/projects`;
   try {
     console.log('Debug Route: Fetching', targetUrl);
     const response = await fetch(targetUrl, { cache: 'no-store' });

@@ -1,5 +1,6 @@
 // API Configuration for Express Backend
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+const rawUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5002/api';
+const API_BASE_URL = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
 
 export const API_ENDPOINTS = {
   banner: `${API_BASE_URL}/banner`,

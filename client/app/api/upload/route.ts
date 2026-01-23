@@ -57,8 +57,9 @@ export async function POST(request: NextRequest) {
     await writeFile(filepath, buffer);
 
     // Return URL (pointing to backend static serve)
-    // TODO: Use env variable for backend URL
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001';
+    // Use API_BASE_URL and remove /api to get the root backend URL
+    const { default: API_BASE_URL } = await import('@/lib/api');
+    const backendUrl = API_BASE_URL.replace(/\/api$/, '');
     const url = `${backendUrl}/public/${subDir}/${filename}`;
 
     return NextResponse.json({

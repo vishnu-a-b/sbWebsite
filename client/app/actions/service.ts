@@ -1,11 +1,11 @@
 'use server';
 
-const API_URL = 'http://127.0.0.1:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getServices() {
   try {
-    console.log(`Fetching services from: ${API_URL}/api/services`);
-    const response = await fetch(`${API_URL}/api/services`, {
+    console.log(`Fetching services from: ${API_BASE_URL}/services`);
+    const response = await fetch(`${API_BASE_URL}/services`, {
       cache: 'no-store',
     });
 
@@ -24,7 +24,7 @@ export async function getServices() {
 
 export async function getServiceBySlug(slug: string) {
   try {
-    const response = await fetch(`${API_URL}/api/services/slug/${slug}`, {
+    const response = await fetch(`${API_BASE_URL}/services/slug/${slug}`, {
       cache: 'no-store',
     });
 

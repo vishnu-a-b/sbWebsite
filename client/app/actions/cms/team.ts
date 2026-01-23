@@ -1,10 +1,10 @@
 'use server';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getTeamMembers() {
   try {
-    const response = await fetch(`${API_URL}/api/team/admin`, {
+    const response = await fetch(`${API_BASE_URL}/team/admin`, {
       cache: 'no-store',
     });
 
@@ -22,7 +22,7 @@ export async function getTeamMembers() {
 
 export async function getTeamMember(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/team/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/team/${id}`, {
       cache: 'no-store',
     });
 
@@ -40,7 +40,7 @@ export async function getTeamMember(id: string) {
 
 export async function createTeamMember(teamMemberData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/team`, {
+    const response = await fetch(`${API_BASE_URL}/team`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export async function createTeamMember(teamMemberData: any) {
 
 export async function updateTeamMember(id: string, teamMemberData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/team/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/team/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ export async function updateTeamMember(id: string, teamMemberData: any) {
 
 export async function deleteTeamMember(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/team/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/team/${id}`, {
       method: 'DELETE',
     });
 

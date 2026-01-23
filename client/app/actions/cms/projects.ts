@@ -1,21 +1,21 @@
 'use server';
 
-const API_URL = 'http://127.0.0.1:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getProjects(filter?: { showOnBenevity?: boolean, showOnFirstFace?: boolean, mode?: 'admin' | 'public' }) {
   try {
-    let url = `${API_URL}/api/projects/admin`;
+    let url = `${API_BASE_URL}/projects/admin`;
     if (filter) {
         if (filter.showOnBenevity) {
             // Check if admin mode requested for Benevity
             if (filter.mode === 'admin') {
-                url = `${API_URL}/api/benevity/projects/admin`;
+                url = `${API_BASE_URL}/benevity/projects/admin`;
             } else {
-                url = `${API_URL}/api/benevity/projects`;
+                url = `${API_BASE_URL}/benevity/projects`;
             }
         } else {
              // Main projects
-             url = `${API_URL}/api/projects?`;
+             url = `${API_BASE_URL}/projects?`;
              if (filter.showOnFirstFace) {
                  url += `showOnFirstFace=true`;
              }
@@ -44,7 +44,7 @@ export async function getProjects(filter?: { showOnBenevity?: boolean, showOnFir
 export async function getProject(id: string) {
   try {
     // 1. Try Main Collection
-    const mainResponse = await fetch(`${API_URL}/api/projects/${id}`, { cache: 'no-store' });
+    const mainResponse = await fetch(`${API_BASE_URL}/projects/${id}`, { cache: 'no-store' });
     if (mainResponse.ok) {
         const data = await mainResponse.json();
         return data.project;
@@ -52,7 +52,7 @@ export async function getProject(id: string) {
 
     // 2. Try Benevity Collection
     // Only if main failed (e.g. 404), check Benevity
-    const benevityResponse = await fetch(`${API_URL}/api/benevity/projects/${id}`, { cache: 'no-store' });
+    const benevityResponse = await fetch(`${API_BASE_URL}/benevity/projects/${id}`, { cache: 'no-store' });
     if (benevityResponse.ok) {
         const data = await benevityResponse.json();
         return data.project;
@@ -72,7 +72,7 @@ import { revalidatePath } from 'next/cache';
 
 export async function createProject(projectData: any, isBenevity: boolean = false) {
   try {
-    const url = isBenevity ? `${API_URL}/api/benevity/projects` : `${API_URL}/api/projects`;
+    const url = isBenevity ? `${API_BASE_URL}/benevity/projects` : `${API_BASE_URL}/projects`;
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -102,7 +102,7 @@ export async function createProject(projectData: any, isBenevity: boolean = fals
 
 export async function updateProject(id: string, projectData: any, isBenevity: boolean = false) {
   try {
-    const url = isBenevity ? `${API_URL}/api/benevity/projects/${id}` : `${API_URL}/api/projects/${id}`;
+    const url = isBenevity ? `${API_BASE_URL}/benevity/projects/${id}` : `${API_BASE_URL}/projects/${id}`;
     // For Benevity routes, we might need a generic PUT endpoint if using /:id
     // Benevity routes currently don't explicitly list PUT /:id but assume standard CRUD.
     // I need to double check benevity.routes.ts... wait, I didn't add PUT /:id there!
@@ -142,7 +142,7 @@ export async function updateProject(id: string, projectData: any, isBenevity: bo
 
 export async function deleteProject(id: string, isBenevity: boolean = false) {
   try {
-    const url = isBenevity ? `${API_URL}/api/benevity/projects/${id}` : `${API_URL}/api/projects/${id}`;
+    const url = isBenevity ? `${API_BASE_URL}/benevity/projects/${id}` : `${API_BASE_URL}/projects/${id}`;
     const response = await fetch(url, {
       method: 'DELETE',
     });

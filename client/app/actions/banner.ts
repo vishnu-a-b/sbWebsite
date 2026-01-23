@@ -3,7 +3,7 @@
 import connectToDatabase from "@/lib/db";
 import Banner from "@/models/Banner";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getBanners(location?: string) {
   await connectToDatabase();
@@ -65,9 +65,8 @@ export async function deleteBanner(id: string) {
 
 export async function seedBenevityBanners() {
   try {
-    // Replace localhost with 127.0.0.1 to avoid Node v17+ resolution issues
-    const safeUrl = API_URL.replace('localhost', '127.0.0.1');
-    const response = await fetch(`${safeUrl}/api/benevity/banners/seed`, {
+    // Use API_BASE_URL directly, it already handles the backend location
+    const response = await fetch(`${API_BASE_URL}/benevity/banners/seed`, {
       method: 'POST',
       cache: 'no-store',
     });

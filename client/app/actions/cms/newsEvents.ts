@@ -1,10 +1,10 @@
 'use server';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getNewsEvents() {
   try {
-    const response = await fetch(`${API_URL}/api/news-events/admin`, {
+    const response = await fetch(`${API_BASE_URL}/news-events/admin`, {
       cache: 'no-store',
     });
 
@@ -22,7 +22,7 @@ export async function getNewsEvents() {
 
 export async function getPublicNewsEvents() {
   try {
-    const response = await fetch(`${API_URL}/api/news-events`, {
+    const response = await fetch(`${API_BASE_URL}/news-events`, {
       cache: 'no-store',
     });
 
@@ -40,7 +40,7 @@ export async function getPublicNewsEvents() {
 
 export async function getNewsEvent(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/news-events/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/news-events/${id}`, {
       cache: 'no-store',
     });
 
@@ -58,7 +58,7 @@ export async function getNewsEvent(id: string) {
 
 export async function createNewsEvent(newsEventData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/news-events`, {
+    const response = await fetch(`${API_BASE_URL}/news-events`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export async function createNewsEvent(newsEventData: any) {
 
 export async function updateNewsEvent(id: string, newsEventData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/news-events/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/news-events/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ export async function updateNewsEvent(id: string, newsEventData: any) {
 
 export async function deleteNewsEvent(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/news-events/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/news-events/${id}`, {
       method: 'DELETE',
     });
 

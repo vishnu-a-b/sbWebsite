@@ -1,11 +1,10 @@
 'use server';
 
-const RAW_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001';
-const API_URL = RAW_API_URL.includes('localhost') ? RAW_API_URL.replace('localhost', '127.0.0.1') : RAW_API_URL;
+import API_BASE_URL from '@/lib/api';
 
 export async function getServices() {
   try {
-    const url = `${API_URL}/api/services/admin`;
+    const url = `${API_BASE_URL}/services/admin`;
     console.log(`[CMS] Fetching services from: ${url}`);
     
     const response = await fetch(url, {
@@ -28,7 +27,7 @@ export async function getServices() {
 
 export async function getService(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/services/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
       cache: 'no-store',
     });
 
@@ -46,7 +45,7 @@ export async function getService(id: string) {
 
 export async function createService(serviceData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/services`, {
+    const response = await fetch(`${API_BASE_URL}/services`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +67,7 @@ export async function createService(serviceData: any) {
 
 export async function updateService(id: string, serviceData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/services/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -90,7 +89,7 @@ export async function updateService(id: string, serviceData: any) {
 
 export async function deleteService(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/services/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
       method: 'DELETE',
     });
 

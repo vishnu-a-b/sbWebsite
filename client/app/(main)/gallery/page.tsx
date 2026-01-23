@@ -8,10 +8,11 @@ interface GalleryImage {
   category?: string;
 }
 
+import API_BASE_URL from '@/lib/api';
+
 async function getGalleryImages() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/gallery`, {
+    const res = await fetch(`${API_BASE_URL}/gallery`, {
       cache: 'no-store',
     });
 

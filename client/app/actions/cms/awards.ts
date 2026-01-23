@@ -1,10 +1,10 @@
 'use server';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5001';
+import API_BASE_URL from '@/lib/api';
 
 export async function getAwards() {
   try {
-    const url = `${API_URL}/api/awards/admin`;
+    const url = `${API_BASE_URL}/awards/admin`;
     console.log('[Awards] Fetching from:', url);
     
     const response = await fetch(url, {
@@ -30,7 +30,7 @@ export async function getAwards() {
 
 export async function getAward(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/awards/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/awards/${id}`, {
       cache: 'no-store',
     });
 
@@ -48,7 +48,7 @@ export async function getAward(id: string) {
 
 export async function createAward(awardData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/awards`, {
+    const response = await fetch(`${API_BASE_URL}/awards`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export async function createAward(awardData: any) {
 
 export async function updateAward(id: string, awardData: any) {
   try {
-    const response = await fetch(`${API_URL}/api/awards/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/awards/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export async function updateAward(id: string, awardData: any) {
 
 export async function deleteAward(id: string) {
   try {
-    const response = await fetch(`${API_URL}/api/awards/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/awards/${id}`, {
       method: 'DELETE',
     });
 
