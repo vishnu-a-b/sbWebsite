@@ -17,6 +17,7 @@ interface ProjectFormData {
   showOnFirstFace: boolean;
   showOnSecondFace: boolean;
   showOnBenevity: boolean;
+  link?: string;
 }
 
 interface ProjectFormProps {
@@ -39,6 +40,7 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
     showOnFirstFace: project?.showOnFirstFace || false,
     showOnSecondFace: project?.showOnSecondFace || false,
     showOnBenevity: project?.showOnBenevity || false,
+    link: project?.link || '',
   });
 
   const [newGalleryUrl, setNewGalleryUrl] = useState('');
@@ -154,6 +156,23 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
               rows={6}
             />
             {errors.fullDescription && <p className="text-red-500 text-sm mt-1">{errors.fullDescription}</p>}
+          </div>
+
+          {/* External Link (Benevity Link) */}
+          <div className="bg-blue-50/50 p-4 rounded-lg border border-blue-100">
+            <label className="block text-sm font-bold text-primary mb-2">
+              Support Link / Benevity URL
+            </label>
+            <input
+              type="url"
+              value={formData.link}
+              onChange={(e) => handleChange('link', e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary bg-white"
+              placeholder="https://causes.benevity.org/..."
+            />
+            <p className="text-[11px] text-blue-600 mt-2 font-medium">
+              Optional: If you provide a direct link to this project on Benevity, the website's "Support" button will go there.
+            </p>
           </div>
 
           {/* Featured Image */}

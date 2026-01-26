@@ -56,7 +56,7 @@ export default async function ProjectsSection({ type = 'featured' }: ProjectsSec
                        <Link href={`/projects/${project._id}`}>Know More</Link>
                     </Button>
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 rounded-full font-bold">
-                       <Link href="https://causes.benevity.org/" target="_blank">Support on Benevity</Link>
+                       <Link href={project.link || "https://causes.benevity.org/"} target="_blank">Support on Benevity</Link>
                     </Button>
                 </div>
               </CardContent>

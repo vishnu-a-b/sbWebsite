@@ -38,6 +38,7 @@ const BenevityProjectSchema = new Schema<IFeaturedProjectDocument>({
   showOnFirstFace: { type: Boolean, default: false },
   showOnSecondFace: { type: Boolean, default: false },
   showOnBenevity: { type: Boolean, default: true }, 
+  link: { type: String },
 }, { timestamps: true });
 
 export const BenevityProject = model<IFeaturedProjectDocument>('BenevityProject', BenevityProjectSchema, 'benevity-projects');

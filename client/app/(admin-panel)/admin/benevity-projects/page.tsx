@@ -19,6 +19,7 @@ interface FeaturedProject {
   showOnFirstFace: boolean;
   showOnSecondFace: boolean;
   showOnBenevity: boolean;
+  link?: string;
 }
 
 export default function BenevityProjectsAdminPage() {
@@ -117,81 +118,108 @@ export default function BenevityProjectsAdminPage() {
         </button>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {loading ? (
-          <div className="col-span-full text-center py-12 text-gray-500">
-            Loading projects...
-          </div>
-        ) : projects.length === 0 ? (
-          <div className="col-span-full text-center py-12 text-gray-500">
-            No projects found. Click "Add Benevity Project" to create one.
-          </div>
-        ) : (
-          projects.map((project) => (
-            <div key={project._id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow border-t-4 border-primary">
-              {/* Project Image */}
-              <div className="relative h-48 bg-gray-200">
-                {project.featuredImage ? (
-                  <img src={project.featuredImage} alt={project.projectName} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <ImageIcon className="w-12 h-12 text-gray-400" />
-                  </div>
-                )}
-                <div className="absolute top-2 left-2">
-                  <span className="bg-primary text-white text-xs px-2 py-1 rounded font-semibold">
-                    Priority: {project.priority}
-                  </span>
-                </div>
-              </div>
-
-              {/* Project Info */}
-              <div className="p-4">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2">{project.projectName}</h3>
-                <p className="text-sm text-gray-600 mb-4 line-clamp-2">{project.shortDescription}</p>
-
-                {/* Status & Dates */}
-                <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                  <div>
+      {/* Projects Table */}
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <table className="w-full">
+          <thead className="bg-gray-50 border-b">
+            <tr>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Priority</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Project</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Link</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Status</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Dates</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y">
+            {loading ? (
+              <tr>
+                <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                  Loading projects...
+                </td>
+              </tr>
+            ) : projects.length === 0 ? (
+              <tr>
+                <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                  No projects found. Click "Add Benevity Project" to create one.
+                </td>
+              </tr>
+            ) : (
+              projects.map((project) => (
+                <tr key={project._id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-primary">{project.priority}</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-3">
+                      {project.featuredImage ? (
+                        <img src={project.featuredImage} alt={project.projectName} className="w-12 h-12 rounded-lg object-cover" />
+                      ) : (
+                        <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                          <ImageIcon className="w-6 h-6 text-gray-400" />
+                        </div>
+                      )}
+                      <div>
+                        <div className="font-medium text-gray-900">{project.projectName}</div>
+                        <div className="text-sm text-gray-500 truncate max-w-xs">{project.shortDescription}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    {project.link ? (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-xs text-blue-600 hover:underline max-w-[200px] truncate block"
+                      >
+                        {project.link}
+                      </a>
+                    ) : (
+                      <span className="text-xs text-gray-400">None</span>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
                     {project.isActive ? (
-                      <span className="flex items-center gap-1 text-green-600 font-medium">
-                        <Eye className="w-3 h-3" />
+                      <span className="flex items-center gap-1 text-green-600 text-sm">
+                        <Eye className="w-4 h-4" />
                         Active
                       </span>
                     ) : (
-                      <span className="flex items-center gap-1 text-gray-400">
-                        <EyeOff className="w-3 h-3" />
+                      <span className="flex items-center gap-1 text-gray-400 text-sm">
+                        <EyeOff className="w-4 h-4" />
                         Inactive
                       </span>
                     )}
-                  </div>
-                  <div className="text-right">
+                  </td>
+                  <td className="px-6 py-4 text-xs text-gray-500">
                     <div>{new Date(project.startDate).toLocaleDateString()}</div>
-                    <div>to {new Date(project.expiryDate).toLocaleDateString()}</div>
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => handleEdit(project)}
-                    className="flex-1 bg-blue-50 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-100 flex items-center justify-center gap-2 transition-colors"
-                  >
-                    <Edit className="w-4 h-4" />
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(project._id)}
-                    className="bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))
-        )}
+                    <div className="font-semibold text-gray-400">to</div>
+                    <div>{new Date(project.expiryDate).toLocaleDateString()}</div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleEdit(project)}
+                        className="p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                        title="Edit"
+                      >
+                        <Edit className="w-4 h-4 text-blue-600" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(project._id)}
+                        className="p-2 hover:bg-red-50 rounded-lg transition-colors"
+                        title="Delete"
+                      >
+                        <Trash2 className="w-4 h-4 text-red-600" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -1,11 +1,6 @@
 {
   "app": {
-    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
-    ],
-    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/awards/page": [
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
@@ -15,17 +10,12 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
-    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/news-events/page": [
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
-    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/projects/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
-    ],
-    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/services/page": [
+    "[project]/Official/SbWebsite/client/app/(main)/about/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
@@ -35,22 +25,7 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
-    "[project]/Official/SbWebsite/client/app/(main)/news-events/[id]/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
-    ],
-    "[project]/Official/SbWebsite/client/app/(main)/news-events/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
-    ],
     "[project]/Official/SbWebsite/client/app/(main)/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
-    ],
-    "[project]/Official/SbWebsite/client/app/(main)/projects/[id]/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
@@ -60,7 +35,7 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
-    "[project]/Official/SbWebsite/client/app/_not-found/page": [
+    "[project]/Official/SbWebsite/client/app/(main)/team/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"

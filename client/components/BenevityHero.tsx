@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
 
 const SLIDES = [
   {
@@ -42,6 +42,8 @@ export default function BenevityHero({ slides }: { slides?: any[] }) {
   const activeSlides = slides && slides.length > 0 ? slides : SLIDES;
   const progressCircle = useRef<SVGSVGElement>(null);
   const progressContent = useRef<HTMLSpanElement>(null);
+  const swiperRef = useRef<any>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const onAutoplayTimeLeft = (_s: any, time: number, progress: number) => {
     if (progressCircle.current) {
@@ -52,13 +54,28 @@ export default function BenevityHero({ slides }: { slides?: any[] }) {
     }
   };
 
+  const toggleAutoplay = () => {
+    if (!swiperRef.current) return;
+    
+    if (isPaused) {
+      swiperRef.current.autoplay.start();
+      setIsPaused(false);
+    } else {
+      swiperRef.current.autoplay.stop();
+      setIsPaused(true);
+    }
+  };
+
   return (
     <div className="relative w-full h-[85vh] min-h-[600px] bg-black">
       <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 10000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -116,13 +133,23 @@ export default function BenevityHero({ slides }: { slides?: any[] }) {
           </SwiperSlide>
         ))}
 
-        {/* Autoplay Progress */}
-        <div className="autoplay-progress absolute bottom-8 right-8 z-10 w-12 h-12 flex items-center justify-center font-bold text-white">
-          <svg viewBox="0 0 48 48" ref={progressCircle} className="absolute inset-0 w-full h-full rotate-[-90deg] stroke-primary">
-            <circle cx="24" cy="24" r="20" fill="none" strokeWidth="4" className="stroke-white/20" />
-            <circle cx="24" cy="24" r="20" fill="none" strokeWidth="4" className="stroke-current" style={{ strokeDasharray: 125.6, strokeDashoffset: 'calc(125.6px * (1 - var(--progress)))', transition: 'stroke-dashoffset 0.1s linear' }} />
-          </svg>
-          <span ref={progressContent} className="text-sm"></span>
+        {/* Autoplay Progress & Control */}
+        <div className="absolute bottom-8 right-8 z-10 flex items-center gap-4">
+          <button 
+            onClick={toggleAutoplay}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all shadow-lg"
+            aria-label={isPaused ? "Resident Autoplay" : "Pause Autoplay"}
+          >
+            {isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />}
+          </button>
+          
+          <div className="autoplay-progress relative w-12 h-12 flex items-center justify-center font-bold text-white">
+            <svg viewBox="0 0 48 48" ref={progressCircle} className="absolute inset-0 w-full h-full rotate-[-90deg] stroke-primary">
+              <circle cx="24" cy="24" r="20" fill="none" strokeWidth="4" className="stroke-white/20" />
+              <circle cx="24" cy="24" r="20" fill="none" strokeWidth="4" className="stroke-current" style={{ strokeDasharray: 125.6, strokeDashoffset: 'calc(125.6px * (1 - var(--progress)))', transition: 'stroke-dashoffset 0.1s linear' }} />
+            </svg>
+            <span ref={progressContent} className="text-sm"></span>
+          </div>
         </div>
       </Swiper>
       

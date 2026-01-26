@@ -1515,7 +1515,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function BannersPage() {
+function BannersContent() {
     _s();
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const locationParam = searchParams.get('location');
@@ -1525,10 +1525,10 @@ function BannersPage() {
     const [showForm, setShowForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingBanner, setEditingBanner] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "BannersPage.useEffect": ()=>{
+        "BannersContent.useEffect": ()=>{
             fetchBanners();
         }
-    }["BannersPage.useEffect"], [
+    }["BannersContent.useEffect"], [
         currentLocation
     ]);
     const fetchBanners = async ()=>{
@@ -2132,14 +2132,51 @@ function BannersPage() {
         columnNumber: 5
     }, this);
 }
-_s(BannersPage, "0c3G0VQHr3ESoj5yWlB8Z1IaOOQ=", false, function() {
+_s(BannersContent, "0c3G0VQHr3ESoj5yWlB8Z1IaOOQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
     ];
 });
-_c = BannersPage;
-var _c;
-__turbopack_context__.k.register(_c, "BannersPage");
+_c = BannersContent;
+function BannersPage() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Suspense"], {
+        fallback: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "p-8",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center justify-center h-96",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "text-lg text-gray-600",
+                    children: "Initializing..."
+                }, void 0, false, {
+                    fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page.tsx",
+                    lineNumber: 297,
+                    columnNumber: 11
+                }, void 0)
+            }, void 0, false, {
+                fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page.tsx",
+                lineNumber: 296,
+                columnNumber: 9
+            }, void 0)
+        }, void 0, false, {
+            fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page.tsx",
+            lineNumber: 295,
+            columnNumber: 7
+        }, void 0),
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(BannersContent, {}, void 0, false, {
+            fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page.tsx",
+            lineNumber: 301,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/banners/page.tsx",
+        lineNumber: 294,
+        columnNumber: 5
+    }, this);
+}
+_c1 = BannersPage;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "BannersContent");
+__turbopack_context__.k.register(_c1, "BannersPage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

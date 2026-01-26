@@ -13,6 +13,7 @@ export interface IFeaturedProjectDocument extends Document {
   showOnFirstFace: boolean;
   showOnSecondFace: boolean;
   showOnBenevity: boolean;
+  link?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -30,6 +31,7 @@ const FeaturedProjectSchema = new Schema<IFeaturedProjectDocument>({
   showOnFirstFace: { type: Boolean, default: false },
   showOnSecondFace: { type: Boolean, default: false },
   showOnBenevity: { type: Boolean, default: false },
+  link: { type: String },
 }, { timestamps: true });
 
 export default model<IFeaturedProjectDocument>('FeaturedProject', FeaturedProjectSchema);

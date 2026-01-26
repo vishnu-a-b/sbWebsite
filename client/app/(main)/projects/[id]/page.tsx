@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                Help us continue this vital work. Your support through Benevity makes a direct impact.
              </p>
              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-               <Link href="https://causes.benevity.org/" target="_blank">
+               <Link href={project.link || "https://causes.benevity.org/"} target="_blank">
                  Support on Benevity
                </Link>
              </Button>
