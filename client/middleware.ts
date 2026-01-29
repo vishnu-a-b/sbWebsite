@@ -6,11 +6,21 @@ export function middleware(request: NextRequest) {
 
   // Protect all /admin routes except /admin/login
   if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-    const authSession = request.cookies.get('admin_session');
+    const authToken = request.cookies.get('admin_token');
 
-    if (!authSession || authSession.value !== 'true') {
+    if (!authToken || !authToken.value) {
       const loginUrl = new URL('/admin/login', request.url);
       return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // Redirect logged-in users away from login page
+  if (pathname === '/admin/login') {
+    const authToken = request.cookies.get('admin_token');
+
+    if (authToken && authToken.value) {
+      const adminUrl = new URL('/admin', request.url);
+      return NextResponse.redirect(adminUrl);
     }
   }
 

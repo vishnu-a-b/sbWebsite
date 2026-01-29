@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -23,10 +23,31 @@ import {
   Info,
   Heart,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Shield
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logout } from '@/app/(admin-panel)/admin/login/actions';
+
+interface AdminInfo {
+  id: string;
+  username: string;
+  role: string;
+}
+
+const roleLabels: Record<string, string> = {
+  super_admin: 'Super Admin',
+  agent: 'Agent',
+  approver: 'Approver',
+  accounts: 'Accounts',
+};
+
+const roleColors: Record<string, string> = {
+  super_admin: 'bg-purple-500',
+  agent: 'bg-blue-500',
+  approver: 'bg-green-500',
+  accounts: 'bg-orange-500',
+};
 
 function SidebarDropdown({ label, icon: Icon, items, currentPath }: any) {
     const isChildActive = items.some((item: any) => currentPath === item.href || currentPath.startsWith(item.href + '?'));
@@ -113,6 +134,26 @@ const menuItems = [
 
 export default function AdminSidebar() {
   const pathname = usePathname();
+  const [adminInfo, setAdminInfo] = useState<AdminInfo | null>(null);
+
+  useEffect(() => {
+    // Read admin info from cookie on client side
+    const getCookie = (name: string) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift();
+      return null;
+    };
+
+    const adminCookie = getCookie('admin_info');
+    if (adminCookie) {
+      try {
+        setAdminInfo(JSON.parse(decodeURIComponent(adminCookie)));
+      } catch (e) {
+        console.error('Failed to parse admin info');
+      }
+    }
+  }, []);
 
   return (
     <div className="w-72 bg-gradient-to-br from-primary via-primary to-primary/95 text-white min-h-screen flex flex-col shadow-2xl relative overflow-hidden">
@@ -241,10 +282,21 @@ export default function AdminSidebar() {
         })}
       </nav>
 
-      {/* Footer */}
-      <div className="relative p-4 border-t border-white/20">
+      {/* User Info & Footer */}
+      <div className="relative p-4 border-t border-white/20 space-y-3">
+        {adminInfo && (
+          <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm">
+            <div className={`w-10 h-10 ${roleColors[adminInfo.role] || 'bg-gray-500'} rounded-xl flex items-center justify-center`}>
+              <Shield className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-white truncate">{adminInfo.username}</p>
+              <p className="text-xs text-secondary/90">{roleLabels[adminInfo.role] || adminInfo.role}</p>
+            </div>
+          </div>
+        )}
         <form action={logout} className="w-full">
-          <button 
+          <button
             type="submit"
             className="flex items-center gap-3 px-4 py-3.5 rounded-xl hover:bg-red-500/20 w-full transition-all text-left border border-white/10 hover:border-red-400/50 group"
           >
