@@ -10,7 +10,8 @@
     "start": "node dist/server.js",
     "start:ts": "ts-node --esm src/server.ts",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "seed": "tsx src/scripts/seed.ts"
   },
   "keywords": [],
   "author": "",
