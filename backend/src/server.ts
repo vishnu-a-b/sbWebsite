@@ -25,6 +25,8 @@ import teamMemberRoutes from './modules/team-member/team-member.routes.js';
 import homeSectionRoutes from './modules/home-section/home-section.routes.js';
 import aboutRoutes from './modules/about/about.routes.js';
 import benevityRoutes from './modules/benevity/benevity.routes.js';
+import adminRoutes from './modules/admin/admin.routes.js';
+import donationRoutes from './modules/donation/donation.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -65,6 +67,8 @@ app.use('/api/news-events', newsEventRoutes);
 app.use('/api/team', teamMemberRoutes);
 app.use('/api/homepage', homeSectionRoutes);
 app.use('/api/benevity', benevityRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/donation', donationRoutes);
 
 // Health check route
 app.get('/api/health', (_req: Request, res: Response): void => {
