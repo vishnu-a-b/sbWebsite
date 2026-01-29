@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import Fellowship, { FellowshipStatus } from './fellowship.model.js';
 import crypto from 'crypto';
+import emailService from '../../services/email.service.js';
 
 // Create a new fellowship subscription
 export const createFellowship = async (req: Request, res: Response): Promise<void> => {
@@ -67,6 +68,18 @@ export const createFellowship = async (req: Request, res: Response): Promise<voi
       verificationToken,
       verificationTokenExpiry
     });
+
+    // Send welcome email with verification link
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    const verificationLink = `${frontendUrl}/fellowship/verify/${verificationToken}`;
+
+    emailService.sendFellowshipWelcome({
+      email: fellowship.email,
+      subscriberName: fellowship.subscriberName,
+      monthlyAmount: fellowship.monthlyAmount,
+      currency: fellowship.currency,
+      verificationLink
+    }).catch(err => console.error('Failed to send welcome email:', err));
 
     res.status(201).json({
       success: true,
@@ -242,6 +255,13 @@ export const pauseFellowship = async (req: Request, res: Response): Promise<void
 
     await fellowship.save();
 
+    // Send pause notification email
+    emailService.sendFellowshipPaused({
+      email: fellowship.email,
+      subscriberName: fellowship.subscriberName,
+      reason: reason || undefined
+    }).catch(err => console.error('Failed to send pause email:', err));
+
     res.json({
       success: true,
       message: 'Fellowship paused successfully',
@@ -330,6 +350,13 @@ export const cancelFellowship = async (req: Request, res: Response): Promise<voi
     fellowship.endDate = new Date();
 
     await fellowship.save();
+
+    // Send cancellation notification email
+    emailService.sendFellowshipCancelled({
+      email: fellowship.email,
+      subscriberName: fellowship.subscriberName,
+      reason: reason || undefined
+    }).catch(err => console.error('Failed to send cancellation email:', err));
 
     res.json({
       success: true,

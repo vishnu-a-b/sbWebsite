@@ -9,6 +9,7 @@ import {
   getPaymentStatusMessage,
   generateOrderId
 } from './utils/billdesk.util.js';
+import emailService from '../../services/email.service.js';
 
 /**
  * Initiate donation payment
@@ -214,6 +215,27 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
       ipAddress: req.ip
     });
 
+    // Send email notification
+    if (donation.paymentStatus === PaymentStatus.SUCCESS) {
+      emailService.sendDonationSuccess({
+        email: donation.email,
+        donorName: donation.donorName,
+        amount: donation.amount,
+        currency: donation.currency,
+        transactionId: response.transactionId || donation.gatewayOrderId || 'N/A',
+        donationType: donation.donationType,
+        receiptNumber: donation.receiptNumber
+      }).catch(err => console.error('Failed to send success email:', err));
+    } else {
+      emailService.sendDonationFailed({
+        email: donation.email,
+        donorName: donation.donorName,
+        amount: donation.amount,
+        currency: donation.currency,
+        reason: getPaymentStatusMessage(response.authStatus || '')
+      }).catch(err => console.error('Failed to send failure email:', err));
+    }
+
     // Redirect to frontend with status
     const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
     const statusMessage = getPaymentStatusMessage(response.authStatus || '');
@@ -300,6 +322,27 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
       }
 
       await donation.save();
+
+      // Send email notification (only if we just processed the payment)
+      if (donation.paymentStatus === PaymentStatus.SUCCESS) {
+        emailService.sendDonationSuccess({
+          email: donation.email,
+          donorName: donation.donorName,
+          amount: donation.amount,
+          currency: donation.currency,
+          transactionId: response.transactionId || donation.gatewayOrderId || 'N/A',
+          donationType: donation.donationType,
+          receiptNumber: donation.receiptNumber
+        }).catch(err => console.error('Failed to send success email:', err));
+      } else if (donation.paymentStatus === PaymentStatus.FAILED) {
+        emailService.sendDonationFailed({
+          email: donation.email,
+          donorName: donation.donorName,
+          amount: donation.amount,
+          currency: donation.currency,
+          reason: getPaymentStatusMessage(response.authStatus || '')
+        }).catch(err => console.error('Failed to send failure email:', err));
+      }
     }
 
     // Log transaction

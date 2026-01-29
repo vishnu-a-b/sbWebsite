@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Donation, { DonationType, PaymentStatus, ApprovalStatus } from './donation.model.js';
+import emailService from '../../services/email.service.js';
 
 /**
  * Add offline payment (Agent role)
@@ -137,6 +138,15 @@ export const approveOfflinePayment = async (req: Request, res: Response): Promis
 
     await donation.save();
 
+    // Send confirmation email to donor
+    emailService.sendOfflineDonationApproved({
+      email: donation.email,
+      donorName: donation.donorName,
+      amount: donation.amount,
+      currency: donation.currency,
+      receiptNumber: donation.receiptNumber || undefined
+    }).catch(err => console.error('Failed to send approval email:', err));
+
     res.json({
       success: true,
       donation,
@@ -197,6 +207,15 @@ export const rejectOfflinePayment = async (req: Request, res: Response): Promise
     donation.rejectionReason = reason;
 
     await donation.save();
+
+    // Send rejection email to donor
+    emailService.sendOfflineDonationRejected({
+      email: donation.email,
+      donorName: donation.donorName,
+      amount: donation.amount,
+      currency: donation.currency,
+      reason
+    }).catch(err => console.error('Failed to send rejection email:', err));
 
     res.json({
       success: true,
