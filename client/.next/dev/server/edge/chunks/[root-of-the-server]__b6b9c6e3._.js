@@ -27,10 +27,18 @@ function middleware(request) {
     const { pathname } = request.nextUrl;
     // Protect all /admin routes except /admin/login
     if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-        const authSession = request.cookies.get('admin_session');
-        if (!authSession || authSession.value !== 'true') {
+        const authToken = request.cookies.get('admin_token');
+        if (!authToken || !authToken.value) {
             const loginUrl = new URL('/admin/login', request.url);
             return __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(loginUrl);
+        }
+    }
+    // Redirect logged-in users away from login page
+    if (pathname === '/admin/login') {
+        const authToken = request.cookies.get('admin_token');
+        if (authToken && authToken.value) {
+            const adminUrl = new URL('/admin', request.url);
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(adminUrl);
         }
     }
     return __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();

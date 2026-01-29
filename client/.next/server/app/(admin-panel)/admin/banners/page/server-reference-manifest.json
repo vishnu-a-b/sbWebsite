@@ -1,9 +1,24 @@
 {
   "node": {
-    "40b1a0fce55538418938d5229c099d2024cc3dba08": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "406e37e5053a866fed7083ea40dec063ca4bc034e7": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 1292,
           "async": false,
           "exportedName": "getBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -15,10 +30,10 @@
       "exportedName": "getBanners",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
     },
-    "40797285b2da184935ae23c309bb84a3cc6afcb9b7": {
+    "40d9e3766e9d1b5c0018cfed2f2ff013eff065c5ef": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "createBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -30,10 +45,10 @@
       "exportedName": "createBanner",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
     },
-    "60d270839c0a937488865b8378e0d6e79f40b33e4e": {
+    "60497d33878d3844c58243d75cedfeddd536f8fa08": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "updateBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -45,10 +60,10 @@
       "exportedName": "updateBanner",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
     },
-    "40e35b9199270eee0c7d67202b4ec0be96c5e4bc34": {
+    "40f5a9bd3c51d8ed4ba234673fb0e079e31febbd8a": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "deleteBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -60,10 +75,10 @@
       "exportedName": "deleteBanner",
       "filename": "Official/SbWebsite/client/app/actions/banner.ts"
     },
-    "00709c903ef0f94aefe62a5a782b91c5ea609bc679": {
+    "007a499369ffe2ff906181095997506aa0d7c48b78": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "seedBenevityBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"

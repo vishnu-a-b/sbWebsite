@@ -1,0 +1,3 @@
+module.exports=[85896,t=>{"use strict";let e="http://127.0.0.1:5002",a=e.endsWith("/api")?e:`${e}/api`,n={banner:`${a}/banner`,payment:`${a}/payment`,contact:`${a}/contact`,volunteer:`${a}/volunteer`,stats:`${a}/stats`,service:`${a}/service`,aboutImage:`${a}/about-image`,health:`${a}/health`};t.s(["API_ENDPOINTS",0,n,"default",0,a])}];
+
+//# sourceMappingURL=Official_SbWebsite_client_lib_api_ts_1fea8a05._.js.map

@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(admin-panel)/layout,_N_T_/(admin-panel)/admin/layout,_N_T_/(admin-panel)/admin/donations/layout,_N_T_/(admin-panel)/admin/donations/add/layout,_N_T_/(admin-panel)/admin/donations/add/page,_N_T_/admin/donations/add"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGFkbWluLXBhbmVsKQ/admin/donations/add/__PAGE__",
+    "/!KGFkbWluLXBhbmVsKQ/admin/donations/add",
+    "/!KGFkbWluLXBhbmVsKQ/admin/donations",
+    "/!KGFkbWluLXBhbmVsKQ/admin",
+    "/!KGFkbWluLXBhbmVsKQ",
+    "/_index",
+    "/_head"
+  ]
+}

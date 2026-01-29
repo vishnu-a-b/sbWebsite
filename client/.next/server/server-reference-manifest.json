@@ -1,9 +1,164 @@
 {
   "node": {
-    "00079c28e89cb4e91bdd03590ed50ac388823ade0c": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
       "workers": {
         "app/(admin-panel)/admin/about/page": {
-          "moduleId": 84818,
+          "moduleId": 49425,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 55007,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": 1292,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": 90690,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/add/page": {
+          "moduleId": 36749,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/history/page": {
+          "moduleId": 50999,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/page": {
+          "moduleId": 36702,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/pending/page": {
+          "moduleId": 92104,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/stats/page": {
+          "moduleId": 21088,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/fellowships/add/page": {
+          "moduleId": 95990,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/fellowships/overdue/page": {
+          "moduleId": 14071,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/fellowships/page": {
+          "moduleId": 84690,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/fellowships/stats/page": {
+          "moduleId": 10180,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/homepage/page": {
+          "moduleId": 71606,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": 28712,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/news-events/page": {
+          "moduleId": 78697,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/page": {
+          "moduleId": 46604,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/payments/page": {
+          "moduleId": 45949,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/projects/page": {
+          "moduleId": 2903,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 73363,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/team/page": {
+          "moduleId": 41097,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser",
+        "app/(admin-panel)/admin/awards/page": "action-browser",
+        "app/(admin-panel)/admin/banners/page": "action-browser",
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/donations/add/page": "action-browser",
+        "app/(admin-panel)/admin/donations/history/page": "action-browser",
+        "app/(admin-panel)/admin/donations/page": "action-browser",
+        "app/(admin-panel)/admin/donations/pending/page": "action-browser",
+        "app/(admin-panel)/admin/donations/stats/page": "action-browser",
+        "app/(admin-panel)/admin/fellowships/add/page": "action-browser",
+        "app/(admin-panel)/admin/fellowships/overdue/page": "action-browser",
+        "app/(admin-panel)/admin/fellowships/page": "action-browser",
+        "app/(admin-panel)/admin/fellowships/stats/page": "action-browser",
+        "app/(admin-panel)/admin/homepage/page": "action-browser",
+        "app/(admin-panel)/admin/login/page": "action-browser",
+        "app/(admin-panel)/admin/news-events/page": "action-browser",
+        "app/(admin-panel)/admin/page": "action-browser",
+        "app/(admin-panel)/admin/payments/page": "action-browser",
+        "app/(admin-panel)/admin/projects/page": "action-browser",
+        "app/(admin-panel)/admin/services/page": "action-browser",
+        "app/(admin-panel)/admin/team/page": "action-browser"
+      },
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts",
+      "exportedName": "logout"
+    },
+    "00be392516b639e08407be0eb68b658a4165ef1990": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": 49425,
           "async": false,
           "exportedName": "getAboutContent",
           "filename": "Official/SbWebsite/client/app/actions/about.ts"
@@ -22,10 +177,10 @@
       "filename": "Official/SbWebsite/client/app/actions/about.ts",
       "exportedName": "getAboutContent"
     },
-    "40219cd4be3543d79675f9788b312971d2d56c6311": {
+    "4048f206bdcfaf553d057a0941720379c30026add7": {
       "workers": {
         "app/(admin-panel)/admin/about/page": {
-          "moduleId": 84818,
+          "moduleId": 49425,
           "async": false,
           "exportedName": "updateAboutContent",
           "filename": "Official/SbWebsite/client/app/actions/about.ts"
@@ -44,10 +199,10 @@
       "filename": "Official/SbWebsite/client/app/actions/about.ts",
       "exportedName": "updateAboutContent"
     },
-    "00ca061ef44aa147e27d10bb1e91d021f86ce8320e": {
+    "008ac2a24e8b1e253c3fec76491947950c01be754d": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "getAwards",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -66,10 +221,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "getAwards"
     },
-    "408f1a8a311d89f646d4b4265ec7a26cfe7fb3338c": {
+    "4046ce037ee406d5fe9d4436f7b2ab78630c367847": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "createAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -88,10 +243,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "createAward"
     },
-    "60e609b30585888a18175c68e123d9906abb78b10b": {
+    "603cfe384358c0f79a839a0fa35226b087283358a7": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "updateAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -110,10 +265,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "updateAward"
     },
-    "402541e06a6dff97d177402719971a940d16dca609": {
+    "40a975ccbce706cfdf68f937ca5a8bd1292f1e8a83": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "deleteAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -132,10 +287,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "deleteAward"
     },
-    "40b1a0fce55538418938d5229c099d2024cc3dba08": {
+    "406e37e5053a866fed7083ea40dec063ca4bc034e7": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "getBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -161,10 +316,10 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "getBanners"
     },
-    "40797285b2da184935ae23c309bb84a3cc6afcb9b7": {
+    "40d9e3766e9d1b5c0018cfed2f2ff013eff065c5ef": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "createBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -190,10 +345,10 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "createBanner"
     },
-    "60d270839c0a937488865b8378e0d6e79f40b33e4e": {
+    "60497d33878d3844c58243d75cedfeddd536f8fa08": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "updateBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -219,10 +374,10 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "updateBanner"
     },
-    "40e35b9199270eee0c7d67202b4ec0be96c5e4bc34": {
+    "40f5a9bd3c51d8ed4ba234673fb0e079e31febbd8a": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "deleteBanner",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -248,10 +403,10 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "deleteBanner"
     },
-    "00709c903ef0f94aefe62a5a782b91c5ea609bc679": {
+    "007a499369ffe2ff906181095997506aa0d7c48b78": {
       "workers": {
         "app/(admin-panel)/admin/banners/page": {
-          "moduleId": 21083,
+          "moduleId": 1292,
           "async": false,
           "exportedName": "seedBenevityBanners",
           "filename": "Official/SbWebsite/client/app/actions/banner.ts"
@@ -277,16 +432,16 @@
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
       "exportedName": "seedBenevityBanners"
     },
-    "4031a0ec2c91737f621f2cce532b0218cf38bcafec": {
+    "404b9a74e6d97d1be9bf0ef2262bc91f30b539e152": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": 45026,
+          "moduleId": 90690,
           "async": false,
           "exportedName": "getProjects",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
         },
         "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+          "moduleId": 2903,
           "async": false,
           "exportedName": "getProjects",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -320,16 +475,16 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
       "exportedName": "getProjects"
     },
-    "604aa66fe8a1cea12bc8ce2383422b9f1bf3716dee": {
+    "60f8c347eba8c2987b5335d7934c5a8f03d4046da2": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": 45026,
+          "moduleId": 90690,
           "async": false,
           "exportedName": "createProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
         },
         "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+          "moduleId": 2903,
           "async": false,
           "exportedName": "createProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -363,16 +518,16 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
       "exportedName": "createProject"
     },
-    "704a0fc593f4b81aebdd8974bfe2e2e858547650bc": {
+    "70f5bc4b7a64303ffe89ce45bcf2c18c2f5f30463e": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": 45026,
+          "moduleId": 90690,
           "async": false,
           "exportedName": "updateProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
         },
         "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+          "moduleId": 2903,
           "async": false,
           "exportedName": "updateProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -406,16 +561,16 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
       "exportedName": "updateProject"
     },
-    "60bae16c5b18520b556320f365cdc9c1b1a703904d": {
+    "601ab81ca4e0ca46af88224578793b80f9ca3972dc": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": 45026,
+          "moduleId": 90690,
           "async": false,
           "exportedName": "deleteProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
         },
         "app/(admin-panel)/admin/projects/page": {
-          "moduleId": 73654,
+          "moduleId": 2903,
           "async": false,
           "exportedName": "deleteProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -449,10 +604,25 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
       "exportedName": "deleteProject"
     },
-    "008b6f0eb9837c9e9ba9e95247581147e8d61431b6": {
+    "401d60d54a79ba847ecc5477dba8e7dcf50204c276": {
+      "workers": {
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": 28712,
+          "async": false,
+          "exportedName": "login",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/login/page": "action-browser"
+      },
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts",
+      "exportedName": "login"
+    },
+    "00b79543d2d01295e8747ca7afc9a5d035f4635a41": {
       "workers": {
         "app/(admin-panel)/admin/news-events/page": {
-          "moduleId": 14889,
+          "moduleId": 78697,
           "async": false,
           "exportedName": "getNewsEvents",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -485,10 +655,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "getNewsEvents"
     },
-    "40e19220d44788db16ca6f5970f5315d81449f6d29": {
+    "40dfc5a8511bc8e3e99a8a25bdcce3d33720847164": {
       "workers": {
         "app/(admin-panel)/admin/news-events/page": {
-          "moduleId": 14889,
+          "moduleId": 78697,
           "async": false,
           "exportedName": "createNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -521,10 +691,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "createNewsEvent"
     },
-    "60977d6a3fb994f2ae6d4ccb83920d1d69fe750bd7": {
+    "60ab4d566512ff8ce8277947363b4b5db520a73fb4": {
       "workers": {
         "app/(admin-panel)/admin/news-events/page": {
-          "moduleId": 14889,
+          "moduleId": 78697,
           "async": false,
           "exportedName": "updateNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -557,10 +727,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "updateNewsEvent"
     },
-    "40442cad095725ca7e359e5e93f5e03df0d72dcf4b": {
+    "40d59a2943de80ae7da28ddc9c992d6eeee551b3ae": {
       "workers": {
         "app/(admin-panel)/admin/news-events/page": {
-          "moduleId": 14889,
+          "moduleId": 78697,
           "async": false,
           "exportedName": "deleteNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -593,10 +763,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "deleteNewsEvent"
     },
-    "0097772b03c89fa728c20a5f8f03fca816c4fa0888": {
+    "009b0154bbc23be3db2cd797a244e8b59e5aa0a803": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "getServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
@@ -615,10 +785,10 @@
       "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts",
       "exportedName": "getServicesPageContent"
     },
-    "40a470356aa7609e428d9c38099633aaea61a324de": {
+    "405a6fe9bd743e017a8dfe48745bfa82c9f6afed39": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "updateServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
@@ -637,10 +807,10 @@
       "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts",
       "exportedName": "updateServicesPageContent"
     },
-    "006dd374314f756bd6aa97544917b3997663b11820": {
+    "00853a16ad6017d34514193fdeeb0e723aa61315c2": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -652,10 +822,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts",
       "exportedName": "getServices"
     },
-    "40db25771f00592eadd28150cf3b9dc91ae8c6a106": {
+    "4034b2c9aae5697739b52e3f02744c35a656d0af9e": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "createService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -667,10 +837,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts",
       "exportedName": "createService"
     },
-    "60c2b0dae7a1f4b488cc406c189c819f71b0483601": {
+    "6062b7f83ee7535a7b34abe5e7d4e2f902234db793": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "updateService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -682,10 +852,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts",
       "exportedName": "updateService"
     },
-    "4066dfc5bdcac6efad4b79cc063d4a23397a35dca5": {
+    "4046f6fd21267d4ab83a07b6ee3ec5a552dfa42dff": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "deleteService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -697,10 +867,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts",
       "exportedName": "deleteService"
     },
-    "00c7e4a1dd8f5db7d6e0c3809633d733b86640e204": {
+    "00e572f829fd74fe57bd4b1a840705a333b203bbfe": {
       "workers": {
         "app/(admin-panel)/admin/team/page": {
-          "moduleId": 24428,
+          "moduleId": 41097,
           "async": false,
           "exportedName": "getTeamMembers",
           "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
@@ -712,10 +882,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/team.ts",
       "exportedName": "getTeamMembers"
     },
-    "4070aac954711e1581fb9815bb725f552fa21bbe43": {
+    "401aa94d3978f4948bf639583e82294590050477b6": {
       "workers": {
         "app/(admin-panel)/admin/team/page": {
-          "moduleId": 24428,
+          "moduleId": 41097,
           "async": false,
           "exportedName": "createTeamMember",
           "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
@@ -727,10 +897,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/team.ts",
       "exportedName": "createTeamMember"
     },
-    "60d7d1ee4e3d2b1217d6f9b789bd0c7a0bf13db164": {
+    "60a6c703d882184fdfc93716a9a75b17c9367c79ee": {
       "workers": {
         "app/(admin-panel)/admin/team/page": {
-          "moduleId": 24428,
+          "moduleId": 41097,
           "async": false,
           "exportedName": "updateTeamMember",
           "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
@@ -742,10 +912,10 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/team.ts",
       "exportedName": "updateTeamMember"
     },
-    "408f48efe6cc0ae403ce144eba96168012ffbc7059": {
+    "40b88cdb1e6269407837644e250b7212a540ddcbe8": {
       "workers": {
         "app/(admin-panel)/admin/team/page": {
-          "moduleId": 24428,
+          "moduleId": 41097,
           "async": false,
           "exportedName": "deleteTeamMember",
           "filename": "Official/SbWebsite/client/app/actions/cms/team.ts"
@@ -757,7 +927,7 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/team.ts",
       "exportedName": "deleteTeamMember"
     },
-    "003f50ae0e7113f8a26e01c4d28d8dc245b0856c30": {
+    "0014905adf47fd89503fe29f063bd96a75f58fb24a": {
       "workers": {
         "app/(main)/page": {
           "moduleId": 48940,
@@ -786,7 +956,7 @@
       "filename": "Official/SbWebsite/client/app/actions/service.ts",
       "exportedName": "getServices"
     },
-    "40c4811317dd7334572a00427ee0e11577b9df84e8": {
+    "4065919ada0cbdcf8a42fc0aa481d395ce346b8b22": {
       "workers": {
         "app/(main)/page": {
           "moduleId": 48940,
@@ -815,7 +985,7 @@
       "filename": "Official/SbWebsite/client/app/actions/service.ts",
       "exportedName": "getServiceBySlug"
     },
-    "409c3e8cb2694e4c38e73cb36dcb2037d81ecc44a6": {
+    "40234b38dd228a079b945ca3341cb80e66d55e540a": {
       "workers": {
         "app/(main)/benevity/page": {
           "moduleId": 92969,
@@ -844,7 +1014,7 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
       "exportedName": "getProject"
     },
-    "40537865e789065c8ba3736fdfa5e5142c793f8163": {
+    "40c3a02a52b068ed9b652d2b71761045cca7f5898c": {
       "workers": {
         "app/(main)/page": {
           "moduleId": 48940,
@@ -859,7 +1029,7 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts",
       "exportedName": "getAward"
     },
-    "008c1ce485684d66a2d506182f33e1d88fd366d7c6": {
+    "0093ce4d5b25d93dd4293781c399aad7b62b6571eb": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
@@ -888,7 +1058,7 @@
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "getPublicNewsEvents"
     },
-    "40aa091f1f7b32c0cd5b6a5d28f1bf0129931b3641": {
+    "40b2181f3656113591658ae5751d0a9f98f7efa739": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
@@ -919,5 +1089,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "DClfjCBZBW0zNkhK5Ff723eb4GsyvWVBR7G6XU4ecU8="
+  "encryptionKey": "3/BKa2x23h1ZpVWnQ9CciByc+Z3NDiA/nb3pgj8PDSY="
 }

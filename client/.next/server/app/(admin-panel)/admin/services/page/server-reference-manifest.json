@@ -1,9 +1,24 @@
 {
   "node": {
-    "0097772b03c89fa728c20a5f8f03fca816c4fa0888": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/services/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "009b0154bbc23be3db2cd797a244e8b59e5aa0a803": {
+      "workers": {
+        "app/(admin-panel)/admin/services/page": {
+          "moduleId": 73363,
           "async": false,
           "exportedName": "getServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
@@ -15,10 +30,10 @@
       "exportedName": "getServicesPageContent",
       "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
     },
-    "40a470356aa7609e428d9c38099633aaea61a324de": {
+    "405a6fe9bd743e017a8dfe48745bfa82c9f6afed39": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "updateServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
@@ -30,10 +45,10 @@
       "exportedName": "updateServicesPageContent",
       "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
     },
-    "006dd374314f756bd6aa97544917b3997663b11820": {
+    "00853a16ad6017d34514193fdeeb0e723aa61315c2": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -45,10 +60,10 @@
       "exportedName": "getServices",
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
     },
-    "40db25771f00592eadd28150cf3b9dc91ae8c6a106": {
+    "4034b2c9aae5697739b52e3f02744c35a656d0af9e": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "createService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -60,10 +75,10 @@
       "exportedName": "createService",
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
     },
-    "60c2b0dae7a1f4b488cc406c189c819f71b0483601": {
+    "6062b7f83ee7535a7b34abe5e7d4e2f902234db793": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "updateService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
@@ -75,10 +90,10 @@
       "exportedName": "updateService",
       "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"
     },
-    "4066dfc5bdcac6efad4b79cc063d4a23397a35dca5": {
+    "4046f6fd21267d4ab83a07b6ee3ec5a552dfa42dff": {
       "workers": {
         "app/(admin-panel)/admin/services/page": {
-          "moduleId": 26373,
+          "moduleId": 73363,
           "async": false,
           "exportedName": "deleteService",
           "filename": "Official/SbWebsite/client/app/actions/cms/services.ts"

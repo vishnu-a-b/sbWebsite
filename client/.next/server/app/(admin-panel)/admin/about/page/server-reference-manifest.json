@@ -1,9 +1,24 @@
 {
   "node": {
-    "00079c28e89cb4e91bdd03590ed50ac388823ade0c": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
       "workers": {
         "app/(admin-panel)/admin/about/page": {
-          "moduleId": 84818,
+          "moduleId": 49425,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "00be392516b639e08407be0eb68b658a4165ef1990": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": 49425,
           "async": false,
           "exportedName": "getAboutContent",
           "filename": "Official/SbWebsite/client/app/actions/about.ts"
@@ -15,10 +30,10 @@
       "exportedName": "getAboutContent",
       "filename": "Official/SbWebsite/client/app/actions/about.ts"
     },
-    "40219cd4be3543d79675f9788b312971d2d56c6311": {
+    "4048f206bdcfaf553d057a0941720379c30026add7": {
       "workers": {
         "app/(admin-panel)/admin/about/page": {
-          "moduleId": 84818,
+          "moduleId": 49425,
           "async": false,
           "exportedName": "updateAboutContent",
           "filename": "Official/SbWebsite/client/app/actions/about.ts"

@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/e8951d81ba672843.css","style"]
+:HL["/_next/static/chunks/66a004ef6aa8f188.css","style"]
 :HL["/_next/static/media/0c89a48fa5027cee-s.p.4564287c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -27,4 +27,4 @@
 :HL["https://shanthibhavan.in/images/products/5b4708488e94c.jpeg","image"]
 :HL["https://shanthibhavan.in/images/products/5b46f73f1b039.jpeg","image"]
 :HL["https://shanthibhavan.in/images/album/photos/690862fae90fe.jpeg","image"]
-0:{"buildId":"HNxifyLGMDNmcv2HvXQb4","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"(main)","paramType":null,"paramKey":"(main)","hasRuntimePrefetch":false,"slots":{"children":{"name":"team","paramType":null,"paramKey":"team","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"ioRXHZ0FK-Pxr-9CtN3PP","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"(main)","paramType":null,"paramKey":"(main)","hasRuntimePrefetch":false,"slots":{"children":{"name":"team","paramType":null,"paramKey":"team","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

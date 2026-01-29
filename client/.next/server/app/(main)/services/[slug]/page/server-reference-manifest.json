@@ -1,6 +1,6 @@
 {
   "node": {
-    "003f50ae0e7113f8a26e01c4d28d8dc245b0856c30": {
+    "0014905adf47fd89503fe29f063bd96a75f58fb24a": {
       "workers": {
         "app/(main)/services/[slug]/page": {
           "moduleId": 33795,
@@ -15,7 +15,7 @@
       "exportedName": "getServices",
       "filename": "Official/SbWebsite/client/app/actions/service.ts"
     },
-    "40c4811317dd7334572a00427ee0e11577b9df84e8": {
+    "4065919ada0cbdcf8a42fc0aa481d395ce346b8b22": {
       "workers": {
         "app/(main)/services/[slug]/page": {
           "moduleId": 33795,

@@ -24,7 +24,15 @@ import {
   Heart,
   ChevronDown,
   ChevronRight,
-  Shield
+  Shield,
+  ClipboardCheck,
+  Clock,
+  PlusCircle,
+  History,
+  UserPlus,
+  CheckCircle,
+  XCircle,
+  Wallet
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logout } from '@/app/(admin-panel)/admin/login/actions';
@@ -49,95 +57,146 @@ const roleColors: Record<string, string> = {
   accounts: 'bg-orange-500',
 };
 
-function SidebarDropdown({ label, icon: Icon, items, currentPath }: any) {
-    const isChildActive = items.some((item: any) => currentPath === item.href || currentPath.startsWith(item.href + '?'));
-    const [isOpen, setIsOpen] = useState(isChildActive);
-  
-    // Auto-expand if a child is active
-    // useEffect(() => {
-    //   if (isChildActive) setIsOpen(true);
-    // }, [isChildActive]);
-  
-    return (
-      <div className="mb-2">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
-            isChildActive || isOpen ? 'bg-white/10' : 'hover:bg-white/5'
-          }`}
-        >
-          <div className="flex items-center gap-3">
-            <Icon className="w-5 h-5 text-secondary" />
-            <span className="font-medium text-white">{label}</span>
-          </div>
-          {isOpen ? <ChevronDown className="w-4 h-4 text-white/70" /> : <ChevronRight className="w-4 h-4 text-white/70" />}
-        </button>
-  
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <div className="pl-4 pt-1 space-y-1">
-                {items.map((item: any) => {
-                  const isActive = currentPath === item.href;
-                  const ItemIcon = item.icon;
-                  return (
-                    <Link key={item.href} href={item.href}>
-                        <div className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                            isActive 
-                            ? 'bg-white text-primary font-medium shadow-sm' 
-                            : 'text-white/80 hover:bg-white/10 hover:text-white'
-                        }`}>
-                            <ItemIcon className={`w-4 h-4 ${isActive ? 'text-primary' : 'text-white/70'}`} />
-                            <span className="text-sm">{item.label}</span>
-                        </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    );
-  }
+// Define which roles can access which menu items
+type Role = 'super_admin' | 'agent' | 'approver' | 'accounts';
 
-const menuItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', href: '/admin', category: 'main' },
-  { icon: BarChart3, label: 'Analytics', href: '/admin/analytics', category: 'main' },
+interface MenuItem {
+  icon: any;
+  label: string;
+  href: string;
+  category: string;
+  roles: Role[]; // Which roles can see this item
+}
 
-  // CMS Content Management
-  { icon: Home, label: 'Homepage Sections', href: '/admin/homepage', category: 'cms' },
-  { icon: Video, label: 'Hero Banners', href: '/admin/banners', category: 'cms' },
-  { icon: Info, label: 'About Us', href: '/admin/about', category: 'cms' },
-  { icon: ListOrdered, label: 'Services', href: '/admin/services', category: 'cms' },
-  { icon: Briefcase, label: 'Featured Projects', href: '/admin/projects', category: 'cms' },
-  { icon: Award, label: 'Awards & Recognition', href: '/admin/awards', category: 'cms' },
-  { icon: Newspaper, label: 'News & Events', href: '/admin/news-events', category: 'cms' },
-  { icon: Briefcase, label: 'Benevity Projects', href: '/admin/benevity-projects', category: 'cms' },
-  { icon: Heart, label: 'Benevity Impact', href: '/admin/banners?location=benevity', category: 'cms' },
-  { icon: UserCircle, label: 'Team Members', href: '/admin/team', category: 'cms' },
-  { icon: Image, label: 'Gallery', href: '/admin/gallery', category: 'cms' },
+const menuItems: MenuItem[] = [
+  // Dashboard - All roles
+  { icon: LayoutDashboard, label: 'Dashboard', href: '/admin', category: 'main', roles: ['super_admin', 'agent', 'approver', 'accounts'] },
 
-  // Operations
-  { icon: CreditCard, label: 'Donations', href: '/admin/payments', category: 'operations' },
-  { icon: Users, label: 'Volunteers', href: '/admin/volunteers', category: 'operations' },
-  { icon: Mail, label: 'Contact Messages', href: '/admin/messages', category: 'operations' },
+  // Super Admin Only - Analytics & Settings
+  { icon: BarChart3, label: 'Analytics', href: '/admin/analytics', category: 'main', roles: ['super_admin'] },
+  { icon: Users, label: 'Admin Users', href: '/admin/users', category: 'main', roles: ['super_admin'] },
 
-  // Settings
-  { icon: Settings, label: 'Settings', href: '/admin/settings', category: 'settings' },
+  // CMS Content Management - Super Admin Only
+  { icon: Home, label: 'Homepage Sections', href: '/admin/homepage', category: 'cms', roles: ['super_admin'] },
+  { icon: Video, label: 'Hero Banners', href: '/admin/banners', category: 'cms', roles: ['super_admin'] },
+  { icon: Info, label: 'About Us', href: '/admin/about', category: 'cms', roles: ['super_admin'] },
+  { icon: ListOrdered, label: 'Services', href: '/admin/services', category: 'cms', roles: ['super_admin'] },
+  { icon: Briefcase, label: 'Featured Projects', href: '/admin/projects', category: 'cms', roles: ['super_admin'] },
+  { icon: Award, label: 'Awards & Recognition', href: '/admin/awards', category: 'cms', roles: ['super_admin'] },
+  { icon: Newspaper, label: 'News & Events', href: '/admin/news-events', category: 'cms', roles: ['super_admin'] },
+  { icon: Briefcase, label: 'Benevity Projects', href: '/admin/benevity-projects', category: 'cms', roles: ['super_admin'] },
+  { icon: Heart, label: 'Benevity Impact', href: '/admin/banners?location=benevity', category: 'cms', roles: ['super_admin'] },
+  { icon: UserCircle, label: 'Team Members', href: '/admin/team', category: 'cms', roles: ['super_admin'] },
+  { icon: Image, label: 'Gallery', href: '/admin/gallery', category: 'cms', roles: ['super_admin'] },
+
+  // Donation Management
+  { icon: CreditCard, label: 'All Donations', href: '/admin/donations', category: 'donations', roles: ['super_admin', 'accounts'] },
+  { icon: PlusCircle, label: 'Add Offline Donation', href: '/admin/donations/add', category: 'donations', roles: ['super_admin', 'agent'] },
+  { icon: Clock, label: 'Pending Approvals', href: '/admin/donations/pending', category: 'donations', roles: ['super_admin', 'approver'] },
+  { icon: History, label: 'Donation History', href: '/admin/donations/history', category: 'donations', roles: ['super_admin', 'accounts'] },
+  { icon: Wallet, label: 'Donation Stats', href: '/admin/donations/stats', category: 'donations', roles: ['super_admin', 'accounts'] },
+
+  // Fellowship Management
+  { icon: Heart, label: 'All Fellowships', href: '/admin/fellowships', category: 'fellowship', roles: ['super_admin', 'accounts'] },
+  { icon: UserPlus, label: 'Add Fellowship', href: '/admin/fellowships/add', category: 'fellowship', roles: ['super_admin', 'agent'] },
+  { icon: Clock, label: 'Overdue Payments', href: '/admin/fellowships/overdue', category: 'fellowship', roles: ['super_admin', 'accounts', 'agent'] },
+  { icon: BarChart3, label: 'Fellowship Stats', href: '/admin/fellowships/stats', category: 'fellowship', roles: ['super_admin', 'accounts'] },
+
+  // Operations - Super Admin
+  { icon: Users, label: 'Volunteers', href: '/admin/volunteers', category: 'operations', roles: ['super_admin'] },
+  { icon: Mail, label: 'Contact Messages', href: '/admin/messages', category: 'operations', roles: ['super_admin'] },
+
+  // Settings - Super Admin Only
+  { icon: Settings, label: 'Settings', href: '/admin/settings', category: 'settings', roles: ['super_admin'] },
 ];
+
+function SidebarDropdown({ label, icon: Icon, items, currentPath }: { label: string; icon: any; items: MenuItem[]; currentPath: string }) {
+  const isChildActive = items.some((item) => currentPath === item.href || currentPath.startsWith(item.href + '?'));
+  const [isOpen, setIsOpen] = useState(isChildActive);
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="mb-2">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
+          isChildActive || isOpen ? 'bg-white/10' : 'hover:bg-white/5'
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <Icon className="w-5 h-5 text-secondary" />
+          <span className="font-medium text-white">{label}</span>
+        </div>
+        {isOpen ? <ChevronDown className="w-4 h-4 text-white/70" /> : <ChevronRight className="w-4 h-4 text-white/70" />}
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 pt-1 space-y-1">
+              {items.map((item) => {
+                const isActive = currentPath === item.href;
+                const ItemIcon = item.icon;
+                return (
+                  <Link key={item.href} href={item.href}>
+                    <div className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+                      isActive
+                        ? 'bg-white text-primary font-medium shadow-sm'
+                        : 'text-white/80 hover:bg-white/10 hover:text-white'
+                    }`}>
+                      <ItemIcon className={`w-4 h-4 ${isActive ? 'text-primary' : 'text-white/70'}`} />
+                      <span className="text-sm">{item.label}</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function SidebarLink({ item, currentPath }: { item: MenuItem; currentPath: string }) {
+  const isActive = currentPath === item.href;
+  const Icon = item.icon;
+
+  return (
+    <Link href={item.href}>
+      <motion.div
+        whileHover={{ x: 6, scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+          isActive
+            ? 'bg-white text-primary shadow-lg font-semibold'
+            : 'hover:bg-white/15 backdrop-blur-sm'
+        }`}
+      >
+        <Icon className={`w-5 h-5 ${isActive ? 'text-primary' : 'text-secondary'}`} />
+        <span className="font-medium">{item.label}</span>
+        {isActive && (
+          <motion.div
+            layoutId="activeIndicator"
+            className="ml-auto w-2 h-2 bg-primary rounded-full"
+          />
+        )}
+      </motion.div>
+    </Link>
+  );
+}
 
 export default function AdminSidebar() {
   const pathname = usePathname();
   const [adminInfo, setAdminInfo] = useState<AdminInfo | null>(null);
 
   useEffect(() => {
-    // Read admin info from cookie on client side
     const getCookie = (name: string) => {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -155,6 +214,17 @@ export default function AdminSidebar() {
     }
   }, []);
 
+  // Filter menu items based on user role
+  const userRole = (adminInfo?.role || 'agent') as Role;
+  const filteredItems = menuItems.filter(item => item.roles.includes(userRole));
+
+  const mainItems = filteredItems.filter(item => item.category === 'main');
+  const cmsItems = filteredItems.filter(item => item.category === 'cms');
+  const donationItems = filteredItems.filter(item => item.category === 'donations');
+  const fellowshipItems = filteredItems.filter(item => item.category === 'fellowship');
+  const operationsItems = filteredItems.filter(item => item.category === 'operations');
+  const settingsItems = filteredItems.filter(item => item.category === 'settings');
+
   return (
     <div className="w-72 bg-gradient-to-br from-primary via-primary to-primary/95 text-white min-h-screen flex flex-col shadow-2xl relative overflow-hidden">
       {/* Decorative Background Elements */}
@@ -170,10 +240,10 @@ export default function AdminSidebar() {
             <span className="text-2xl">❤️</span>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white">
-              Shanthibhavan
-            </h2>
-            <p className="text-xs text-secondary/90 font-medium">Admin Dashboard</p>
+            <h2 className="text-2xl font-bold text-white">Shanthibhavan</h2>
+            <p className="text-xs text-secondary/90 font-medium">
+              {roleLabels[userRole] || 'Admin'} Portal
+            </p>
           </div>
         </div>
       </div>
@@ -181,105 +251,68 @@ export default function AdminSidebar() {
       {/* Navigation */}
       <nav className="relative flex-1 p-4 space-y-1 overflow-y-auto">
         {/* Main Section */}
-        {menuItems.filter(item => item.category === 'main').map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
+        {mainItems.map((item) => (
+          <SidebarLink key={item.href} item={item} currentPath={pathname} />
+        ))}
 
-          return (
-            <Link key={item.href} href={item.href}>
-              <motion.div
-                whileHover={{ x: 6, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                  isActive
-                    ? 'bg-white text-primary shadow-lg font-semibold'
-                    : 'hover:bg-white/15 backdrop-blur-sm'
-                }`}
-              >
-                <Icon className={`w-5 h-5 ${isActive ? 'text-primary' : 'text-secondary'}`} />
-                <span className="font-medium">{item.label}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="ml-auto w-2 h-2 bg-primary rounded-full"
-                  />
-                )}
-              </motion.div>
-            </Link>
-          );
-        })}
-
-        {/* CMS Dropdown */}
-        <SidebarDropdown 
-            label="CMS Content" 
+        {/* CMS Dropdown - Super Admin Only */}
+        {cmsItems.length > 0 && (
+          <SidebarDropdown
+            label="CMS Content"
             icon={FileText}
-            items={menuItems.filter(item => item.category === 'cms')}
+            items={cmsItems}
             currentPath={pathname}
-        />
+          />
+        )}
 
-        {/* Operations Section */}
-        <div className="pt-4 pb-2">
-          <p className="text-xs font-semibold text-secondary/80 uppercase tracking-wider px-4 mb-2">Operations</p>
-        </div>
-        {menuItems.filter(item => item.category === 'operations').map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
+        {/* Donations Section */}
+        {donationItems.length > 0 && (
+          <>
+            <div className="pt-4 pb-2">
+              <p className="text-xs font-semibold text-secondary/80 uppercase tracking-wider px-4 mb-2">Donations</p>
+            </div>
+            <SidebarDropdown
+              label="Donation Management"
+              icon={CreditCard}
+              items={donationItems}
+              currentPath={pathname}
+            />
+          </>
+        )}
 
-          return (
-            <Link key={item.href} href={item.href}>
-              <motion.div
-                whileHover={{ x: 6, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                  isActive
-                    ? 'bg-white text-primary shadow-lg font-semibold'
-                    : 'hover:bg-white/15 backdrop-blur-sm'
-                }`}
-              >
-                <Icon className={`w-5 h-5 ${isActive ? 'text-primary' : 'text-secondary'}`} />
-                <span className="font-medium">{item.label}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="ml-auto w-2 h-2 bg-primary rounded-full"
-                  />
-                )}
-              </motion.div>
-            </Link>
-          );
-        })}
+        {/* Fellowship Section */}
+        {fellowshipItems.length > 0 && (
+          <SidebarDropdown
+            label="Fellowship"
+            icon={Heart}
+            items={fellowshipItems}
+            currentPath={pathname}
+          />
+        )}
 
-        {/* Settings Section */}
-        <div className="pt-4 pb-2">
-          <p className="text-xs font-semibold text-secondary/80 uppercase tracking-wider px-4 mb-2">Settings</p>
-        </div>
-        {menuItems.filter(item => item.category === 'settings').map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
+        {/* Operations Section - Super Admin */}
+        {operationsItems.length > 0 && (
+          <>
+            <div className="pt-4 pb-2">
+              <p className="text-xs font-semibold text-secondary/80 uppercase tracking-wider px-4 mb-2">Operations</p>
+            </div>
+            {operationsItems.map((item) => (
+              <SidebarLink key={item.href} item={item} currentPath={pathname} />
+            ))}
+          </>
+        )}
 
-          return (
-            <Link key={item.href} href={item.href}>
-              <motion.div
-                whileHover={{ x: 6, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                  isActive
-                    ? 'bg-white text-primary shadow-lg font-semibold'
-                    : 'hover:bg-white/15 backdrop-blur-sm'
-                }`}
-              >
-                <Icon className={`w-5 h-5 ${isActive ? 'text-primary' : 'text-secondary'}`} />
-                <span className="font-medium">{item.label}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="ml-auto w-2 h-2 bg-primary rounded-full"
-                  />
-                )}
-              </motion.div>
-            </Link>
-          );
-        })}
+        {/* Settings Section - Super Admin */}
+        {settingsItems.length > 0 && (
+          <>
+            <div className="pt-4 pb-2">
+              <p className="text-xs font-semibold text-secondary/80 uppercase tracking-wider px-4 mb-2">Settings</p>
+            </div>
+            {settingsItems.map((item) => (
+              <SidebarLink key={item.href} item={item} currentPath={pathname} />
+            ))}
+          </>
+        )}
       </nav>
 
       {/* User Info & Footer */}

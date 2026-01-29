@@ -1,0 +1,20 @@
+{
+  "node": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
+      "workers": {
+        "app/(admin-panel)/admin/fellowships/overdue/page": {
+          "moduleId": 14071,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/fellowships/overdue/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    }
+  },
+  "edge": {}
+}

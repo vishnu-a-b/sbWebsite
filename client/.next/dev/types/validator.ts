@@ -83,6 +83,87 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/(admin-panel)/admin/donations/add/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/donations/add">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/donations/add/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/donations/history/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/donations/history">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/donations/history/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/donations/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/donations">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/donations/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/donations/pending/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/donations/pending">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/donations/pending/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/donations/stats/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/donations/stats">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/donations/stats/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/fellowships/add/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/fellowships/add">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/fellowships/add/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/fellowships/overdue/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/fellowships/overdue">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/fellowships/overdue/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/fellowships/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/fellowships">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/fellowships/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(admin-panel)/admin/fellowships/stats/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/fellowships/stats">> = Specific
+  const handler = {} as typeof import("../../../app/(admin-panel)/admin/fellowships/stats/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/(admin-panel)/admin/homepage/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/admin/homepage">> = Specific

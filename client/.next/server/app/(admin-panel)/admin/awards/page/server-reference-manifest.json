@@ -1,9 +1,24 @@
 {
   "node": {
-    "00ca061ef44aa147e27d10bb1e91d021f86ce8320e": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/awards/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "008ac2a24e8b1e253c3fec76491947950c01be754d": {
+      "workers": {
+        "app/(admin-panel)/admin/awards/page": {
+          "moduleId": 55007,
           "async": false,
           "exportedName": "getAwards",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -15,10 +30,10 @@
       "exportedName": "getAwards",
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
     },
-    "408f1a8a311d89f646d4b4265ec7a26cfe7fb3338c": {
+    "4046ce037ee406d5fe9d4436f7b2ab78630c367847": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "createAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -30,10 +45,10 @@
       "exportedName": "createAward",
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
     },
-    "60e609b30585888a18175c68e123d9906abb78b10b": {
+    "603cfe384358c0f79a839a0fa35226b087283358a7": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "updateAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
@@ -45,10 +60,10 @@
       "exportedName": "updateAward",
       "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"
     },
-    "402541e06a6dff97d177402719971a940d16dca609": {
+    "40a975ccbce706cfdf68f937ca5a8bd1292f1e8a83": {
       "workers": {
         "app/(admin-panel)/admin/awards/page": {
-          "moduleId": 74158,
+          "moduleId": 55007,
           "async": false,
           "exportedName": "deleteAward",
           "filename": "Official/SbWebsite/client/app/actions/cms/awards.ts"

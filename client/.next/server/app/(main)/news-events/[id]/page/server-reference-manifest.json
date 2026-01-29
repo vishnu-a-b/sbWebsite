@@ -1,21 +1,6 @@
 {
   "node": {
-    "008b6f0eb9837c9e9ba9e95247581147e8d61431b6": {
-      "workers": {
-        "app/(main)/news-events/[id]/page": {
-          "moduleId": 34607,
-          "async": false,
-          "exportedName": "getNewsEvents",
-          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
-        }
-      },
-      "layer": {
-        "app/(main)/news-events/[id]/page": "rsc"
-      },
-      "exportedName": "getNewsEvents",
-      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
-    },
-    "008c1ce485684d66a2d506182f33e1d88fd366d7c6": {
+    "0093ce4d5b25d93dd4293781c399aad7b62b6571eb": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
@@ -30,22 +15,22 @@
       "exportedName": "getPublicNewsEvents",
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
     },
-    "40442cad095725ca7e359e5e93f5e03df0d72dcf4b": {
+    "00b79543d2d01295e8747ca7afc9a5d035f4635a41": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
           "async": false,
-          "exportedName": "deleteNewsEvent",
+          "exportedName": "getNewsEvents",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
         }
       },
       "layer": {
         "app/(main)/news-events/[id]/page": "rsc"
       },
-      "exportedName": "deleteNewsEvent",
+      "exportedName": "getNewsEvents",
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
     },
-    "40aa091f1f7b32c0cd5b6a5d28f1bf0129931b3641": {
+    "40b2181f3656113591658ae5751d0a9f98f7efa739": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
@@ -60,7 +45,22 @@
       "exportedName": "getNewsEvent",
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
     },
-    "40e19220d44788db16ca6f5970f5315d81449f6d29": {
+    "40d59a2943de80ae7da28ddc9c992d6eeee551b3ae": {
+      "workers": {
+        "app/(main)/news-events/[id]/page": {
+          "moduleId": 34607,
+          "async": false,
+          "exportedName": "deleteNewsEvent",
+          "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/news-events/[id]/page": "rsc"
+      },
+      "exportedName": "deleteNewsEvent",
+      "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
+    },
+    "40dfc5a8511bc8e3e99a8a25bdcce3d33720847164": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,
@@ -75,7 +75,7 @@
       "exportedName": "createNewsEvent",
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
     },
-    "60977d6a3fb994f2ae6d4ccb83920d1d69fe750bd7": {
+    "60ab4d566512ff8ce8277947363b4b5db520a73fb4": {
       "workers": {
         "app/(main)/news-events/[id]/page": {
           "moduleId": 34607,

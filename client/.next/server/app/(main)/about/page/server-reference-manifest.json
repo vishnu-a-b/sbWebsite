@@ -1,6 +1,6 @@
 {
   "node": {
-    "00079c28e89cb4e91bdd03590ed50ac388823ade0c": {
+    "00be392516b639e08407be0eb68b658a4165ef1990": {
       "workers": {
         "app/(main)/about/page": {
           "moduleId": 97084,
@@ -15,7 +15,7 @@
       "exportedName": "getAboutContent",
       "filename": "Official/SbWebsite/client/app/actions/about.ts"
     },
-    "40219cd4be3543d79675f9788b312971d2d56c6311": {
+    "4048f206bdcfaf553d057a0941720379c30026add7": {
       "workers": {
         "app/(main)/about/page": {
           "moduleId": 97084,

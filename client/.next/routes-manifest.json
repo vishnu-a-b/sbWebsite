@@ -102,10 +102,70 @@
       "namedRegex": "^/admin/benevity\\-projects(?:/)?$"
     },
     {
+      "page": "/admin/donations",
+      "regex": "^/admin/donations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/donations(?:/)?$"
+    },
+    {
+      "page": "/admin/donations/add",
+      "regex": "^/admin/donations/add(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/donations/add(?:/)?$"
+    },
+    {
+      "page": "/admin/donations/history",
+      "regex": "^/admin/donations/history(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/donations/history(?:/)?$"
+    },
+    {
+      "page": "/admin/donations/pending",
+      "regex": "^/admin/donations/pending(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/donations/pending(?:/)?$"
+    },
+    {
+      "page": "/admin/donations/stats",
+      "regex": "^/admin/donations/stats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/donations/stats(?:/)?$"
+    },
+    {
+      "page": "/admin/fellowships",
+      "regex": "^/admin/fellowships(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/fellowships(?:/)?$"
+    },
+    {
+      "page": "/admin/fellowships/add",
+      "regex": "^/admin/fellowships/add(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/fellowships/add(?:/)?$"
+    },
+    {
+      "page": "/admin/fellowships/overdue",
+      "regex": "^/admin/fellowships/overdue(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/fellowships/overdue(?:/)?$"
+    },
+    {
+      "page": "/admin/fellowships/stats",
+      "regex": "^/admin/fellowships/stats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/fellowships/stats(?:/)?$"
+    },
+    {
       "page": "/admin/homepage",
       "regex": "^/admin/homepage(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/admin/homepage(?:/)?$"
+    },
+    {
+      "page": "/admin/login",
+      "regex": "^/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/login(?:/)?$"
     },
     {
       "page": "/admin/news-events",

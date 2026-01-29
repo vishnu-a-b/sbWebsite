@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(admin-panel)/layout,_N_T_/(admin-panel)/admin/layout,_N_T_/(admin-panel)/admin/fellowships/layout,_N_T_/(admin-panel)/admin/fellowships/add/layout,_N_T_/(admin-panel)/admin/fellowships/add/page,_N_T_/admin/fellowships/add"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGFkbWluLXBhbmVsKQ/admin/fellowships/add/__PAGE__",
+    "/!KGFkbWluLXBhbmVsKQ/admin/fellowships/add",
+    "/!KGFkbWluLXBhbmVsKQ/admin/fellowships",
+    "/!KGFkbWluLXBhbmVsKQ/admin",
+    "/!KGFkbWluLXBhbmVsKQ",
+    "/_index",
+    "/_head"
+  ]
+}

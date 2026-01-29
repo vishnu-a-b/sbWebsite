@@ -1,0 +1,35 @@
+{
+  "node": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
+      "workers": {
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": 28712,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/login/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "401d60d54a79ba847ecc5477dba8e7dcf50204c276": {
+      "workers": {
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": 28712,
+          "async": false,
+          "exportedName": "login",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/login/page": "action-browser"
+      },
+      "exportedName": "login",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    }
+  },
+  "edge": {}
+}
