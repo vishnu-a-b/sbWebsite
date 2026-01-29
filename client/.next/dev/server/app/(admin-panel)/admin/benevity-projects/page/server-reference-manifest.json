@@ -1,9 +1,24 @@
 {
   "node": {
+    "007a492ff3da995ffc6fe884c1385881a8b5ab44e9": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
     "4052a7d1f46c0a028198c1f37200896feb2d7200a3": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "getProjects",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -18,7 +33,7 @@
     "60aa0eb5621a561e50a062d75d613a1f94b78cb619": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -33,7 +48,7 @@
     "70ec8de4bd180a36f98d47bc35bbc15186253fbf2f": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
@@ -48,7 +63,7 @@
     "60ffeae8b5dc590ed43163967b5ee0f8cd35297d21": {
       "workers": {
         "app/(admin-panel)/admin/benevity-projects/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteProject",
           "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"

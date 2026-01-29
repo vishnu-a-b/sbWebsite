@@ -26,6 +26,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { logout } from '@/app/(admin-panel)/admin/login/actions';
 
 function SidebarDropdown({ label, icon: Icon, items, currentPath }: any) {
     const isChildActive = items.some((item: any) => currentPath === item.href || currentPath.startsWith(item.href + '?'));
@@ -242,10 +243,15 @@ export default function AdminSidebar() {
 
       {/* Footer */}
       <div className="relative p-4 border-t border-white/20">
-        <button className="flex items-center gap-3 px-4 py-3.5 rounded-xl hover:bg-red-500/20 w-full transition-all text-left border border-white/10 hover:border-red-400/50 group">
-          <LogOut className="w-5 h-5 text-secondary group-hover:text-red-300" />
-          <span className="font-medium">Logout</span>
-        </button>
+        <form action={logout} className="w-full">
+          <button 
+            type="submit"
+            className="flex items-center gap-3 px-4 py-3.5 rounded-xl hover:bg-red-500/20 w-full transition-all text-left border border-white/10 hover:border-red-400/50 group"
+          >
+            <LogOut className="w-5 h-5 text-secondary group-hover:text-red-300" />
+            <span className="font-medium">Logout</span>
+          </button>
+        </form>
       </div>
     </div>
   );
