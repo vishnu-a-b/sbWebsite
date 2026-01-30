@@ -18,6 +18,32 @@ interface CreateAdminRequestBody {
   role: AdminRole;
 }
 
+// Generate tokens
+const generateTokens = (adminId: string, role: string) => {
+  const jwtSecret = process.env.JWT_SECRET;
+  const refreshSecret = process.env.JWT_REFRESH_SECRET || jwtSecret;
+
+  if (!jwtSecret) {
+    throw new Error('JWT_SECRET not configured');
+  }
+
+  // Access token - short lived (15 minutes)
+  const accessToken = jwt.sign(
+    { adminId, role, type: 'access' },
+    jwtSecret,
+    { expiresIn: '15m' as StringValue }
+  );
+
+  // Refresh token - long lived (7 days)
+  const refreshToken = jwt.sign(
+    { adminId, role, type: 'refresh' },
+    refreshSecret!,
+    { expiresIn: '7d' as StringValue }
+  );
+
+  return { accessToken, refreshToken };
+};
+
 // Login
 router.post('/login', async (req: Request<{}, {}, LoginRequestBody>, res: Response): Promise<void> => {
   try {
@@ -40,20 +66,12 @@ router.post('/login', async (req: Request<{}, {}, LoginRequestBody>, res: Respon
       return;
     }
 
-    const jwtSecret = process.env.JWT_SECRET;
-    if (!jwtSecret) {
-      throw new Error('JWT_SECRET not configured');
-    }
-
-    const token = jwt.sign(
-      { adminId: admin._id, role: admin.role },
-      jwtSecret,
-      { expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as StringValue }
-    );
+    const { accessToken, refreshToken } = generateTokens(admin._id.toString(), admin.role);
 
     res.json({
       success: true,
-      token,
+      accessToken,
+      refreshToken,
       admin: {
         id: admin._id,
         username: admin.username,
@@ -64,6 +82,60 @@ router.post('/login', async (req: Request<{}, {}, LoginRequestBody>, res: Respon
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ success: false, error: 'Login failed' });
+  }
+});
+
+// Refresh token endpoint
+router.post('/refresh', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { refreshToken } = req.body;
+
+    if (!refreshToken) {
+      res.status(400).json({ success: false, error: 'Refresh token is required' });
+      return;
+    }
+
+    const refreshSecret = process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET;
+    if (!refreshSecret) {
+      throw new Error('JWT secrets not configured');
+    }
+
+    // Verify refresh token
+    const decoded = jwt.verify(refreshToken, refreshSecret) as { adminId: string; role: string; type: string };
+
+    if (decoded.type !== 'refresh') {
+      res.status(401).json({ success: false, error: 'Invalid token type' });
+      return;
+    }
+
+    // Check if admin still exists and is active
+    const admin = await Admin.findOne({ _id: decoded.adminId, isActive: true });
+    if (!admin) {
+      res.status(401).json({ success: false, error: 'Admin not found or inactive' });
+      return;
+    }
+
+    // Generate new tokens
+    const tokens = generateTokens(admin._id.toString(), admin.role);
+
+    res.json({
+      success: true,
+      accessToken: tokens.accessToken,
+      refreshToken: tokens.refreshToken,
+      admin: {
+        id: admin._id,
+        username: admin.username,
+        email: admin.email,
+        role: admin.role
+      }
+    });
+  } catch (error) {
+    if (error instanceof jwt.TokenExpiredError) {
+      res.status(401).json({ success: false, error: 'Refresh token expired' });
+      return;
+    }
+    console.error('Refresh token error:', error);
+    res.status(401).json({ success: false, error: 'Invalid refresh token' });
   }
 });
 

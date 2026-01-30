@@ -6,9 +6,11 @@ export function middleware(request: NextRequest) {
 
   // Protect all /admin routes except /admin/login
   if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-    const authToken = request.cookies.get('admin_token');
+    const accessToken = request.cookies.get('admin_access_token');
+    const refreshToken = request.cookies.get('admin_refresh_token');
 
-    if (!authToken || !authToken.value) {
+    // If no tokens at all, redirect to login
+    if (!accessToken && !refreshToken) {
       const loginUrl = new URL('/admin/login', request.url);
       return NextResponse.redirect(loginUrl);
     }
@@ -16,9 +18,10 @@ export function middleware(request: NextRequest) {
 
   // Redirect logged-in users away from login page
   if (pathname === '/admin/login') {
-    const authToken = request.cookies.get('admin_token');
+    const accessToken = request.cookies.get('admin_access_token');
+    const refreshToken = request.cookies.get('admin_refresh_token');
 
-    if (authToken && authToken.value) {
+    if (accessToken || refreshToken) {
       const adminUrl = new URL('/admin', request.url);
       return NextResponse.redirect(adminUrl);
     }
