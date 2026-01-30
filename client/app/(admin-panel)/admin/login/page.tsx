@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { login } from './actions';
 import { Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -14,11 +16,24 @@ export default function LoginPage() {
     setError(null);
 
     const formData = new FormData(e.currentTarget);
-    const result = await login(formData);
 
-    if (result?.error) {
-      setError(result.error);
-      setLoading(false);
+    try {
+      const result = await login(formData);
+
+      if (result?.error) {
+        setError(result.error);
+        setLoading(false);
+      } else {
+        // If no error returned, redirect might have been blocked
+        // Force navigation
+        router.push('/admin');
+        router.refresh();
+      }
+    } catch (err) {
+      // Redirect throws an error in Next.js, so this might be expected
+      // Try to navigate anyway
+      router.push('/admin');
+      router.refresh();
     }
   };
 

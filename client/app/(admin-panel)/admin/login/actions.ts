@@ -26,6 +26,8 @@ export async function login(formData: FormData) {
     return { error: 'Username and password are required' };
   }
 
+  let shouldRedirect = false;
+
   try {
     const response = await fetch(`${API_URL}/api/admin/login`, {
       method: 'POST',
@@ -71,7 +73,7 @@ export async function login(formData: FormData) {
         path: '/',
       });
 
-      redirect('/admin');
+      shouldRedirect = true;
     } else {
       return { error: data.error || 'Login failed' };
     }
@@ -79,6 +81,13 @@ export async function login(formData: FormData) {
     console.error('Login error:', error);
     return { error: 'Unable to connect to server' };
   }
+
+  // Redirect outside try-catch to avoid catching redirect "error"
+  if (shouldRedirect) {
+    redirect('/admin');
+  }
+
+  return { error: 'Login failed' };
 }
 
 export async function logout() {
