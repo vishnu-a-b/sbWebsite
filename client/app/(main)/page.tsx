@@ -7,9 +7,12 @@ import * as LucideIcons from 'lucide-react';
 import BannerCarousel from '@/components/BannerCarousel';
 import { getBanners } from '@/app/actions/banner';
 import { getServices } from '@/app/actions/service';
+import { getActiveCampaigns } from '@/app/actions/campaign';
 import ProjectsSection from '@/components/ProjectsSection';
 import AwardsSection from '@/components/AwardsSection';
 import NewsEventsSection from '@/components/NewsEventsSection';
+import DonationSection from '@/components/DonationSection';
+import CampaignsSection from '@/components/CampaignsSection';
 import BenevitySection from '@/components/BenevitySection';
 import RevealAnimation from '@/components/RevealAnimation';
 import ParallaxSection from '@/components/ParallaxSection';
@@ -45,9 +48,10 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const [banners, services] = await Promise.all([
+  const [banners, services, campaigns] = await Promise.all([
     getBanners('home'),
-    getServices()
+    getServices(),
+    getActiveCampaigns()
   ]);
 
   // Structured data for SEO
@@ -222,6 +226,9 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Campaigns Section */}
+      <CampaignsSection campaigns={campaigns} />
+
       {/* Projects Section */}
       <ProjectsSection />
 
@@ -230,6 +237,9 @@ export default async function Home() {
 
       {/* News & Events Section */}
       <NewsEventsSection />
+
+      {/* Donation Section */}
+      <DonationSection />
 
       {/* Benevity Section */}
       <BenevitySection />

@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import Admin, { AdminRole } from '../modules/admin/admin.model.js';
 import Fellowship, { FellowshipStatus } from '../modules/fellowship/fellowship.model.js';
 import Donation, { DonationType, PaymentStatus, ApprovalStatus } from '../modules/donation/donation.model.js';
+import Campaign, { CampaignStatus } from '../modules/campaign/campaign.model.js';
 
 dotenv.config();
 
@@ -102,6 +103,89 @@ const fellowships = [
     isEmailVerified: true,
     totalPaid: 9000,
     totalPayments: 3
+  }
+];
+
+// Test Campaigns (will be linked to admin after creation)
+const campaigns = [
+  {
+    title: 'Food Challenge 2024',
+    slug: 'food-challenge-2024',
+    description: 'Help us provide nutritious meals to patients and their families. Our Food Challenge aims to ensure no one goes hungry while receiving care at Shanthibhavan. Every meal counts in the healing process.\n\nYour contribution will help us:\n- Serve 3 nutritious meals daily to all patients\n- Provide meals to family members staying with patients\n- Ensure special dietary needs are met\n- Maintain our kitchen facilities',
+    shortDescription: 'Provide nutritious meals to patients and families',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 500000,
+    raisedAmount: 125000,
+    donorCount: 45,
+    status: CampaignStatus.ACTIVE,
+    isFeatured: true,
+    startDate: new Date('2024-01-01')
+  },
+  {
+    title: 'Medical Equipment Fund',
+    slug: 'medical-equipment-2024',
+    description: 'We need to upgrade our medical equipment to provide better care. This campaign will help us purchase essential medical devices including monitors, wheelchairs, and diagnostic tools.\n\nEquipment we need:\n- Patient monitoring systems\n- Wheelchairs and mobility aids\n- Oxygen concentrators\n- Diagnostic equipment\n- Hospital beds with special features',
+    shortDescription: 'Upgrade medical equipment for better patient care',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 1000000,
+    raisedAmount: 350000,
+    donorCount: 78,
+    status: CampaignStatus.ACTIVE,
+    isFeatured: true,
+    startDate: new Date('2024-02-15')
+  },
+  {
+    title: 'Home Care Vehicle Fund',
+    slug: 'home-care-vehicle',
+    description: 'Our home care program reaches patients who cannot travel to the hospital. We need to add more vehicles to our fleet to expand our reach and serve more communities.\n\nWith your help, we can:\n- Purchase a new home care vehicle\n- Equip it with necessary medical supplies\n- Reach remote areas in need\n- Provide regular home visits to bedridden patients',
+    shortDescription: 'Expand home care reach with new vehicles',
+    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 800000,
+    raisedAmount: 280000,
+    donorCount: 52,
+    status: CampaignStatus.ACTIVE,
+    isFeatured: true,
+    startDate: new Date('2024-03-01')
+  },
+  {
+    title: 'Building Expansion Project',
+    slug: 'building-expansion',
+    description: 'To serve more patients, we need to expand our facility. This campaign will fund the construction of a new wing with 20 additional beds and a dedicated rehabilitation center.',
+    shortDescription: 'Expand facility with 20 new beds',
+    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 5000000,
+    raisedAmount: 750000,
+    donorCount: 120,
+    status: CampaignStatus.PAUSED,
+    isFeatured: false,
+    startDate: new Date('2023-06-01')
+  },
+  {
+    title: 'Winter Warmth Drive',
+    slug: 'winter-warmth-2023',
+    description: 'Provide blankets, warm clothing, and heating arrangements for patients during the winter months.',
+    shortDescription: 'Warmth essentials for patients in winter',
+    image: 'https://images.unsplash.com/photo-1469571486292-b53601020f29?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 200000,
+    raisedAmount: 200000,
+    donorCount: 89,
+    status: CampaignStatus.COMPLETED,
+    isFeatured: false,
+    startDate: new Date('2023-11-01'),
+    endDate: new Date('2024-01-31')
+  },
+  {
+    title: 'Ambulance Service',
+    slug: 'ambulance-service',
+    description: 'Draft campaign for acquiring a new ambulance to provide emergency transport services.',
+    shortDescription: 'New ambulance for emergency services',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1200&auto=format&fit=crop',
+    goalAmount: 800000,
+    raisedAmount: 0,
+    donorCount: 0,
+    status: CampaignStatus.DRAFT,
+    isFeatured: false,
+    startDate: new Date('2024-03-01')
   }
 ];
 
@@ -211,12 +295,17 @@ async function seed() {
     await Admin.deleteMany({});
     await Fellowship.deleteMany({});
     await Donation.deleteMany({});
+    await Campaign.deleteMany({});
     console.log('Existing data cleared');
 
     // Create Admin Users
     console.log('\nCreating admin users...');
+    let superAdminId = null;
     for (const admin of adminUsers) {
       const newAdmin = await Admin.create(admin);
+      if (newAdmin.role === AdminRole.SUPER_ADMIN) {
+        superAdminId = newAdmin._id;
+      }
       console.log(`  Created: ${newAdmin.username} (${newAdmin.role})`);
     }
 
@@ -237,6 +326,16 @@ async function seed() {
       });
       createdFellowships.push(newFellowship);
       console.log(`  Created: ${newFellowship.subscriberName} (${newFellowship.status})`);
+    }
+
+    // Create Campaigns
+    console.log('\nCreating campaigns...');
+    for (const campaign of campaigns) {
+      const newCampaign = await Campaign.create({
+        ...campaign,
+        createdBy: superAdminId
+      });
+      console.log(`  Created: ${newCampaign.title} (${newCampaign.status})`);
     }
 
     // Create Donations
@@ -265,6 +364,7 @@ async function seed() {
     console.log('----------------------------------------');
     console.log(`\nFellowships: ${createdFellowships.length}`);
     console.log(`Donations: ${donations.length}`);
+    console.log(`Campaigns: ${campaigns.length}`);
     console.log('\n');
 
   } catch (error) {

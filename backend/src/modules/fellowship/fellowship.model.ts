@@ -11,6 +11,7 @@ export interface IFellowshipDocument extends Document {
   // Subscriber Information
   subscriberName: string;
   email: string;
+  countryCode?: string;
   phone: string;
   address?: string;
   panNumber?: string;
@@ -60,6 +61,11 @@ const FellowshipSchema = new Schema<IFellowshipDocument>({
     lowercase: true,
     trim: true,
     index: true
+  },
+  countryCode: {
+    type: String,
+    trim: true,
+    default: '+91'
   },
   phone: {
     type: String,

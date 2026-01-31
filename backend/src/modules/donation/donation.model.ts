@@ -2,7 +2,8 @@ import { Schema, model, Document, Types } from 'mongoose';
 
 export enum DonationType {
   GENERAL = 'general',
-  FELLOWSHIP = 'fellowship'
+  FELLOWSHIP = 'fellowship',
+  CAMPAIGN = 'campaign'
 }
 
 export enum PaymentStatus {
@@ -23,6 +24,7 @@ export interface IDonationDocument extends Document {
   donorName: string;
   email: string;
   phone?: string;
+  countryCode?: string;
   panNumber?: string;
   address?: string;
 
@@ -61,6 +63,9 @@ export interface IDonationDocument extends Document {
   // Fellowship Link
   fellowshipId?: Types.ObjectId;
 
+  // Campaign Link
+  campaignId?: Types.ObjectId;
+
   // Timestamps
   createdAt: Date;
   updatedAt: Date;
@@ -82,6 +87,11 @@ const DonationSchema = new Schema<IDonationDocument>({
   phone: {
     type: String,
     trim: true
+  },
+  countryCode: {
+    type: String,
+    trim: true,
+    default: '+91'
   },
   panNumber: {
     type: String,
@@ -195,6 +205,12 @@ const DonationSchema = new Schema<IDonationDocument>({
   fellowshipId: {
     type: Schema.Types.ObjectId,
     ref: 'Fellowship'
+  },
+
+  // Campaign Link
+  campaignId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Campaign'
   }
 }, { timestamps: true });
 
