@@ -1,7 +1,76 @@
 import express, { Request, Response, Router } from 'express';
-import { BenevityBanner, BenevityProject } from './benevity.model.js';
+import { BenevityBanner, BenevityProject, BenevityPage } from './benevity.model.js';
 
 const router: Router = express.Router();
+
+// --- PAGE CONTENT (HERO) ---
+
+// GET Benevity Page Content
+router.get('/page', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    let page = await BenevityPage.findOne().sort({ createdAt: -1 });
+    res.json(page);
+  } catch (error) {
+    console.error('Error fetching benevity page content:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch page content' });
+  }
+});
+
+// UPDATE or CREATE Benevity Page Content
+router.post('/page', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const data = req.body;
+    let page = await BenevityPage.findOne();
+
+    if (page) {
+      page = await BenevityPage.findByIdAndUpdate(page._id, data, { new: true });
+    } else {
+      page = await BenevityPage.create(data);
+    }
+
+    res.json({ success: true, data: page });
+  } catch (error) {
+    console.error('Error saving benevity page content:', error);
+    res.status(500).json({ success: false, error: 'Failed to save page content' });
+  }
+});
+
+// SEED Benevity Page Content
+router.post('/page/seed', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    await BenevityPage.deleteMany({});
+
+    const defaultContent = {
+      badge: 'Donate Through Your Workplace',
+      title: 'Your Company Can',
+      highlightText: 'Double Your Donation',
+      description: 'Are you a corporate employee? Search for "Shanthibhavan" on your company\'s Benevity portal and donate today. Many employers match donations dollar-for-dollar — your $50 becomes $100 for patients in need.',
+      backgroundImage: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2000&auto=format&fit=crop',
+      stat1Value: '2x',
+      stat1Label: 'Your Donation Doubled',
+      stat2Value: '₹0',
+      stat2Label: 'Cost to Patients',
+      stat3Value: '100%',
+      stat3Label: 'Goes to Care',
+      ctaText: 'Donate Now on Benevity',
+      ctaLink: 'https://causes.benevity.org/',
+      secondaryCtaText: 'How to Donate',
+      secondaryCtaLink: '#how-it-works',
+      cardTitle: 'Why Donate via Benevity?',
+      cardSubtitle: 'Simple. Impactful. Matched.',
+      cardFeature1: 'Your employer may match your gift',
+      cardFeature2: 'Easy payroll deduction option',
+      cardFeature3: 'Instant tax receipt provided',
+      cardFeature4: '100% reaches Shanthibhavan',
+    };
+
+    const page = await BenevityPage.create(defaultContent);
+    res.json({ success: true, message: 'Seeded benevity page content', data: page });
+  } catch (error) {
+    console.error('Error seeding benevity page content:', error);
+    res.status(500).json({ success: false, error: 'Failed to seed page content' });
+  }
+});
 
 // --- BANNERS ---
 

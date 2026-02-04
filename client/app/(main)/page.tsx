@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Heart, Activity, Users, Truck, Clock, HandHeart } from 'lucide-react';
+import { Activity, Users, Clock, HandHeart } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import BannerCarousel from '@/components/BannerCarousel';
 import { getBanners } from '@/app/actions/banner';
 import { getServices } from '@/app/actions/service';
 import { getActiveCampaigns } from '@/app/actions/campaign';
+import { getAboutContent } from '@/app/actions/about';
 import ProjectsSection from '@/components/ProjectsSection';
 import AwardsSection from '@/components/AwardsSection';
 import NewsEventsSection from '@/components/NewsEventsSection';
@@ -48,10 +50,11 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const [banners, services, campaigns] = await Promise.all([
+  const [banners, services, campaigns, aboutContent] = await Promise.all([
     getBanners('home'),
     getServices(),
-    getActiveCampaigns()
+    getActiveCampaigns(),
+    getAboutContent()
   ]);
 
   // Structured data for SEO
@@ -93,48 +96,49 @@ export default async function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <>
       {/* Structured Data for SEO */}
-      <script
+      <Script
+        id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
+      <div className="flex flex-col min-h-screen bg-white">
       {/* Hero Section with Banner */}
       <BannerCarousel dbBanners={banners} />
 
       {/* About Section */}
       <section className="w-full py-20 md:py-32 bg-slate-50 relative overflow-hidden">
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
              style={{ backgroundImage: 'radial-gradient(#0f635c 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-        
+
         <div className="container px-4 md:px-6 mx-auto max-w-7xl relative z-10">
           <div className="grid gap-12 md:grid-cols-2 items-center">
             <RevealAnimation direction="left">
               <div className="space-y-6">
                 <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-2">
-                  Established 1993
+                  {aboutContent?.homeBadge || 'Established 1993'}
                 </div>
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-tight">
-                  The First Palliative Hospital in India
+                  {aboutContent?.homeTitle || 'The First Palliative Hospital in India'}
                 </h2>
                 <p className="text-gray-700 text-lg md:text-xl font-medium leading-relaxed">
-                  Shanthibhavan Palliative Hospital operates as a division of the Franciscan Sisters of St. Clare Charitable Trust.
+                  {aboutContent?.homeIntro || 'Shanthibhavan Palliative Hospital operates as a division of the Franciscan Sisters of St. Clare Charitable Trust.'}
                 </p>
                 <div className="w-20 h-1 bg-secondary rounded-full" />
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  We function as a no-bill hospital with 49 beds, providing comprehensive palliative care without bills and cash counters.
-                  Our aim is to improve the quality of life of people with life-limiting or disabling diseases.
+                  {aboutContent?.homeDescription || 'We function as a no-bill hospital with 49 beds, providing comprehensive palliative care without bills and cash counters. Our aim is to improve the quality of life of people with life-limiting or disabling diseases.'}
                 </p>
                 <div className="flex pt-4">
                   <Button asChild variant="default" size="lg" className="rounded-full px-8 hover:scale-105 transition-transform">
-                    <Link href="/about">Learn More About Us</Link>
+                    <Link href={aboutContent?.homeButtonLink || '/about'}>{aboutContent?.homeButtonText || 'Learn More About Us'}</Link>
                   </Button>
                 </div>
               </div>
             </RevealAnimation>
-            
+
             <RevealAnimation direction="right" delay={0.2}>
               <div className="relative group">
                 <div className="absolute -inset-4 bg-primary/5 rounded-3xl rotate-2 transition-transform group-hover:rotate-1" />
@@ -142,7 +146,7 @@ export default async function Home() {
                 <ParallaxSection offset={-30}>
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl">
                     <Image
-                      src="https://shanthibhavan.in/images/products/5b46fcb5b0482.jpeg"
+                      src={aboutContent?.homeImage || 'https://shanthibhavan.in/images/products/5b46fcb5b0482.jpeg'}
                       alt="Hospital Care at Shanthibhavan"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -330,5 +334,6 @@ export default async function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -18,7 +18,8 @@ import { AdminRole } from '../admin/admin.model.js';
 const router: Router = express.Router();
 
 // Public routes
-router.post('/subscribe', createFellowship);
+router.post('/', createFellowship); // Create new fellowship (public - for donation page)
+router.post('/subscribe', createFellowship); // Alias for backward compatibility
 router.get('/verify/:token', verifyEmail);
 router.get('/lookup/:email', getFellowshipByEmail);
 

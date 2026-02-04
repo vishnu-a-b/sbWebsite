@@ -3235,7 +3235,28 @@ function AppContainer({ children }) {
                                         "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
                                         "unoptimized": ("TURBOPACK compile-time value", false),
                                         "domains": ("TURBOPACK compile-time value", []),
-                                        "remotePatterns": ("TURBOPACK compile-time value", []),
+                                        "remotePatterns": ("TURBOPACK compile-time value", [
+                                            ("TURBOPACK compile-time value", {
+                                                "protocol": ("TURBOPACK compile-time value", "https"),
+                                                "hostname": ("TURBOPACK compile-time value", "shanthibhavan.in"),
+                                                "pathname": ("TURBOPACK compile-time value", "/**")
+                                            }),
+                                            ("TURBOPACK compile-time value", {
+                                                "protocol": ("TURBOPACK compile-time value", "https"),
+                                                "hostname": ("TURBOPACK compile-time value", "images.unsplash.com"),
+                                                "pathname": ("TURBOPACK compile-time value", "/**")
+                                            }),
+                                            ("TURBOPACK compile-time value", {
+                                                "protocol": ("TURBOPACK compile-time value", "http"),
+                                                "hostname": ("TURBOPACK compile-time value", "127.0.0.1"),
+                                                "pathname": ("TURBOPACK compile-time value", "/**")
+                                            }),
+                                            ("TURBOPACK compile-time value", {
+                                                "protocol": ("TURBOPACK compile-time value", "http"),
+                                                "hostname": ("TURBOPACK compile-time value", "localhost"),
+                                                "pathname": ("TURBOPACK compile-time value", "/**")
+                                            })
+                                        ]),
                                         "localPatterns": ("TURBOPACK compile-time value", [
                                             ("TURBOPACK compile-time value", {
                                                 "pathname": ("TURBOPACK compile-time value", "**"),

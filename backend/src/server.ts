@@ -28,6 +28,8 @@ import benevityRoutes from './modules/benevity/benevity.routes.js';
 import adminRoutes from './modules/admin/admin.routes.js';
 import donationRoutes from './modules/donation/donation.routes.js';
 import fellowshipRoutes from './modules/fellowship/fellowship.routes.js';
+import campaignRoutes from './modules/campaign/campaign.routes.js';
+import footerRoutes from './modules/footer/footer.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -71,6 +73,8 @@ app.use('/api/benevity', benevityRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/donation', donationRoutes);
 app.use('/api/fellowship', fellowshipRoutes);
+app.use('/api/campaign', campaignRoutes);
+app.use('/api/footer', footerRoutes);
 
 // Health check route
 app.get('/api/health', (_req: Request, res: Response): void => {

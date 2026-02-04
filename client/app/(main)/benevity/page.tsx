@@ -1,22 +1,41 @@
 import { Button } from "@/components/ui/Button";
 export const dynamic = 'force-dynamic';
 import Link from "next/link";
-import { Heart, CheckCircle2, DollarSign, FileText, TrendingUp } from "lucide-react";
+import { Heart, CheckCircle2, FileText, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card";
-import BenevityHero from "@/components/BenevityHero";
-import { getBanners } from "@/app/actions/banner";
 import ProjectsSection from "@/components/ProjectsSection";
+import { getBenevityPageContent } from "@/app/actions/benevityPage";
+import BenevityHeroClient from "@/components/BenevityHeroClient";
 
 export default async function BenevityPage() {
-  const banners = await getBanners('benevity');
-  
+  const pageContent = await getBenevityPageContent();
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
-       {/* Hero Section */}
-       <BenevityHero slides={banners} />
+      {/* Modern Hero Section with CMS Content */}
+      <BenevityHeroClient content={pageContent} />
 
-       {/* Benevity Projects Section */}
-       <ProjectsSection type="benevity" />
+      {/* Video Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-primary">
+        <div className="container px-4 md:px-6 mx-auto max-w-5xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Watch Our Story</h2>
+            <p className="text-white/80">See how your support transforms lives</p>
+          </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/aI1NGyK-B4c?autoplay=1&rel=0"
+              title="Shanthibhavan Story"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Benevity Projects Section */}
+      <ProjectsSection type="benevity" />
 
       {/* Dignity Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-slate-50">
@@ -108,10 +127,8 @@ export default async function BenevityPage() {
         </div>
       </section>
 
-
-
       {/* How to Support Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-secondary/20">
+      <section id="how-it-works" className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-secondary/20">
         <div className="container px-4 md:px-6 mx-auto max-w-5xl">
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">How to Support Us Today</h2>

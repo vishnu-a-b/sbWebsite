@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import { Heart, ArrowDown } from 'lucide-react';
-import { useState } from 'react';
 
 interface VideoHeroProps {
   videoUrl: string;
@@ -25,8 +24,6 @@ export default function VideoHero({
   ctaLink,
   thumbnailUrl,
 }: VideoHeroProps) {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
     <section className="relative w-full h-[calc(100vh-64px)] min-h-[600px] overflow-hidden">
       {/* Video Background */}
@@ -38,7 +35,6 @@ export default function VideoHero({
           playsInline
           className="w-full h-full object-cover"
           poster={thumbnailUrl}
-          onLoadedData={() => setIsVideoLoaded(true)}
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
@@ -71,7 +67,7 @@ export default function VideoHero({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="glass-effect px-6 py-3 rounded-full flex items-center gap-2 "
+                className="glass-effect px-6 py-3 rounded-full flex items-center gap-2"
               >
                 <Heart className="w-4 h-4 text-red-400 fill-red-400 animate-pulse" />
                 <span className="text-white text-sm md:text-base font-medium">

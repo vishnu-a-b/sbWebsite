@@ -43,8 +43,11 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild variant="default" className="bg-primary hover:bg-primary/90">
-              <Link href="/donate">Donate Now</Link>
+            <Button asChild variant="default" className="bg-primary hover:bg-primary/90 gap-2">
+              <Link href="/donate">
+                <Heart className="w-4 h-4" />
+                Donate Now
+              </Link>
             </Button>
           </div>
 
@@ -72,8 +75,11 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="w-full bg-primary hover:bg-primary/90">
-            <Link href="/donate" onClick={() => setIsOpen(false)}>Donate Now</Link>
+          <Button asChild className="w-full bg-primary hover:bg-primary/90 gap-2">
+            <Link href="/donate" onClick={() => setIsOpen(false)}>
+              <Heart className="w-4 h-4" />
+              Donate Now
+            </Link>
           </Button>
         </div>
       )}

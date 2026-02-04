@@ -71,11 +71,40 @@ const AboutSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
     },
     storyDescription: {
         type: String,
-        required: true
+        default: ''
     },
     storyImage: {
         type: String,
-        required: true
+        default: ''
+    },
+    // Home page about section
+    homeTitle: {
+        type: String,
+        default: 'The First Palliative Hospital in India'
+    },
+    homeBadge: {
+        type: String,
+        default: 'Established 1993'
+    },
+    homeIntro: {
+        type: String,
+        default: 'Shanthibhavan Palliative Hospital operates as a division of the Franciscan Sisters of St. Clare Charitable Trust.'
+    },
+    homeDescription: {
+        type: String,
+        default: 'We function as a no-bill hospital with 49 beds, providing comprehensive palliative care without bills and cash counters. Our aim is to improve the quality of life of people with life-limiting or disabling diseases.'
+    },
+    homeImage: {
+        type: String,
+        default: 'https://shanthibhavan.in/images/products/5b46fcb5b0482.jpeg'
+    },
+    homeButtonText: {
+        type: String,
+        default: 'Learn More About Us'
+    },
+    homeButtonLink: {
+        type: String,
+        default: '/about'
     },
     mission: {
         title: {
@@ -136,9 +165,11 @@ const __TURBOPACK__default__export__ = About;
 "[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"00fb3d8c0f57b0831852eb6a04e1493af194a3af2e":"getAboutContent","405e078970def27525c7f2416c1e68e231e4e9d6ee":"updateAboutContent"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"009a27f21d06ce601c3db390f830955a0d52ae1e4c":"seedAboutContent","00fb3d8c0f57b0831852eb6a04e1493af194a3af2e":"getAboutContent","405e078970def27525c7f2416c1e68e231e4e9d6ee":"updateAboutContent"},"",""] */ __turbopack_context__.s([
     "getAboutContent",
     ()=>getAboutContent,
+    "seedAboutContent",
+    ()=>seedAboutContent,
     "updateAboutContent",
     ()=>updateAboutContent
 ]);
@@ -201,13 +232,62 @@ async function updateAboutContent(data) {
         throw error;
     }
 }
+async function seedAboutContent() {
+    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$lib$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])();
+    try {
+        // Clear existing and create new
+        await __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$models$2f$About$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].deleteMany({});
+        const defaultContent = {
+            heroTitle: 'About Us',
+            heroSubtitle: "For the people, by the people. India's first palliative hospital without bills or bill counters.",
+            storyTitle: 'Our Story',
+            storyDescription: `Shanthibhavan Palliative Hospital, located at Golden Hills, Venkode, Vattappara, Thiruvananthapuram, Kerala, stands as India's First Palliative Hospital. Operating as a division of the Franciscan Sisters of St. Clare Charitable Trust, the hospital was established with the blessings of Mar Andrews Thazhath, Archbishop of Thrissur, and co-founded by Rev. Father Joy Koothur, Sr. Beatrice Scalinci, and Sr. Maria Chiara.
+
+The hospital is a beacon of hope for the vulnerable, equipped with 49 beds, centralized oxygen systems, ICU with ventilator facilities, and a solar-powered dialysis unit. It operates as a "No-Bill" hospital—meaning there are no bills and no cash counters. Every service, from medical care to food and accommodation, is provided completely free of charge to registered patients.
+
+Our mission extends beyond hospital walls with 15 home care vehicles serving Thiruvananthapuram District, providing 24/7 emergency home care, free ambulance services, and comprehensive palliative support to those who need it most.`,
+            storyImage: 'https://shanthibhavan.in/images/banner/5b56c7058a275.jpeg',
+            // Home page about section
+            homeTitle: 'The First Palliative Hospital in India',
+            homeBadge: 'Established 1993',
+            homeIntro: 'Shanthibhavan Palliative Hospital operates as a division of the Franciscan Sisters of St. Clare Charitable Trust.',
+            homeDescription: 'We function as a no-bill hospital with 49 beds, providing comprehensive palliative care without bills and cash counters. Our aim is to improve the quality of life of people with life-limiting or disabling diseases.',
+            homeImage: 'https://shanthibhavan.in/images/products/5b46fcb5b0482.jpeg',
+            homeButtonText: 'Learn More About Us',
+            homeButtonLink: '/about',
+            mission: {
+                title: 'Our Mission',
+                description: 'To improve the quality of life for palliative bedridden patients, offering relief from pain and symptoms regardless of religion, caste, or creed.'
+            },
+            vision: {
+                title: 'Our Vision',
+                description: 'To become a general hospital providing emergency care and casualty services to all nearby people, supported entirely by public donations.'
+            },
+            motto: {
+                title: 'Our Motto',
+                description: '"For the people, by the people." We combine psychological and spiritual care to help people live as actively as possible until death.'
+            },
+            belief: {
+                title: 'Our Belief',
+                description: 'Every life is precious. There are no barriers here—everyone is equal. Shanthibhavan is a light of compassion, kindness, and eternal love.'
+            }
+        };
+        const about = await __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$models$2f$About$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].create(defaultContent);
+        return JSON.parse(JSON.stringify(about));
+    } catch (error) {
+        console.error("Failed to seed about content", error);
+        throw error;
+    }
+}
 ;
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
     getAboutContent,
-    updateAboutContent
+    updateAboutContent,
+    seedAboutContent
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getAboutContent, "00fb3d8c0f57b0831852eb6a04e1493af194a3af2e", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateAboutContent, "405e078970def27525c7f2416c1e68e231e4e9d6ee", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(seedAboutContent, "009a27f21d06ce601c3db390f830955a0d52ae1e4c", null);
 }),
 "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript) <locals>", ((__turbopack_context__) => {
 "use strict";
@@ -216,11 +296,14 @@ __turbopack_context__.s([]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$about$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)");
 ;
 ;
+;
 }),
 "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
+    "009a27f21d06ce601c3db390f830955a0d52ae1e4c",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$about$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["seedAboutContent"],
     "00fb3d8c0f57b0831852eb6a04e1493af194a3af2e",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$app$2f$actions$2f$about$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAboutContent"],
     "405e078970def27525c7f2416c1e68e231e4e9d6ee",

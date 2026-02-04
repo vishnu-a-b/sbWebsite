@@ -125,8 +125,9 @@ async function POST(request) {
         const filepath = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(fullUploadDir, filename);
         await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$fs$2f$promises__$5b$external$5d$__$28$fs$2f$promises$2c$__cjs$29$__["writeFile"])(filepath, buffer);
         // Return URL (pointing to backend static serve)
-        // TODO: Use env variable for backend URL
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001';
+        // Use API_BASE_URL and remove /api to get the root backend URL
+        const { default: API_BASE_URL } = await __turbopack_context__.A("[project]/Official/SbWebsite/client/lib/api.ts [app-route] (ecmascript, async loader)");
+        const backendUrl = API_BASE_URL.replace(/\/api$/, '');
         const url = `${backendUrl}/public/${subDir}/${filename}`;
         return __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             success: true,

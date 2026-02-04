@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import Donation, { DonationType, PaymentStatus } from './donation.model.js';
 import Transaction, { TransactionType } from './transaction.model.js';
 import Fellowship from '../fellowship/fellowship.model.js';
+import Campaign, { CampaignStatus } from '../campaign/campaign.model.js';
 import {
   buildPaymentRequest,
   validateAndVerifyResponse,
@@ -25,7 +26,8 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       panNumber,
       address,
       notes,
-      fellowshipId
+      fellowshipId,
+      campaignId
     } = req.body;
 
     // Validation
@@ -71,6 +73,26 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       }
     }
 
+    // If campaign donation, validate campaign exists and is active
+    if (campaignId) {
+      const campaign = await Campaign.findById(campaignId);
+      if (!campaign) {
+        res.status(404).json({
+          success: false,
+          error: 'Campaign not found'
+        });
+        return;
+      }
+
+      if (campaign.status !== CampaignStatus.ACTIVE) {
+        res.status(400).json({
+          success: false,
+          error: 'This campaign is not currently active'
+        });
+        return;
+      }
+    }
+
     // Generate unique order ID
     const gatewayOrderId = generateOrderId();
 
@@ -86,6 +108,7 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       notes,
       gatewayOrderId,
       fellowshipId,
+      campaignId,
       paymentStatus: PaymentStatus.PENDING
     });
 
@@ -194,6 +217,17 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
           fellowship.totalPayments += 1;
           fellowship.donations.push(donation._id);
           await fellowship.save();
+        }
+      }
+
+      // If campaign donation, update campaign
+      if (donation.campaignId) {
+        const campaign = await Campaign.findById(donation.campaignId);
+        if (campaign) {
+          campaign.raisedAmount += donation.amount;
+          campaign.donorCount += 1;
+          campaign.donations.push(donation._id);
+          await campaign.save();
         }
       }
     } else {
@@ -315,6 +349,17 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
             fellowship.totalPayments += 1;
             fellowship.donations.push(donation._id);
             await fellowship.save();
+          }
+        }
+
+        // Update campaign if applicable
+        if (donation.campaignId) {
+          const campaign = await Campaign.findById(donation.campaignId);
+          if (campaign && !campaign.donations.includes(donation._id)) {
+            campaign.raisedAmount += donation.amount;
+            campaign.donorCount += 1;
+            campaign.donations.push(donation._id);
+            await campaign.save();
           }
         }
       } else {
@@ -474,7 +519,8 @@ export const getDonationStats = async (_req: Request, res: Response): Promise<vo
       successfulDonations,
       totalAmount,
       generalAmount,
-      fellowshipAmount
+      fellowshipAmount,
+      campaignAmount
     ] = await Promise.all([
       Donation.countDocuments(),
       Donation.countDocuments({ paymentStatus: PaymentStatus.SUCCESS }),
@@ -499,6 +545,15 @@ export const getDonationStats = async (_req: Request, res: Response): Promise<vo
           }
         },
         { $group: { _id: null, total: { $sum: '$amount' } } }
+      ]),
+      Donation.aggregate([
+        {
+          $match: {
+            paymentStatus: PaymentStatus.SUCCESS,
+            donationType: DonationType.CAMPAIGN
+          }
+        },
+        { $group: { _id: null, total: { $sum: '$amount' } } }
       ])
     ]);
 
@@ -509,7 +564,8 @@ export const getDonationStats = async (_req: Request, res: Response): Promise<vo
         successfulDonations,
         totalAmount: totalAmount[0]?.total || 0,
         generalAmount: generalAmount[0]?.total || 0,
-        fellowshipAmount: fellowshipAmount[0]?.total || 0
+        fellowshipAmount: fellowshipAmount[0]?.total || 0,
+        campaignAmount: campaignAmount[0]?.total || 0
       }
     });
   } catch (error) {

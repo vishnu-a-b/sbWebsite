@@ -1,0 +1,65 @@
+{
+  "node": {
+    "007a492ff3da995ffc6fe884c1385881a8b5ab44e9": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/benevityPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "00b0e3d66c06e8c0968dc2df0cce15bab3dd500bba": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/benevityPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "getBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    },
+    "40a78c26d740582b230e7c9395e83848d130d94327": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/benevityPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "updateBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    },
+    "00ca80fd4d2553c377e9babdcefe91239b2f735c71": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/benevityPage.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "seedBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    }
+  },
+  "edge": {}
+}

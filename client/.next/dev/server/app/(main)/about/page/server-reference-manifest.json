@@ -1,5 +1,20 @@
 {
   "node": {
+    "009a27f21d06ce601c3db390f830955a0d52ae1e4c": {
+      "workers": {
+        "app/(main)/about/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/about/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/about/page": "rsc"
+      },
+      "exportedName": "seedAboutContent",
+      "filename": "Official/SbWebsite/client/app/actions/about.ts"
+    },
     "00fb3d8c0f57b0831852eb6a04e1493af194a3af2e": {
       "workers": {
         "app/(main)/about/page": {

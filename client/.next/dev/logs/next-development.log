@@ -1,17 +1,517 @@
-[00:00:01.663] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.771] Server  LOG     ✓ Ready in 1556ms
-[00:12:42.812] Server  LOG     ✓ Compiled in 1675ms
-[00:13:03.166] Server  LOG     ✓ Compiled in 511ms
-[00:13:27.291] Server  LOG     ✓ Compiled in 332ms
-[00:13:48.551] Server  LOG     ✓ Compiled in 201ms
-[00:14:09.732] Server  LOG     ✓ Compiled in 964ms
-[00:14:28.367] Server  LOG     ✓ Compiled in 269ms
-[00:17:03.019] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:05:43.970] Server  LOG     ✓ Compiled in 1724ms
-[04:05:45.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[04:06:54.942] Server  LOG     ✓ Compiled in 1790ms
-[04:07:23.829] Server  LOG     ✓ Compiled in 0ms
-[04:07:57.913] Server  LOG     ✓ Compiled in 289ms
-[04:08:15.391] Server  LOG     ✓ Finished filesystem cache database compaction in 10.7s
-[04:08:19.596] Server  LOG     ✓ Compiled in 410ms
-[04:15:44.455] Server  LOG     ✓ Compiled in 0ms
+[00:00:02.075] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.264] Server  LOG     ✓ Ready in 1698ms
+[00:00:03.781] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[00:00:04.211] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[00:00:04.551] Server  LOG     getProjects: Received data count: 3
+[00:00:05.095] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[00:00:05.186] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770101071327-67bpcp.jpg" "resolved to private ip" "[\"127.0.0.1\"]"
+[00:00:05.420] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:00:11.641] Server  LOG     ✓ Compiled in 103ms
+[00:00:15.117] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[00:00:15.209] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[00:00:18.286] Server  LOG     [CMS] Fetched 9 services
+[00:03:33.996] Server  LOG     ✓ Compiled in 335ms
+[00:09:14.786] Server  LOG     ✓ Compiled in 36ms
+[01:39:44.312] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[01:39:44.382] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:39:50.182] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:39:51.333] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:39:53.297] Server  LOG     getServices: Fetched 9 services
+[01:39:53.614] Server  LOG     getServices: Fetched 9 services
+[01:39:53.615] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[01:39:54.319] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[01:39:54.346] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[01:39:54.968] Server  LOG     [CMS] Fetched 9 services
+[01:39:54.993] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[01:39:55.490] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:39:55.491] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:39:55.880] Server  LOG     getProjects: Received data count: 3
+[01:39:55.933] Server  LOG     [Awards] Response status: 200
+[01:39:55.934] Server  LOG     [Awards] Fetched awards count: 6
+[01:39:55.979] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[01:39:56.239] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:39:56.239] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:39:56.676] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[01:40:03.619] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[01:40:04.998] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[01:40:05.030] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[01:40:05.682] Server  LOG     [CMS] Fetched 9 services
+[01:40:05.701] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[01:40:15.709] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[01:40:15.726] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[01:40:16.416] Server  LOG     [CMS] Fetched 9 services
+[01:40:16.437] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[01:40:26.442] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[01:40:26.463] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[01:40:27.170] Server  LOG     [CMS] Fetched 9 services
+[02:43:42.290] Server  LOG     ✓ Compiled in 624ms
+[02:43:42.337] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[02:43:42.352] Server  LOG     getServices: Fetched 9 services
+[02:43:42.352] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[02:43:52.378] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[02:44:35.043] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[02:44:37.954] Server  LOG     getServices: Fetched 9 services
+[02:44:39.796] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[02:44:39.798] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[02:44:40.158] Server  LOG     [Awards] Response status: 200
+[02:44:40.160] Server  LOG     [Awards] Fetched awards count: 6
+[02:44:40.180] Server  LOG     getProjects: Received data count: 3
+[02:44:40.240] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[02:44:40.319] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[02:44:40.882] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[02:44:42.552] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[02:44:42.890] Server  LOG     getProjects: Received data count: 3
+[02:54:14.355] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[02:54:14.711] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[02:54:15.034] Server  LOG     getProjects: Received data count: 3
+[02:54:15.454] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[02:54:21.022] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[02:54:21.379] Server  LOG     getProjects: Received data count: 3
+[02:54:21.625] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:03:12.126] Server  LOG     ✓ Compiled in 1498ms
+[03:03:17.442] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:03:19.792] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:03:20.118] Server  LOG     getProjects: Received data count: 3
+[03:03:20.690] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:03:25.758] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:03:26.077] Server  LOG     getProjects: Received data count: 3
+[03:03:26.426] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:03:30.752] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:03:31.080] Server  LOG     getProjects: Received data count: 3
+[03:03:31.341] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:03:37.777] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:03:46.385] Server  LOG     getProjects: Received data count: 3
+[03:03:46.680] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:04:34.522] Server  LOG     ✓ Compiled in 262ms
+[03:05:29.533] Server  LOG     ✓ Compiled in 16ms
+[03:05:29.656] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:05:29.975] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:05:30.292] Server  LOG     getProjects: Received data count: 3
+[03:05:30.718] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:06:32.423] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:06:32.749] Server  LOG     getProjects: Received data count: 3
+[03:06:33.042] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:06:37.437] Server  LOG     ✓ Compiled in 146ms
+[03:06:54.552] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:06:54.906] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:06:55.269] Server  LOG     getProjects: Received data count: 3
+[03:06:55.601] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:06:58.414] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:06:58.737] Server  LOG     getProjects: Received data count: 3
+[03:06:58.997] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:13:24.952] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:24.992] Server  LOG     getProjects: Received data count: 3
+[03:13:25.011] Server  LOG     ✓ Compiled in 1093ms
+[03:13:25.239] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.248] Server  LOG     getProjects: Received data count: 3
+[03:13:25.319] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.333] Server  LOG     getProjects: Received data count: 3
+[03:13:25.384] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.388] Server  LOG     getProjects: Received data count: 3
+[03:13:25.441] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.445] Server  LOG     getProjects: Received data count: 3
+[03:13:25.496] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.501] Server  LOG     getProjects: Received data count: 3
+[03:13:25.545] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.549] Server  LOG     getProjects: Received data count: 3
+[03:13:25.599] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.603] Server  LOG     getProjects: Received data count: 3
+[03:13:25.650] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.655] Server  LOG     getProjects: Received data count: 3
+[03:13:25.699] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.704] Server  LOG     getProjects: Received data count: 3
+[03:13:25.764] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.769] Server  LOG     getProjects: Received data count: 3
+[03:13:25.817] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.821] Server  LOG     getProjects: Received data count: 3
+[03:13:25.875] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.879] Server  LOG     getProjects: Received data count: 3
+[03:13:25.929] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.932] Server  LOG     getProjects: Received data count: 3
+[03:13:25.983] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:25.987] Server  LOG     getProjects: Received data count: 3
+[03:13:26.026] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.030] Server  LOG     getProjects: Received data count: 3
+[03:13:26.077] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.081] Server  LOG     getProjects: Received data count: 3
+[03:13:26.135] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.140] Server  LOG     getProjects: Received data count: 3
+[03:13:26.180] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.183] Server  LOG     getProjects: Received data count: 3
+[03:13:26.242] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.246] Server  LOG     getProjects: Received data count: 3
+[03:13:26.335] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.340] Server  LOG     getProjects: Received data count: 3
+[03:13:26.388] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.392] Server  LOG     getProjects: Received data count: 3
+[03:13:26.443] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.446] Server  LOG     getProjects: Received data count: 3
+[03:13:26.487] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.491] Server  LOG     getProjects: Received data count: 3
+[03:13:26.532] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.536] Server  LOG     getProjects: Received data count: 3
+[03:13:26.596] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.599] Server  LOG     getProjects: Received data count: 3
+[03:13:26.642] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.646] Server  LOG     getProjects: Received data count: 3
+[03:13:26.709] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.722] Server  LOG     getProjects: Received data count: 3
+[03:13:26.841] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.845] Server  LOG     getProjects: Received data count: 3
+[03:13:26.892] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.896] Server  LOG     getProjects: Received data count: 3
+[03:13:26.932] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.940] Server  LOG     getProjects: Received data count: 3
+[03:13:26.979] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:26.985] Server  LOG     getProjects: Received data count: 3
+[03:13:27.027] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.030] Server  LOG     getProjects: Received data count: 3
+[03:13:27.074] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.078] Server  LOG     getProjects: Received data count: 3
+[03:13:27.104] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.108] Server  LOG     getProjects: Received data count: 3
+[03:13:27.152] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.157] Server  LOG     getProjects: Received data count: 3
+[03:13:27.211] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.215] Server  LOG     getProjects: Received data count: 3
+[03:13:27.275] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.284] Server  LOG     getProjects: Received data count: 3
+[03:13:27.356] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.363] Server  LOG     getProjects: Received data count: 3
+[03:13:27.423] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.427] Server  LOG     getProjects: Received data count: 3
+[03:13:27.490] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.495] Server  LOG     getProjects: Received data count: 3
+[03:13:27.558] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.563] Server  LOG     getProjects: Received data count: 3
+[03:13:27.693] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.697] Server  LOG     getProjects: Received data count: 3
+[03:13:27.748] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.752] Server  LOG     getProjects: Received data count: 3
+[03:13:27.796] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.801] Server  LOG     getProjects: Received data count: 3
+[03:13:27.852] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.859] Server  LOG     getProjects: Received data count: 3
+[03:13:27.945] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:27.949] Server  LOG     getProjects: Received data count: 3
+[03:13:28.032] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.036] Server  LOG     getProjects: Received data count: 3
+[03:13:28.095] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.099] Server  LOG     getProjects: Received data count: 3
+[03:13:28.136] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.141] Server  LOG     getProjects: Received data count: 3
+[03:13:28.180] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.183] Server  LOG     getProjects: Received data count: 3
+[03:13:28.224] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.228] Server  LOG     getProjects: Received data count: 3
+[03:13:28.289] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.293] Server  LOG     getProjects: Received data count: 3
+[03:13:28.341] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.344] Server  LOG     getProjects: Received data count: 3
+[03:13:28.386] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.391] Server  LOG     getProjects: Received data count: 3
+[03:13:28.433] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.437] Server  LOG     getProjects: Received data count: 3
+[03:13:28.483] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.487] Server  LOG     getProjects: Received data count: 3
+[03:13:28.556] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.562] Server  LOG     getProjects: Received data count: 3
+[03:13:28.648] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.652] Server  LOG     getProjects: Received data count: 3
+[03:13:28.750] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.754] Server  LOG     getProjects: Received data count: 3
+[03:13:28.794] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.797] Server  LOG     getProjects: Received data count: 3
+[03:13:28.854] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.859] Server  LOG     getProjects: Received data count: 3
+[03:13:28.905] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.909] Server  LOG     getProjects: Received data count: 3
+[03:13:28.953] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:28.957] Server  LOG     getProjects: Received data count: 3
+[03:13:28.997] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.001] Server  LOG     getProjects: Received data count: 3
+[03:13:29.043] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.046] Server  LOG     getProjects: Received data count: 3
+[03:13:29.080] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.084] Server  LOG     getProjects: Received data count: 3
+[03:13:29.124] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.127] Server  LOG     getProjects: Received data count: 3
+[03:13:29.166] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.170] Server  LOG     getProjects: Received data count: 3
+[03:13:29.210] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.213] Server  LOG     getProjects: Received data count: 3
+[03:13:29.251] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.255] Server  LOG     getProjects: Received data count: 3
+[03:13:29.293] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.297] Server  LOG     getProjects: Received data count: 3
+[03:13:29.341] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.344] Server  LOG     getProjects: Received data count: 3
+[03:13:29.379] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.382] Server  LOG     getProjects: Received data count: 3
+[03:13:29.420] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.424] Server  LOG     getProjects: Received data count: 3
+[03:13:29.471] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.474] Server  LOG     getProjects: Received data count: 3
+[03:13:29.513] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.517] Server  LOG     getProjects: Received data count: 3
+[03:13:29.556] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.559] Server  LOG     getProjects: Received data count: 3
+[03:13:29.600] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.603] Server  LOG     getProjects: Received data count: 3
+[03:13:29.640] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.645] Server  LOG     getProjects: Received data count: 3
+[03:13:29.687] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.691] Server  LOG     getProjects: Received data count: 3
+[03:13:29.732] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.735] Server  LOG     getProjects: Received data count: 3
+[03:13:29.776] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.780] Server  LOG     getProjects: Received data count: 3
+[03:13:29.815] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.819] Server  LOG     getProjects: Received data count: 3
+[03:13:29.854] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.858] Server  LOG     getProjects: Received data count: 3
+[03:13:29.897] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.901] Server  LOG     getProjects: Received data count: 3
+[03:13:29.945] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.948] Server  LOG     getProjects: Received data count: 3
+[03:13:29.982] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:29.986] Server  LOG     getProjects: Received data count: 3
+[03:13:30.015] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.018] Server  LOG     getProjects: Received data count: 3
+[03:13:30.050] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.057] Server  LOG     getProjects: Received data count: 3
+[03:13:30.089] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.092] Server  LOG     getProjects: Received data count: 3
+[03:13:30.129] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.134] Server  LOG     getProjects: Received data count: 3
+[03:13:30.177] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.180] Server  LOG     getProjects: Received data count: 3
+[03:13:30.228] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.232] Server  LOG     getProjects: Received data count: 3
+[03:13:30.277] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.281] Server  LOG     getProjects: Received data count: 3
+[03:13:30.318] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.322] Server  LOG     getProjects: Received data count: 3
+[03:13:30.369] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.373] Server  LOG     getProjects: Received data count: 3
+[03:13:30.417] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.422] Server  LOG     getProjects: Received data count: 3
+[03:13:30.467] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.471] Server  LOG     getProjects: Received data count: 3
+[03:13:30.530] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.534] Server  LOG     getProjects: Received data count: 3
+[03:13:30.575] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.578] Server  LOG     getProjects: Received data count: 3
+[03:13:30.615] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.618] Server  LOG     getProjects: Received data count: 3
+[03:13:30.726] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.729] Server  LOG     getProjects: Received data count: 3
+[03:13:30.774] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.777] Server  LOG     getProjects: Received data count: 3
+[03:13:30.815] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.819] Server  LOG     getProjects: Received data count: 3
+[03:13:30.877] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.883] Server  LOG     getProjects: Received data count: 3
+[03:13:30.924] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.927] Server  LOG     getProjects: Received data count: 3
+[03:13:30.968] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:30.973] Server  LOG     getProjects: Received data count: 3
+[03:13:31.028] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.031] Server  LOG     getProjects: Received data count: 3
+[03:13:31.073] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.076] Server  LOG     getProjects: Received data count: 3
+[03:13:31.113] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.117] Server  LOG     getProjects: Received data count: 3
+[03:13:31.153] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.157] Server  LOG     getProjects: Received data count: 3
+[03:13:31.198] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.202] Server  LOG     getProjects: Received data count: 3
+[03:13:31.241] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.244] Server  LOG     getProjects: Received data count: 3
+[03:13:31.284] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.289] Server  LOG     getProjects: Received data count: 3
+[03:13:31.330] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.334] Server  LOG     getProjects: Received data count: 3
+[03:13:31.372] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.376] Server  LOG     getProjects: Received data count: 3
+[03:13:31.422] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.425] Server  LOG     getProjects: Received data count: 3
+[03:13:31.458] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:13:31.462] Server  LOG     getProjects: Received data count: 3
+[03:14:00.082] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:00.154] Server  LOG     getProjects: Received data count: 3
+[03:14:00.577] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:00.589] Server  LOG     getProjects: Received data count: 3
+[03:14:01.047] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:01.058] Server  LOG     getProjects: Received data count: 3
+[03:14:01.166] Server  LOG     ✓ Compiled in 4.5s
+[03:14:16.321] Server  LOG     ✓ Compiled in 617ms
+[03:14:42.762] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:42.856] Server  ERROR   ⨯ ReferenceError: Facebook is not defined
+[03:14:42.859] Server  LOG     getProjects: Received data count: 3
+[03:14:43.026] Server  LOG     ✓ Compiled in 1235ms
+[03:14:43.061] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:43.077] Server  ERROR   ⨯ ReferenceError: Facebook is not defined
+[03:14:43.079] Server  LOG     getProjects: Received data count: 3
+[03:14:43.127] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:43.135] Server  ERROR   ⨯ ReferenceError: Facebook is not defined
+[03:14:43.137] Server  LOG     getProjects: Received data count: 3
+[03:14:43.460] Browser ERROR   uncaughtError: ReferenceError: Facebook is not defined
+[03:14:52.809] Server  LOG     ✓ Compiled in 153ms
+[03:14:53.523] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:14:53.985] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:14:54.052] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:14:54.496] Server  LOG     getProjects: Received data count: 3
+[03:14:55.144] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:40:56.266] Server  LOG     ✓ Compiled in 315ms
+[03:40:56.841] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:40:56.858] Server  LOG     getProjects: Received data count: 3
+[03:40:56.928] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:40:56.939] Server  LOG     getProjects: Received data count: 3
+[03:40:57.005] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:40:57.013] Server  LOG     getProjects: Received data count: 3
+[03:41:35.827] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[03:41:42.375] Server  LOG     ○ Compiling /admin/footer ...
+[03:41:43.461] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[03:41:43.563] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[03:41:45.840] Server  ERROR   Failed to fetch services page content MongooseError: Operation `servicespages.findOne()` buffering timed out after 10000ms
+[03:41:47.349] Server  LOG     [CMS] Fetched 9 services
+[03:46:51.615] Server  ERROR   Failed to update footer content Error: Failed to update footer content
+[03:46:51.855] Server  ERROR   ⨯ Error: Failed to update footer content
+[03:46:53.947] Browser ERROR   Error saving content: {"digest":"3763535066","environmentName":"Server","name":"Error"}
+[03:48:12.048] Server  ERROR   Failed to update footer content Error: Failed to update footer content
+[03:48:12.304] Server  ERROR   ⨯ Error: Failed to update footer content
+[03:50:20.261] Browser ERROR   Error saving content: {"digest":"3763535066","environmentName":"Server","name":"Error"}
+[03:50:24.657] Server  ERROR   Failed to update footer content Error: Failed to update footer content
+[03:50:24.812] Server  ERROR   ⨯ Error: Failed to update footer content
+[03:50:26.686] Browser ERROR   Error saving content: {"digest":"3763535066","environmentName":"Server","name":"Error"}
+[03:50:35.410] Server  ERROR   Failed to update footer content Error: Failed to update footer content
+[03:50:35.554] Server  ERROR   ⨯ Error: Failed to update footer content
+[03:50:37.370] Browser ERROR   Error saving content: {"digest":"3763535066","environmentName":"Server","name":"Error"}
+[03:51:03.887] Server  ERROR   Failed to update footer content Error: Failed to update footer content
+[03:51:04.050] Server  ERROR   ⨯ Error: Failed to update footer content
+[03:51:05.828] Browser ERROR   Error saving content: {"digest":"3763535066","environmentName":"Server","name":"Error"}
+[03:55:44.970] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[03:55:45.715] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:55:46.222] Server  LOG     getProjects: Received data count: 3
+[03:55:46.593] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[03:56:39.113] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[03:56:39.424] Server  LOG     getProjects: Received data count: 3
+[03:56:39.778] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[04:00:29.301] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[04:00:29.614] Server  LOG     getProjects: Received data count: 3
+[04:00:29.952] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[04:09:44.958] Server  LOG     ✓ Compiled in 626ms
+[04:09:46.033] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[04:09:46.061] Server  LOG     getProjects: Received data count: 3
+[04:09:46.166] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[04:09:46.173] Server  LOG     getProjects: Received data count: 3
+[04:09:46.274] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[04:09:46.279] Server  LOG     getProjects: Received data count: 3
+[04:09:46.379] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[04:09:46.388] Server  LOG     getProjects: Received data count: 3
+[04:10:00.300] Server  LOG     ✓ Finished filesystem cache database compaction in 10.9s
+[21:06:27.721] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[21:06:31.235] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:06:31.700] Server  LOG     getProjects: Received data count: 3
+[21:15:57.621] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[21:15:57.828] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[21:16:00.313] Server  LOG     getServices: Fetched 9 services
+[21:16:00.409] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[21:16:00.410] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[21:16:00.837] Server  LOG     getProjects: Received data count: 3
+[21:16:00.858] Server  LOG     [Awards] Response status: 200
+[21:16:00.859] Server  LOG     [Awards] Fetched awards count: 6
+[21:16:01.026] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[21:16:01.174] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:16:01.385] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[21:16:01.385] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[21:16:12.748] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[21:16:21.439] Server  LOG     ○ Compiling /volunteer ...
+[21:16:23.102] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[21:16:27.481] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[21:16:28.016] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[21:20:03.648] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:20:05.148] Server  LOG     getProjects: Received data count: 3
+[21:26:43.618] Server  LOG     ✓ Compiled in 474ms
+[21:26:44.521] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:44.537] Server  LOG     getProjects: Received data count: 3
+[21:26:44.731] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:44.747] Server  LOG     getProjects: Received data count: 3
+[21:26:44.801] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:44.814] Server  LOG     getProjects: Received data count: 3
+[21:26:44.946] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:44.955] Server  LOG     getProjects: Received data count: 3
+[21:26:45.009] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:45.016] Server  LOG     getProjects: Received data count: 3
+[21:26:45.083] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:45.092] Server  LOG     getProjects: Received data count: 3
+[21:26:45.258] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:45.267] Server  LOG     getProjects: Received data count: 3
+[21:26:45.424] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:26:45.437] Server  LOG     getProjects: Received data count: 3
+[21:26:56.270] Server  LOG     ✓ Compiled in 187ms
+[21:27:31.936] Server  LOG     ✓ Compiled in 141ms
+[21:27:40.586] Server  LOG     ✓ Compiled in 211ms
+[21:27:46.737] Server  LOG     ✓ Compiled in 95ms
+[21:27:52.578] Server  LOG     ✓ Compiled in 88ms
+[21:28:44.186] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[21:28:44.568] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:28:44.969] Server  LOG     getProjects: Received data count: 3
+[21:28:45.180] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:28:45.315] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[21:28:55.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:29:19.832] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[21:29:19.906] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[21:29:29.913] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
+[21:29:29.931] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[21:29:39.938] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
+[21:29:39.955] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[21:29:40.243] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
+[21:29:49.962] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
+[21:29:50.247] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
+[21:30:47.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:30:49.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:35:36.628] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:35:36.649] Server  LOG     getProjects: Received data count: 3
+[21:35:37.325] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:35:37.340] Server  LOG     getProjects: Received data count: 3
+[21:35:37.367] Server  LOG     ✓ Compiled in 0ms
+[21:35:37.611] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:35:37.617] Server  LOG     getProjects: Received data count: 3
+[21:35:37.785] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:35:37.795] Server  LOG     getProjects: Received data count: 3
+[21:35:37.975] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects"
+[21:35:37.981] Server  LOG     getProjects: Received data count: 3
+[21:35:44.086] Server  LOG     ✓ Compiled in 191ms
+[21:36:15.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:37:04.162] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:37:57.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:40:17.305] Server  LOG     ✓ Compiled in 142ms
+[21:41:05.966] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[21:44:35.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:00:08.077] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[22:00:08.220] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[22:00:10.694] Server  LOG     getServices: Fetched 9 services
+[22:00:10.778] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[22:00:10.779] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[22:00:11.098] Server  LOG     [Awards] Response status: 200
+[22:00:11.098] Server  LOG     [Awards] Fetched awards count: 6
+[22:00:11.480] Server  LOG     getProjects: Received data count: 3
+[22:00:11.574] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[22:00:11.816] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:00:11.955] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[22:00:12.089] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[22:00:14.264] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[22:51:25.211] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[22:51:29.684] Server  LOG     getServices: Fetched 9 services
+[22:51:29.711] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[22:51:29.713] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[22:51:30.067] Server  LOG     [Awards] Response status: 200
+[22:51:30.069] Server  LOG     [Awards] Fetched awards count: 6
+[22:51:30.106] Server  LOG     getProjects: Received data count: 3
+[22:51:30.893] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[22:51:31.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:51:31.239] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[22:51:31.239] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[22:58:24.096] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

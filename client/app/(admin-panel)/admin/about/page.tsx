@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Save, Eye } from 'lucide-react';
 import MediaUpload from '@/components/admin/MediaUpload';
-import { getAboutContent, updateAboutContent } from '@/app/actions/about';
+import { getAboutContent, updateAboutContent, seedAboutContent } from '@/app/actions/about';
 
 interface AboutPageContent {
   _id?: string;
@@ -12,6 +12,14 @@ interface AboutPageContent {
   storyTitle: string;
   storyDescription: string;
   storyImage: string;
+  // Home page about section
+  homeTitle: string;
+  homeBadge: string;
+  homeIntro: string;
+  homeDescription: string;
+  homeImage: string;
+  homeButtonText: string;
+  homeButtonLink: string;
   mission: { title: string; description: string };
   vision: { title: string; description: string };
   motto: { title: string; description: string };
@@ -31,6 +39,14 @@ export default function AboutAdminPage() {
     storyTitle: 'Our Story',
     storyDescription: '',
     storyImage: '',
+    // Home page about section
+    homeTitle: 'The First Palliative Hospital in India',
+    homeBadge: 'Established 1993',
+    homeIntro: '',
+    homeDescription: '',
+    homeImage: '',
+    homeButtonText: 'Learn More About Us',
+    homeButtonLink: '/about',
     mission: { title: 'Our Mission', description: '' },
     vision: { title: 'Our Vision', description: '' },
     motto: { title: 'Our Motto', description: '' },
@@ -40,6 +56,7 @@ export default function AboutAdminPage() {
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [seeding, setSeeding] = useState(false);
 
   useEffect(() => {
     fetchAboutContent();
@@ -48,16 +65,46 @@ export default function AboutAdminPage() {
   const fetchAboutContent = async () => {
     try {
       const data = await getAboutContent();
+      console.log('Fetched about content:', data);
       if (data) {
-        // Ensure all nested fields exist
-        setContent({
-          ...data,
-          mission: data.mission || { title: 'Our Mission', description: '' },
-          vision: data.vision || { title: 'Our Vision', description: '' },
-          motto: data.motto || { title: 'Our Motto', description: '' },
-          belief: data.belief || { title: 'Our Belief', description: '' },
+        // Ensure all fields exist with proper defaults
+        const newContent = {
+          _id: data._id,
+          heroTitle: data.heroTitle || 'About Us',
+          heroSubtitle: data.heroSubtitle || '',
+          storyTitle: data.storyTitle || 'Our Story',
+          storyDescription: data.storyDescription || '',
+          storyImage: data.storyImage || '',
+          homeTitle: data.homeTitle || 'The First Palliative Hospital in India',
+          homeBadge: data.homeBadge || 'Established 1993',
+          homeIntro: data.homeIntro || '',
+          homeDescription: data.homeDescription || '',
+          homeImage: data.homeImage || '',
+          homeButtonText: data.homeButtonText || 'Learn More About Us',
+          homeButtonLink: data.homeButtonLink || '/about',
+          mission: {
+            title: data.mission?.title || 'Our Mission',
+            description: data.mission?.description || ''
+          },
+          vision: {
+            title: data.vision?.title || 'Our Vision',
+            description: data.vision?.description || ''
+          },
+          motto: {
+            title: data.motto?.title || 'Our Motto',
+            description: data.motto?.description || ''
+          },
+          belief: {
+            title: data.belief?.title || 'Our Belief',
+            description: data.belief?.description || ''
+          },
+          founderMessage: data.founderMessage || '',
           timeline: data.timeline || [],
-        });
+        };
+        console.log('Setting content to:', newContent);
+        setContent(newContent);
+      } else {
+        console.log('No data returned from getAboutContent');
       }
       setLoading(false);
     } catch (error) {
@@ -76,6 +123,57 @@ export default function AboutAdminPage() {
       alert('Error saving content');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleSeed = async () => {
+    if (!confirm('This will reset all about content to default values. Are you sure?')) {
+      return;
+    }
+    setSeeding(true);
+    try {
+      const data = await seedAboutContent();
+      if (data) {
+        setContent({
+          _id: data._id,
+          heroTitle: data.heroTitle || 'About Us',
+          heroSubtitle: data.heroSubtitle || '',
+          storyTitle: data.storyTitle || 'Our Story',
+          storyDescription: data.storyDescription || '',
+          storyImage: data.storyImage || '',
+          homeTitle: data.homeTitle || 'The First Palliative Hospital in India',
+          homeBadge: data.homeBadge || 'Established 1993',
+          homeIntro: data.homeIntro || '',
+          homeDescription: data.homeDescription || '',
+          homeImage: data.homeImage || '',
+          homeButtonText: data.homeButtonText || 'Learn More About Us',
+          homeButtonLink: data.homeButtonLink || '/about',
+          mission: {
+            title: data.mission?.title || 'Our Mission',
+            description: data.mission?.description || ''
+          },
+          vision: {
+            title: data.vision?.title || 'Our Vision',
+            description: data.vision?.description || ''
+          },
+          motto: {
+            title: data.motto?.title || 'Our Motto',
+            description: data.motto?.description || ''
+          },
+          belief: {
+            title: data.belief?.title || 'Our Belief',
+            description: data.belief?.description || ''
+          },
+          founderMessage: data.founderMessage || '',
+          timeline: data.timeline || [],
+        });
+      }
+      alert('Content seeded successfully!');
+    } catch (error) {
+      console.error('Error seeding content:', error);
+      alert('Error seeding content');
+    } finally {
+      setSeeding(false);
     }
   };
 
@@ -123,6 +221,13 @@ export default function AboutAdminPage() {
           <p className="text-gray-600 mt-1">Manage About Us page content</p>
         </div>
         <div className="flex gap-3">
+          <button
+            onClick={handleSeed}
+            disabled={seeding}
+            className="bg-orange-100 text-orange-700 px-6 py-3 rounded-lg hover:bg-orange-200 flex items-center gap-2 transition-all disabled:opacity-50"
+          >
+            {seeding ? 'Seeding...' : 'Seed Default'}
+          </button>
           <button className="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 flex items-center gap-2 transition-all">
             <Eye className="w-5 h-5" />
             Preview
@@ -160,6 +265,87 @@ export default function AboutAdminPage() {
                 onChange={(e) => setContent({ ...content, heroSubtitle: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 rows={2}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Home Page About Section */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b">Home Page About Section</h2>
+          <p className="text-gray-500 text-sm mb-6">This section appears on the home page as the introduction to the hospital.</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Badge Text</label>
+                <input
+                  type="text"
+                  value={content.homeBadge}
+                  onChange={(e) => setContent({ ...content, homeBadge: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="e.g., Established 1993"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Title</label>
+                <input
+                  type="text"
+                  value={content.homeTitle}
+                  onChange={(e) => setContent({ ...content, homeTitle: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="The First Palliative Hospital in India"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Introduction (Short)</label>
+                <textarea
+                  value={content.homeIntro}
+                  onChange={(e) => setContent({ ...content, homeIntro: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  rows={2}
+                  placeholder="A brief introduction about the hospital..."
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
+                <textarea
+                  value={content.homeDescription}
+                  onChange={(e) => setContent({ ...content, homeDescription: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  rows={4}
+                  placeholder="Detailed description for the home page..."
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Button Text</label>
+                  <input
+                    type="text"
+                    value={content.homeButtonText}
+                    onChange={(e) => setContent({ ...content, homeButtonText: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Learn More About Us"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Button Link</label>
+                  <input
+                    type="text"
+                    value={content.homeButtonLink}
+                    onChange={(e) => setContent({ ...content, homeButtonLink: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="/about"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <MediaUpload
+                type="image"
+                label="Home Page Image"
+                currentUrl={content.homeImage}
+                onUploadComplete={(url) => setContent({ ...content, homeImage: url })}
+                maxSize={5}
               />
             </div>
           </div>

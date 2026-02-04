@@ -32,7 +32,9 @@ import {
   UserPlus,
   CheckCircle,
   XCircle,
-  Wallet
+  Wallet,
+  Target,
+  Megaphone
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logout } from '@/app/(admin-panel)/admin/login/actions';
@@ -84,10 +86,11 @@ const menuItems: MenuItem[] = [
   { icon: Briefcase, label: 'Featured Projects', href: '/admin/projects', category: 'cms', roles: ['super_admin'] },
   { icon: Award, label: 'Awards & Recognition', href: '/admin/awards', category: 'cms', roles: ['super_admin'] },
   { icon: Newspaper, label: 'News & Events', href: '/admin/news-events', category: 'cms', roles: ['super_admin'] },
+  { icon: Heart, label: 'Benevity Page', href: '/admin/benevity', category: 'cms', roles: ['super_admin'] },
   { icon: Briefcase, label: 'Benevity Projects', href: '/admin/benevity-projects', category: 'cms', roles: ['super_admin'] },
-  { icon: Heart, label: 'Benevity Impact', href: '/admin/banners?location=benevity', category: 'cms', roles: ['super_admin'] },
   { icon: UserCircle, label: 'Team Members', href: '/admin/team', category: 'cms', roles: ['super_admin'] },
   { icon: Image, label: 'Gallery', href: '/admin/gallery', category: 'cms', roles: ['super_admin'] },
+  { icon: Settings, label: 'Footer Settings', href: '/admin/footer', category: 'cms', roles: ['super_admin'] },
 
   // Donation Management
   { icon: CreditCard, label: 'All Donations', href: '/admin/donations', category: 'donations', roles: ['super_admin', 'accounts'] },
@@ -101,6 +104,11 @@ const menuItems: MenuItem[] = [
   { icon: UserPlus, label: 'Add Fellowship', href: '/admin/fellowships/add', category: 'fellowship', roles: ['super_admin', 'agent'] },
   { icon: Clock, label: 'Overdue Payments', href: '/admin/fellowships/overdue', category: 'fellowship', roles: ['super_admin', 'accounts', 'agent'] },
   { icon: BarChart3, label: 'Fellowship Stats', href: '/admin/fellowships/stats', category: 'fellowship', roles: ['super_admin', 'accounts'] },
+
+  // Campaign Management
+  { icon: Target, label: 'All Campaigns', href: '/admin/campaigns', category: 'campaigns', roles: ['super_admin', 'accounts'] },
+  { icon: PlusCircle, label: 'Create Campaign', href: '/admin/campaigns/create', category: 'campaigns', roles: ['super_admin'] },
+  { icon: BarChart3, label: 'Campaign Stats', href: '/admin/campaigns/stats', category: 'campaigns', roles: ['super_admin', 'accounts'] },
 
   // Operations - Super Admin
   { icon: Users, label: 'Volunteers', href: '/admin/volunteers', category: 'operations', roles: ['super_admin'] },
@@ -222,6 +230,7 @@ export default function AdminSidebar() {
   const cmsItems = filteredItems.filter(item => item.category === 'cms');
   const donationItems = filteredItems.filter(item => item.category === 'donations');
   const fellowshipItems = filteredItems.filter(item => item.category === 'fellowship');
+  const campaignItems = filteredItems.filter(item => item.category === 'campaigns');
   const operationsItems = filteredItems.filter(item => item.category === 'operations');
   const settingsItems = filteredItems.filter(item => item.category === 'settings');
 
@@ -286,6 +295,16 @@ export default function AdminSidebar() {
             label="Fellowship"
             icon={Heart}
             items={fellowshipItems}
+            currentPath={pathname}
+          />
+        )}
+
+        {/* Campaigns Section */}
+        {campaignItems.length > 0 && (
+          <SidebarDropdown
+            label="Campaigns"
+            icon={Target}
+            items={campaignItems}
             currentPath={pathname}
           />
         )}

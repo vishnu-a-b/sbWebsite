@@ -1,6 +1,63 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 import { IBannerDocument } from '../banner/banner.model.js';
 import { IFeaturedProjectDocument } from '../featured-project/featured-project.model.js';
+
+// BENEVITY PAGE HERO CONTENT
+export interface IBenevityPageDocument extends Document {
+  // Hero Section
+  badge: string;
+  title: string;
+  highlightText: string;
+  description: string;
+  backgroundImage: string;
+  // Stats
+  stat1Value: string;
+  stat1Label: string;
+  stat2Value: string;
+  stat2Label: string;
+  stat3Value: string;
+  stat3Label: string;
+  // CTA
+  ctaText: string;
+  ctaLink: string;
+  secondaryCtaText: string;
+  secondaryCtaLink: string;
+  // Card Content
+  cardTitle: string;
+  cardSubtitle: string;
+  cardFeature1: string;
+  cardFeature2: string;
+  cardFeature3: string;
+  cardFeature4: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const BenevityPageSchema = new Schema<IBenevityPageDocument>({
+  badge: { type: String, default: 'Official Benevity Partner' },
+  title: { type: String, default: 'Double Your Impact with' },
+  highlightText: { type: String, default: 'Corporate Giving' },
+  description: { type: String, default: 'Join thousands of corporate employees making a difference. Your donation through Benevity can be matched by your employer, doubling the lives you save.' },
+  backgroundImage: { type: String, default: '' },
+  stat1Value: { type: String, default: '2x' },
+  stat1Label: { type: String, default: 'Matching Impact' },
+  stat2Value: { type: String, default: '500+' },
+  stat2Label: { type: String, default: 'Partner Companies' },
+  stat3Value: { type: String, default: '100%' },
+  stat3Label: { type: String, default: 'Tax Deductible' },
+  ctaText: { type: String, default: 'Donate via Benevity' },
+  ctaLink: { type: String, default: 'https://causes.benevity.org/' },
+  secondaryCtaText: { type: String, default: 'Learn How It Works' },
+  secondaryCtaLink: { type: String, default: '#how-it-works' },
+  cardTitle: { type: String, default: 'Benevity Platform' },
+  cardSubtitle: { type: String, default: 'Workplace Giving Made Easy' },
+  cardFeature1: { type: String, default: 'Automatic payroll deductions' },
+  cardFeature2: { type: String, default: 'Employer donation matching' },
+  cardFeature3: { type: String, default: 'Instant tax receipts' },
+  cardFeature4: { type: String, default: 'Track your impact' },
+}, { timestamps: true });
+
+export const BenevityPage = model<IBenevityPageDocument>('BenevityPage', BenevityPageSchema, 'benevity-page');
 
 // Re-use interfaces if possible, or define new ones if they diverge.
 // For now, they are identical in structure to their main counterparts.

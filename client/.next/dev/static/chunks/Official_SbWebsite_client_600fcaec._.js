@@ -430,6 +430,14 @@ function AboutAdminPage() {
         storyTitle: 'Our Story',
         storyDescription: '',
         storyImage: '',
+        // Home page about section
+        homeTitle: 'The First Palliative Hospital in India',
+        homeBadge: 'Established 1993',
+        homeIntro: '',
+        homeDescription: '',
+        homeImage: '',
+        homeButtonText: 'Learn More About Us',
+        homeButtonLink: '/about',
         mission: {
             title: 'Our Mission',
             description: ''
@@ -463,6 +471,13 @@ function AboutAdminPage() {
                 // Ensure all nested fields exist
                 setContent({
                     ...data,
+                    homeTitle: data.homeTitle || 'The First Palliative Hospital in India',
+                    homeBadge: data.homeBadge || 'Established 1993',
+                    homeIntro: data.homeIntro || '',
+                    homeDescription: data.homeDescription || '',
+                    homeImage: data.homeImage || '',
+                    homeButtonText: data.homeButtonText || 'Learn More About Us',
+                    homeButtonLink: data.homeButtonLink || '/about',
                     mission: data.mission || {
                         title: 'Our Mission',
                         description: ''
@@ -534,7 +549,7 @@ function AboutAdminPage() {
             children: "Loading about content..."
         }, void 0, false, {
             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-            lineNumber: 114,
+            lineNumber: 137,
             columnNumber: 12
         }, this);
     }
@@ -551,7 +566,7 @@ function AboutAdminPage() {
                                 children: "About Us Content"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 122,
+                                lineNumber: 145,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -559,13 +574,13 @@ function AboutAdminPage() {
                                 children: "Manage About Us page content"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 123,
+                                lineNumber: 146,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 121,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -578,14 +593,14 @@ function AboutAdminPage() {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 150,
                                         columnNumber: 13
                                     }, this),
                                     "Preview"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 126,
+                                lineNumber: 149,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -597,26 +612,26 @@ function AboutAdminPage() {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 158,
                                         columnNumber: 13
                                     }, this),
                                     saving ? 'Saving...' : 'Save Changes'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 130,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 125,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                lineNumber: 120,
+                lineNumber: 143,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -630,7 +645,7 @@ function AboutAdminPage() {
                                 children: "Hero Section"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 145,
+                                lineNumber: 168,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -643,7 +658,7 @@ function AboutAdminPage() {
                                                 children: "Page Title"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 148,
+                                                lineNumber: 171,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -656,13 +671,13 @@ function AboutAdminPage() {
                                                 className: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 172,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 170,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -672,7 +687,7 @@ function AboutAdminPage() {
                                                 children: "Subtitle / Introduction"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -685,25 +700,25 @@ function AboutAdminPage() {
                                                 rows: 2
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 158,
+                                                lineNumber: 181,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 146,
+                                lineNumber: 169,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 144,
+                        lineNumber: 167,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -714,7 +729,7 @@ function AboutAdminPage() {
                                 children: "Our Story"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 170,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -730,7 +745,7 @@ function AboutAdminPage() {
                                                         children: "Section Title"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 197,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -743,13 +758,13 @@ function AboutAdminPage() {
                                                         className: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 198,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 173,
+                                                lineNumber: 196,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -759,7 +774,7 @@ function AboutAdminPage() {
                                                         children: "Story Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 206,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -773,19 +788,19 @@ function AboutAdminPage() {
                                                         placeholder: "Tell the story of the hospital..."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 184,
+                                                        lineNumber: 207,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 182,
+                                                lineNumber: 205,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 195,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -800,24 +815,24 @@ function AboutAdminPage() {
                                             maxSize: 5
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                            lineNumber: 194,
+                                            lineNumber: 217,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 216,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 171,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 169,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -828,7 +843,7 @@ function AboutAdminPage() {
                                 children: "Core Values"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 207,
+                                lineNumber: 230,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -842,7 +857,7 @@ function AboutAdminPage() {
                                                 children: "Mission"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 211,
+                                                lineNumber: 234,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -856,7 +871,7 @@ function AboutAdminPage() {
                                                         placeholder: "Title"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 213,
+                                                        lineNumber: 236,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -867,19 +882,19 @@ function AboutAdminPage() {
                                                         placeholder: "Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 220,
+                                                        lineNumber: 243,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 235,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -890,7 +905,7 @@ function AboutAdminPage() {
                                                 children: "Vision"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 255,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -904,7 +919,7 @@ function AboutAdminPage() {
                                                         placeholder: "Title"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 234,
+                                                        lineNumber: 257,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -915,19 +930,19 @@ function AboutAdminPage() {
                                                         placeholder: "Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 264,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 233,
+                                                lineNumber: 256,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 254,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -938,7 +953,7 @@ function AboutAdminPage() {
                                                 children: "Motto"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 253,
+                                                lineNumber: 276,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -952,7 +967,7 @@ function AboutAdminPage() {
                                                         placeholder: "Title"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 255,
+                                                        lineNumber: 278,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -963,19 +978,19 @@ function AboutAdminPage() {
                                                         placeholder: "Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 262,
+                                                        lineNumber: 285,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 254,
+                                                lineNumber: 277,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 252,
+                                        lineNumber: 275,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -986,7 +1001,7 @@ function AboutAdminPage() {
                                                 children: "Belief"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 297,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1000,7 +1015,7 @@ function AboutAdminPage() {
                                                         placeholder: "Title"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 299,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1011,31 +1026,31 @@ function AboutAdminPage() {
                                                         placeholder: "Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 306,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 275,
+                                                lineNumber: 298,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 296,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 208,
+                                lineNumber: 231,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 206,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1046,7 +1061,7 @@ function AboutAdminPage() {
                                 children: "Founder's Message"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 297,
+                                lineNumber: 320,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1060,13 +1075,13 @@ function AboutAdminPage() {
                                 placeholder: "Message from the founder..."
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 298,
+                                lineNumber: 321,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 296,
+                        lineNumber: 319,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1080,7 +1095,7 @@ function AboutAdminPage() {
                                         children: "Timeline / History"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 310,
+                                        lineNumber: 333,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1089,13 +1104,13 @@ function AboutAdminPage() {
                                         children: "+ Add Item"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 311,
+                                        lineNumber: 334,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 309,
+                                lineNumber: 332,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1105,7 +1120,7 @@ function AboutAdminPage() {
                                     children: "No timeline items yet. Add one to show the hospital's history."
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                    lineNumber: 320,
+                                    lineNumber: 343,
                                     columnNumber: 16
                                 }, this) : content.timeline.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "border border-gray-200 rounded-lg p-4 relative group hover:border-primary/30 transition-colors",
@@ -1121,7 +1136,7 @@ function AboutAdminPage() {
                                                                 children: "Year"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 328,
+                                                                lineNumber: 351,
                                                                 columnNumber: 24
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1141,13 +1156,13 @@ function AboutAdminPage() {
                                                                 placeholder: "2024"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 329,
+                                                                lineNumber: 352,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 327,
+                                                        lineNumber: 350,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1158,7 +1173,7 @@ function AboutAdminPage() {
                                                                 children: "Title"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 342,
+                                                                lineNumber: 365,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1178,13 +1193,13 @@ function AboutAdminPage() {
                                                                 placeholder: "Milestone Title"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 343,
+                                                                lineNumber: 366,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 341,
+                                                        lineNumber: 364,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1195,7 +1210,7 @@ function AboutAdminPage() {
                                                                 children: "Description"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 356,
+                                                                lineNumber: 379,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1215,19 +1230,19 @@ function AboutAdminPage() {
                                                                 placeholder: "Details about this milestone..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                                lineNumber: 357,
+                                                                lineNumber: 380,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 355,
+                                                        lineNumber: 378,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 326,
+                                                lineNumber: 349,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1245,50 +1260,50 @@ function AboutAdminPage() {
                                                         clipRule: "evenodd"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                        lineNumber: 376,
+                                                        lineNumber: 399,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                    lineNumber: 375,
+                                                    lineNumber: 398,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                                lineNumber: 370,
+                                                lineNumber: 393,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                        lineNumber: 325,
+                                        lineNumber: 348,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                                lineNumber: 318,
+                                lineNumber: 341,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                        lineNumber: 308,
+                        lineNumber: 331,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-                lineNumber: 141,
+                lineNumber: 164,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/about/page.tsx",
-        lineNumber: 118,
+        lineNumber: 141,
         columnNumber: 5
     }, this);
 }
-_s(AboutAdminPage, "qWFHS/TMoZFQurPBo469WWVEekM=");
+_s(AboutAdminPage, "BX2YyW1hVkUSBOBlqOpnrJaXkRU=");
 _c = AboutAdminPage;
 var _c;
 __turbopack_context__.k.register(_c, "AboutAdminPage");
