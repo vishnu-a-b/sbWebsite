@@ -1,9 +1,54 @@
 {
   "node": {
+    "00012cb6d3b08eb0083c4d6b43ea6ffb1212d7bea2": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 3052,
+          "async": false,
+          "exportedName": "seedFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "seedFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
+    "008187e7a77d22fe523a3cf05a3c21e61892315d7e": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 3052,
+          "async": false,
+          "exportedName": "getFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "getFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
+    "408f4957cc8373da69863fefbc4be7f40c0995107d": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 3052,
+          "async": false,
+          "exportedName": "updateFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "updateFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
     "0014905adf47fd89503fe29f063bd96a75f58fb24a": {
       "workers": {
         "app/(main)/services/page": {
-          "moduleId": 57972,
+          "moduleId": 3052,
           "async": false,
           "exportedName": "getServices",
           "filename": "Official/SbWebsite/client/app/actions/service.ts"
@@ -18,7 +63,7 @@
     "4065919ada0cbdcf8a42fc0aa481d395ce346b8b22": {
       "workers": {
         "app/(main)/services/page": {
-          "moduleId": 57972,
+          "moduleId": 3052,
           "async": false,
           "exportedName": "getServiceBySlug",
           "filename": "Official/SbWebsite/client/app/actions/service.ts"
@@ -33,7 +78,7 @@
     "009b0154bbc23be3db2cd797a244e8b59e5aa0a803": {
       "workers": {
         "app/(main)/services/page": {
-          "moduleId": 57972,
+          "moduleId": 3052,
           "async": false,
           "exportedName": "getServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
@@ -48,7 +93,7 @@
     "405a6fe9bd743e017a8dfe48745bfa82c9f6afed39": {
       "workers": {
         "app/(main)/services/page": {
-          "moduleId": 57972,
+          "moduleId": 3052,
           "async": false,
           "exportedName": "updateServicesPageContent",
           "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"

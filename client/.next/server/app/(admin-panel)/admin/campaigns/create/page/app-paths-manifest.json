@@ -1,0 +1,3 @@
+{
+  "/(admin-panel)/admin/campaigns/create/page": "app/(admin-panel)/admin/campaigns/create/page.js"
+}

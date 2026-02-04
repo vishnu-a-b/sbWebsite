@@ -1,0 +1,65 @@
+{
+  "node": {
+    "009faadb1529b4cea0c09a05987a31705883f2c05d": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": 73669,
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "logout",
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+    },
+    "0067f3ad1338d72934c3426a827fd0842d13381503": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": 73669,
+          "async": false,
+          "exportedName": "getBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "getBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    },
+    "40e145880ea6e85e173be923adb88bbd3cc3ad6872": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": 73669,
+          "async": false,
+          "exportedName": "updateBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "updateBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    },
+    "00ef7483a52736349de95566e42c069ac34939c44c": {
+      "workers": {
+        "app/(admin-panel)/admin/benevity/page": {
+          "moduleId": 73669,
+          "async": false,
+          "exportedName": "seedBenevityPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/benevity/page": "action-browser"
+      },
+      "exportedName": "seedBenevityPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/benevityPage.ts"
+    }
+  },
+  "edge": {}
+}

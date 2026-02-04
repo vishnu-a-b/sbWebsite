@@ -54,21 +54,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
 async function getFooterContent() {
     try {
-        // Add timestamp to bypass any caching
-        const res = await fetch(`${API_URL}/api/footer?t=${Date.now()}`, {
-            cache: 'no-store',
-            headers: {
-                'Cache-Control': 'no-cache'
+        const res = await fetch(`${API_URL}/api/footer`, {
+            next: {
+                revalidate: 60
             }
         });
         if (!res.ok) {
-            console.error("Failed to fetch footer content:", res.status);
             return null;
         }
         const data = await res.json();
         return data;
-    } catch (error) {
-        console.error("Failed to fetch footer content", error);
+    } catch  {
+        // Silently fail during build when backend is not available
         return null;
     }
 }

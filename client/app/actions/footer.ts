@@ -6,21 +6,16 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
 
 export async function getFooterContent() {
   try {
-    // Add timestamp to bypass any caching
-    const res = await fetch(`${API_URL}/api/footer?t=${Date.now()}`, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache',
-      },
+    const res = await fetch(`${API_URL}/api/footer`, {
+      next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
     if (!res.ok) {
-      console.error("Failed to fetch footer content:", res.status);
       return null;
     }
     const data = await res.json();
     return data;
-  } catch (error) {
-    console.error("Failed to fetch footer content", error);
+  } catch {
+    // Silently fail during build when backend is not available
     return null;
   }
 }

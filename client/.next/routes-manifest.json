@@ -22,6 +22,22 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/admin/campaigns/[id]",
+      "regex": "^/admin/campaigns/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/admin/campaigns/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/campaigns/[slug]",
+      "regex": "^/campaigns/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/campaigns/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/news-events/[id]",
       "regex": "^/news\\-events/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -96,10 +112,34 @@
       "namedRegex": "^/admin/banners(?:/)?$"
     },
     {
+      "page": "/admin/benevity",
+      "regex": "^/admin/benevity(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/benevity(?:/)?$"
+    },
+    {
       "page": "/admin/benevity-projects",
       "regex": "^/admin/benevity\\-projects(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/admin/benevity\\-projects(?:/)?$"
+    },
+    {
+      "page": "/admin/campaigns",
+      "regex": "^/admin/campaigns(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/campaigns(?:/)?$"
+    },
+    {
+      "page": "/admin/campaigns/create",
+      "regex": "^/admin/campaigns/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/campaigns/create(?:/)?$"
+    },
+    {
+      "page": "/admin/campaigns/stats",
+      "regex": "^/admin/campaigns/stats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/campaigns/stats(?:/)?$"
     },
     {
       "page": "/admin/donations",
@@ -156,6 +196,12 @@
       "namedRegex": "^/admin/fellowships/stats(?:/)?$"
     },
     {
+      "page": "/admin/footer",
+      "regex": "^/admin/footer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/footer(?:/)?$"
+    },
+    {
       "page": "/admin/homepage",
       "regex": "^/admin/homepage(?:/)?$",
       "routeKeys": {},
@@ -196,6 +242,12 @@
       "regex": "^/admin/team(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/admin/team(?:/)?$"
+    },
+    {
+      "page": "/admin/users",
+      "regex": "^/admin/users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users(?:/)?$"
     },
     {
       "page": "/api/about-image",
@@ -276,6 +328,12 @@
       "namedRegex": "^/benevity(?:/)?$"
     },
     {
+      "page": "/campaigns",
+      "regex": "^/campaigns(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/campaigns(?:/)?$"
+    },
+    {
       "page": "/contact",
       "regex": "^/contact(?:/)?$",
       "routeKeys": {},
@@ -286,6 +344,18 @@
       "regex": "^/donate(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/donate(?:/)?$"
+    },
+    {
+      "page": "/donate/failed",
+      "regex": "^/donate/failed(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/donate/failed(?:/)?$"
+    },
+    {
+      "page": "/donate/success",
+      "regex": "^/donate/success(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/donate/success(?:/)?$"
     },
     {
       "page": "/favicon.ico",

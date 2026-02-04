@@ -1,0 +1,3 @@
+module.exports=[89216,a=>{"use strict";var b=a.i(14669);a.s([],76172),a.i(76172),a.s(["00012cb6d3b08eb0083c4d6b43ea6ffb1212d7bea2",()=>b.seedFooterContent,"008187e7a77d22fe523a3cf05a3c21e61892315d7e",()=>b.getFooterContent,"408f4957cc8373da69863fefbc4be7f40c0995107d",()=>b.updateFooterContent],89216)}];
+
+//# sourceMappingURL=f09a4_client__next-internal_server_app_%28main%29_campaigns_page_actions_07e8eac8.js.map

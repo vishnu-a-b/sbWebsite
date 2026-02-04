@@ -1,13 +1,3 @@
 {
-  "/(admin-panel)/admin/benevity/page": "app/(admin-panel)/admin/benevity/page.js",
-  "/(admin-panel)/admin/footer/page": "app/(admin-panel)/admin/footer/page.js",
-  "/(admin-panel)/admin/login/page": "app/(admin-panel)/admin/login/page.js",
-  "/(admin-panel)/admin/page": "app/(admin-panel)/admin/page.js",
-  "/(admin-panel)/admin/services/page": "app/(admin-panel)/admin/services/page.js",
-  "/(main)/benevity/page": "app/(main)/benevity/page.js",
-  "/(main)/page": "app/(main)/page.js",
-  "/(main)/services/page": "app/(main)/services/page.js",
-  "/(main)/volunteer/page": "app/(main)/volunteer/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/stats/route": "app/api/stats/route.js"
+  "/(main)/page": "app/(main)/page.js"
 }

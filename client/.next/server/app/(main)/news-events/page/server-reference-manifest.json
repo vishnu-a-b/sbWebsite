@@ -1,9 +1,54 @@
 {
   "node": {
+    "00012cb6d3b08eb0083c4d6b43ea6ffb1212d7bea2": {
+      "workers": {
+        "app/(main)/news-events/page": {
+          "moduleId": 2867,
+          "async": false,
+          "exportedName": "seedFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/news-events/page": "rsc"
+      },
+      "exportedName": "seedFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
+    "008187e7a77d22fe523a3cf05a3c21e61892315d7e": {
+      "workers": {
+        "app/(main)/news-events/page": {
+          "moduleId": 2867,
+          "async": false,
+          "exportedName": "getFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/news-events/page": "rsc"
+      },
+      "exportedName": "getFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
+    "408f4957cc8373da69863fefbc4be7f40c0995107d": {
+      "workers": {
+        "app/(main)/news-events/page": {
+          "moduleId": 2867,
+          "async": false,
+          "exportedName": "updateFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/news-events/page": "rsc"
+      },
+      "exportedName": "updateFooterContent",
+      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+    },
     "0093ce4d5b25d93dd4293781c399aad7b62b6571eb": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "getPublicNewsEvents",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -18,7 +63,7 @@
     "00b79543d2d01295e8747ca7afc9a5d035f4635a41": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "getNewsEvents",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -33,7 +78,7 @@
     "40b2181f3656113591658ae5751d0a9f98f7efa739": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "getNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -48,7 +93,7 @@
     "40d59a2943de80ae7da28ddc9c992d6eeee551b3ae": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "deleteNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -63,7 +108,7 @@
     "40dfc5a8511bc8e3e99a8a25bdcce3d33720847164": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "createNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"
@@ -78,7 +123,7 @@
     "60ab4d566512ff8ce8277947363b4b5db520a73fb4": {
       "workers": {
         "app/(main)/news-events/page": {
-          "moduleId": 90890,
+          "moduleId": 2867,
           "async": false,
           "exportedName": "updateNewsEvent",
           "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts"

@@ -20,6 +20,31 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/benevity/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/[id]/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/create/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/stats/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
     "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/add/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
@@ -65,6 +90,11 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/footer/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
     "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/homepage/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
@@ -105,6 +135,11 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
+    "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/users/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
     "[project]/Official/SbWebsite/client/app/(main)/about/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
@@ -115,12 +150,32 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
+    "[project]/Official/SbWebsite/client/app/(main)/campaigns/[slug]/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(main)/campaigns/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
     "[project]/Official/SbWebsite/client/app/(main)/contact/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
     ],
+    "[project]/Official/SbWebsite/client/app/(main)/donate/failed/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
     "[project]/Official/SbWebsite/client/app/(main)/donate/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2",
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"
+    ],
+    "[project]/Official/SbWebsite/client/app/(main)/donate/success/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2",
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2"

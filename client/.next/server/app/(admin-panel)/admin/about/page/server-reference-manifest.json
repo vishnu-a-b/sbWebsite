@@ -44,6 +44,21 @@
       },
       "exportedName": "updateAboutContent",
       "filename": "Official/SbWebsite/client/app/actions/about.ts"
+    },
+    "003878d0ee858dbe2b58b46f1ea88510dff291fe13": {
+      "workers": {
+        "app/(admin-panel)/admin/about/page": {
+          "moduleId": 49425,
+          "async": false,
+          "exportedName": "seedAboutContent",
+          "filename": "Official/SbWebsite/client/app/actions/about.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/about/page": "action-browser"
+      },
+      "exportedName": "seedAboutContent",
+      "filename": "Official/SbWebsite/client/app/actions/about.ts"
     }
   },
   "edge": {}

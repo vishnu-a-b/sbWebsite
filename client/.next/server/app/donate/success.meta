@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(main)/layout,_N_T_/(main)/donate/layout,_N_T_/(main)/donate/success/layout,_N_T_/(main)/donate/success/page,_N_T_/donate/success"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KG1haW4p/donate/success/__PAGE__",
+    "/!KG1haW4p/donate/success",
+    "/!KG1haW4p/donate",
+    "/!KG1haW4p",
+    "/_index",
+    "/_head"
+  ]
+}
