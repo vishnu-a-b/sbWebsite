@@ -13,7 +13,8 @@ interface Stats {
   activeFellowships: number;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export default function FellowshipStatsPage() {
   const [stats, setStats] = useState<Stats | null>(null);
