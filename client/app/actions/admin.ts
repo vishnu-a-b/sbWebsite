@@ -1,24 +1,25 @@
 'use server';
 
-import connectToDatabase from "@/lib/db";
-import Volunteer from "@/models/Volunteer";
-import Contact from "@/models/Contact";
+// Remove trailing /api if present to avoid double /api/api paths
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export async function getAdminData(type: 'volunteers' | 'contacts') {
-  await connectToDatabase();
-
   try {
-    let data;
-    switch (type) {
-      case 'volunteers':
-        data = await Volunteer.find({}).sort({ createdAt: -1 }).lean();
-        break;
-      case 'contacts':
-        data = await Contact.find({}).sort({ createdAt: -1 }).lean();
-        break;
+    const endpoint = type === 'volunteers' ? 'volunteer' : 'contact';
+    const res = await fetch(`${API_URL}/api/${endpoint}`, {
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      console.error(`Failed to fetch ${type}: ${res.status}`);
+      return [];
     }
-    // Convert _id and dates to string to be passed to client
-    return JSON.parse(JSON.stringify(data));
+
+    const data = await res.json();
+
+    // Backend returns array directly for GET requests
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error("Failed to fetch admin data", error);
     return [];

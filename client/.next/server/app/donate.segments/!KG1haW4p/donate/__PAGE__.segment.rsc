@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[9624,["/_next/static/chunks/d544b14302600993.js","/_next/static/chunks/82706c94087a574b.js"],"ClientPageRoot"]
-3:I[57433,["/_next/static/chunks/f7f7fba58932c5fe.js","/_next/static/chunks/967cc2f19c283ef4.js","/_next/static/chunks/15c57668b241333b.js","/_next/static/chunks/a9342eee31dff3f8.js","/_next/static/chunks/fe902ac5a7ca01bb.js","/_next/static/chunks/bfe006692e55fe25.js"],"default"]
+3:I[57433,["/_next/static/chunks/f7f7fba58932c5fe.js","/_next/static/chunks/967cc2f19c283ef4.js","/_next/static/chunks/15c57668b241333b.js","/_next/static/chunks/a9342eee31dff3f8.js","/_next/static/chunks/779821bb0a1ad987.js","/_next/static/chunks/bfe006692e55fe25.js"],"default"]
 6:I[76422,["/_next/static/chunks/d544b14302600993.js","/_next/static/chunks/82706c94087a574b.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
 :HL["/_next/static/chunks/947b6a80bcdd8921.css","style"]
-0:{"buildId":"hpKGfoZmHelzBQ0lx5HmP","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/947b6a80bcdd8921.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/fe902ac5a7ca01bb.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/bfe006692e55fe25.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"3H4RcFdM07QyFYAXaU6Jo","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/947b6a80bcdd8921.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/779821bb0a1ad987.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/bfe006692e55fe25.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null

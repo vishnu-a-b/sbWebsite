@@ -1,15 +1,4 @@
-[00:00:01.695] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.796] Server  LOG     ✓ Ready in 1612ms
-[00:01:19.925] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[00:01:20.024] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[00:01:20.764] Server  LOG     getServices: Fetched 9 services
-[00:01:20.846] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[00:01:20.847] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[00:01:21.274] Server  LOG     getProjects: Received data count: 3
-[00:01:21.299] Server  LOG     [Awards] Response status: 200
-[00:01:21.300] Server  LOG     [Awards] Fetched awards count: 6
-[00:01:21.527] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
-[00:01:21.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:21.981] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[00:01:22.116] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:25.141] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:01.118] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.223] Server  LOG     ✓ Ready in 1026ms
+[00:00:05.926] Server  LOG     [CMS] Fetching services from: http://127.0.0.1:5002/api/services/admin
+[00:00:06.758] Server  LOG     [CMS] Fetched 9 services

@@ -16,7 +16,7 @@ R.c("server/chunks/ssr/4dc83_next_dist_client_components_builtin_forbidden_26269
 R.c("server/chunks/ssr/4dc83_next_dist_client_components_builtin_unauthorized_04ea6c66.js")
 R.c("server/chunks/ssr/Official_SbWebsite_client_app_(admin-panel)_layout_tsx_bdd79c72._.js")
 R.c("server/chunks/ssr/Official_SbWebsite_client_app_(admin-panel)_admin_layout_tsx_89bd8e71._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__1e3747b5._.js")
+R.c("server/chunks/ssr/Official_SbWebsite_client_fbad4e57._.js")
 R.c("server/chunks/ssr/Official_SbWebsite_client_be9078e8._.js")
 R.c("server/chunks/ssr/4dc83_next_dist_e8966e9e._.js")
 R.m(74001)

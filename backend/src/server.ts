@@ -24,6 +24,7 @@ import newsEventRoutes from './modules/news-event/news-event.routes.js';
 import teamMemberRoutes from './modules/team-member/team-member.routes.js';
 import homeSectionRoutes from './modules/home-section/home-section.routes.js';
 import aboutRoutes from './modules/about/about.routes.js';
+import aboutImageRoutes from './modules/about/about-image.routes.js';
 import benevityRoutes from './modules/benevity/benevity.routes.js';
 import adminRoutes from './modules/admin/admin.routes.js';
 import donationRoutes from './modules/donation/donation.routes.js';
@@ -62,6 +63,7 @@ app.use('/api/stats', statsRoutes);
 
 // Routes - CMS Content
 app.use('/api/about', aboutRoutes);
+app.use('/api/about-image', aboutImageRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/services-page', servicesPageRoutes);
 app.use('/api/projects', projectRoutes);

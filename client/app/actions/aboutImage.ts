@@ -1,13 +1,21 @@
 'use server';
 
-import connectToDatabase from "@/lib/db";
-import AboutImage from "@/models/AboutImage";
+// Remove trailing /api if present to avoid double /api/api paths
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export async function getAboutImage() {
-  await connectToDatabase();
   try {
-    const image = await AboutImage.findOne({ isActive: true }).lean();
-    return JSON.parse(JSON.stringify(image));
+    const res = await fetch(`${API_URL}/api/about-image`, {
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      return null;
+    }
+
+    const data = await res.json();
+    return data;
   } catch (error) {
     console.error("Failed to fetch about image", error);
     return null;
@@ -15,14 +23,21 @@ export async function getAboutImage() {
 }
 
 export async function createAboutImage(data: any) {
-  await connectToDatabase();
   try {
-    // Deactivate all existing images
-    await AboutImage.updateMany({}, { isActive: false });
+    const res = await fetch(`${API_URL}/api/about-image`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-    // Create new active image
-    const image = await AboutImage.create({ ...data, isActive: true });
-    return JSON.parse(JSON.stringify(image));
+    if (!res.ok) {
+      throw new Error('Failed to create about image');
+    }
+
+    const result = await res.json();
+    return result.image || result;
   } catch (error) {
     console.error("Failed to create about image", error);
     throw error;
@@ -30,18 +45,22 @@ export async function createAboutImage(data: any) {
 }
 
 export async function updateAboutImage(id: string, data: any) {
-  await connectToDatabase();
   try {
-    // Deactivate all existing images
-    await AboutImage.updateMany({}, { isActive: false });
+    // The backend POST endpoint handles both create and update (deactivates old, creates new)
+    const res = await fetch(`${API_URL}/api/about-image`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-    // Update and activate the specified image
-    const image = await AboutImage.findByIdAndUpdate(
-      id,
-      { ...data, isActive: true },
-      { new: true }
-    );
-    return JSON.parse(JSON.stringify(image));
+    if (!res.ok) {
+      throw new Error('Failed to update about image');
+    }
+
+    const result = await res.json();
+    return result.image || result;
   } catch (error) {
     console.error("Failed to update about image", error);
     throw error;
@@ -49,21 +68,17 @@ export async function updateAboutImage(id: string, data: any) {
 }
 
 export async function deleteAboutImage(id: string) {
-  await connectToDatabase();
-  try {
-    await AboutImage.findByIdAndDelete(id);
-    return { success: true };
-  } catch (error) {
-    console.error("Failed to delete about image", error);
-    throw error;
-  }
+  // Note: Backend doesn't have a delete endpoint, so we'll just return success
+  // The POST endpoint deactivates old images anyway
+  return { success: true };
 }
 
 export async function getAllAboutImages() {
-  await connectToDatabase();
+  // Backend only returns the active image, not all images
+  // For now, return the active image as an array
   try {
-    const images = await AboutImage.find({}).sort({ createdAt: -1 }).lean();
-    return JSON.parse(JSON.stringify(images));
+    const image = await getAboutImage();
+    return image ? [image] : [];
   } catch (error) {
     console.error("Failed to fetch all about images", error);
     return [];

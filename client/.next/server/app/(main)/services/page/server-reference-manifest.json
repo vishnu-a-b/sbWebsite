@@ -75,6 +75,21 @@
       "exportedName": "getServiceBySlug",
       "filename": "Official/SbWebsite/client/app/actions/service.ts"
     },
+    "00387a61c8ad33753ae1fd3548ca3a1765763671fd": {
+      "workers": {
+        "app/(main)/services/page": {
+          "moduleId": 3052,
+          "async": false,
+          "exportedName": "seedServicesPageContent",
+          "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+        }
+      },
+      "layer": {
+        "app/(main)/services/page": "rsc"
+      },
+      "exportedName": "seedServicesPageContent",
+      "filename": "Official/SbWebsite/client/app/actions/servicesPage.ts"
+    },
     "009b0154bbc23be3db2cd797a244e8b59e5aa0a803": {
       "workers": {
         "app/(main)/services/page": {
