@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
-import { existsSync } from 'fs';
+
+// Remove trailing /api if present to avoid double /api/api paths
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File;
-    const type = formData.get('type') as string || 'any';
 
     if (!file) {
       return NextResponse.json(
@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate file
-    const maxSize = 50 * 1024 * 1024; // 50MB
+    // Validate file size (50MB)
+    const maxSize = 50 * 1024 * 1024;
     if (file.size > maxSize) {
       return NextResponse.json(
         { success: false, error: 'File size must be less than 50MB' },
@@ -25,50 +25,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get file extension
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const ext = file.name.split('.').pop();
+    // Forward to backend upload API
+    const backendFormData = new FormData();
+    backendFormData.append('file', file);
 
-    // Generate unique filename
-    const timestamp = Date.now();
-    const randomString = Math.random().toString(36).substring(7);
-    const filename = `${timestamp}-${randomString}.${ext}`;
-
-    // Determine upload directory based on type
-    let subDir = 'uploads';
-    if (type === 'video' || file.type.startsWith('video/')) {
-      subDir = 'video';
-    } else if (type === 'image' || file.type.startsWith('image/')) {
-      subDir = 'images';
-    }
-
-    // Backend public directory path (assuming client and backend are siblings)
-    const backendPublicDir = path.join(process.cwd(), '../backend/public');
-    const fullUploadDir = path.join(backendPublicDir, subDir);
-
-    // Create directory if it doesn't exist
-    if (!existsSync(fullUploadDir)) {
-      await mkdir(fullUploadDir, { recursive: true });
-    }
-
-    // Write file
-    const filepath = path.join(fullUploadDir, filename);
-    await writeFile(filepath, buffer);
-
-    // Return URL (pointing to backend static serve)
-    // Use API_BASE_URL and remove /api to get the root backend URL
-    const { default: API_BASE_URL } = await import('@/lib/api');
-    const backendUrl = API_BASE_URL.replace(/\/api$/, '');
-    const url = `${backendUrl}/public/${subDir}/${filename}`;
-
-    return NextResponse.json({
-      success: true,
-      url,
-      filename,
-      size: file.size,
-      type: file.type
+    const response = await fetch(`${API_URL}/api/upload`, {
+      method: 'POST',
+      body: backendFormData,
     });
+
+    if (!response.ok) {
+      const error = await response.json();
+      return NextResponse.json(
+        { success: false, error: error.error || 'Upload failed' },
+        { status: response.status }
+      );
+    }
+
+    const data = await response.json();
+
+    // Convert relative URL to absolute URL pointing to backend
+    if (data.url && data.url.startsWith('/public/')) {
+      data.url = `${API_URL}${data.url}`;
+    }
+
+    return NextResponse.json(data);
   } catch (error) {
     console.error('Upload error:', error);
     return NextResponse.json(
