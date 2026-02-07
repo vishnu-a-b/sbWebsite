@@ -14,7 +14,6 @@ import {
   getPaymentStatusMessage,
   generateOrderId,
   isTerminalCancellation,
-  AUTH_STATUS,
 } from './utils/billdesk.util.js';
 import emailService from '../../services/email.service.js';
 
@@ -486,7 +485,7 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
  */
 export const checkTransactionStatus = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId as string;
 
     if (!orderId) {
       res.status(400).json({
