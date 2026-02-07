@@ -3,7 +3,8 @@ import { Schema, model, Document, Types } from 'mongoose';
 export enum TransactionType {
   PAYMENT_INITIATED = 'payment_initiated',
   PAYMENT_RETURN = 'payment_return',
-  PAYMENT_WEBHOOK = 'payment_webhook'
+  PAYMENT_WEBHOOK = 'payment_webhook',
+  STATUS_CHECK = 'status_check'
 }
 
 export interface ITransactionDocument extends Document {

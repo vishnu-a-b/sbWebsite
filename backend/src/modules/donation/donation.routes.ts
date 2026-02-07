@@ -3,6 +3,7 @@ import {
   initiateDonation,
   handleBillDeskReturn,
   handleBillDeskWebhook,
+  checkTransactionStatus,
   getDonationById,
   listDonations,
   getDonationStats
@@ -24,6 +25,7 @@ router.post('/initiate', initiateDonation);
 router.post('/callback/billdesk/return', handleBillDeskReturn);
 router.get('/callback/billdesk/return', handleBillDeskReturn); // Support both GET and POST
 router.post('/callback/billdesk/webhook', handleBillDeskWebhook);
+router.get('/status/:orderId', checkTransactionStatus); // Check transaction status (Step 7)
 
 // Offline payment routes (must be before /:id to avoid route conflicts)
 router.post('/offline',

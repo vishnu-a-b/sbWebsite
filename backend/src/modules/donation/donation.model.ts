@@ -38,6 +38,7 @@ export interface IDonationDocument extends Document {
   paymentStatus: PaymentStatus;
   transactionId?: string; // BillDesk transaction ID
   gatewayOrderId?: string; // Our generated order ID
+  bdOrderId?: string; // BillDesk generated order ID (V2)
   bankReferenceNumber?: string;
   paymentMethod?: string; // card, upi, netbanking, etc.
 
@@ -139,6 +140,11 @@ const DonationSchema = new Schema<IDonationDocument>({
   gatewayOrderId: {
     type: String,
     unique: true,
+    sparse: true,
+    index: true
+  },
+  bdOrderId: {
+    type: String,
     sparse: true,
     index: true
   },

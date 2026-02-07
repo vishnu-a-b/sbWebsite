@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/vishnuab/Official/SbWebsite/client/.next-internal/server/app/%28main%29/privacy-policy/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {getFooterContent as '0099f994b742aedb9649744330d515e513bb7ff4dd'} from 'ACTIONS_MODULE0'\nexport {seedFooterContent as '00ac8f0731888bb914e0bc2d9b191213cce1218b3a'} from 'ACTIONS_MODULE0'\nexport {updateFooterContent as '403117ed3a07c5b61e812767edfa37a75b378cabaa'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA"}}]
+}

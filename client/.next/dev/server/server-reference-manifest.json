@@ -7,10 +7,24 @@
           "async": false,
           "exportedName": "getFooterContent",
           "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/privacy-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/refund-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/refund-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
         }
       },
       "layer": {
-        "app/(main)/page": "rsc"
+        "app/(main)/page": "rsc",
+        "app/(main)/privacy-policy/page": "rsc",
+        "app/(main)/refund-policy/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/footer.ts",
       "exportedName": "getFooterContent"
@@ -22,10 +36,24 @@
           "async": false,
           "exportedName": "seedFooterContent",
           "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/privacy-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/refund-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/refund-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
         }
       },
       "layer": {
-        "app/(main)/page": "rsc"
+        "app/(main)/page": "rsc",
+        "app/(main)/privacy-policy/page": "rsc",
+        "app/(main)/refund-policy/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/footer.ts",
       "exportedName": "seedFooterContent"
@@ -37,10 +65,24 @@
           "async": false,
           "exportedName": "updateFooterContent",
           "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/privacy-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+        },
+        "app/(main)/refund-policy/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/refund-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateFooterContent",
+          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
         }
       },
       "layer": {
-        "app/(main)/page": "rsc"
+        "app/(main)/page": "rsc",
+        "app/(main)/privacy-policy/page": "rsc",
+        "app/(main)/refund-policy/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/footer.ts",
       "exportedName": "updateFooterContent"

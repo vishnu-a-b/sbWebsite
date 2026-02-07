@@ -1,3 +1,5 @@
 {
-  "/(main)/page": "app/(main)/page.js"
+  "/(main)/page": "app/(main)/page.js",
+  "/(main)/privacy-policy/page": "app/(main)/privacy-policy/page.js",
+  "/(main)/refund-policy/page": "app/(main)/refund-policy/page.js"
 }

@@ -4,16 +4,25 @@ import Transaction, { TransactionType } from './transaction.model.js';
 import Fellowship from '../fellowship/fellowship.model.js';
 import Campaign, { CampaignStatus } from '../campaign/campaign.model.js';
 import {
-  buildPaymentRequest,
-  validateAndVerifyResponse,
+  createOrder,
+  buildPaymentPageData,
+  parseCallbackResponse,
+  retrieveTransaction,
   isPaymentSuccessful,
+  isPaymentPending,
+  isPaymentFailed,
   getPaymentStatusMessage,
-  generateOrderId
+  generateOrderId,
+  isTerminalCancellation,
+  AUTH_STATUS,
 } from './utils/billdesk.util.js';
 import emailService from '../../services/email.service.js';
 
 /**
- * Initiate donation payment
+ * Initiate donation payment - BillDesk V2
+ * Step 1: Create donation record
+ * Step 2: Call BillDesk Create Order API
+ * Step 3: Return payment page redirect data
  */
 export const initiateDonation = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -96,7 +105,7 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
     // Generate unique order ID
     const gatewayOrderId = generateOrderId();
 
-    // Create donation record
+    // Create donation record with PENDING status
     const donation = await Donation.create({
       donorName,
       email,
@@ -112,16 +121,35 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       paymentStatus: PaymentStatus.PENDING
     });
 
-    // Build BillDesk payment request
-    const paymentRequest = buildPaymentRequest({
+    // Call BillDesk Create Order API (Step 2)
+    const orderResult = await createOrder({
       orderId: gatewayOrderId,
       amount,
-      currency: 'INR',
       customerName: donorName,
       customerEmail: email,
       customerPhone: phone,
-      additionalInfo: donationType
+      additionalInfo: {
+        donationType,
+        donationId: donation._id.toString(),
+      }
     });
+
+    if (!orderResult.success || !orderResult.data) {
+      // Update donation as failed
+      donation.paymentStatus = PaymentStatus.FAILED;
+      donation.gatewayResponse = orderResult.error || 'Order creation failed';
+      await donation.save();
+
+      res.status(500).json({
+        success: false,
+        error: orderResult.error || 'Failed to create payment order'
+      });
+      return;
+    }
+
+    // Store BillDesk order ID
+    donation.bdOrderId = orderResult.data.bdorderid;
+    await donation.save();
 
     // Log transaction
     await Transaction.create({
@@ -129,23 +157,30 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       transactionType: TransactionType.PAYMENT_INITIATED,
       requestPayload: {
         orderId: gatewayOrderId,
+        bdOrderId: orderResult.data.bdorderid,
         amount,
         donorName,
         email
       },
+      responsePayload: orderResult.data,
       bdOrderId: gatewayOrderId,
-      checksumSent: paymentRequest.checksum,
       success: true
     });
 
-    // Return payment URL and message
+    // Build payment page redirect data (Step 3)
+    const paymentPageData = buildPaymentPageData(orderResult.data);
+
     res.json({
       success: true,
       donationId: donation._id,
       orderId: gatewayOrderId,
-      paymentUrl: paymentRequest.url,
-      paymentMsg: paymentRequest.msg,
-      checksum: paymentRequest.checksum,
+      bdOrderId: orderResult.data.bdorderid,
+      paymentPageUrl: paymentPageData.url,
+      paymentData: {
+        bdorderid: paymentPageData.bdorderid,
+        merchantid: paymentPageData.merchantid,
+        rdata: paymentPageData.rdata,
+      },
       message: 'Donation initiated. Redirect to payment gateway.'
     });
   } catch (error) {
@@ -159,56 +194,82 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
 
 /**
  * Handle BillDesk return callback (user redirect after payment)
+ * Step 5: Capture transaction response
  */
 export const handleBillDeskReturn = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const responseString = req.body.msg || req.query.msg as string;
+  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
 
-    if (!responseString) {
-      res.status(400).json({
-        success: false,
-        error: 'No response data received'
-      });
+  try {
+    // Check for terminal cancellation (user clicked X button)
+    if (isTerminalCancellation(req.body)) {
+      const orderId = req.body.orderid;
+
+      if (orderId) {
+        const donation = await Donation.findOne({ gatewayOrderId: orderId });
+        if (donation && donation.paymentStatus === PaymentStatus.PENDING) {
+          donation.paymentStatus = PaymentStatus.FAILED;
+          donation.authStatus = 'CANCELLED';
+          donation.gatewayResponse = 'User cancelled payment';
+          await donation.save();
+
+          // Log transaction
+          await Transaction.create({
+            donationId: donation._id,
+            transactionType: TransactionType.PAYMENT_RETURN,
+            responsePayload: req.body,
+            bdOrderId: orderId,
+            success: false,
+            ipAddress: req.ip
+          });
+        }
+      }
+
+      res.redirect(`${frontendUrl}/donate/failed?orderId=${orderId}&message=${encodeURIComponent('Payment cancelled')}`);
       return;
     }
 
-    // Validate and verify response
-    const validation = validateAndVerifyResponse(responseString);
+    // Get JWS response token
+    const responseToken = req.body.transaction_response || req.body.response;
+
+    if (!responseToken) {
+      console.error('No response token received:', req.body);
+      res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent('No response received')}`);
+      return;
+    }
+
+    // Parse and verify JWS response
+    const validation = await parseCallbackResponse(responseToken);
 
     if (!validation.isValid || !validation.response) {
-      res.status(400).json({
-        success: false,
-        error: validation.error || 'Invalid response',
-        checksumVerified: false
-      });
+      console.error('Invalid response:', validation.error);
+      res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent(validation.error || 'Invalid response')}`);
       return;
     }
 
     const { response, checksumVerified } = validation;
 
     // Find donation by order ID
-    const donation = await Donation.findOne({ gatewayOrderId: response.orderId });
+    const donation = await Donation.findOne({ gatewayOrderId: response.orderid });
 
     if (!donation) {
-      res.status(404).json({
-        success: false,
-        error: 'Donation not found'
-      });
+      console.error('Donation not found for order:', response.orderid);
+      res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent('Donation not found')}`);
       return;
     }
 
     // Update donation with response data
-    donation.transactionId = response.transactionId;
-    donation.authStatus = response.authStatus;
-    donation.bankReferenceNumber = response.bankReferenceNumber;
-    donation.gatewayResponse = responseString;
+    donation.transactionId = response.transactionid;
+    donation.authStatus = response.auth_status;
+    donation.bankReferenceNumber = response.bank_ref_no;
+    donation.gatewayResponse = JSON.stringify(response);
     donation.checksumVerified = checksumVerified;
+    donation.paymentMethod = response.payment_method_type;
 
-    // Update payment status based on auth status
-    if (response.authStatus && isPaymentSuccessful(response.authStatus)) {
+    // Handle based on auth status
+    if (isPaymentSuccessful(response.auth_status)) {
       donation.paymentStatus = PaymentStatus.SUCCESS;
 
-      // If fellowship donation, update fellowship
+      // Update fellowship if applicable
       if (donation.fellowshipId) {
         const fellowship = await Fellowship.findById(donation.fellowshipId);
         if (fellowship) {
@@ -220,7 +281,7 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
         }
       }
 
-      // If campaign donation, update campaign
+      // Update campaign if applicable
       if (donation.campaignId) {
         const campaign = await Campaign.findById(donation.campaignId);
         if (campaign) {
@@ -230,7 +291,11 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
           await campaign.save();
         }
       }
+    } else if (isPaymentPending(response.auth_status)) {
+      // Payment pending - keep as pending, will be updated via webhook or retrieve API
+      donation.paymentStatus = PaymentStatus.PENDING;
     } else {
+      // Payment failed
       donation.paymentStatus = PaymentStatus.FAILED;
     }
 
@@ -241,11 +306,10 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
       donationId: donation._id,
       transactionType: TransactionType.PAYMENT_RETURN,
       responsePayload: response,
-      bdOrderId: response.orderId,
-      bdTransactionId: response.transactionId,
-      checksumReceived: response.checksum,
+      bdOrderId: response.orderid,
+      bdTransactionId: response.transactionid,
       checksumVerified,
-      success: isPaymentSuccessful(response.authStatus || ''),
+      success: isPaymentSuccessful(response.auth_status),
       ipAddress: req.ip
     });
 
@@ -256,48 +320,45 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
         donorName: donation.donorName,
         amount: donation.amount,
         currency: donation.currency,
-        transactionId: response.transactionId || donation.gatewayOrderId || 'N/A',
+        transactionId: response.transactionid || donation.gatewayOrderId || 'N/A',
         donationType: donation.donationType,
         receiptNumber: donation.receiptNumber
       }).catch(err => console.error('Failed to send success email:', err));
+
+      res.redirect(`${frontendUrl}/donate/success?orderId=${response.orderid}&receiptNumber=${donation.receiptNumber}`);
+    } else if (donation.paymentStatus === PaymentStatus.PENDING) {
+      // Redirect to pending page
+      res.redirect(`${frontendUrl}/donate/pending?orderId=${response.orderid}`);
     } else {
+      const statusMessage = getPaymentStatusMessage(response.auth_status, response.transaction_error_desc);
+
       emailService.sendDonationFailed({
         email: donation.email,
         donorName: donation.donorName,
         amount: donation.amount,
         currency: donation.currency,
-        reason: getPaymentStatusMessage(response.authStatus || '')
+        reason: statusMessage
       }).catch(err => console.error('Failed to send failure email:', err));
-    }
 
-    // Redirect to frontend with status
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
-    const statusMessage = getPaymentStatusMessage(response.authStatus || '');
-
-    if (donation.paymentStatus === PaymentStatus.SUCCESS) {
-      res.redirect(
-        `${frontendUrl}/donate/success?orderId=${response.orderId}&receiptNumber=${donation.receiptNumber}`
-      );
-    } else {
-      res.redirect(
-        `${frontendUrl}/donate/failed?orderId=${response.orderId}&message=${encodeURIComponent(statusMessage)}`
-      );
+      res.redirect(`${frontendUrl}/donate/failed?orderId=${response.orderid}&message=${encodeURIComponent(statusMessage)}`);
     }
   } catch (error) {
     console.error('BillDesk return callback error:', error);
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
-    res.redirect(`${frontendUrl}/donate/failed?message=Processing%20error`);
+    res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent('Processing error')}`);
   }
 };
 
 /**
  * Handle BillDesk webhook (server-to-server notification)
+ * Step 6: Webhook for transaction response
  */
 export const handleBillDeskWebhook = async (req: Request, res: Response): Promise<void> => {
   try {
-    const responseString = req.body.msg;
+    // Get JWS response token
+    const responseToken = req.body.transaction_response || req.body.response;
 
-    if (!responseString) {
+    if (!responseToken) {
+      console.error('Webhook: No response token received:', req.body);
       res.status(400).json({
         success: false,
         error: 'No response data received'
@@ -305,10 +366,11 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
       return;
     }
 
-    // Validate and verify response
-    const validation = validateAndVerifyResponse(responseString);
+    // Parse and verify JWS response
+    const validation = await parseCallbackResponse(responseToken);
 
     if (!validation.isValid || !validation.response) {
+      console.error('Webhook: Invalid response:', validation.error);
       res.status(400).json({
         success: false,
         error: validation.error || 'Invalid response'
@@ -319,9 +381,10 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
     const { response, checksumVerified } = validation;
 
     // Find donation by order ID
-    const donation = await Donation.findOne({ gatewayOrderId: response.orderId });
+    const donation = await Donation.findOne({ gatewayOrderId: response.orderid });
 
     if (!donation) {
+      console.error('Webhook: Donation not found for order:', response.orderid);
       res.status(404).json({
         success: false,
         error: 'Donation not found'
@@ -329,15 +392,16 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
       return;
     }
 
-    // Only update if not already processed
+    // Only process if still pending (idempotent)
     if (donation.paymentStatus === PaymentStatus.PENDING) {
-      donation.transactionId = response.transactionId;
-      donation.authStatus = response.authStatus;
-      donation.bankReferenceNumber = response.bankReferenceNumber;
-      donation.gatewayResponse = responseString;
+      donation.transactionId = response.transactionid;
+      donation.authStatus = response.auth_status;
+      donation.bankReferenceNumber = response.bank_ref_no;
+      donation.gatewayResponse = JSON.stringify(response);
       donation.checksumVerified = checksumVerified;
+      donation.paymentMethod = response.payment_method_type;
 
-      if (response.authStatus && isPaymentSuccessful(response.authStatus)) {
+      if (isPaymentSuccessful(response.auth_status)) {
         donation.paymentStatus = PaymentStatus.SUCCESS;
 
         // Update fellowship if applicable
@@ -362,32 +426,33 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
             await campaign.save();
           }
         }
-      } else {
-        donation.paymentStatus = PaymentStatus.FAILED;
-      }
 
-      await donation.save();
-
-      // Send email notification (only if we just processed the payment)
-      if (donation.paymentStatus === PaymentStatus.SUCCESS) {
+        // Send success email
         emailService.sendDonationSuccess({
           email: donation.email,
           donorName: donation.donorName,
           amount: donation.amount,
           currency: donation.currency,
-          transactionId: response.transactionId || donation.gatewayOrderId || 'N/A',
+          transactionId: response.transactionid || donation.gatewayOrderId || 'N/A',
           donationType: donation.donationType,
           receiptNumber: donation.receiptNumber
         }).catch(err => console.error('Failed to send success email:', err));
-      } else if (donation.paymentStatus === PaymentStatus.FAILED) {
+
+      } else if (isPaymentFailed(response.auth_status)) {
+        donation.paymentStatus = PaymentStatus.FAILED;
+
+        // Send failure email
         emailService.sendDonationFailed({
           email: donation.email,
           donorName: donation.donorName,
           amount: donation.amount,
           currency: donation.currency,
-          reason: getPaymentStatusMessage(response.authStatus || '')
+          reason: getPaymentStatusMessage(response.auth_status, response.transaction_error_desc)
         }).catch(err => console.error('Failed to send failure email:', err));
       }
+      // If still pending (0002), keep as pending
+
+      await donation.save();
     }
 
     // Log transaction
@@ -395,11 +460,10 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
       donationId: donation._id,
       transactionType: TransactionType.PAYMENT_WEBHOOK,
       responsePayload: response,
-      bdOrderId: response.orderId,
-      bdTransactionId: response.transactionId,
-      checksumReceived: response.checksum,
+      bdOrderId: response.orderid,
+      bdTransactionId: response.transactionid,
       checksumVerified,
-      success: isPaymentSuccessful(response.authStatus || ''),
+      success: isPaymentSuccessful(response.auth_status),
       ipAddress: req.ip
     });
 
@@ -412,6 +476,140 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
     res.status(500).json({
       success: false,
       error: 'Failed to process webhook'
+    });
+  }
+};
+
+/**
+ * Check transaction status - Retrieve Transaction API
+ * Step 7: For pending transactions
+ */
+export const checkTransactionStatus = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { orderId } = req.params;
+
+    if (!orderId) {
+      res.status(400).json({
+        success: false,
+        error: 'Order ID is required'
+      });
+      return;
+    }
+
+    // Find donation
+    const donation = await Donation.findOne({ gatewayOrderId: orderId });
+
+    if (!donation) {
+      res.status(404).json({
+        success: false,
+        error: 'Donation not found'
+      });
+      return;
+    }
+
+    // If already processed, return current status
+    if (donation.paymentStatus !== PaymentStatus.PENDING) {
+      res.json({
+        success: true,
+        status: donation.paymentStatus,
+        transactionId: donation.transactionId,
+        message: getPaymentStatusMessage(donation.authStatus || '')
+      });
+      return;
+    }
+
+    // Call Retrieve Transaction API
+    const result = await retrieveTransaction(orderId, donation.bdOrderId);
+
+    if (!result.success || !result.data) {
+      res.json({
+        success: true,
+        status: PaymentStatus.PENDING,
+        message: 'Transaction status is still pending. Please try again later.'
+      });
+      return;
+    }
+
+    const txnData = result.data;
+
+    // Update donation based on retrieved status
+    donation.transactionId = txnData.transactionid;
+    donation.authStatus = txnData.auth_status;
+    donation.bankReferenceNumber = txnData.bank_ref_no;
+    donation.gatewayResponse = JSON.stringify(txnData);
+    donation.paymentMethod = txnData.payment_method_type;
+
+    if (isPaymentSuccessful(txnData.auth_status)) {
+      donation.paymentStatus = PaymentStatus.SUCCESS;
+
+      // Update fellowship/campaign
+      if (donation.fellowshipId) {
+        const fellowship = await Fellowship.findById(donation.fellowshipId);
+        if (fellowship && !fellowship.donations.includes(donation._id)) {
+          fellowship.lastPaymentDate = new Date();
+          fellowship.totalPaid += donation.amount;
+          fellowship.totalPayments += 1;
+          fellowship.donations.push(donation._id);
+          await fellowship.save();
+        }
+      }
+
+      if (donation.campaignId) {
+        const campaign = await Campaign.findById(donation.campaignId);
+        if (campaign && !campaign.donations.includes(donation._id)) {
+          campaign.raisedAmount += donation.amount;
+          campaign.donorCount += 1;
+          campaign.donations.push(donation._id);
+          await campaign.save();
+        }
+      }
+
+      // Send success email
+      emailService.sendDonationSuccess({
+        email: donation.email,
+        donorName: donation.donorName,
+        amount: donation.amount,
+        currency: donation.currency,
+        transactionId: txnData.transactionid || donation.gatewayOrderId || 'N/A',
+        donationType: donation.donationType,
+        receiptNumber: donation.receiptNumber
+      }).catch(err => console.error('Failed to send success email:', err));
+
+    } else if (isPaymentFailed(txnData.auth_status)) {
+      donation.paymentStatus = PaymentStatus.FAILED;
+
+      emailService.sendDonationFailed({
+        email: donation.email,
+        donorName: donation.donorName,
+        amount: donation.amount,
+        currency: donation.currency,
+        reason: getPaymentStatusMessage(txnData.auth_status, txnData.transaction_error_desc)
+      }).catch(err => console.error('Failed to send failure email:', err));
+    }
+
+    await donation.save();
+
+    // Log transaction
+    await Transaction.create({
+      donationId: donation._id,
+      transactionType: TransactionType.STATUS_CHECK,
+      responsePayload: txnData,
+      bdOrderId: txnData.orderid,
+      bdTransactionId: txnData.transactionid,
+      success: isPaymentSuccessful(txnData.auth_status),
+    });
+
+    res.json({
+      success: true,
+      status: donation.paymentStatus,
+      transactionId: donation.transactionId,
+      message: getPaymentStatusMessage(txnData.auth_status, txnData.transaction_error_desc)
+    });
+  } catch (error) {
+    console.error('Check transaction status error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to check transaction status'
     });
   }
 };

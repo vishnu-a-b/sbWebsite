@@ -71,6 +71,30 @@ export default function DonationModal({ isOpen, onClose, campaign }: DonationMod
     return Math.min(Math.round((raised / goal) * 100), 100);
   };
 
+  // Helper function to redirect to BillDesk V2 payment page
+  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string }) => {
+    const formEl = document.createElement('form');
+    formEl.method = 'POST';
+    formEl.action = paymentPageUrl;
+
+    const fields = [
+      { name: 'bdorderid', value: paymentData.bdorderid },
+      { name: 'merchantid', value: paymentData.merchantid },
+      { name: 'rdata', value: paymentData.rdata },
+    ];
+
+    fields.forEach(field => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = field.name;
+      input.value = field.value;
+      formEl.appendChild(input);
+    });
+
+    document.body.appendChild(formEl);
+    formEl.submit();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -90,15 +114,16 @@ export default function DonationModal({ isOpen, onClose, campaign }: DonationMod
 
       const data = await res.json();
 
-      if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
+      if (data.success && data.paymentPageUrl && data.paymentData) {
+        // BillDesk V2: Redirect via form POST
+        redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
       } else {
         alert(data.error || 'Failed to initiate payment');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Payment error:', error);
       alert('Failed to initiate payment. Please try again.');
-    } finally {
       setLoading(false);
     }
   };
@@ -296,7 +321,7 @@ export default function DonationModal({ isOpen, onClose, campaign }: DonationMod
           </Button>
 
           <p className="text-xs text-center text-gray-500">
-            Secure payment powered by Razorpay. 80G tax exemption available.
+            Secure payment powered by BillDesk. 80G tax exemption available.
           </p>
         </form>
       </div>

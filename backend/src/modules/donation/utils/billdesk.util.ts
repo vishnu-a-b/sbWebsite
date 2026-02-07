@@ -1,200 +1,433 @@
+import * as jose from 'jose';
 import crypto from 'crypto';
 import { getBillDeskConfig } from '../../../config/billdesk.js';
 
-export interface BillDeskPaymentRequest {
+// ============================================
+// INTERFACES
+// ============================================
+
+export interface BillDeskOrderRequest {
   orderId: string;
   amount: number;
-  currency: string;
+  currency?: string;
   customerName: string;
   customerEmail: string;
   customerPhone?: string;
-  additionalInfo?: string;
+  additionalInfo?: Record<string, string>;
 }
 
-export interface BillDeskPaymentResponse {
-  merchantId: string;
-  orderId: string;
-  transactionId: string;
+export interface BillDeskOrderResponse {
+  orderid: string;
+  bdorderid: string;
+  mercid: string;
+  rdata: string;  // Encrypted response data for SDK
+  status: string;
+  createdon: string;
+  next_step: string;
+}
+
+export interface BillDeskTransactionResponse {
+  mercid: string;
+  orderid: string;
+  bdorderid: string;
+  transactionid: string;
+  transaction_date: string;
   amount: string;
-  authStatus: string;
-  bankReferenceNumber?: string;
-  additionalInfo1?: string;
-  additionalInfo2?: string;
-  checksum: string;
+  surcharge: string;
+  txn_amount: string;
+  currency: string;
+  auth_status: string;
+  transaction_error_code: string;
+  transaction_error_desc: string;
+  transaction_error_type: string;
+  payment_method_type: string;
+  itemcode: string;
+  bankid: string;
+  bank_ref_no: string;
+  objectid: string;
+  ru: string;
+  additional_info: Record<string, string>;
+  discount_response?: any;
+  refund_details?: any[];
 }
 
+// Auth status codes
+export const AUTH_STATUS = {
+  SUCCESS: '0300',
+  FAILURE: '0399',
+  PENDING: '0002',
+  CANCELLED: 'NA',  // User cancelled via cross button
+} as const;
+
+// ============================================
+// JWS/JWE UTILITIES
+// ============================================
+
 /**
- * Generate HMAC-SHA256 checksum for BillDesk request
+ * Create JWS (JSON Web Signature) for request
  */
-export const generateChecksum = (data: string, key: string): string => {
-  const hmac = crypto.createHmac('sha256', key);
-  hmac.update(data);
-  return hmac.digest('hex').toUpperCase();
+export const createJWS = async (payload: object, privateKeyPem: string, clientId: string): Promise<string> => {
+  const privateKey = crypto.createPrivateKey(privateKeyPem);
+
+  const jws = await new jose.CompactSign(
+    new TextEncoder().encode(JSON.stringify(payload))
+  )
+    .setProtectedHeader({
+      alg: 'RS256',
+      clientid: clientId,
+    })
+    .sign(privateKey);
+
+  return jws;
 };
 
 /**
- * Verify checksum from BillDesk response
+ * Verify and decode JWS response from BillDesk
  */
-export const verifyChecksum = (data: string, receivedChecksum: string, key: string): boolean => {
-  const calculatedChecksum = generateChecksum(data, key);
-  return calculatedChecksum === receivedChecksum.toUpperCase();
-};
-
-/**
- * Build BillDesk payment request string (pipe-separated)
- * Format: MerchantID|OrderID|Amount|NA|NA|NA|NA|ReturnURL|Checksum
- */
-export const buildPaymentRequest = (request: BillDeskPaymentRequest): { msg: string; checksum: string; url: string } => {
-  const config = getBillDeskConfig();
-
-  // Format amount to 2 decimal places
-  const formattedAmount = request.amount.toFixed(2);
-
-  // Build pipe-separated string (simplified format for sandbox)
-  // Full format: MerchantID|OrderID|NA|Amount|NA|NA|NA|ReturnURL|ChecksumKey|AdditionalInfo1|AdditionalInfo2|AdditionalInfo3|AdditionalInfo4|AdditionalInfo5
-  const msgParts = [
-    config.merchantId,
-    request.orderId,
-    'NA', // Customer ID (optional)
-    formattedAmount,
-    'NA', // Product description
-    'NA', // Date
-    'NA', // Currency
-    config.returnUrl,
-    config.securityId
-  ];
-
-  // Add additional info if provided
-  if (request.additionalInfo) {
-    msgParts.push(request.additionalInfo);
-  }
-
-  const msg = msgParts.join('|');
-  const checksum = generateChecksum(msg, config.checksumKey);
-
-  return {
-    msg,
-    checksum,
-    url: config.paymentUrl
-  };
-};
-
-/**
- * Parse BillDesk response (pipe-separated format)
- */
-export const parsePaymentResponse = (responseString: string): Partial<BillDeskPaymentResponse> | null => {
+export const verifyJWS = async (token: string, publicKeyPem: string): Promise<{ payload: any; verified: boolean }> => {
   try {
-    const parts = responseString.split('|');
+    const publicKey = crypto.createPublicKey(publicKeyPem);
 
-    if (parts.length < 8) {
-      console.error('Invalid BillDesk response format');
-      return null;
-    }
+    const { payload } = await jose.compactVerify(token, publicKey);
+    const decodedPayload = JSON.parse(new TextDecoder().decode(payload));
 
     return {
-      merchantId: parts[0],
-      orderId: parts[1],
-      transactionId: parts[2],
-      amount: parts[3],
-      authStatus: parts[4],
-      bankReferenceNumber: parts[5] !== 'NA' ? parts[5] : undefined,
-      additionalInfo1: parts[6] !== 'NA' ? parts[6] : undefined,
-      additionalInfo2: parts[7] !== 'NA' ? parts[7] : undefined,
-      checksum: parts[parts.length - 1] // Checksum is always last
+      payload: decodedPayload,
+      verified: true,
     };
   } catch (error) {
-    console.error('Error parsing BillDesk response:', error);
+    console.error('JWS verification failed:', error);
+    return {
+      payload: null,
+      verified: false,
+    };
+  }
+};
+
+/**
+ * Create JWE (JSON Web Encryption) - if needed for specific requests
+ */
+export const createJWE = async (payload: object, publicKeyPem: string, clientId: string): Promise<string> => {
+  const publicKey = crypto.createPublicKey(publicKeyPem);
+
+  const jwe = await new jose.CompactEncrypt(
+    new TextEncoder().encode(JSON.stringify(payload))
+  )
+    .setProtectedHeader({
+      alg: 'RSA-OAEP-256',
+      enc: 'A256GCM',
+      clientid: clientId,
+    })
+    .encrypt(publicKey);
+
+  return jwe;
+};
+
+/**
+ * Decrypt JWE response
+ */
+export const decryptJWE = async (token: string, privateKeyPem: string): Promise<any> => {
+  try {
+    const privateKey = crypto.createPrivateKey(privateKeyPem);
+
+    const { plaintext } = await jose.compactDecrypt(token, privateKey);
+    return JSON.parse(new TextDecoder().decode(plaintext));
+  } catch (error) {
+    console.error('JWE decryption failed:', error);
     return null;
   }
 };
 
+// ============================================
+// BILLDESK V2 API FUNCTIONS
+// ============================================
+
 /**
- * Check if payment was successful based on auth status
- * BillDesk auth status codes:
- * 0300 - Success
- * 0399 - In process
- * 0400 - Failure
- * 0401 - Cancelled by user
- * etc.
+ * Generate unique order ID
+ * Format: DN-YYYYMMDDHHMMSS-RANDOM (alphanumeric, 10-35 chars)
+ */
+export const generateOrderId = (): string => {
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/[-:T.]/g, '').slice(0, 14);
+  const random = Math.floor(1000 + Math.random() * 9000);
+  return `DN${timestamp}${random}`;
+};
+
+/**
+ * Generate trace ID for request tracking
+ */
+export const generateTraceId = (): string => {
+  return `TRC${Date.now()}${Math.floor(Math.random() * 10000)}`;
+};
+
+/**
+ * Get timestamp in IST format (yyyyMMddHHmmss)
+ */
+export const getISTTimestamp = (): string => {
+  const now = new Date();
+  // Convert to IST (UTC+5:30)
+  const istOffset = 5.5 * 60 * 60 * 1000;
+  const istDate = new Date(now.getTime() + istOffset);
+
+  return istDate.toISOString()
+    .replace(/[-:T.Z]/g, '')
+    .slice(0, 14);
+};
+
+/**
+ * Create Order API - Step 2 of BillDesk V2
+ */
+export const createOrder = async (request: BillDeskOrderRequest): Promise<{
+  success: boolean;
+  data?: BillDeskOrderResponse;
+  error?: string;
+}> => {
+  const config = getBillDeskConfig();
+
+  const traceId = generateTraceId();
+  const timestamp = getISTTimestamp();
+
+  // Build order request payload
+  const orderPayload = {
+    mercid: config.merchantId,
+    orderid: request.orderId,
+    amount: request.amount.toFixed(2),
+    order_date: new Date().toISOString(),
+    currency: request.currency || '356', // 356 = INR
+    ru: config.returnUrl,
+    additional_info: {
+      additional_info1: request.customerName,
+      additional_info2: request.customerEmail,
+      additional_info3: request.customerPhone || '',
+      additional_info4: request.additionalInfo?.donationType || 'general',
+      additional_info5: request.additionalInfo?.donationId || '',
+      additional_info6: '',
+      additional_info7: '',
+    },
+    itemcode: 'DIRECT',
+    device: {
+      init_channel: 'internet',
+      ip: '127.0.0.1',
+      user_agent: 'Mozilla/5.0',
+      accept_header: 'text/html',
+    },
+  };
+
+  try {
+    // Create JWS token for the request
+    const jwsToken = await createJWS(orderPayload, config.privateKey, config.clientId);
+
+    // Make API call to BillDesk
+    const response = await fetch(config.createOrderUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/jose',
+        'Accept': 'application/jose',
+        'BD-Traceid': traceId,
+        'BD-Timestamp': timestamp,
+      },
+      body: jwsToken,
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      console.error('BillDesk Create Order failed:', response.status, responseText);
+      return {
+        success: false,
+        error: `API error: ${response.status}`,
+      };
+    }
+
+    // Verify and decode JWS response
+    const { payload, verified } = await verifyJWS(responseText, config.publicKey);
+
+    if (!verified || !payload) {
+      return {
+        success: false,
+        error: 'Response verification failed',
+      };
+    }
+
+    // Check for error in response
+    if (payload.status === 'FAILED' || payload.objectid === 'error') {
+      return {
+        success: false,
+        error: payload.message || payload.error_description || 'Order creation failed',
+      };
+    }
+
+    return {
+      success: true,
+      data: payload as BillDeskOrderResponse,
+    };
+  } catch (error) {
+    console.error('Create order error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+};
+
+/**
+ * Retrieve Transaction API - Step 7 of BillDesk V2
+ */
+export const retrieveTransaction = async (orderId: string, bdOrderId?: string): Promise<{
+  success: boolean;
+  data?: BillDeskTransactionResponse;
+  error?: string;
+}> => {
+  const config = getBillDeskConfig();
+
+  const traceId = generateTraceId();
+  const timestamp = getISTTimestamp();
+
+  const retrievePayload = {
+    mercid: config.merchantId,
+    orderid: orderId,
+    ...(bdOrderId && { bdorderid: bdOrderId }),
+    refund_details: 'true',  // Always check refund status
+  };
+
+  try {
+    const jwsToken = await createJWS(retrievePayload, config.privateKey, config.clientId);
+
+    const response = await fetch(config.retrieveTransactionUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/jose',
+        'Accept': 'application/jose',
+        'BD-Traceid': traceId,
+        'BD-Timestamp': timestamp,
+      },
+      body: jwsToken,
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        error: `API error: ${response.status}`,
+      };
+    }
+
+    const { payload, verified } = await verifyJWS(responseText, config.publicKey);
+
+    if (!verified || !payload) {
+      return {
+        success: false,
+        error: 'Response verification failed',
+      };
+    }
+
+    return {
+      success: true,
+      data: payload as BillDeskTransactionResponse,
+    };
+  } catch (error) {
+    console.error('Retrieve transaction error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+};
+
+/**
+ * Parse and verify callback/webhook response
+ */
+export const parseCallbackResponse = async (responseToken: string): Promise<{
+  isValid: boolean;
+  response: BillDeskTransactionResponse | null;
+  checksumVerified: boolean;
+  error?: string;
+}> => {
+  const config = getBillDeskConfig();
+
+  try {
+    const { payload, verified } = await verifyJWS(responseToken, config.publicKey);
+
+    if (!verified || !payload) {
+      return {
+        isValid: false,
+        response: null,
+        checksumVerified: false,
+        error: 'JWS verification failed',
+      };
+    }
+
+    return {
+      isValid: true,
+      response: payload as BillDeskTransactionResponse,
+      checksumVerified: verified,
+    };
+  } catch (error) {
+    console.error('Parse callback error:', error);
+    return {
+      isValid: false,
+      response: null,
+      checksumVerified: false,
+      error: error instanceof Error ? error.message : 'Parse error',
+    };
+  }
+};
+
+/**
+ * Check if payment was successful
  */
 export const isPaymentSuccessful = (authStatus: string): boolean => {
-  return authStatus === '0300';
+  return authStatus === AUTH_STATUS.SUCCESS;
+};
+
+/**
+ * Check if payment is pending
+ */
+export const isPaymentPending = (authStatus: string): boolean => {
+  return authStatus === AUTH_STATUS.PENDING;
+};
+
+/**
+ * Check if payment failed
+ */
+export const isPaymentFailed = (authStatus: string): boolean => {
+  return authStatus === AUTH_STATUS.FAILURE;
 };
 
 /**
  * Get human-readable status message
  */
-export const getPaymentStatusMessage = (authStatus: string): string => {
-  const statusMap: { [key: string]: string } = {
-    '0300': 'Payment successful',
-    '0399': 'Payment in process',
-    '0400': 'Payment failed',
-    '0401': 'Payment cancelled by user',
-    '0002': 'Invalid merchant ID',
-    '0003': 'Invalid transaction amount',
-    '0004': 'Invalid checksum',
-    '0005': 'Invalid order ID'
+export const getPaymentStatusMessage = (authStatus: string, errorDesc?: string): string => {
+  const statusMap: Record<string, string> = {
+    [AUTH_STATUS.SUCCESS]: 'Payment successful',
+    [AUTH_STATUS.FAILURE]: errorDesc || 'Payment failed',
+    [AUTH_STATUS.PENDING]: 'Payment is being processed. Please check back after some time.',
+    [AUTH_STATUS.CANCELLED]: 'Payment cancelled by user',
   };
 
   return statusMap[authStatus] || `Payment status: ${authStatus}`;
 };
 
 /**
- * Validate BillDesk response and verify checksum
+ * Check if response is terminal state cancellation
+ * User clicked cancel (X) button on payment page
  */
-export const validateAndVerifyResponse = (responseString: string): {
-  isValid: boolean;
-  response: Partial<BillDeskPaymentResponse> | null;
-  checksumVerified: boolean;
-  error?: string;
-} => {
-  const config = getBillDeskConfig();
-
-  // Parse response
-  const response = parsePaymentResponse(responseString);
-
-  if (!response) {
-    return {
-      isValid: false,
-      response: null,
-      checksumVerified: false,
-      error: 'Failed to parse response'
-    };
-  }
-
-  // Extract checksum from response
-  const receivedChecksum = response.checksum || '';
-
-  // Remove checksum from response string for verification
-  const parts = responseString.split('|');
-  const dataWithoutChecksum = parts.slice(0, -1).join('|');
-
-  // Verify checksum
-  const checksumVerified = verifyChecksum(dataWithoutChecksum, receivedChecksum, config.checksumKey);
-
-  if (!checksumVerified) {
-    return {
-      isValid: false,
-      response,
-      checksumVerified: false,
-      error: 'Checksum verification failed'
-    };
-  }
-
-  return {
-    isValid: true,
-    response,
-    checksumVerified: true
-  };
+export const isTerminalCancellation = (body: any): boolean => {
+  // terminal_state=111&orderid=ORDERID format
+  return body.terminal_state === '111' || body.terminal_state === 111;
 };
 
 /**
- * Generate unique order ID
- * Format: DN-YYYYMMDDHHMMSS-RANDOM
+ * Build payment page redirect data
  */
-export const generateOrderId = (): string => {
-  const now = new Date();
-  const timestamp = now.toISOString().replace(/[-:T.]/g, '').slice(0, 14);
-  const random = Math.floor(1000 + Math.random() * 9000);
-  return `DN-${timestamp}-${random}`;
+export const buildPaymentPageData = (orderResponse: BillDeskOrderResponse) => {
+  const config = getBillDeskConfig();
+
+  return {
+    url: config.paymentPageUrl,
+    bdorderid: orderResponse.bdorderid,
+    merchantid: config.merchantId,
+    rdata: orderResponse.rdata,
+  };
 };

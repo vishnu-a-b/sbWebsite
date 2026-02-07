@@ -1538,6 +1538,35 @@ function DonationModal({ isOpen, onClose, campaign }) {
     const getProgressPercentage = (raised, goal)=>{
         return Math.min(Math.round(raised / goal * 100), 100);
     };
+    // Helper function to redirect to BillDesk V2 payment page
+    const redirectToPaymentPage = (paymentPageUrl, paymentData)=>{
+        const formEl = document.createElement('form');
+        formEl.method = 'POST';
+        formEl.action = paymentPageUrl;
+        const fields = [
+            {
+                name: 'bdorderid',
+                value: paymentData.bdorderid
+            },
+            {
+                name: 'merchantid',
+                value: paymentData.merchantid
+            },
+            {
+                name: 'rdata',
+                value: paymentData.rdata
+            }
+        ];
+        fields.forEach((field)=>{
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = field.name;
+            input.value = field.value;
+            formEl.appendChild(input);
+        });
+        document.body.appendChild(formEl);
+        formEl.submit();
+    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setLoading(true);
@@ -1556,15 +1585,16 @@ function DonationModal({ isOpen, onClose, campaign }) {
                 })
             });
             const data = await res.json();
-            if (data.success && data.paymentUrl) {
-                window.location.href = data.paymentUrl;
+            if (data.success && data.paymentPageUrl && data.paymentData) {
+                // BillDesk V2: Redirect via form POST
+                redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
             } else {
                 alert(data.error || 'Failed to initiate payment');
+                setLoading(false);
             }
         } catch (error) {
             console.error('Payment error:', error);
             alert('Failed to initiate payment. Please try again.');
-        } finally{
             setLoading(false);
         }
     };
@@ -1578,7 +1608,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                 onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                lineNumber: 113,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1591,12 +1621,12 @@ function DonationModal({ isOpen, onClose, campaign }) {
                             className: "w-5 h-5 text-gray-500"
                         }, void 0, false, {
                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                            lineNumber: 125,
+                            lineNumber: 150,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                        lineNumber: 121,
+                        lineNumber: 146,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1611,26 +1641,26 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         className: "w-full h-full object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 131,
+                                lineNumber: 156,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-32 w-full bg-gradient-to-r from-primary to-primary/80 rounded-t-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 140,
+                                lineNumber: 165,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1643,7 +1673,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 className: "w-4 h-4 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 170,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1651,13 +1681,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: "Campaign"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 146,
+                                                lineNumber: 171,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 169,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1665,19 +1695,19 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         children: campaign.title
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 148,
+                                        lineNumber: 173,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 143,
+                                lineNumber: 168,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                        lineNumber: 129,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1696,7 +1726,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1707,13 +1737,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 184,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1725,12 +1755,12 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 187,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1743,7 +1773,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 194,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Goal: ",
@@ -1751,7 +1781,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 193,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1761,7 +1791,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                     className: "w-3 h-3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                    lineNumber: 173,
+                                                    lineNumber: 198,
                                                     columnNumber: 17
                                                 }, this),
                                                 campaign.donorCount,
@@ -1769,24 +1799,24 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 172,
+                                            lineNumber: 197,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 192,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                            lineNumber: 154,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                        lineNumber: 153,
+                        lineNumber: 178,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1803,7 +1833,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: "Full Name *"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 209,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1816,13 +1846,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 placeholder: "Your name"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 187,
+                                                lineNumber: 212,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 208,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1832,7 +1862,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: "Email *"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 220,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1846,19 +1876,19 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 placeholder: "your@email.com"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 223,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 219,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 182,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1868,7 +1898,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         children: "Phone"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 234,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$react$2d$phone$2d$number$2d$input$2f$min$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1879,13 +1909,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         className: "phone-input-custom"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 237,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 208,
+                                lineNumber: 233,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1898,7 +1928,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: "PAN Number"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 223,
+                                                lineNumber: 248,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1911,13 +1941,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 maxLength: 10
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 247,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1927,7 +1957,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: "Address"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 234,
+                                                lineNumber: 259,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1939,19 +1969,19 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 placeholder: "Your address"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 237,
+                                                lineNumber: 262,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 233,
+                                        lineNumber: 258,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 221,
+                                lineNumber: 246,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1961,7 +1991,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                         children: "Amount (INR) *"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 271,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1971,7 +2001,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 275,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1987,13 +2017,13 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 className: "pl-9"
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 251,
+                                                lineNumber: 276,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 249,
+                                        lineNumber: 274,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2014,18 +2044,18 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                                 children: formatCurrency(amt)
                                             }, amt, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                                lineNumber: 263,
+                                                lineNumber: 288,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                        lineNumber: 261,
+                                        lineNumber: 286,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 245,
+                                lineNumber: 270,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2038,7 +2068,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             className: "w-5 h-5 mr-2 animate-spin"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 286,
+                                            lineNumber: 311,
                                             columnNumber: 17
                                         }, this),
                                         "Processing..."
@@ -2049,7 +2079,7 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             className: "w-5 h-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 291,
+                                            lineNumber: 316,
                                             columnNumber: 17
                                         }, this),
                                         "Donate ",
@@ -2058,40 +2088,40 @@ function DonationModal({ isOpen, onClose, campaign }) {
                                             className: "w-5 h-5 ml-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                            lineNumber: 293,
+                                            lineNumber: 318,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 279,
+                                lineNumber: 304,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xs text-center text-gray-500",
-                                children: "Secure payment powered by Razorpay. 80G tax exemption available."
+                                children: "Secure payment powered by BillDesk. 80G tax exemption available."
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                                lineNumber: 298,
+                                lineNumber: 323,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                        lineNumber: 181,
+                        lineNumber: 206,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-                lineNumber: 119,
+                lineNumber: 144,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/components/DonationModal.tsx",
-        lineNumber: 111,
+        lineNumber: 136,
         columnNumber: 5
     }, this);
 }

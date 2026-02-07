@@ -90,7 +90,8 @@ export default async function Footer() {
               <li><Link href="/team" className="hover:text-white transition-colors">Care Team</Link></li>
               <li><Link href="/volunteer" className="hover:text-white transition-colors">Volunteer</Link></li>
               <li><Link href="/donate" className="hover:text-white transition-colors">Donate</Link></li>
-              <li><Link href="/admin" className="hover:text-white transition-colors">Admin</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-white transition-colors">Refund Policy</Link></li>
             </ul>
           </div>
 

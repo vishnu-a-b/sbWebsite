@@ -106,6 +106,32 @@ function DonateContent() {
     }
   };
 
+  // Helper function to redirect to BillDesk V2 payment page
+  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string }) => {
+    // Create a form and submit it to the payment page
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = paymentPageUrl;
+
+    // Add hidden fields
+    const fields = [
+      { name: 'bdorderid', value: paymentData.bdorderid },
+      { name: 'merchantid', value: paymentData.merchantid },
+      { name: 'rdata', value: paymentData.rdata },
+    ];
+
+    fields.forEach(field => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = field.name;
+      input.value = field.value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+  };
+
   const handleGeneralDonation = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -121,15 +147,16 @@ function DonateContent() {
         })
       });
       const data = await res.json();
-      if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
+      if (data.success && data.paymentPageUrl && data.paymentData) {
+        // BillDesk V2: Redirect via form POST
+        redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
       } else {
         alert(data.error || 'Failed to initiate payment');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Payment error:', error);
       alert('Failed to initiate payment');
-    } finally {
       setLoading(false);
     }
   };
@@ -175,15 +202,16 @@ function DonateContent() {
         })
       });
       const data = await res.json();
-      if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
+      if (data.success && data.paymentPageUrl && data.paymentData) {
+        // BillDesk V2: Redirect via form POST
+        redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
       } else {
         alert(data.error || 'Failed to initiate payment');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Payment error:', error);
       alert('Failed to initiate payment');
-    } finally {
       setLoading(false);
     }
   };
@@ -208,15 +236,16 @@ function DonateContent() {
         })
       });
       const data = await res.json();
-      if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
+      if (data.success && data.paymentPageUrl && data.paymentData) {
+        // BillDesk V2: Redirect via form POST
+        redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
       } else {
         alert(data.error || 'Failed to initiate payment');
+        setLoading(false);
       }
     } catch (error) {
       console.error('Payment error:', error);
       alert('Failed to initiate payment');
-    } finally {
       setLoading(false);
     }
   };

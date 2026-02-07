@@ -15,3 +15,168 @@
 [00:00:05.171] Browser ERROR   Failed to fetch campaigns: {}
 [00:00:05.171] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
 [00:00:05.171] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:37:08.687] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:08.721] Server  LOG     ✓ Compiled in 1034ms
+[01:37:08.721] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:37:08.755] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:08.807] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:08.961] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[01:37:08.993] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:09.022] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:09.055] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:10.270] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:37:10.273] Server  LOG     ✓ Compiled in 485ms
+[01:37:10.501] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:10.594] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[01:37:11.268] Server  LOG     getServices: Fetched 9 services
+[01:37:12.010] Server  LOG     getServices: Fetched 9 services
+[01:37:12.222] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:12.223] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:12.715] Server  LOG     getServices: Fetched 9 services
+[01:37:13.029] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:13.030] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:13.240] Server  LOG     getServices: Fetched 9 services
+[01:37:13.852] Server  LOG     getServices: Fetched 9 services
+[01:37:13.863] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:13.865] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:14.380] Server  LOG     getServices: Fetched 9 services
+[01:37:14.392] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:14.393] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:14.468] Server  LOG     getServices: Fetched 9 services
+[01:37:14.835] Server  LOG     [Awards] Response status: 200
+[01:37:14.840] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:14.888] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:14.889] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.055] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.056] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.130] Server  LOG     [Awards] Response status: 200
+[01:37:15.130] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.175] Server  LOG     [Awards] Response status: 200
+[01:37:15.176] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.180] Server  LOG     getProjects: Received data count: 3
+[01:37:15.186] Server  LOG     getProjects: Received data count: 3
+[01:37:15.207] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.208] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.216] Server  LOG     [Awards] Response status: 200
+[01:37:15.217] Server  LOG     getProjects: Received data count: 3
+[01:37:15.217] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.267] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.354] Server  LOG     getServices: Fetched 9 services
+[01:37:15.374] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.381] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.393] Server  LOG     [Awards] Response status: 200
+[01:37:15.394] Server  LOG     getProjects: Received data count: 3
+[01:37:15.394] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.434] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.446] Server  LOG     getServices: Fetched 9 services
+[01:37:15.458] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.458] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.472] Server  LOG     [Awards] Response status: 200
+[01:37:15.473] Server  LOG     getProjects: Received data count: 3
+[01:37:15.473] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.487] Server  LOG     [Awards] Response status: 200
+[01:37:15.487] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.493] Server  LOG     getProjects: Received data count: 3
+[01:37:15.496] Server  LOG     getProjects: Received data count: 3
+[01:37:15.498] Server  LOG     [Awards] Response status: 200
+[01:37:15.499] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.590] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.600] Server  LOG     getServices: Fetched 9 services
+[01:37:15.609] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.610] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.618] Server  LOG     [Awards] Response status: 200
+[01:37:15.618] Server  LOG     getProjects: Received data count: 3
+[01:37:15.618] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.645] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.652] Server  LOG     getServices: Fetched 9 services
+[01:37:15.663] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.664] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.673] Server  LOG     [Awards] Response status: 200
+[01:37:15.674] Server  LOG     getProjects: Received data count: 3
+[01:37:15.674] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.713] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.724] Server  LOG     getServices: Fetched 9 services
+[01:37:15.741] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.742] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.749] Server  LOG     [Awards] Response status: 200
+[01:37:15.750] Server  LOG     getProjects: Received data count: 3
+[01:37:15.750] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.772] Server  LOG     [Awards] Response status: 200
+[01:37:15.772] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:15.776] Server  LOG     getProjects: Received data count: 3
+[01:37:15.899] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:15.915] Server  LOG     getServices: Fetched 9 services
+[01:37:15.930] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:15.932] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:15.947] Server  LOG     [Awards] Response status: 200
+[01:37:15.948] Server  LOG     getProjects: Received data count: 3
+[01:37:15.948] Server  LOG     [Awards] Fetched awards count: 6
+[01:37:16.001] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[01:37:17.466] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[01:37:35.844] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:37:35.858] Server  LOG     getServices: Fetched 9 services
+[01:37:35.903] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:37:35.904] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:37:35.916] Server  LOG     [Awards] Response status: 200
+[01:37:35.917] Server  LOG     getProjects: Received data count: 3
+[01:37:35.917] Server  LOG     [Awards] Fetched awards count: 6
+[01:42:31.859] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:42:31.983] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[01:42:35.015] Server  LOG     getServices: Fetched 9 services
+[01:42:37.212] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:42:37.214] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:42:37.653] Server  LOG     [Awards] Response status: 200
+[01:42:37.655] Server  LOG     [Awards] Fetched awards count: 6
+[01:42:37.689] Server  LOG     getProjects: Received data count: 3
+[01:42:38.083] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[01:42:42.300] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[01:42:43.354] Server  LOG     getServices: Fetched 9 services
+[01:42:43.382] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[01:42:43.382] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[01:42:43.916] Server  LOG     getProjects: Received data count: 3
+[01:42:43.920] Server  LOG     [Awards] Response status: 200
+[01:42:43.921] Server  LOG     [Awards] Fetched awards count: 6
+[01:42:44.252] Server  ERROR   ⨯ "upstream image" "http://127.0.0.1:5002/public/images/1770014191803-nmlx3u.jpeg" "resolved to private ip" "[\"127.0.0.1\"]"
+[01:42:44.649] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[01:42:44.649] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:42:48.678] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[01:42:56.207] Server  LOG     ○ Compiling /privacy-policy ...
+[01:42:57.888] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[02:10:48.324] Server  LOG     ✓ Finished filesystem cache database compaction in 21.1s
+[02:10:48.431] Server  LOG     ✓ Finished writing to filesystem cache in 10.2s
+[02:15:31.161] Server  LOG     ✓ Compiled in 1067ms
+[02:15:32.342] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[02:15:32.352] Server  LOG     getServices: Fetched 9 services
+[02:15:32.379] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[02:15:32.380] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[02:15:32.391] Server  LOG     [Awards] Response status: 200
+[02:15:32.399] Server  LOG     getProjects: Received data count: 3
+[02:15:32.399] Server  LOG     [Awards] Fetched awards count: 6
+[02:15:32.468] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:15:32.468] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:15:32.610] Server  LOG     ✓ Compiled in 0ms
+[02:15:32.763] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[02:15:32.810] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[02:15:32.851] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[02:15:32.880] Server  ERROR   Failed to fetch banners TypeError: fetch failed
+[02:15:32.883] Server  ERROR   Failed to fetch services TypeError: fetch failed
+[02:15:32.886] Server  ERROR   Error fetching active campaigns: TypeError: fetch failed
+[02:15:32.890] Server  ERROR   Failed to fetch about content TypeError: fetch failed
+[02:15:32.894] Server  ERROR   TypeError: fetch failed
+[02:15:32.981] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[02:15:32.982] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[02:15:33.088] Server  ERROR   Error fetching projects: TypeError: fetch failed
+[02:15:33.093] Server  ERROR   Error fetching awards: TypeError: fetch failed
+[02:15:33.095] Server  ERROR   Error fetching news/events: TypeError: fetch failed
+[02:15:33.116] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[02:15:33.127] Server  LOG     getServices: Fetched 9 services
+[02:15:33.141] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[02:15:33.143] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[02:15:33.157] Server  LOG     [Awards] Response status: 200
+[02:15:33.158] Server  LOG     getProjects: Received data count: 3
+[02:15:33.158] Server  LOG     [Awards] Fetched awards count: 6
+[02:15:34.429] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[02:15:34.429] Browser ERROR   Failed to fetch campaigns: {}
+[02:15:34.429] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[02:15:57.144] Server  LOG     ✓ Compiled in 723ms
+[02:16:09.910] Server  LOG     ✓ Compiled in 98ms
