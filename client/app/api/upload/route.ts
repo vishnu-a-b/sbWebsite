@@ -4,6 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
+// Use NEXT_PUBLIC_BACKEND_IMAGE_URL for stored URLs, falls back to API_URL
+// Set this to production URL even in development if you want portable URLs
+const IMAGE_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_IMAGE_URL || API_URL;
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -44,8 +48,11 @@ export async function POST(request: NextRequest) {
 
     const data = await response.json();
 
-    // Keep the relative URL - the client will prepend API_URL when displaying
-    // This makes the stored URLs portable between environments
+    // Prepend the backend URL to create full URL for storage
+    if (data.url && data.url.startsWith('/public/')) {
+      data.url = `${IMAGE_BASE_URL}${data.url}`;
+    }
+
     return NextResponse.json(data);
   } catch (error) {
     console.error('Upload error:', error);
