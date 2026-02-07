@@ -183,3 +183,5 @@
 [04:21:25.479] Server  LOG     ✓ Finished filesystem cache database compaction in 11.0s
 [04:32:23.928] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
 [04:32:23.929] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[05:07:47.422] Server  LOG       Reload env: .env.local
+[05:07:55.812] Server  LOG     ✓ Compiled in 8.3s
