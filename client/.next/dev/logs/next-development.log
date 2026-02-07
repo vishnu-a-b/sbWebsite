@@ -180,3 +180,4 @@
 [02:15:34.429] Browser WARN    motion() is deprecated. Use motion.create() instead.
 [02:15:57.144] Server  LOG     ✓ Compiled in 723ms
 [02:16:09.910] Server  LOG     ✓ Compiled in 98ms
+[04:21:25.479] Server  LOG     ✓ Finished filesystem cache database compaction in 11.0s

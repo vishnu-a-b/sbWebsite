@@ -44,11 +44,8 @@ export async function POST(request: NextRequest) {
 
     const data = await response.json();
 
-    // Convert relative URL to absolute URL pointing to backend
-    if (data.url && data.url.startsWith('/public/')) {
-      data.url = `${API_URL}${data.url}`;
-    }
-
+    // Keep the relative URL - the client will prepend API_URL when displaying
+    // This makes the stored URLs portable between environments
     return NextResponse.json(data);
   } catch (error) {
     console.error('Upload error:', error);

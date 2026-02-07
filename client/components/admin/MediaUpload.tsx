@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Upload, X, Image as ImageIcon, Video, File, Loader2 } from 'lucide-react';
+import { getImageUrl } from '@/lib/image-url';
 
 interface MediaUploadProps {
   type?: 'image' | 'video' | 'any';
@@ -139,6 +140,7 @@ export default function MediaUpload({
   };
 
   const isVideo = preview && (preview.includes('.mp4') || preview.includes('.webm') || preview.includes('.mov'));
+  const displayUrl = getImageUrl(preview);
 
   return (
     <div className="space-y-2">
@@ -166,13 +168,13 @@ export default function MediaUpload({
             <div className="p-4">
               {isVideo ? (
                 <video
-                  src={preview}
+                  src={displayUrl}
                   className="w-full h-48 object-cover rounded-lg"
                   controls
                 />
               ) : (
                 <img
-                  src={preview}
+                  src={displayUrl}
                   alt="Preview"
                   className="w-full h-48 object-cover rounded-lg"
                 />
