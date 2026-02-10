@@ -2776,7 +2776,6 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70),
-        ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70)
     ]),
     "path": ("TURBOPACK compile-time value", "/_next/image"),
@@ -2793,6 +2792,11 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", {
             "protocol": ("TURBOPACK compile-time value", "https"),
             "hostname": ("TURBOPACK compile-time value", "images.unsplash.com"),
+            "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "https"),
+            "hostname": ("TURBOPACK compile-time value", "api.donatebed.palliativeindia.in"),
             "pathname": ("TURBOPACK compile-time value", "/**")
         }),
         ("TURBOPACK compile-time value", {

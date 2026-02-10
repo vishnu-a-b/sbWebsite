@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Card, CardContent } from './ui/Card';
 import { Button } from './ui/Button';
 import Link from 'next/link';
 
@@ -40,7 +39,10 @@ export default function HorizontalScrollProjects({ projects, title, description 
               
               <div className="absolute bottom-0 p-8 text-white w-full">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">{project.projectName}</h3>
-                <p className="text-white/80 line-clamp-2 mb-6 text-sm md:text-base">{project.shortDescription}</p>
+                <p
+                  className="text-white/80 line-clamp-2 mb-6 text-sm md:text-base"
+                  dangerouslySetInnerHTML={{ __html: project.shortDescription }}
+                />
                 <div className="flex gap-4">
                   <Button asChild variant="secondary" className="rounded-full">
                     <Link href={`/projects/${project._id}`}>Details</Link>

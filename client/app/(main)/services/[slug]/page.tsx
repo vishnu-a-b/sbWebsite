@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Info, Phone } from "lucide-react";
 import RevealAnimation from "@/components/RevealAnimation";
+import { getImageUrl } from "@/lib/image-url";
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -25,7 +26,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <section className="relative h-[50vh] min-h-[400px]">
         {service.image ? (
             <img
-            src={service.image}
+            src={getImageUrl(service.image)}
             alt={service.title}
             className="w-full h-full object-cover"
             />

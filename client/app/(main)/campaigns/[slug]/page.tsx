@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import DonationModal from '@/components/DonationModal';
 import RevealAnimation from '@/components/RevealAnimation';
+import { getImageUrl } from '@/lib/image-url';
 
 interface Campaign {
   _id: string;
@@ -145,7 +146,7 @@ export default function CampaignDetailPage() {
         <section className="relative h-[50vh] md:h-[60vh] min-h-[400px]">
           {campaign.image ? (
             <Image
-              src={campaign.image}
+              src={getImageUrl(campaign.image)}
               alt={campaign.title}
               fill
               className="object-cover"

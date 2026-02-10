@@ -37,9 +37,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </h1>
             </RevealAnimation>
             <RevealAnimation delay={0.1}>
-              <p className="text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed shadow-sm">
-                {project.shortDescription}
-              </p>
+              <p
+                className="text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed shadow-sm"
+                dangerouslySetInnerHTML={{ __html: project.shortDescription }}
+              />
             </RevealAnimation>
           </div>
         </div>
@@ -48,8 +49,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {/* Content Section */}
       <section className="py-12 md:py-16">
         <div className="container px-4 md:px-6 mx-auto max-w-4xl">
-           <Link href="/benevity" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
-              <ArrowLeft className="w-4 h-4 mr-2" /> Back to Benevity Page
+           <Link href="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
            </Link>
 
            <div className="flex flex-wrap gap-4 mb-8 text-sm text-gray-600">
@@ -59,9 +60,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                </div>
            </div>
 
-           <div className="prose prose-lg max-w-none text-gray-800 leading-relaxed whitespace-pre-line mb-12">
-              {project.fullDescription}
-           </div>
+           <div
+              className="prose prose-lg max-w-none text-gray-800 leading-relaxed whitespace-pre-line mb-12"
+              dangerouslySetInnerHTML={{ __html: project.fullDescription.replace(/\n/g, '<br/>') }}
+           />
            
            {/* Gallery */}
            {project.gallery && project.gallery.length > 0 && (

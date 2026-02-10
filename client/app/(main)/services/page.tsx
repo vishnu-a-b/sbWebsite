@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { getServices } from "@/app/actions/service";
 import { getServicesPageContent } from "@/app/actions/servicesPage";
+import { getImageUrl } from "@/lib/image-url";
 // Import all icons used (map string to component)
 import * as LucideIcons from "lucide-react";
 
@@ -60,9 +61,9 @@ export default async function ServicesPage() {
                 <Card className="h-full border-0 shadow-xl bg-white overflow-hidden group hover:shadow-2xl transition-all duration-300">
                   <div className="relative h-48 overflow-hidden">
                     {service.image ? (
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
+                      <img
+                        src={getImageUrl(service.image)}
+                        alt={service.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     ) : (

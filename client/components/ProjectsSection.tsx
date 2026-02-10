@@ -48,12 +48,13 @@ export default async function ProjectsSection({ type = 'featured' }: ProjectsSec
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
                   {project.projectName}
                 </h3>
-                <p className="text-gray-600 text-base mb-8 flex-grow line-clamp-3 leading-relaxed">
-                  {project.shortDescription}
-                </p>
+                <p
+                  className="text-gray-600 text-base mb-8 flex-grow line-clamp-3 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: project.shortDescription }}
+                />
                 <div className="flex flex-col gap-4 mt-auto">
                     <Button asChild variant="outline" className="w-full rounded-full border-2">
-                       <Link href={`/projects/${project._id}`}>Know More</Link>
+                       <Link href={`/benevity/${project._id}`}>Know More</Link>
                     </Button>
                     <Button asChild className="w-full bg-primary hover:bg-primary/90 rounded-full font-bold">
                        <Link href={project.link || "https://causes.benevity.org/"} target="_blank">Support on Benevity</Link>

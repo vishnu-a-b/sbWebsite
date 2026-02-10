@@ -138,6 +138,7 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
               placeholder="Brief overview (for cards/previews)"
               rows={2}
             />
+            <p className="text-xs text-gray-500 mt-1">Supports HTML tags: &lt;strong&gt;, &lt;em&gt;, &lt;br&gt;, etc.</p>
             {errors.shortDescription && <p className="text-red-500 text-sm mt-1">{errors.shortDescription}</p>}
           </div>
 
@@ -155,6 +156,7 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
               placeholder="Detailed project information"
               rows={6}
             />
+            <p className="text-xs text-gray-500 mt-1">Supports HTML tags: &lt;strong&gt;, &lt;em&gt;, &lt;br&gt;, &lt;ul&gt;, &lt;li&gt;, etc.</p>
             {errors.fullDescription && <p className="text-red-500 text-sm mt-1">{errors.fullDescription}</p>}
           </div>
 

@@ -57,7 +57,7 @@ function HorizontalScrollProjects({ projects, title, description }) {
                                 children: title
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                lineNumber: 26,
+                                lineNumber: 25,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -65,18 +65,18 @@ function HorizontalScrollProjects({ projects, title, description }) {
                                 children: description
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                lineNumber: 27,
+                                lineNumber: 26,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -93,14 +93,14 @@ function HorizontalScrollProjects({ projects, title, description }) {
                                     className: "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 33,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 38,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -111,15 +111,17 @@ function HorizontalScrollProjects({ projects, title, description }) {
                                             children: project.projectName
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                            lineNumber: 42,
+                                            lineNumber: 41,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-white/80 line-clamp-2 mb-6 text-sm md:text-base",
-                                            children: project.shortDescription
+                                            dangerouslySetInnerHTML: {
+                                                __html: project.shortDescription
+                                            }
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                            lineNumber: 43,
+                                            lineNumber: 42,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -133,45 +135,45 @@ function HorizontalScrollProjects({ projects, title, description }) {
                                                     children: "Details"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                                    lineNumber: 46,
+                                                    lineNumber: 48,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                                lineNumber: 45,
+                                                lineNumber: 47,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                            lineNumber: 44,
+                                            lineNumber: 46,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 40,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, project._id, true, {
                             fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                            lineNumber: 33,
+                            lineNumber: 32,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-                    lineNumber: 31,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-            lineNumber: 19,
+            lineNumber: 18,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Official/SbWebsite/client/components/HorizontalScrollProjects.tsx",
-        lineNumber: 18,
+        lineNumber: 17,
         columnNumber: 5
     }, this);
 }

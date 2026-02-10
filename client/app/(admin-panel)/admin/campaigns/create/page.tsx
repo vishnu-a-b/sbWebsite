@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Target, ArrowLeft, Save, Loader2 } from 'lucide-react';
+import MediaUpload from '@/components/admin/MediaUpload';
 
 const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
@@ -159,18 +160,17 @@ export default function CreateCampaignPage() {
             />
           </div>
 
-          {/* Image URL */}
+          {/* Campaign Image */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Image URL
+              Campaign Image
             </label>
-            <input
-              type="url"
-              value={form.image}
-              onChange={(e) => setForm(prev => ({ ...prev, image: e.target.value }))}
-              placeholder="https://example.com/campaign-image.jpg"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+            <MediaUpload
+              onUploadComplete={(url) => setForm(prev => ({ ...prev, image: url }))}
+              currentUrl={form.image}
+              type="image"
             />
+            <p className="text-xs text-gray-500 mt-1">Recommended size: 800x600px</p>
           </div>
 
           {/* Goal Amount */}

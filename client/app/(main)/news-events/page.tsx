@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getPublicNewsEvents } from "@/app/actions/cms/newsEvents";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
 import RevealAnimation from "@/components/RevealAnimation";
+import { getImageUrl } from "@/lib/image-url";
 
 export const dynamic = 'force-dynamic';
 
@@ -36,8 +37,8 @@ export default async function NewsEventsPage() {
                   <Link href={`/news-events/${item._id}`} className="block h-full">
                     <Card className="h-full border-0 shadow-xl bg-white overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-2xl flex flex-col">
                       <div className="relative h-60 overflow-hidden">
-                        <img 
-                          src={item.images && item.images[0] ? item.images[0] : "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800"} 
+                        <img
+                          src={item.images && item.images[0] ? getImageUrl(item.images[0]) : "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800"}
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
