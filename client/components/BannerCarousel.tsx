@@ -10,7 +10,7 @@ const DEFAULT_VIDEO_BANNER = {
   description: 'The First Palliative Hospital in India with no bills and bill counters. Dedicated to improving the quality of life for bedridden patients.',
   mediaType: 'video',
   videoUrl: '/video/hero.mp4',
-  thumbnailUrl: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2000&auto=format&fit=crop',
+  thumbnailUrl: '/image/hero.jpeg',
   ctaText: 'Donate Now',
   ctaLink: '/donate',
 };

@@ -4802,6 +4802,30 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
+        ("TURBOPACK compile-time value", 70),
         ("TURBOPACK compile-time value", 70)
     ]),
     "path": ("TURBOPACK compile-time value", "/_next/image"),
@@ -4818,6 +4842,28 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", {
             "protocol": ("TURBOPACK compile-time value", "https"),
             "hostname": ("TURBOPACK compile-time value", "images.unsplash.com"),
+            "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "https"),
+            "hostname": ("TURBOPACK compile-time value", "api.donatebed.palliativeindia.in"),
+            "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "http"),
+            "hostname": ("TURBOPACK compile-time value", "127.0.0.1"),
+            "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "http"),
+            "hostname": ("TURBOPACK compile-time value", "localhost"),
+            "port": ("TURBOPACK compile-time value", ""),
+            "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "http"),
+            "hostname": ("TURBOPACK compile-time value", "localhost"),
+            "port": ("TURBOPACK compile-time value", "5001"),
             "pathname": ("TURBOPACK compile-time value", "/**")
         })
     ]),
@@ -5170,6 +5216,30 @@ function getImageProps(imgProps) {
                 ("TURBOPACK compile-time value", 70),
                 ("TURBOPACK compile-time value", 70),
                 ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70),
                 ("TURBOPACK compile-time value", 70)
             ]),
             "path": ("TURBOPACK compile-time value", "/_next/image"),
@@ -5186,6 +5256,28 @@ function getImageProps(imgProps) {
                 ("TURBOPACK compile-time value", {
                     "protocol": ("TURBOPACK compile-time value", "https"),
                     "hostname": ("TURBOPACK compile-time value", "images.unsplash.com"),
+                    "pathname": ("TURBOPACK compile-time value", "/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "https"),
+                    "hostname": ("TURBOPACK compile-time value", "api.donatebed.palliativeindia.in"),
+                    "pathname": ("TURBOPACK compile-time value", "/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "127.0.0.1"),
+                    "pathname": ("TURBOPACK compile-time value", "/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "localhost"),
+                    "port": ("TURBOPACK compile-time value", ""),
+                    "pathname": ("TURBOPACK compile-time value", "/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "localhost"),
+                    "port": ("TURBOPACK compile-time value", "5001"),
                     "pathname": ("TURBOPACK compile-time value", "/**")
                 })
             ]),

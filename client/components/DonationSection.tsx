@@ -144,7 +144,7 @@ export default function DonationSection() {
         </div>
 
         {/* Featured Campaigns */}
-        {!loading && campaigns.length > 0 && (
+        {/* {!loading && campaigns.length > 0 && (
           <RevealAnimation delay={0.4}>
             <div className="mt-16">
               <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
@@ -194,7 +194,7 @@ export default function DonationSection() {
               </div>
             </div>
           </RevealAnimation>
-        )}
+        )} */}
 
         {/* Trust indicators */}
         <RevealAnimation delay={0.5}>

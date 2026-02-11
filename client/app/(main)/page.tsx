@@ -241,14 +241,6 @@ export default async function Home() {
 
       {/* News & Events Section */}
       <NewsEventsSection />
-
-      {/* Donation Section */}
-      <DonationSection />
-
-      {/* Benevity Section */}
-      <BenevitySection />
-
-      {/* Stats Section with Glassmorphism */}
       <section className="w-full py-24 md:py-32 bg-primary relative overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white opacity-[0.03] skew-x-12 translate-x-1/2" />
@@ -299,6 +291,15 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Donation Section */}
+      <DonationSection />
+
+      {/* Benevity Section */}
+      <BenevitySection />
+
+      {/* Stats Section with Glassmorphism */}
+      
+
       {/* Immersive Call to Action */}
       <section className="w-full py-24 md:py-40 relative overflow-hidden group">
         <Image
@@ -325,7 +326,7 @@ export default async function Home() {
                 </Button>
               </Magnetic>
               <Magnetic>
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-10 py-7 text-lg font-bold transition-all">
+                <Button asChild size="lg" variant="outline" className="border border-white bg-white/15 text-white hover:bg-white/25 rounded-full px-10 py-7 text-lg font-bold transition-all">
                   <Link href="/volunteer">Become a Volunteer</Link>
                 </Button>
               </Magnetic>

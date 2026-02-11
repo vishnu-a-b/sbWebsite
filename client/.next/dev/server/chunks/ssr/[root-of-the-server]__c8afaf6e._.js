@@ -266,7 +266,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 function DonateContent() {
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const tabParam = searchParams.get('tab');
@@ -344,6 +345,37 @@ function DonateContent() {
             setLoadingCampaigns(false);
         }
     };
+    // Helper function to redirect to BillDesk V2 payment page
+    const redirectToPaymentPage = (paymentPageUrl, paymentData)=>{
+        // Create a form and submit it to the payment page
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = paymentPageUrl;
+        // Add hidden fields
+        const fields = [
+            {
+                name: 'bdorderid',
+                value: paymentData.bdorderid
+            },
+            {
+                name: 'merchantid',
+                value: paymentData.merchantid
+            },
+            {
+                name: 'rdata',
+                value: paymentData.rdata
+            }
+        ];
+        fields.forEach((field)=>{
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = field.name;
+            input.value = field.value;
+            form.appendChild(input);
+        });
+        document.body.appendChild(form);
+        form.submit();
+    };
     const handleGeneralDonation = async (e)=>{
         e.preventDefault();
         setLoading(true);
@@ -361,15 +393,16 @@ function DonateContent() {
                 })
             });
             const data = await res.json();
-            if (data.success && data.paymentUrl) {
-                window.location.href = data.paymentUrl;
+            if (data.success && data.paymentPageUrl && data.paymentData) {
+                // BillDesk V2: Redirect via form POST
+                redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
             } else {
                 alert(data.error || 'Failed to initiate payment');
+                setLoading(false);
             }
         } catch (error) {
             console.error('Payment error:', error);
             alert('Failed to initiate payment');
-        } finally{
             setLoading(false);
         }
     };
@@ -416,15 +449,16 @@ function DonateContent() {
                 })
             });
             const data = await res.json();
-            if (data.success && data.paymentUrl) {
-                window.location.href = data.paymentUrl;
+            if (data.success && data.paymentPageUrl && data.paymentData) {
+                // BillDesk V2: Redirect via form POST
+                redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
             } else {
                 alert(data.error || 'Failed to initiate payment');
+                setLoading(false);
             }
         } catch (error) {
             console.error('Payment error:', error);
             alert('Failed to initiate payment');
-        } finally{
             setLoading(false);
         }
     };
@@ -450,15 +484,16 @@ function DonateContent() {
                 })
             });
             const data = await res.json();
-            if (data.success && data.paymentUrl) {
-                window.location.href = data.paymentUrl;
+            if (data.success && data.paymentPageUrl && data.paymentData) {
+                // BillDesk V2: Redirect via form POST
+                redirectToPaymentPage(data.paymentPageUrl, data.paymentData);
             } else {
                 alert(data.error || 'Failed to initiate payment');
+                setLoading(false);
             }
         } catch (error) {
             console.error('Payment error:', error);
             alert('Failed to initiate payment');
-        } finally{
             setLoading(false);
         }
     };
@@ -483,7 +518,7 @@ function DonateContent() {
                         children: "Support Our Cause"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                        lineNumber: 238,
+                        lineNumber: 268,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -491,13 +526,13 @@ function DonateContent() {
                         children: 'Our income is only from donations, not from services. Help us keep Shanthibhavan a "No-Bill" hospital.'
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                        lineNumber: 239,
+                        lineNumber: 269,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                lineNumber: 237,
+                lineNumber: 267,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -512,7 +547,7 @@ function DonateContent() {
                                     className: "w-10 h-10 md:w-12 md:h-12 text-secondary mx-auto"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 248,
+                                    lineNumber: 278,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -520,7 +555,7 @@ function DonateContent() {
                                     children: "A Light of Compassion"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 249,
+                                    lineNumber: 279,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -528,13 +563,13 @@ function DonateContent() {
                                     children: "Shanthibhavan runs entirely on the goodwill of generous hearts like yours. We do not charge for any of our services. From specialized medical care to daily food and accommodation for patients and bystanders, everything is free."
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 250,
+                                    lineNumber: 280,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                            lineNumber: 247,
+                            lineNumber: 277,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -553,7 +588,7 @@ function DonateContent() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 260,
+                                                    lineNumber: 290,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -561,13 +596,13 @@ function DonateContent() {
                                                     children: "General"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 291,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                            lineNumber: 259,
+                                            lineNumber: 289,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -578,7 +613,7 @@ function DonateContent() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 264,
+                                                    lineNumber: 294,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -586,13 +621,13 @@ function DonateContent() {
                                                     children: "Fellowship"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 295,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                            lineNumber: 263,
+                                            lineNumber: 293,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -603,7 +638,7 @@ function DonateContent() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 298,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -611,19 +646,19 @@ function DonateContent() {
                                                     children: "Campaign"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 269,
+                                                    lineNumber: 299,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 297,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 258,
+                                    lineNumber: 288,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -639,27 +674,27 @@ function DonateContent() {
                                                                 className: "w-5 h-5 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 278,
+                                                                lineNumber: 308,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "One-Time Donation"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 277,
+                                                        lineNumber: 307,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
                                                         children: "Make a one-time contribution to support our mission. Every rupee helps provide free healthcare to those in need."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 311,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 306,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -677,7 +712,7 @@ function DonateContent() {
                                                                             children: "Full Name *"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 289,
+                                                                            lineNumber: 319,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -690,13 +725,13 @@ function DonateContent() {
                                                                             placeholder: "Enter your full name"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 290,
+                                                                            lineNumber: 320,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 288,
+                                                                    lineNumber: 318,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -706,7 +741,7 @@ function DonateContent() {
                                                                             children: "Email *"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 298,
+                                                                            lineNumber: 328,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -720,19 +755,19 @@ function DonateContent() {
                                                                             placeholder: "your@email.com"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 299,
+                                                                            lineNumber: 329,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 297,
+                                                                    lineNumber: 327,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 287,
+                                                            lineNumber: 317,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -742,7 +777,7 @@ function DonateContent() {
                                                                     children: "Phone"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 309,
+                                                                    lineNumber: 339,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$react$2d$phone$2d$number$2d$input$2f$min$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -753,13 +788,13 @@ function DonateContent() {
                                                                     className: "phone-input-custom"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 310,
+                                                                    lineNumber: 340,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 308,
+                                                            lineNumber: 338,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -772,7 +807,7 @@ function DonateContent() {
                                                                             children: "PAN Number (for 80G receipt)"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 320,
+                                                                            lineNumber: 350,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -785,13 +820,13 @@ function DonateContent() {
                                                                             maxLength: 10
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 321,
+                                                                            lineNumber: 351,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 319,
+                                                                    lineNumber: 349,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -801,7 +836,7 @@ function DonateContent() {
                                                                             children: "Address"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 329,
+                                                                            lineNumber: 359,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -813,19 +848,19 @@ function DonateContent() {
                                                                             placeholder: "Your complete address"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 330,
+                                                                            lineNumber: 360,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 328,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 318,
+                                                            lineNumber: 348,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -835,7 +870,7 @@ function DonateContent() {
                                                                     children: "Amount (INR) *"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 338,
+                                                                    lineNumber: 368,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -845,7 +880,7 @@ function DonateContent() {
                                                                             className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 340,
+                                                                            lineNumber: 370,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -861,13 +896,13 @@ function DonateContent() {
                                                                             className: "pl-9"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 341,
+                                                                            lineNumber: 371,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 369,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -887,18 +922,18 @@ function DonateContent() {
                                                                             children: formatCurrency(amt)
                                                                         }, amt, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 353,
+                                                                            lineNumber: 383,
                                                                             columnNumber: 27
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 351,
+                                                                    lineNumber: 381,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 367,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -908,7 +943,7 @@ function DonateContent() {
                                                                     children: "Notes (optional)"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 365,
+                                                                    lineNumber: 395,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -920,13 +955,13 @@ function DonateContent() {
                                                                     placeholder: "Any message or dedication"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 366,
+                                                                    lineNumber: 396,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 364,
+                                                            lineNumber: 394,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -940,7 +975,7 @@ function DonateContent() {
                                                                         className: "w-4 h-4 mr-2 animate-spin"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 375,
+                                                                        lineNumber: 405,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     "Processing..."
@@ -952,36 +987,36 @@ function DonateContent() {
                                                                         className: "w-4 h-4 ml-2"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 381,
+                                                                        lineNumber: 411,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 372,
+                                                            lineNumber: 402,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 286,
+                                                    lineNumber: 316,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 285,
+                                                lineNumber: 315,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                        lineNumber: 275,
+                                        lineNumber: 305,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 274,
+                                    lineNumber: 304,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -997,27 +1032,27 @@ function DonateContent() {
                                                                 className: "w-5 h-5 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 395,
+                                                                lineNumber: 425,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Fellowship Program"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 394,
+                                                        lineNumber: 424,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
                                                         children: "Join our fellowship program with a monthly contribution. Your regular support helps us plan and sustain our services better."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 398,
+                                                        lineNumber: 428,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 393,
+                                                lineNumber: 423,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1032,14 +1067,14 @@ function DonateContent() {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 405,
+                                                                        lineNumber: 435,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Monthly Giving Benefits"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 404,
+                                                                lineNumber: 434,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1049,40 +1084,40 @@ function DonateContent() {
                                                                         children: "Predictable support helps us plan long-term programs"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 409,
+                                                                        lineNumber: 439,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                         children: "Receive monthly updates on how your contribution helps"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 410,
+                                                                        lineNumber: 440,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                         children: "Special recognition in our annual report"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 411,
+                                                                        lineNumber: 441,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                         children: "80G tax exemption certificate for each payment"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 412,
+                                                                        lineNumber: 442,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 408,
+                                                                lineNumber: 438,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 403,
+                                                        lineNumber: 433,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1099,7 +1134,7 @@ function DonateContent() {
                                                                                 children: "Full Name *"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 418,
+                                                                                lineNumber: 448,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1112,13 +1147,13 @@ function DonateContent() {
                                                                                 placeholder: "Enter your full name"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 419,
+                                                                                lineNumber: 449,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 417,
+                                                                        lineNumber: 447,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1128,7 +1163,7 @@ function DonateContent() {
                                                                                 children: "Email *"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 427,
+                                                                                lineNumber: 457,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1142,19 +1177,19 @@ function DonateContent() {
                                                                                 placeholder: "your@email.com"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 428,
+                                                                                lineNumber: 458,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 426,
+                                                                        lineNumber: 456,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 416,
+                                                                lineNumber: 446,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1164,7 +1199,7 @@ function DonateContent() {
                                                                         children: "Phone *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 438,
+                                                                        lineNumber: 468,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$react$2d$phone$2d$number$2d$input$2f$min$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1175,13 +1210,13 @@ function DonateContent() {
                                                                         className: "phone-input-custom"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 439,
+                                                                        lineNumber: 469,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 437,
+                                                                lineNumber: 467,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1194,7 +1229,7 @@ function DonateContent() {
                                                                                 children: "PAN Number *"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 449,
+                                                                                lineNumber: 479,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1208,13 +1243,13 @@ function DonateContent() {
                                                                                 maxLength: 10
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 450,
+                                                                                lineNumber: 480,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 448,
+                                                                        lineNumber: 478,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1224,7 +1259,7 @@ function DonateContent() {
                                                                                 children: "Address"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 459,
+                                                                                lineNumber: 489,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1236,19 +1271,19 @@ function DonateContent() {
                                                                                 placeholder: "Your complete address"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 460,
+                                                                                lineNumber: 490,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 458,
+                                                                        lineNumber: 488,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 447,
+                                                                lineNumber: 477,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1258,7 +1293,7 @@ function DonateContent() {
                                                                         children: "Monthly Amount (INR) *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 468,
+                                                                        lineNumber: 498,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1268,7 +1303,7 @@ function DonateContent() {
                                                                                 className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 470,
+                                                                                lineNumber: 500,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1284,13 +1319,13 @@ function DonateContent() {
                                                                                 className: "pl-9"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 471,
+                                                                                lineNumber: 501,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 469,
+                                                                        lineNumber: 499,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1313,18 +1348,18 @@ function DonateContent() {
                                                                                 ]
                                                                             }, amt, true, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 483,
+                                                                                lineNumber: 513,
                                                                                 columnNumber: 27
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                        lineNumber: 481,
+                                                                        lineNumber: 511,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 467,
+                                                                lineNumber: 497,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1338,7 +1373,7 @@ function DonateContent() {
                                                                             className: "w-4 h-4 mr-2 animate-spin"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 497,
+                                                                            lineNumber: 527,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         "Processing..."
@@ -1350,37 +1385,37 @@ function DonateContent() {
                                                                             className: "w-4 h-4 ml-2"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 503,
+                                                                            lineNumber: 533,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 494,
+                                                                lineNumber: 524,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 415,
+                                                        lineNumber: 445,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 402,
+                                                lineNumber: 432,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                        lineNumber: 392,
+                                        lineNumber: 422,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 391,
+                                    lineNumber: 421,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -1396,27 +1431,27 @@ function DonateContent() {
                                                                 className: "w-5 h-5 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                lineNumber: 517,
+                                                                lineNumber: 547,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Donation Campaigns"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 516,
+                                                        lineNumber: 546,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
                                                         children: "Support our active campaigns and help us reach specific goals for important initiatives."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 520,
+                                                        lineNumber: 550,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 515,
+                                                lineNumber: 545,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1426,12 +1461,12 @@ function DonateContent() {
                                                         className: "w-8 h-8 animate-spin text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                        lineNumber: 527,
+                                                        lineNumber: 557,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 526,
+                                                    lineNumber: 556,
                                                     columnNumber: 21
                                                 }, this) : campaigns.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-center py-8 text-gray-500",
@@ -1440,14 +1475,14 @@ function DonateContent() {
                                                             className: "w-12 h-12 mx-auto mb-4 opacity-50"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 531,
+                                                            lineNumber: 561,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "No active campaigns at the moment."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 532,
+                                                            lineNumber: 562,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1455,13 +1490,13 @@ function DonateContent() {
                                                             children: "Please check back later or make a general donation."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 533,
+                                                            lineNumber: 563,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                    lineNumber: 530,
+                                                    lineNumber: 560,
                                                     columnNumber: 21
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
@@ -1473,7 +1508,7 @@ function DonateContent() {
                                                                     children: "Select a Campaign *"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 539,
+                                                                    lineNumber: 569,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1490,7 +1525,7 @@ function DonateContent() {
                                                                                             children: campaign.title
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                            lineNumber: 552,
+                                                                                            lineNumber: 582,
                                                                                             columnNumber: 33
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1498,13 +1533,13 @@ function DonateContent() {
                                                                                             children: "Active"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                            lineNumber: 553,
+                                                                                            lineNumber: 583,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 551,
+                                                                                    lineNumber: 581,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 campaign.shortDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1512,7 +1547,7 @@ function DonateContent() {
                                                                                     children: campaign.shortDescription
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 556,
+                                                                                    lineNumber: 586,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1529,7 +1564,7 @@ function DonateContent() {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                                    lineNumber: 560,
+                                                                                                    lineNumber: 590,
                                                                                                     columnNumber: 35
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1540,13 +1575,13 @@ function DonateContent() {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                                    lineNumber: 561,
+                                                                                                    lineNumber: 591,
                                                                                                     columnNumber: 35
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                            lineNumber: 559,
+                                                                                            lineNumber: 589,
                                                                                             columnNumber: 33
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1558,12 +1593,12 @@ function DonateContent() {
                                                                                                 }
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                                lineNumber: 564,
+                                                                                                lineNumber: 594,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                            lineNumber: 563,
+                                                                                            lineNumber: 593,
                                                                                             columnNumber: 33
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1576,7 +1611,7 @@ function DonateContent() {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                                    lineNumber: 570,
+                                                                                                    lineNumber: 600,
                                                                                                     columnNumber: 35
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1586,36 +1621,36 @@ function DonateContent() {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                                    lineNumber: 571,
+                                                                                                    lineNumber: 601,
                                                                                                     columnNumber: 35
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                            lineNumber: 569,
+                                                                                            lineNumber: 599,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 558,
+                                                                                    lineNumber: 588,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, campaign._id, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 542,
+                                                                            lineNumber: 572,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 540,
+                                                                    lineNumber: 570,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 538,
+                                                            lineNumber: 568,
                                                             columnNumber: 23
                                                         }, this),
                                                         selectedCampaign && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1632,7 +1667,7 @@ function DonateContent() {
                                                                                     children: "Full Name *"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 584,
+                                                                                    lineNumber: 614,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1645,13 +1680,13 @@ function DonateContent() {
                                                                                     placeholder: "Enter your full name"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 585,
+                                                                                    lineNumber: 615,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 583,
+                                                                            lineNumber: 613,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1661,7 +1696,7 @@ function DonateContent() {
                                                                                     children: "Email *"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 593,
+                                                                                    lineNumber: 623,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1675,19 +1710,19 @@ function DonateContent() {
                                                                                     placeholder: "your@email.com"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 594,
+                                                                                    lineNumber: 624,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 592,
+                                                                            lineNumber: 622,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 582,
+                                                                    lineNumber: 612,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1697,7 +1732,7 @@ function DonateContent() {
                                                                             children: "Phone"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 604,
+                                                                            lineNumber: 634,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$react$2d$phone$2d$number$2d$input$2f$min$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1708,13 +1743,13 @@ function DonateContent() {
                                                                             className: "phone-input-custom"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 605,
+                                                                            lineNumber: 635,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 603,
+                                                                    lineNumber: 633,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1727,7 +1762,7 @@ function DonateContent() {
                                                                                     children: "PAN Number (for 80G receipt)"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 615,
+                                                                                    lineNumber: 645,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1740,13 +1775,13 @@ function DonateContent() {
                                                                                     maxLength: 10
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 616,
+                                                                                    lineNumber: 646,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 614,
+                                                                            lineNumber: 644,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1756,7 +1791,7 @@ function DonateContent() {
                                                                                     children: "Address"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 624,
+                                                                                    lineNumber: 654,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1768,19 +1803,19 @@ function DonateContent() {
                                                                                     placeholder: "Your complete address"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 625,
+                                                                                    lineNumber: 655,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 623,
+                                                                            lineNumber: 653,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 613,
+                                                                    lineNumber: 643,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1790,7 +1825,7 @@ function DonateContent() {
                                                                             children: "Amount (INR) *"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 633,
+                                                                            lineNumber: 663,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1800,7 +1835,7 @@ function DonateContent() {
                                                                                     className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 635,
+                                                                                    lineNumber: 665,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1816,13 +1851,13 @@ function DonateContent() {
                                                                                     className: "pl-9"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 636,
+                                                                                    lineNumber: 666,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 634,
+                                                                            lineNumber: 664,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1842,18 +1877,18 @@ function DonateContent() {
                                                                                     children: formatCurrency(amt)
                                                                                 }, amt, false, {
                                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                    lineNumber: 648,
+                                                                                    lineNumber: 678,
                                                                                     columnNumber: 33
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                            lineNumber: 646,
+                                                                            lineNumber: 676,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 632,
+                                                                    lineNumber: 662,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1867,7 +1902,7 @@ function DonateContent() {
                                                                                 className: "w-4 h-4 mr-2 animate-spin"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 662,
+                                                                                lineNumber: 692,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             "Processing..."
@@ -1880,44 +1915,44 @@ function DonateContent() {
                                                                                 className: "w-4 h-4 ml-2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                                lineNumber: 668,
+                                                                                lineNumber: 698,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                                    lineNumber: 659,
+                                                                    lineNumber: 689,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                            lineNumber: 581,
+                                                            lineNumber: 611,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                                lineNumber: 524,
+                                                lineNumber: 554,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                        lineNumber: 514,
+                                        lineNumber: 544,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 513,
+                                    lineNumber: 543,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                            lineNumber: 257,
+                            lineNumber: 287,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1928,7 +1963,7 @@ function DonateContent() {
                                     children: "Corporate Giving?"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 683,
+                                    lineNumber: 713,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1936,7 +1971,7 @@ function DonateContent() {
                                     children: "We are registered on Benevity! If your company uses Benevity for corporate giving or matching donations, you can support us there."
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 684,
+                                    lineNumber: 714,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1947,35 +1982,35 @@ function DonateContent() {
                                         children: "Learn About Benevity"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                        lineNumber: 688,
+                                        lineNumber: 718,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                                    lineNumber: 687,
+                                    lineNumber: 717,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                            lineNumber: 682,
+                            lineNumber: 712,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                    lineNumber: 245,
+                    lineNumber: 275,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                lineNumber: 244,
+                lineNumber: 274,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-        lineNumber: 236,
+        lineNumber: 266,
         columnNumber: 5
     }, this);
 }
@@ -1988,7 +2023,7 @@ function DonatePage() {
                     className: "animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                    lineNumber: 701,
+                    lineNumber: 731,
                     columnNumber: 9
                 }, void 0),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1996,23 +2031,23 @@ function DonatePage() {
                     children: "Loading donation options..."
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-                    lineNumber: 702,
+                    lineNumber: 732,
                     columnNumber: 9
                 }, void 0)
             ]
         }, void 0, true, {
             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-            lineNumber: 700,
+            lineNumber: 730,
             columnNumber: 7
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(DonateContent, {}, void 0, false, {
             fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-            lineNumber: 705,
+            lineNumber: 735,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Official/SbWebsite/client/app/(main)/donate/page.tsx",
-        lineNumber: 699,
+        lineNumber: 729,
         columnNumber: 5
     }, this);
 }
