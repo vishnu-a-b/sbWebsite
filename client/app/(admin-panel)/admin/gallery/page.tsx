@@ -2,22 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import { Plus, Edit, Trash2, Image as ImageIcon, Eye, EyeOff, X, Save } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import MediaUpload from '@/components/admin/MediaUpload';
 import RevealAnimation from '@/components/RevealAnimation';
+import API_BASE_URL from '@/lib/api';
+import { getImageUrl } from '@/lib/image-url';
 
 interface GalleryImage {
   _id: string;
   imageUrl: string;
   altText: string;
   category: string;
-  order: number;
+  priority: number;
   isActive: boolean;
   createdAt: string;
 }
 
-const CATEGORIES = ['general', 'care', 'facility', 'events', 'services'];
+const CATEGORIES = ['General', 'Hospital Life', 'Patient Care', 'Medical Team', 'Facilities', 'Community', 'Rehabilitation', 'Spiritual Care', 'Support Services', 'Volunteers', 'Services', 'Projects'];
 
 export default function GalleryAdminPage() {
   const [images, setImages] = useState<GalleryImage[]>([]);
@@ -27,8 +29,8 @@ export default function GalleryAdminPage() {
   const [formData, setFormData] = useState({
     imageUrl: '',
     altText: '',
-    category: 'general',
-    order: 0,
+    category: 'General',
+    priority: 0,
     isActive: true,
   });
   const [saving, setSaving] = useState(false);
@@ -40,7 +42,7 @@ export default function GalleryAdminPage() {
   const fetchImages = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/gallery?mode=admin');
+      const res = await fetch(`${API_BASE_URL}/gallery/admin`);
       const data = await res.json();
       if (data.success) {
         setImages(data.images);
@@ -61,15 +63,15 @@ export default function GalleryAdminPage() {
 
     setSaving(true);
     try {
+      const url = editingImage
+        ? `${API_BASE_URL}/gallery/${editingImage._id}`
+        : `${API_BASE_URL}/gallery`;
       const method = editingImage ? 'PUT' : 'POST';
-      const body = editingImage
-        ? { id: editingImage._id, ...formData }
-        : formData;
 
-      const res = await fetch('/api/gallery', {
+      const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
@@ -95,7 +97,7 @@ export default function GalleryAdminPage() {
       imageUrl: image.imageUrl,
       altText: image.altText,
       category: image.category,
-      order: image.order,
+      priority: image.priority,
       isActive: image.isActive,
     });
     setShowForm(true);
@@ -105,7 +107,7 @@ export default function GalleryAdminPage() {
     if (!confirm('Are you sure you want to delete this image?')) return;
 
     try {
-      const res = await fetch(`/api/gallery?id=${id}`, {
+      const res = await fetch(`${API_BASE_URL}/gallery/${id}`, {
         method: 'DELETE',
       });
 
@@ -125,8 +127,8 @@ export default function GalleryAdminPage() {
     setFormData({
       imageUrl: '',
       altText: '',
-      category: 'general',
-      order: 0,
+      category: 'General',
+      priority: 0,
       isActive: true,
     });
   };
@@ -197,25 +199,25 @@ export default function GalleryAdminPage() {
                 >
                   {CATEGORIES.map((cat) => (
                     <option key={cat} value={cat}>
-                      {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                      {cat}
                     </option>
                   ))}
                 </select>
               </div>
 
-              {/* Order */}
+              {/* Priority */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Display Order
+                  Priority
                 </label>
                 <input
                   type="number"
-                  value={formData.order}
-                  onChange={(e) => setFormData(prev => ({ ...prev, order: parseInt(e.target.value) || 0 }))}
+                  value={formData.priority}
+                  onChange={(e) => setFormData(prev => ({ ...prev, priority: parseInt(e.target.value) || 0 }))}
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   min="0"
                 />
-                <p className="text-xs text-gray-500 mt-1">Lower numbers appear first</p>
+                <p className="text-xs text-gray-500 mt-1">Higher numbers appear first</p>
               </div>
 
               {/* Active Toggle */}
@@ -299,7 +301,7 @@ export default function GalleryAdminPage() {
               <Card className="overflow-hidden group hover:shadow-xl transition-all">
                 <div className="relative aspect-square">
                   <img
-                    src={image.imageUrl}
+                    src={getImageUrl(image.imageUrl)}
                     alt={image.altText}
                     className="w-full h-full object-cover"
                   />
@@ -334,16 +336,16 @@ export default function GalleryAdminPage() {
                       </span>
                     )}
                   </div>
-                  {/* Order Badge */}
+                  {/* Priority Badge */}
                   <div className="absolute top-2 left-2">
                     <span className="bg-primary text-white text-xs px-2 py-1 rounded-full font-bold">
-                      #{image.order}
+                      P:{image.priority}
                     </span>
                   </div>
                 </div>
                 <CardContent className="p-4">
                   <p className="font-medium text-gray-900 line-clamp-1">{image.altText}</p>
-                  <p className="text-sm text-gray-500 capitalize">{image.category}</p>
+                  <p className="text-sm text-gray-500">{image.category}</p>
                 </CardContent>
               </Card>
             </RevealAnimation>

@@ -80,28 +80,28 @@ async function GalleryPage() {
         className: "flex flex-col min-h-screen bg-white",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "bg-gradient-to-r from-purple-500 to-pink-500 py-16 text-center",
+                className: "bg-gradient-to-r from-blue-900 to-blue-800 py-16 text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-4xl font-bold text-white mb-4",
                         children: "Gallery"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-purple-50 max-w-2xl mx-auto px-4",
+                        className: "text-blue-100 max-w-2xl mx-auto px-4",
                         children: "Glimpses of life at Shanthibhavan. Moments of care, joy, and hope."
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                        lineNumber: 38,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                lineNumber: 36,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -121,7 +121,7 @@ async function GalleryPage() {
                                             className: "w-full h-auto transition-transform duration-300 group-hover:scale-105"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 53,
                                             columnNumber: 22
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,23 +131,23 @@ async function GalleryPage() {
                                                 children: image.altText
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 59,
                                                 columnNumber: 24
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 58,
                                             columnNumber: 22
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 52,
                                     columnNumber: 20
                                 }, this)
                             }, image._id, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                lineNumber: 49,
+                                lineNumber: 51,
                                 columnNumber: 17
                             }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "col-span-full text-center py-12",
@@ -156,33 +156,33 @@ async function GalleryPage() {
                                 children: "No images available at the moment."
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                                lineNumber: 64,
+                                lineNumber: 66,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                            lineNumber: 63,
+                            lineNumber: 65,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                        lineNumber: 46,
+                        lineNumber: 48,
                         columnNumber: 10
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                    lineNumber: 44,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-                lineNumber: 43,
+                lineNumber: 45,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/app/(main)/gallery/page.tsx",
-        lineNumber: 35,
+        lineNumber: 37,
         columnNumber: 5
     }, this);
 }

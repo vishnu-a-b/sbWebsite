@@ -32,6 +32,7 @@ import fellowshipRoutes from './modules/fellowship/fellowship.routes.js';
 import campaignRoutes from './modules/campaign/campaign.routes.js';
 import footerRoutes from './modules/footer/footer.routes.js';
 import uploadRoutes from './modules/upload/upload.routes.js';
+import galleryRoutes from './modules/gallery/gallery.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -79,6 +80,7 @@ app.use('/api/fellowship', fellowshipRoutes);
 app.use('/api/campaign', campaignRoutes);
 app.use('/api/footer', footerRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/gallery', galleryRoutes);
 
 // Health check route
 app.get('/api/health', (_req: Request, res: Response): void => {

@@ -13,9 +13,45 @@ export async function getTeamMembers() {
     }
 
     const data = await response.json();
-    return data.teamMembers || [];
+    return data.members || [];
   } catch (error) {
     console.error('Error fetching team members:', error);
+    return [];
+  }
+}
+
+export async function getPublicTeamMembers() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/team`, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch team members');
+    }
+
+    const data = await response.json();
+    return data.members || [];
+  } catch (error) {
+    console.error('Error fetching public team members:', error);
+    return [];
+  }
+}
+
+export async function getAboutPageLeadership() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/team/about`, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch leadership members');
+    }
+
+    const data = await response.json();
+    return data.members || [];
+  } catch (error) {
+    console.error('Error fetching about page leadership:', error);
     return [];
   }
 }

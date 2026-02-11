@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
            
            {/* Gallery */}
            {project.gallery && project.gallery.length > 0 && (
-             <div className="mb-12">
+             <div>
                <h3 className="text-2xl font-bold text-primary mb-6">Project Gallery</h3>
                <div className="grid md:grid-cols-2 gap-4">
                  {project.gallery.map((img: string, index: number) => (
@@ -78,18 +78,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                </div>
              </div>
            )}
-
-           <div className="bg-secondary/10 border-l-4 border-secondary p-8 rounded-r-xl">
-             <h3 className="text-2xl font-bold text-primary mb-4">Support this Project</h3>
-             <p className="text-gray-700 mb-6">
-               Help us continue this vital work. Your support through Benevity makes a direct impact.
-             </p>
-             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-               <Link href={project.link || "https://causes.benevity.org/"} target="_blank">
-                 Support on Benevity
-               </Link>
-             </Button>
-           </div>
         </div>
       </section>
     </div>

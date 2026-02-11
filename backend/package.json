@@ -11,7 +11,11 @@
     "start:ts": "ts-node --esm src/server.ts",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "seed": "tsx src/scripts/seed.ts"
+    "seed": "tsx src/scripts/seed.ts",
+    "seed:pillars": "tsx src/scripts/seed-pillars.ts",
+    "seed:gallery": "tsx src/scripts/seed-gallery.ts",
+    "seed:campaigns": "tsx src/scripts/seed-campaigns.ts",
+    "seed:awards": "tsx src/scripts/seed-awards.ts"
   },
   "keywords": [],
   "author": "",

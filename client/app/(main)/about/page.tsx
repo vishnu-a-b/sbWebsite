@@ -1,11 +1,51 @@
 import { Card, CardContent } from "@/components/ui/Card";
-import { Users, Target, History, Lightbulb } from "lucide-react";
+import { Users, Target, History, Lightbulb, Award, ArrowRight } from "lucide-react";
 import { getAboutContent } from "@/app/actions/about";
+import { getAboutPageLeadership } from "@/app/actions/cms/team";
+import { getImageUrl } from "@/lib/image-url";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import API_BASE_URL from "@/lib/api";
 
 export const dynamic = 'force-dynamic';
 
+interface LeadershipMember {
+  _id: string;
+  name: string;
+  role: string;
+  designation: string;
+  image: string;
+  priority: number;
+}
+
+interface AwardItem {
+  _id: string;
+  title: string;
+  awardingAuthority: string;
+  year: number;
+  description: string;
+  image: string;
+}
+
+async function getAwards(): Promise<AwardItem[]> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/awards`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.awards || [];
+  } catch {
+    return [];
+  }
+}
+
 export default async function AboutPage() {
-  const aboutContent = await getAboutContent();
+  const [aboutContent, leadershipMembers, awards] = await Promise.all([
+    getAboutContent(),
+    getAboutPageLeadership(),
+    getAwards(),
+  ]);
 
   if (!aboutContent) {
     return <div className="p-12 text-center">Loading...</div>; // Or handle error/empty state gracefully
@@ -88,84 +128,63 @@ export default async function AboutPage() {
           </Card>
         </div>
 
-        {/* Leadership Section - Still Static or Separate CMS? User asked to "set about page into db" */}
-        {/* For now, I will leave Leadership and Awards as static until requested otherwise, or unless they are part of `team` and `awards` modules which are already handled elsewhere? */}
-        {/* Yes, Team and Awards have their own modules. I should probably verify if they are dynamically fetched. */}
-        {/* The user specifically asked "like this set about page into db" relative to the previous banner seeding. */}
-        {/* I will assume they mean the main textual content. I'll stick to the about model fields. */}
-        
-        <div className="bg-slate-50 p-8 md:p-12 rounded-xl text-center mb-16 md:mb-20">
-           <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-primary">Leadership & Patronage</h2>
-           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-             <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-secondary/50 to-secondary rounded-full mb-4 flex items-center justify-center text-4xl shadow-md">⛪</div>
-                <h3 className="font-bold text-lg">Mar Andrews Thazhath</h3>
-                <p className="text-sm text-primary font-semibold">Chief Patron</p>
-                <p className="text-xs text-primary/70 mt-1">Archbishop of Thrissur</p>
-             </div>
-             <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-secondary/50 to-secondary rounded-full mb-4 flex items-center justify-center text-4xl shadow-md">✝️</div>
-                <h3 className="font-bold text-lg">Fr. Joy Koothur</h3>
-                <p className="text-sm text-primary font-semibold">CEO & Co-Founder</p>
-                <p className="text-xs text-primary/70 mt-1">Leading the mission</p>
-             </div>
-             <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-secondary/50 to-secondary rounded-full mb-4 flex items-center justify-center text-4xl shadow-md">🙏</div>
-                <h3 className="font-bold text-lg">Sr. Beatrice Scalinci</h3>
-                <p className="text-sm text-primary font-semibold">Co-Founder</p>
-                <p className="text-xs text-primary/70 mt-1">Franciscan Sisters of St. Clare</p>
-             </div>
-             <div className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-secondary/50 to-secondary rounded-full mb-4 flex items-center justify-center text-4xl shadow-md">💝</div>
-                <h3 className="font-bold text-lg">Sr. Maria Chiara</h3>
-                <p className="text-sm text-primary font-semibold">Co-Founder</p>
-                <p className="text-xs text-primary/70 mt-1">Franciscan Sisters of St. Clare</p>
-             </div>
-           </div>
-        </div>
+        {/* Leadership Section - Dynamic from team members with showOnAboutPage: true */}
+        {leadershipMembers.length > 0 && (
+          <div className="bg-slate-50 p-8 md:p-12 rounded-xl text-center mb-16 md:mb-20">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-primary">Leadership & Patronage</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {leadershipMembers.map((member: LeadershipMember) => (
+                <div key={member._id} className="flex flex-col items-center">
+                  <div className="w-32 h-32 rounded-full mb-4 overflow-hidden shadow-md bg-gray-200">
+                    <img
+                      src={getImageUrl(member.image)}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="font-bold text-lg">{member.name}</h3>
+                  <p className="text-sm text-primary font-semibold">{member.designation}</p>
+                  <p className="text-xs text-primary/70 mt-1">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
-        {/* Awards & Recognition - Static for now, as it matches the file I read */}
-        <div className="mb-16 md:mb-20">
-           <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-primary">Awards & Recognition</h2>
-           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-               <CardContent className="pt-4">
-                 <div className="text-4xl mb-4">🏆</div>
-                 <h3 className="font-bold mb-2">National Award</h3>
-                 <p className="text-sm text-primary/80">
-                   Asia Today Media and Research Group for exceptional contributions
-                 </p>
-               </CardContent>
-             </Card>
-             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-               <CardContent className="pt-4">
-                 <div className="text-4xl mb-4">🏅</div>
-                 <h3 className="font-bold mb-2">URF Award</h3>
-                 <p className="text-sm text-primary/80">
-                   For establishing India's first palliative hospital
-                 </p>
-               </CardContent>
-             </Card>
-             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-               <CardContent className="pt-4">
-                 <div className="text-4xl mb-4">💼</div>
-                 <h3 className="font-bold mb-2">Chamber of Commerce</h3>
-                 <p className="text-sm text-primary/80">
-                   Best Social Service Award (2019)
-                 </p>
-               </CardContent>
-             </Card>
-             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-               <CardContent className="pt-4">
-                 <div className="text-4xl mb-4">⭐</div>
-                 <h3 className="font-bold mb-2">Human Rights Foundation</h3>
-                 <p className="text-sm text-primary/80">
-                   Human Excellence Award
-                 </p>
-               </CardContent>
-             </Card>
-           </div>
-        </div>
+        {/* Awards & Recognition - Dynamic from database */}
+        {awards.length > 0 && (
+          <div className="mb-16 md:mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-primary">Awards & Recognition</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {awards.slice(0, 4).map((award) => (
+                <Card key={award._id} className="text-center p-6 hover:shadow-lg transition-shadow group overflow-hidden">
+                  <CardContent className="pt-4">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-secondary/20 flex items-center justify-center">
+                      <img
+                        src={getImageUrl(award.image)}
+                        alt={award.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">{award.title}</h3>
+                    <p className="text-xs text-secondary font-semibold mb-2">{award.year}</p>
+                    <p className="text-sm text-primary/80 line-clamp-2">
+                      {award.awardingAuthority}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="flex justify-center mt-8">
+              <Button asChild variant="outline" className="rounded-full px-8 border-2 hover:bg-primary hover:text-white transition-all">
+                <Link href="/awards">
+                  View All Awards
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        )}
         </div>
       </section>
     </div>

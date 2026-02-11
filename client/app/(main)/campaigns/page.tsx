@@ -128,9 +128,9 @@ export default function CampaignsPage() {
 
                   return (
                     <RevealAnimation key={campaign._id} delay={index * 0.1}>
-                      <Card className="h-full hover:shadow-2xl transition-all duration-500 group overflow-hidden border-none shadow-lg rounded-2xl">
+                      <Card className="h-full hover:shadow-2xl transition-all duration-500 group overflow-hidden border-none shadow-lg rounded-2xl flex flex-col">
                         {/* Campaign Image */}
-                        <div className="relative h-52 w-full overflow-hidden">
+                        <div className="relative h-52 w-full overflow-hidden flex-shrink-0">
                           <img
                             src={campaign.image ? getImageUrl(campaign.image) : "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800&auto=format&fit=crop"}
                             alt={campaign.title}
@@ -170,46 +170,52 @@ export default function CampaignsPage() {
                           </CardTitle>
                         </CardHeader>
 
-                        <CardContent className="px-6 pb-6 space-y-4">
-                          {campaign.shortDescription && (
-                            <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
-                              {campaign.shortDescription}
-                            </p>
-                          )}
-
-                          {/* Stats */}
-                          <div className="flex items-center justify-between text-sm text-gray-500">
-                            <div className="flex items-center gap-1">
-                              <Target className="w-4 h-4" />
-                              <span>Goal: {formatCurrency(campaign.goalAmount)}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Users className="w-4 h-4" />
-                              <span>{campaign.donorCount} donors</span>
-                            </div>
+                        <CardContent className="px-6 pb-6 flex flex-col flex-grow">
+                          {/* Description - takes available space */}
+                          <div className="flex-grow">
+                            {campaign.shortDescription && (
+                              <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                                {campaign.shortDescription}
+                              </p>
+                            )}
                           </div>
 
-                          {/* Action Buttons */}
-                          <div className="flex gap-3 pt-2">
-                            <Button
-                              asChild
-                              variant="outline"
-                              size="sm"
-                              className="flex-1 rounded-full border-2 hover:bg-primary hover:text-white hover:border-primary transition-all"
-                            >
-                              <Link href={`/campaigns/${campaign.slug}`}>
-                                Learn More
-                                <ArrowRight className="w-4 h-4 ml-1.5" />
-                              </Link>
-                            </Button>
-                            <Button
-                              size="sm"
-                              className="flex-1 rounded-full"
-                              onClick={(e) => handleDonateClick(campaign, e)}
-                            >
-                              <Heart className="w-4 h-4 mr-1.5" />
-                              Donate Now
-                            </Button>
+                          {/* Stats & Buttons - always at bottom */}
+                          <div className="mt-4 space-y-4">
+                            {/* Stats */}
+                            <div className="flex items-center justify-between text-sm text-gray-500 py-3 border-t border-gray-100">
+                              <div className="flex items-center gap-1.5">
+                                <Target className="w-4 h-4 text-primary" />
+                                <span className="font-medium">Goal: {formatCurrency(campaign.goalAmount)}</span>
+                              </div>
+                              <div className="flex items-center gap-1.5">
+                                <Users className="w-4 h-4 text-primary" />
+                                <span className="font-medium">{campaign.donorCount} donors</span>
+                              </div>
+                            </div>
+
+                            {/* Action Buttons */}
+                            <div className="flex gap-3">
+                              <Button
+                                asChild
+                                variant="outline"
+                                size="sm"
+                                className="flex-1 rounded-full border-2 hover:bg-primary hover:text-white hover:border-primary transition-all"
+                              >
+                                <Link href={`/campaigns/${campaign.slug}`}>
+                                  Learn More
+                                  <ArrowRight className="w-4 h-4 ml-1.5" />
+                                </Link>
+                              </Button>
+                              <Button
+                                size="sm"
+                                className="flex-1 rounded-full"
+                                onClick={(e) => handleDonateClick(campaign, e)}
+                              >
+                                <Heart className="w-4 h-4 mr-1.5" />
+                                Donate Now
+                              </Button>
+                            </div>
                           </div>
                         </CardContent>
                       </Card>

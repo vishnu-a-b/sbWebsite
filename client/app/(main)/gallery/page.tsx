@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/Card";
+import { getImageUrl } from "@/lib/image-url";
+
 export const dynamic = 'force-dynamic';
 
 interface GalleryImage {
@@ -33,9 +35,9 @@ export default async function GalleryPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <section className="bg-gradient-to-r from-purple-500 to-pink-500 py-16 text-center">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-800 py-16 text-center">
         <h1 className="text-4xl font-bold text-white mb-4">Gallery</h1>
-        <p className="text-purple-50 max-w-2xl mx-auto px-4">
+        <p className="text-blue-100 max-w-2xl mx-auto px-4">
           Glimpses of life at Shanthibhavan. Moments of care, joy, and hope.
         </p>
       </section>
@@ -49,7 +51,7 @@ export default async function GalleryPage() {
                 <div key={image._id} className="break-inside-avoid mb-4 md:mb-6">
                    <div className="relative group overflow-hidden rounded-lg md:rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                      <img
-                        src={image.imageUrl}
+                        src={getImageUrl(image.imageUrl)}
                         alt={image.altText}
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                      />

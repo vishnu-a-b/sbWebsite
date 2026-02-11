@@ -37,6 +37,26 @@ router.get('/', async (_req: Request, res: Response): Promise<void> => {
   }
 });
 
+// GET team members for about page (showOnAboutPage: true with CMS filtering)
+router.get('/about', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const now = new Date();
+    const members: ITeamMemberDocument[] = await TeamMember.find({
+      isActive: true,
+      showOnAboutPage: true,
+      startDate: { $lte: now },
+      expiryDate: { $gte: now },
+    })
+      .sort({ priority: -1, createdAt: -1 })
+      .exec();
+
+    res.json({ success: true, members });
+  } catch (error) {
+    console.error('Error fetching about page team members:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch team members' });
+  }
+});
+
 // GET all team members (admin - no filtering)
 router.get('/admin', async (_req: Request, res: Response): Promise<void> => {
   try {
