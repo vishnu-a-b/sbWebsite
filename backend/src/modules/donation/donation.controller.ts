@@ -121,12 +121,14 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
     });
 
     // Call BillDesk Create Order API (Step 2)
+    const clientIp = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() || req.ip || '127.0.0.1';
     const orderResult = await createOrder({
       orderId: gatewayOrderId,
       amount,
       customerName: donorName,
       customerEmail: email,
       customerPhone: phone,
+      customerIp: clientIp,
       additionalInfo: {
         donationType,
         donationId: donation._id.toString(),

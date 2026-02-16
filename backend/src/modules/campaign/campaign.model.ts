@@ -100,7 +100,6 @@ const CampaignSchema = new Schema<ICampaignDocument>({
 
 // Indexes
 CampaignSchema.index({ status: 1 });
-CampaignSchema.index({ slug: 1 });
 CampaignSchema.index({ isFeatured: 1, status: 1 });
 
 export default model<ICampaignDocument>('Campaign', CampaignSchema);

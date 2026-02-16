@@ -12,6 +12,7 @@ export interface BillDeskOrderRequest {
   customerName: string;
   customerEmail: string;
   customerPhone?: string;
+  customerIp?: string;
   additionalInfo?: Record<string, string>;
 }
 
@@ -248,7 +249,7 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
     itemcode: 'DIRECT',
     device: {
       init_channel: 'internet',
-      ip: '127.0.0.1',
+      ip: request.customerIp || '127.0.0.1',
       user_agent: 'Mozilla/5.0',
       accept_header: 'text/html',
     },

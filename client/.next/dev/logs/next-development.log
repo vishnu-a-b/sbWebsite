@@ -1,26 +1,5 @@
-[00:00:02.157] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.268] Server  LOG     ✓ Ready in 2s
-[00:00:09.397] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[00:00:09.510] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[00:00:09.901] Server  LOG     getServices: Fetched 9 services
-[00:00:09.974] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[00:00:09.975] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[00:00:10.486] Server  LOG     [Awards] Response status: 200
-[00:00:10.487] Server  LOG     [Awards] Fetched awards count: 4
-[00:00:10.490] Server  LOG     getProjects: Received data count: 3
-[00:00:11.453] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:11.606] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[00:00:11.894] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:15.705] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:09:20.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:20.153] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[41:09:51.592] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[41:09:54.259] Server  LOG     getServices: Fetched 9 services
-[41:09:56.613] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[41:09:56.614] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[41:09:57.076] Server  LOG     [Awards] Response status: 200
-[41:09:57.077] Server  LOG     [Awards] Fetched awards count: 4
-[41:09:57.105] Server  LOG     getProjects: Received data count: 3
-[41:09:57.726] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[41:09:57.726] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[41:10:02.118] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:02.034] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.133] Server  LOG     ✓ Ready in 1927ms
+[00:00:21.100] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[00:00:21.688] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:32:19.603] Browser WARN    motion() is deprecated. Use motion.create() instead.

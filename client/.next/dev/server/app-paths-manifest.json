@@ -1,5 +1,3 @@
 {
-  "/(main)/donate/page": "app/(main)/donate/page.js",
-  "/(main)/page": "app/(main)/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/(main)/donate/page": "app/(main)/donate/page.js"
 }
