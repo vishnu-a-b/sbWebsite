@@ -343,6 +343,16 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
       };
     }
 
+    console.log('BillDesk Create Order success response:', {
+      orderid: payload.orderid,
+      bdorderid: payload.bdorderid,
+      status: payload.status,
+      next_step: payload.next_step,
+      hasRdata: !!payload.rdata,
+      rdataLength: payload.rdata?.length,
+      fullPayload: payload,
+    });
+
     return {
       success: true,
       data: payload as BillDeskOrderResponse,
