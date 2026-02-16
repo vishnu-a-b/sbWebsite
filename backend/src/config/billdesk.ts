@@ -2,8 +2,9 @@ export interface BillDeskConfig {
   env: 'sandbox' | 'production';
   merchantId: string;
   clientId: string;
-  publicKey: string;      // BillDesk's public key for encrypting requests
-  privateKey: string;     // Your private key for signing requests
+  keyId: string;           // Key ID for JWS/JWE headers
+  encryptionKey: string;   // Symmetric key for JWE encryption (A256GCM)
+  signingKey: string;      // Symmetric key for JWS signing (HS256)
   returnUrl: string;
   webhookUrl: string;
   // V2 API endpoints
@@ -17,7 +18,7 @@ export const getBillDeskConfig = (): BillDeskConfig => {
 
   const baseUrl = env === 'production'
     ? 'https://api.billdesk.com'
-    : 'https://pguat.billdesk.io';
+    : 'https://uat1.billdesk.com/u2';
 
   const paymentPageBaseUrl = env === 'production'
     ? 'https://pay.billdesk.com'
@@ -27,8 +28,9 @@ export const getBillDeskConfig = (): BillDeskConfig => {
     env,
     merchantId: process.env.BILLDESK_MERCHANT_ID || '',
     clientId: process.env.BILLDESK_CLIENT_ID || '',
-    publicKey: process.env.BILLDESK_PUBLIC_KEY || '',
-    privateKey: process.env.BILLDESK_PRIVATE_KEY || '',
+    keyId: process.env.BILLDESK_KEY_ID || '',
+    encryptionKey: process.env.BILLDESK_ENCRYPTION_KEY || '',
+    signingKey: process.env.BILLDESK_SIGNING_KEY || '',
     returnUrl: `${process.env.BACKEND_URL || 'http://localhost:5001'}/api/donation/callback/billdesk/return`,
     webhookUrl: `${process.env.BACKEND_URL || 'http://localhost:5001'}/api/donation/callback/billdesk/webhook`,
     // V2 API endpoints

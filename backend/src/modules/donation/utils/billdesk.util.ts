@@ -1,5 +1,4 @@
 import * as jose from 'jose';
-import crypto from 'crypto';
 import { getBillDeskConfig } from '../../../config/billdesk.js';
 
 // ============================================
@@ -64,77 +63,119 @@ export const AUTH_STATUS = {
 // ============================================
 
 /**
- * Create JWS (JSON Web Signature) for request
+ * Create signed and encrypted request for BillDesk.
+ * Flow: JSON payload → JWE encrypt (dir + A256GCM) → JWS sign (HS256)
  */
-export const createJWS = async (payload: object, privateKeyPem: string, clientId: string): Promise<string> => {
-  const privateKey = crypto.createPrivateKey(privateKeyPem);
+export const createSignedRequest = async (
+  payload: object,
+  signingKey: string,
+  encryptionKey: string,
+  clientId: string,
+  signingKeyId: string,
+  encryptionKeyId: string,
+): Promise<string> => {
+  const encSecret = new TextEncoder().encode(encryptionKey);
+  const sigSecret = new TextEncoder().encode(signingKey);
 
-  const jws = await new jose.CompactSign(
+  // Step 1: Encrypt payload with JWE (dir + A256GCM)
+  const jwe = await new jose.CompactEncrypt(
     new TextEncoder().encode(JSON.stringify(payload))
   )
     .setProtectedHeader({
-      alg: 'RS256',
+      alg: 'dir',
+      enc: 'A256GCM',
+      kid: encryptionKeyId,
       clientid: clientId,
     })
-    .sign(privateKey);
+    .encrypt(encSecret);
+
+  // Step 2: Sign the JWE token with JWS (HS256)
+  const jws = await new jose.CompactSign(
+    new TextEncoder().encode(jwe)
+  )
+    .setProtectedHeader({
+      alg: 'HS256',
+      kid: signingKeyId,
+      clientid: clientId,
+    })
+    .sign(sigSecret);
 
   return jws;
 };
 
 /**
- * Verify and decode JWS response from BillDesk
+ * Create JWS-only signed request (no encryption).
+ * Some BillDesk APIs may only need JWS signing.
  */
-export const verifyJWS = async (token: string, publicKeyPem: string): Promise<{ payload: any; verified: boolean }> => {
+export const createJWS = async (
+  payload: object,
+  signingKey: string,
+  clientId: string,
+  signingKeyId: string,
+): Promise<string> => {
+  const secret = new TextEncoder().encode(signingKey);
+
+  const jws = await new jose.CompactSign(
+    new TextEncoder().encode(JSON.stringify(payload))
+  )
+    .setProtectedHeader({
+      alg: 'HS256',
+      kid: signingKeyId,
+      clientid: clientId,
+    })
+    .sign(secret);
+
+  return jws;
+};
+
+/**
+ * Verify JWS response and decrypt JWE payload from BillDesk.
+ * Flow: JWS verify → JWE decrypt → JSON payload
+ */
+export const verifyAndDecryptResponse = async (
+  token: string,
+  signingKey: string,
+  encryptionKey: string,
+): Promise<{ payload: any; verified: boolean }> => {
   try {
-    const publicKey = crypto.createPublicKey(publicKeyPem);
+    const sigSecret = new TextEncoder().encode(signingKey);
+    const encSecret = new TextEncoder().encode(encryptionKey);
 
-    const { payload } = await jose.compactVerify(token, publicKey);
-    const decodedPayload = JSON.parse(new TextDecoder().decode(payload));
+    // Step 1: Verify JWS
+    const { payload: jwsPayload } = await jose.compactVerify(token, sigSecret);
+    const jweToken = new TextDecoder().decode(jwsPayload);
 
-    return {
-      payload: decodedPayload,
-      verified: true,
-    };
-  } catch (error) {
-    console.error('JWS verification failed:', error);
-    return {
-      payload: null,
-      verified: false,
-    };
+    // Step 2: Decrypt JWE
+    const { plaintext } = await jose.compactDecrypt(jweToken, encSecret);
+    const decodedPayload = JSON.parse(new TextDecoder().decode(plaintext));
+
+    return { payload: decodedPayload, verified: true };
+  } catch {
+    // Response might be JWS-only (no JWE wrapping)
+    try {
+      const sigSecret = new TextEncoder().encode(signingKey);
+      const { payload } = await jose.compactVerify(token, sigSecret);
+      const decodedPayload = JSON.parse(new TextDecoder().decode(payload));
+      return { payload: decodedPayload, verified: true };
+    } catch (error) {
+      console.error('Response verification failed:', error);
+      return { payload: null, verified: false };
+    }
   }
 };
 
 /**
- * Create JWE (JSON Web Encryption) - if needed for specific requests
+ * Verify and decode JWS-only response from BillDesk
  */
-export const createJWE = async (payload: object, publicKeyPem: string, clientId: string): Promise<string> => {
-  const publicKey = crypto.createPublicKey(publicKeyPem);
-
-  const jwe = await new jose.CompactEncrypt(
-    new TextEncoder().encode(JSON.stringify(payload))
-  )
-    .setProtectedHeader({
-      alg: 'RSA-OAEP-256',
-      enc: 'A256GCM',
-      clientid: clientId,
-    })
-    .encrypt(publicKey);
-
-  return jwe;
-};
-
-/**
- * Decrypt JWE response
- */
-export const decryptJWE = async (token: string, privateKeyPem: string): Promise<any> => {
+export const verifyJWS = async (token: string, signingKey: string): Promise<{ payload: any; verified: boolean }> => {
   try {
-    const privateKey = crypto.createPrivateKey(privateKeyPem);
-
-    const { plaintext } = await jose.compactDecrypt(token, privateKey);
-    return JSON.parse(new TextDecoder().decode(plaintext));
+    const secret = new TextEncoder().encode(signingKey);
+    const { payload } = await jose.compactVerify(token, secret);
+    const decodedPayload = JSON.parse(new TextDecoder().decode(payload));
+    return { payload: decodedPayload, verified: true };
   } catch (error) {
-    console.error('JWE decryption failed:', error);
-    return null;
+    console.error('JWS verification failed:', error);
+    return { payload: null, verified: false };
   }
 };
 
@@ -214,8 +255,11 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
   };
 
   try {
-    // Create JWS token for the request
-    const jwsToken = await createJWS(orderPayload, config.privateKey, config.clientId);
+    // Create signed & encrypted request (JSON → JWE → JWS)
+    const requestToken = await createSignedRequest(
+      orderPayload, config.signingKey, config.encryptionKey,
+      config.clientId, config.keyId, config.keyId,
+    );
 
     // Make API call to BillDesk
     const response = await fetch(config.createOrderUrl, {
@@ -226,21 +270,24 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
         'BD-Traceid': traceId,
         'BD-Timestamp': timestamp,
       },
-      body: jwsToken,
+      body: requestToken,
     });
 
     const responseText = await response.text();
 
+    // Decrypt response (BillDesk always returns JOSE tokens, even for errors)
+    const { payload, verified } = await verifyAndDecryptResponse(
+      responseText, config.signingKey, config.encryptionKey,
+    );
+
     if (!response.ok) {
-      console.error('BillDesk Create Order failed:', response.status, responseText);
+      const errorMsg = payload?.message || payload?.error_description || `API error: ${response.status}`;
+      console.error('BillDesk Create Order failed:', response.status, errorMsg, payload);
       return {
         success: false,
-        error: `API error: ${response.status}`,
+        error: errorMsg,
       };
     }
-
-    // Verify and decode JWS response
-    const { payload, verified } = await verifyJWS(responseText, config.publicKey);
 
     if (!verified || !payload) {
       return {
@@ -291,7 +338,10 @@ export const retrieveTransaction = async (orderId: string, bdOrderId?: string): 
   };
 
   try {
-    const jwsToken = await createJWS(retrievePayload, config.privateKey, config.clientId);
+    const requestToken = await createSignedRequest(
+      retrievePayload, config.signingKey, config.encryptionKey,
+      config.clientId, config.keyId, config.keyId,
+    );
 
     const response = await fetch(config.retrieveTransactionUrl, {
       method: 'POST',
@@ -301,7 +351,7 @@ export const retrieveTransaction = async (orderId: string, bdOrderId?: string): 
         'BD-Traceid': traceId,
         'BD-Timestamp': timestamp,
       },
-      body: jwsToken,
+      body: requestToken,
     });
 
     const responseText = await response.text();
@@ -313,7 +363,9 @@ export const retrieveTransaction = async (orderId: string, bdOrderId?: string): 
       };
     }
 
-    const { payload, verified } = await verifyJWS(responseText, config.publicKey);
+    const { payload, verified } = await verifyAndDecryptResponse(
+      responseText, config.signingKey, config.encryptionKey,
+    );
 
     if (!verified || !payload) {
       return {
@@ -347,14 +399,16 @@ export const parseCallbackResponse = async (responseToken: string): Promise<{
   const config = getBillDeskConfig();
 
   try {
-    const { payload, verified } = await verifyJWS(responseToken, config.publicKey);
+    const { payload, verified } = await verifyAndDecryptResponse(
+      responseToken, config.signingKey, config.encryptionKey,
+    );
 
     if (!verified || !payload) {
       return {
         isValid: false,
         response: null,
         checksumVerified: false,
-        error: 'JWS verification failed',
+        error: 'Response verification/decryption failed',
       };
     }
 
