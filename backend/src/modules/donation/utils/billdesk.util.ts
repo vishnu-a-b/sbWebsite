@@ -241,7 +241,6 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
   const config = getBillDeskConfig();
 
   const traceId = generateTraceId();
-  const timestamp = getISTTimestamp();
 
   // Build order request payload
   const orderPayload = {
@@ -276,6 +275,17 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
       config.clientId, config.keyId, config.keyId,
     );
 
+    console.log('BillDesk Create Order request:', {
+      url: config.createOrderUrl,
+      traceId,
+      orderid: orderPayload.orderid,
+      amount: orderPayload.amount,
+      order_date: orderPayload.order_date,
+      ru: orderPayload.ru,
+      mercid: orderPayload.mercid,
+      customerIp: orderPayload.device.ip,
+    });
+
     // Make API call to BillDesk
     const response = await fetch(config.createOrderUrl, {
       method: 'POST',
@@ -283,7 +293,7 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
         'Content-Type': 'application/jose',
         'Accept': 'application/jose',
         'BD-Traceid': traceId,
-        'BD-Timestamp': timestamp,
+        'BD-Timestamp': Math.floor(Date.now() / 1000).toString(),
       },
       body: requestToken,
     });
@@ -303,7 +313,7 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
         errorPayload = payload;
       }
       const errorMsg = errorPayload?.message || errorPayload?.error_description || `API error: ${response.status}`;
-      console.error('BillDesk Create Order failed:', {
+      console.error('BillDesk Create Order failed response:', {
         status: response.status,
         error: errorMsg,
         payload: errorPayload,
@@ -359,7 +369,6 @@ export const retrieveTransaction = async (orderId: string, bdOrderId?: string): 
   const config = getBillDeskConfig();
 
   const traceId = generateTraceId();
-  const timestamp = getISTTimestamp();
 
   const retrievePayload = {
     mercid: config.merchantId,
@@ -380,7 +389,7 @@ export const retrieveTransaction = async (orderId: string, bdOrderId?: string): 
         'Content-Type': 'application/jose',
         'Accept': 'application/jose',
         'BD-Traceid': traceId,
-        'BD-Timestamp': timestamp,
+        'BD-Timestamp': Math.floor(Date.now() / 1000).toString(),
       },
       body: requestToken,
     });
