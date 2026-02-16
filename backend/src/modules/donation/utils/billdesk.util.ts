@@ -253,11 +253,9 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
     additional_info: {
       additional_info1: request.customerName,
       additional_info2: request.customerEmail,
-      additional_info3: request.customerPhone || '',
-      additional_info4: request.additionalInfo?.donationType || 'general',
-      additional_info5: request.additionalInfo?.donationId || '',
-      additional_info6: '',
-      additional_info7: '',
+      ...(request.customerPhone && { additional_info3: request.customerPhone }),
+      ...(request.additionalInfo?.donationType && { additional_info4: request.additionalInfo.donationType }),
+      ...(request.additionalInfo?.donationId && { additional_info5: request.additionalInfo.donationId }),
     },
     itemcode: 'DIRECT',
     device: {
