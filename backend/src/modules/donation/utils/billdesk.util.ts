@@ -217,6 +217,20 @@ export const getISTTimestamp = (): string => {
 };
 
 /**
+ * Get ISO 8601 date string with IST offset (+05:30)
+ * Required format: 2024-01-15T15:30:00+05:30
+ */
+export const getISTOrderDate = (): string => {
+  const now = new Date();
+  const istOffset = 5.5 * 60 * 60 * 1000;
+  const istDate = new Date(now.getTime() + istOffset);
+
+  // Build ISO string without the trailing 'Z', truncate milliseconds, append IST offset
+  const iso = istDate.toISOString(); // e.g. 2024-01-15T15:30:00.000Z
+  return iso.slice(0, 19) + '+05:30';
+};
+
+/**
  * Create Order API - Step 2 of BillDesk V2
  */
 export const createOrder = async (request: BillDeskOrderRequest): Promise<{
@@ -234,7 +248,7 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
     mercid: config.merchantId,
     orderid: request.orderId,
     amount: request.amount.toFixed(2),
-    order_date: new Date().toISOString(),
+    order_date: getISTOrderDate(),
     currency: request.currency || '356', // 356 = INR
     ru: config.returnUrl,
     additional_info: {
@@ -276,19 +290,35 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
 
     const responseText = await response.text();
 
-    // Decrypt response (BillDesk always returns JOSE tokens, even for errors)
-    const { payload, verified } = await verifyAndDecryptResponse(
-      responseText, config.signingKey, config.encryptionKey,
-    );
-
     if (!response.ok) {
-      const errorMsg = payload?.message || payload?.error_description || `API error: ${response.status}`;
-      console.error('BillDesk Create Order failed:', response.status, errorMsg, payload);
+      // Error responses from BillDesk may be plain JSON (not JOSE-encrypted)
+      let errorPayload: any = null;
+      try {
+        errorPayload = JSON.parse(responseText);
+      } catch {
+        // Not plain JSON — try JOSE decryption
+        const { payload } = await verifyAndDecryptResponse(
+          responseText, config.signingKey, config.encryptionKey,
+        );
+        errorPayload = payload;
+      }
+      const errorMsg = errorPayload?.message || errorPayload?.error_description || `API error: ${response.status}`;
+      console.error('BillDesk Create Order failed:', {
+        status: response.status,
+        error: errorMsg,
+        payload: errorPayload,
+        rawResponse: responseText.slice(0, 500),
+      });
       return {
         success: false,
         error: errorMsg,
       };
     }
+
+    // Success path — decrypt JOSE response
+    const { payload, verified } = await verifyAndDecryptResponse(
+      responseText, config.signingKey, config.encryptionKey,
+    );
 
     if (!verified || !payload) {
       return {

@@ -201,9 +201,12 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
   const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
 
   try {
+    // Merge body and query so handler works for both GET and POST callbacks
+    const callbackData = { ...req.query, ...req.body };
+
     // Check for terminal cancellation (user clicked X button)
-    if (isTerminalCancellation(req.body)) {
-      const orderId = req.body.orderid;
+    if (isTerminalCancellation(callbackData)) {
+      const orderId = callbackData.orderid as string;
 
       if (orderId) {
         const donation = await Donation.findOne({ gatewayOrderId: orderId });
@@ -217,7 +220,7 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
           await Transaction.create({
             donationId: donation._id,
             transactionType: TransactionType.PAYMENT_RETURN,
-            responsePayload: req.body,
+            responsePayload: callbackData,
             bdOrderId: orderId,
             success: false,
             ipAddress: req.ip
@@ -229,11 +232,11 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
       return;
     }
 
-    // Get JWS response token
-    const responseToken = req.body.transaction_response || req.body.response;
+    // Get JWS response token (from body for POST, query for GET)
+    const responseToken = callbackData.transaction_response || callbackData.response;
 
     if (!responseToken) {
-      console.error('No response token received:', req.body);
+      console.error('No response token received:', callbackData);
       res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent('No response received')}`);
       return;
     }
