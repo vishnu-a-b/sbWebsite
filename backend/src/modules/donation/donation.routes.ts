@@ -20,11 +20,14 @@ import { AdminRole } from '../admin/admin.model.js';
 
 const router: Router = express.Router();
 
+// Middleware to parse text/plain and application/jose bodies (BillDesk sends JOSE tokens)
+const textBodyParser = express.text({ type: ['text/plain', 'application/jose', 'application/jwt'] });
+
 // Public routes
 router.post('/initiate', initiateDonation);
-router.post('/callback/billdesk/return', handleBillDeskReturn);
+router.post('/callback/billdesk/return', textBodyParser, handleBillDeskReturn);
 router.get('/callback/billdesk/return', handleBillDeskReturn); // Support both GET and POST
-router.post('/callback/billdesk/webhook', handleBillDeskWebhook);
+router.post('/callback/billdesk/webhook', textBodyParser, handleBillDeskWebhook);
 router.get('/status/:orderId', checkTransactionStatus); // Check transaction status (Step 7)
 
 // Offline payment routes (must be before /:id to avoid route conflicts)

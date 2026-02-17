@@ -204,6 +204,14 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
     // Merge body and query so handler works for both GET and POST callbacks
     const callbackData = { ...req.query, ...req.body };
 
+    console.log('BillDesk return callback received:', {
+      method: req.method,
+      queryKeys: Object.keys(req.query),
+      bodyKeys: Object.keys(req.body),
+      callbackDataKeys: Object.keys(callbackData),
+      contentType: req.headers['content-type'],
+    });
+
     // Check for terminal cancellation (user clicked X button)
     if (isTerminalCancellation(callbackData)) {
       const orderId = callbackData.orderid as string;
@@ -232,11 +240,17 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
       return;
     }
 
-    // Get JWS response token (from body for POST, query for GET)
-    const responseToken = callbackData.transaction_response || callbackData.response;
+    // Get JWS response token
+    // BillDesk may send as: form field, query param, or raw text body (JOSE token)
+    let responseToken = callbackData.transaction_response || callbackData.response;
+
+    // If body is a raw string (text/plain or application/jose), it's the JOSE token itself
+    if (!responseToken && typeof req.body === 'string' && req.body.length > 0) {
+      responseToken = req.body;
+    }
 
     if (!responseToken) {
-      console.error('No response token received:', callbackData);
+      console.error('No response token received:', { callbackData, rawBody: typeof req.body, bodyLength: typeof req.body === 'string' ? req.body.length : 0 });
       res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent('No response received')}`);
       return;
     }
