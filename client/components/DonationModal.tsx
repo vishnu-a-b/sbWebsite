@@ -72,7 +72,7 @@ export default function DonationModal({ isOpen, onClose, campaign }: DonationMod
   };
 
   // Helper function to redirect to BillDesk V2 payment page
-  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string }) => {
+  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string; authorization?: string }) => {
     const formEl = document.createElement('form');
     formEl.method = 'POST';
     formEl.action = paymentPageUrl;
@@ -81,6 +81,7 @@ export default function DonationModal({ isOpen, onClose, campaign }: DonationMod
       { name: 'bdorderid', value: paymentData.bdorderid },
       { name: 'merchantid', value: paymentData.merchantid },
       { name: 'rdata', value: paymentData.rdata },
+      ...(paymentData.authorization ? [{ name: 'authorization', value: paymentData.authorization }] : []),
     ];
 
     fields.forEach(field => {

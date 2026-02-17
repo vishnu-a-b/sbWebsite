@@ -181,6 +181,7 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
         bdorderid: paymentPageData.bdorderid,
         merchantid: paymentPageData.merchantid,
         rdata: paymentPageData.rdata,
+        authorization: paymentPageData.authorization,
       },
       message: 'Donation initiated. Redirect to payment gateway.'
     });

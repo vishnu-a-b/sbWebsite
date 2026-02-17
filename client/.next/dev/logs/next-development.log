@@ -14,3 +14,6 @@
 [06:09:59.698] Browser WARN    motion() is deprecated. Use motion.create() instead.
 [06:09:59.830] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
 [06:10:02.381] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[25:02:43.217] Server  LOG     ✓ Compiled in 1719ms
+[25:02:46.368] Server  LOG     ✓ Compiled in 67ms
+[25:02:54.056] Server  LOG     ✓ Compiled in 274ms

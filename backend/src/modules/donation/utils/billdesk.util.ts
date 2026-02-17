@@ -536,11 +536,13 @@ export const buildPaymentPageData = (orderResponse: BillDeskOrderResponse) => {
 
   const url = redirectLink?.href || config.paymentPageUrl;
   const params = redirectLink?.parameters || {};
+  const headers = (redirectLink as any)?.headers || {};
 
   return {
     url,
     bdorderid: params.bdorderid || orderResponse.bdorderid,
     merchantid: params.mercid || config.merchantId,
     rdata: params.rdata || '',
+    authorization: headers.authorization || '',
   };
 };

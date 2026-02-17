@@ -107,7 +107,7 @@ function DonateContent() {
   };
 
   // Helper function to redirect to BillDesk V2 payment page
-  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string }) => {
+  const redirectToPaymentPage = (paymentPageUrl: string, paymentData: { bdorderid: string; merchantid: string; rdata: string; authorization?: string }) => {
     // Create a form and submit it to the payment page
     const form = document.createElement('form');
     form.method = 'POST';
@@ -118,6 +118,7 @@ function DonateContent() {
       { name: 'bdorderid', value: paymentData.bdorderid },
       { name: 'merchantid', value: paymentData.merchantid },
       { name: 'rdata', value: paymentData.rdata },
+      ...(paymentData.authorization ? [{ name: 'authorization', value: paymentData.authorization }] : []),
     ];
 
     fields.forEach(field => {
