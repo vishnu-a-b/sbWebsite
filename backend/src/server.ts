@@ -42,6 +42,9 @@ const app: Express = express();
 // Connect to MongoDB
 connectDB();
 
+// Trust reverse proxy (Nginx) so req.ip returns the real client IP from X-Forwarded-For
+app.set('trust proxy', true);
+
 // Middleware
 app.use((req, _res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} | Origin: ${req.headers.origin}`);

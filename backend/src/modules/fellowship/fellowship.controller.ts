@@ -70,7 +70,7 @@ export const createFellowship = async (req: Request, res: Response): Promise<voi
     });
 
     // Send welcome email with verification link
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    const frontendUrl = (process.env.FRONTEND_URL || 'http://localhost:3000').replace(/\/donate\/?$/, '').replace(/\/$/, '');
     const verificationLink = `${frontendUrl}/fellowship/verify/${verificationToken}`;
 
     emailService.sendFellowshipWelcome({

@@ -199,7 +199,8 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
  * Step 5: Capture transaction response
  */
 export const handleBillDeskReturn = async (req: Request, res: Response): Promise<void> => {
-  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+  // Strip trailing slash and /donate path to avoid double /donate/donate/
+  const frontendUrl = (process.env.FRONTEND_URL || 'http://localhost:3000').replace(/\/donate\/?$/, '').replace(/\/$/, '');
 
   try {
     // Merge body and query so handler works for both GET and POST callbacks
@@ -212,6 +213,40 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
       callbackDataKeys: Object.keys(callbackData),
       contentType: req.headers['content-type'],
     });
+
+    // Check for BillDesk error response (plain error fields alongside encrypted_response)
+    if (callbackData.error_code && callbackData.error_type) {
+      const errorMsg = (callbackData.message as string) || `Payment error: ${callbackData.error_code}`;
+      console.error('BillDesk callback error:', {
+        error_type: callbackData.error_type,
+        error_code: callbackData.error_code,
+        message: callbackData.message,
+        status: callbackData.status,
+      });
+
+      // Try to decrypt encrypted_response to get order details for DB update
+      if (callbackData.encrypted_response) {
+        try {
+          const validation = await parseCallbackResponse(callbackData.encrypted_response as string);
+          if (validation.response?.orderid) {
+            const donation = await Donation.findOne({ gatewayOrderId: validation.response.orderid });
+            if (donation && donation.paymentStatus === PaymentStatus.PENDING) {
+              donation.paymentStatus = PaymentStatus.FAILED;
+              donation.authStatus = 'ERROR';
+              donation.gatewayResponse = JSON.stringify({ error_code: callbackData.error_code, message: callbackData.message });
+              await donation.save();
+            }
+            res.redirect(`${frontendUrl}/donate/failed?orderId=${validation.response.orderid}&message=${encodeURIComponent(errorMsg)}`);
+            return;
+          }
+        } catch {
+          // Could not decrypt, continue with generic error
+        }
+      }
+
+      res.redirect(`${frontendUrl}/donate/failed?message=${encodeURIComponent(errorMsg)}`);
+      return;
+    }
 
     // Check for terminal cancellation (user clicked X button)
     if (isTerminalCancellation(callbackData)) {

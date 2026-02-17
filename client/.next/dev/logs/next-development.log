@@ -17,3 +17,15 @@
 [25:02:43.217] Server  LOG     ✓ Compiled in 1719ms
 [25:02:46.368] Server  LOG     ✓ Compiled in 67ms
 [25:02:54.056] Server  LOG     ✓ Compiled in 274ms
+[25:38:20.530] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
+[25:38:20.710] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[25:38:21.065] Server  LOG     getServices: Fetched 9 services
+[25:38:21.134] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
+[25:38:21.135] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
+[25:38:21.450] Server  LOG     [Awards] Response status: 200
+[25:38:21.451] Server  LOG     [Awards] Fetched awards count: 4
+[25:38:21.484] Server  LOG     getProjects: Received data count: 3
+[25:38:22.081] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[25:38:22.266] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[25:38:24.672] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[25:38:28.840] Server  ERROR   TimeoutError: The operation was aborted due to timeout
