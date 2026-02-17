@@ -348,13 +348,13 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
       };
     }
 
-    console.log('BillDesk Create Order success response:', {
+    console.log('BillDesk Create Order success response:', JSON.stringify({
       orderid: payload.orderid,
       bdorderid: payload.bdorderid,
       status: payload.status,
       next_step: payload.next_step,
       links: payload.links,
-    });
+    }, null, 2));
 
     return {
       success: true,

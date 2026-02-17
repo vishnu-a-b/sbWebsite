@@ -241,8 +241,8 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
     }
 
     // Get JWS response token
-    // BillDesk may send as: form field, query param, or raw text body (JOSE token)
-    let responseToken = callbackData.transaction_response || callbackData.response;
+    // BillDesk sends as: encrypted_response, transaction_response, or response
+    let responseToken = callbackData.encrypted_response || callbackData.transaction_response || callbackData.response;
 
     // If body is a raw string (text/plain or application/jose), it's the JOSE token itself
     if (!responseToken && typeof req.body === 'string' && req.body.length > 0) {
@@ -373,7 +373,8 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
 export const handleBillDeskWebhook = async (req: Request, res: Response): Promise<void> => {
   try {
     // Get JWS response token
-    const responseToken = req.body.transaction_response || req.body.response;
+    const webhookBody = typeof req.body === 'string' ? {} : req.body;
+    const responseToken = webhookBody.encrypted_response || webhookBody.transaction_response || webhookBody.response || (typeof req.body === 'string' ? req.body : null);
 
     if (!responseToken) {
       console.error('Webhook: No response token received:', req.body);
