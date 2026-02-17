@@ -20,10 +20,15 @@ export interface BillDeskOrderResponse {
   orderid: string;
   bdorderid: string;
   mercid: string;
-  rdata: string;  // Encrypted response data for SDK
   status: string;
   createdon: string;
   next_step: string;
+  links: Array<{
+    href: string;
+    rel: string;
+    method: string;
+    parameters?: Record<string, string>;
+  }>;
 }
 
 export interface BillDeskTransactionResponse {
@@ -348,9 +353,7 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
       bdorderid: payload.bdorderid,
       status: payload.status,
       next_step: payload.next_step,
-      hasRdata: !!payload.rdata,
-      rdataLength: payload.rdata?.length,
-      fullPayload: payload,
+      links: payload.links,
     });
 
     return {
@@ -521,15 +524,23 @@ export const isTerminalCancellation = (body: any): boolean => {
 };
 
 /**
- * Build payment page redirect data
+ * Build payment page redirect data from Create Order response links
  */
 export const buildPaymentPageData = (orderResponse: BillDeskOrderResponse) => {
   const config = getBillDeskConfig();
 
+  // Find the redirect link from the links array
+  const redirectLink = orderResponse.links?.find(
+    (l) => l.rel === 'redirect' || l.method === 'POST'
+  );
+
+  const url = redirectLink?.href || config.paymentPageUrl;
+  const params = redirectLink?.parameters || {};
+
   return {
-    url: config.paymentPageUrl,
-    bdorderid: orderResponse.bdorderid,
-    merchantid: config.merchantId,
-    rdata: orderResponse.rdata,
+    url,
+    bdorderid: params.bdorderid || orderResponse.bdorderid,
+    merchantid: params.mercid || config.merchantId,
+    rdata: params.rdata || '',
   };
 };
