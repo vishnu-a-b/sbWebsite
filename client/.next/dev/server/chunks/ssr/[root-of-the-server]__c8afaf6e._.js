@@ -266,7 +266,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 ;
-const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 function DonateContent() {
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSearchParams"])();

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Target, ArrowLeft, Save, Loader2 } from 'lucide-react';
 import MediaUpload from '@/components/admin/MediaUpload';
 
-const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export default function CreateCampaignPage() {

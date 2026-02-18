@@ -27,7 +27,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 // Remove trailing /api if present to avoid double /api/api paths
-const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 async function login(formData) {
     const username = formData.get('username');
@@ -68,6 +68,14 @@ async function login(formData) {
                 maxAge: 60 * 60 * 24 * 7,
                 path: '/'
             });
+            // Store token accessible to client-side JS for API calls
+            cookieStore.set('admin_token', data.accessToken, {
+                httpOnly: false,
+                secure: ("TURBOPACK compile-time value", "development") === 'production',
+                sameSite: 'lax',
+                maxAge: 60 * 15,
+                path: '/'
+            });
             // Store admin info (non-sensitive, for UI)
             cookieStore.set('admin_info', JSON.stringify({
                 id: data.admin.id,
@@ -103,6 +111,7 @@ async function login(formData) {
 async function logout() {
     const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cookies"])();
     cookieStore.delete('admin_access_token');
+    cookieStore.delete('admin_token');
     cookieStore.delete('admin_refresh_token');
     cookieStore.delete('admin_info');
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/admin/login');
@@ -128,6 +137,13 @@ async function refreshAccessToken() {
             // Update tokens
             cookieStore.set('admin_access_token', data.accessToken, {
                 httpOnly: true,
+                secure: ("TURBOPACK compile-time value", "development") === 'production',
+                sameSite: 'lax',
+                maxAge: 60 * 15,
+                path: '/'
+            });
+            cookieStore.set('admin_token', data.accessToken, {
+                httpOnly: false,
                 secure: ("TURBOPACK compile-time value", "development") === 'production',
                 sameSite: 'lax',
                 maxAge: 60 * 15,

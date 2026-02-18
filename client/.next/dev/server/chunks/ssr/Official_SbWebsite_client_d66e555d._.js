@@ -52,7 +52,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 // Remove trailing /api if present to avoid double /api/api paths
-const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 async function getFooterContent() {
     try {

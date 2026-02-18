@@ -18,13 +18,13 @@ interface Donation {
   createdAt: string;
 }
 
-const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export default function DonationsPage() {
   const [donations, setDonations] = useState<Donation[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState({ status: '', type: '' });
+  const [filter, setFilter] = useState({ status: '', type: '', startDate: '', endDate: '' });
   const [pagination, setPagination] = useState({ page: 1, total: 0, pages: 0 });
 
   const fetchDonations = async () => {
@@ -35,6 +35,8 @@ export default function DonationsPage() {
         limit: '20',
         ...(filter.status && { status: filter.status }),
         ...(filter.type && { donationType: filter.type }),
+        ...(filter.startDate && { startDate: filter.startDate }),
+        ...(filter.endDate && { endDate: filter.endDate }),
       });
 
       const res = await fetch(`${API_URL}/api/donation?${params}`, {
@@ -102,6 +104,28 @@ export default function DonationsPage() {
             <option value="general">General</option>
             <option value="fellowship">Fellowship</option>
           </select>
+          <input
+            type="date"
+            value={filter.startDate}
+            onChange={(e) => setFilter({ ...filter, startDate: e.target.value })}
+            className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary"
+            placeholder="Start Date"
+          />
+          <input
+            type="date"
+            value={filter.endDate}
+            onChange={(e) => setFilter({ ...filter, endDate: e.target.value })}
+            className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary"
+            placeholder="End Date"
+          />
+          {(filter.startDate || filter.endDate) && (
+            <button
+              onClick={() => setFilter({ ...filter, startDate: '', endDate: '' })}
+              className="px-4 py-2 text-sm text-gray-600 border rounded-lg hover:bg-gray-50"
+            >
+              Clear Dates
+            </button>
+          )}
         </div>
       </div>
 

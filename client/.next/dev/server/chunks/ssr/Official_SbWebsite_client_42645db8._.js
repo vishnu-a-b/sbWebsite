@@ -25,7 +25,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$cli
 ;
 ;
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "https://api.donatebed.palliativeindia.in") || 'http://localhost:5002';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 const statusConfig = {
     draft: {
         label: 'Draft',
@@ -161,14 +162,14 @@ function CampaignsPage() {
                                         className: "w-7 h-7 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 142,
                                         columnNumber: 13
                                     }, this),
                                     "Campaigns"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 140,
+                                lineNumber: 141,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -176,13 +177,13 @@ function CampaignsPage() {
                                 children: "Manage donation campaigns"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 144,
+                                lineNumber: 145,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 139,
+                        lineNumber: 140,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -193,20 +194,20 @@ function CampaignsPage() {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 150,
+                                lineNumber: 151,
                                 columnNumber: 11
                             }, this),
                             "Create Campaign"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 146,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 138,
+                lineNumber: 139,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,7 +222,7 @@ function CampaignsPage() {
                                     className: "absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -232,13 +233,13 @@ function CampaignsPage() {
                                     className: "w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                            lineNumber: 158,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -248,7 +249,7 @@ function CampaignsPage() {
                                     className: "w-5 h-5 text-gray-400"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 170,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -261,7 +262,7 @@ function CampaignsPage() {
                                             children: "All Status"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 176,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -269,7 +270,7 @@ function CampaignsPage() {
                                             children: "Draft"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 177,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -277,7 +278,7 @@ function CampaignsPage() {
                                             children: "Active"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 178,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -285,7 +286,7 @@ function CampaignsPage() {
                                             children: "Paused"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 179,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -293,7 +294,7 @@ function CampaignsPage() {
                                             children: "Completed"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 180,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -301,30 +302,30 @@ function CampaignsPage() {
                                             children: "Cancelled"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 171,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                            lineNumber: 168,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                    lineNumber: 157,
+                    lineNumber: 158,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 156,
+                lineNumber: 157,
                 columnNumber: 7
             }, this),
             loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -333,12 +334,12 @@ function CampaignsPage() {
                     className: "animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
                 }, void 0, false, {
                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                    lineNumber: 189,
+                    lineNumber: 190,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 188,
+                lineNumber: 189,
                 columnNumber: 9
             }, this) : filteredCampaigns.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "bg-white rounded-xl shadow-sm p-12 text-center",
@@ -347,7 +348,7 @@ function CampaignsPage() {
                         className: "w-12 h-12 mx-auto text-gray-400 mb-4"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 193,
+                        lineNumber: 194,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -355,7 +356,7 @@ function CampaignsPage() {
                         children: "No campaigns found"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 194,
+                        lineNumber: 195,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -363,7 +364,7 @@ function CampaignsPage() {
                         children: "Create your first campaign to get started."
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 195,
+                        lineNumber: 196,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -374,20 +375,20 @@ function CampaignsPage() {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 200,
+                                lineNumber: 201,
                                 columnNumber: 13
                             }, this),
                             "Create Campaign"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 196,
+                        lineNumber: 197,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 192,
+                lineNumber: 193,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid gap-6",
@@ -412,7 +413,7 @@ function CampaignsPage() {
                                                         children: campaign.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                        lineNumber: 216,
+                                                        lineNumber: 217,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -422,14 +423,14 @@ function CampaignsPage() {
                                                                 className: "w-3 h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                lineNumber: 218,
+                                                                lineNumber: 219,
                                                                 columnNumber: 25
                                                             }, this),
                                                             status.label
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                        lineNumber: 217,
+                                                        lineNumber: 218,
                                                         columnNumber: 23
                                                     }, this),
                                                     campaign.isFeatured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -437,13 +438,13 @@ function CampaignsPage() {
                                                         children: "Featured"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 223,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 215,
+                                                lineNumber: 216,
                                                 columnNumber: 21
                                             }, this),
                                             campaign.shortDescription && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -451,13 +452,13 @@ function CampaignsPage() {
                                                 children: campaign.shortDescription
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 228,
+                                                lineNumber: 229,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 215,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,12 +472,12 @@ function CampaignsPage() {
                                                     className: "w-4 h-4 text-gray-600"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                    lineNumber: 237,
+                                                    lineNumber: 238,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 233,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -488,12 +489,12 @@ function CampaignsPage() {
                                                     className: "w-4 h-4 text-gray-600"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                    lineNumber: 245,
+                                                    lineNumber: 246,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 239,
+                                                lineNumber: 240,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -505,12 +506,12 @@ function CampaignsPage() {
                                                             className: "w-4 h-4 text-gray-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                            lineNumber: 249,
+                                                            lineNumber: 250,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 249,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -522,7 +523,7 @@ function CampaignsPage() {
                                                                 children: "Activate Campaign"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                lineNumber: 253,
+                                                                lineNumber: 254,
                                                                 columnNumber: 27
                                                             }, this),
                                                             campaign.status === 'active' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -533,7 +534,7 @@ function CampaignsPage() {
                                                                         children: "Pause Campaign"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                        lineNumber: 262,
+                                                                        lineNumber: 263,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -542,7 +543,7 @@ function CampaignsPage() {
                                                                         children: "Mark Completed"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                        lineNumber: 268,
+                                                                        lineNumber: 269,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
@@ -553,7 +554,7 @@ function CampaignsPage() {
                                                                 children: "Resume Campaign"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                lineNumber: 277,
+                                                                lineNumber: 278,
                                                                 columnNumber: 27
                                                             }, this),
                                                             campaign.donorCount === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -562,31 +563,31 @@ function CampaignsPage() {
                                                                 children: "Delete Campaign"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                                lineNumber: 285,
+                                                                lineNumber: 286,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                        lineNumber: 251,
+                                                        lineNumber: 252,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 248,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 232,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 213,
+                                lineNumber: 214,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -603,7 +604,7 @@ function CampaignsPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 300,
+                                                lineNumber: 301,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -614,13 +615,13 @@ function CampaignsPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 301,
+                                                lineNumber: 302,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 299,
+                                        lineNumber: 300,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -632,12 +633,12 @@ function CampaignsPage() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 305,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 304,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -650,7 +651,7 @@ function CampaignsPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 312,
+                                                lineNumber: 313,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -660,19 +661,19 @@ function CampaignsPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                                lineNumber: 313,
+                                                lineNumber: 314,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 311,
+                                        lineNumber: 312,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 298,
+                                lineNumber: 299,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -685,7 +686,7 @@ function CampaignsPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 319,
+                                        lineNumber: 320,
                                         columnNumber: 19
                                     }, this),
                                     campaign.endDate && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -695,25 +696,25 @@ function CampaignsPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 322,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                                lineNumber: 318,
+                                lineNumber: 319,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, campaign._id, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 212,
+                        lineNumber: 213,
                         columnNumber: 15
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 205,
+                lineNumber: 206,
                 columnNumber: 9
             }, this),
             pagination.pages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,7 +730,7 @@ function CampaignsPage() {
                         children: "Previous"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 333,
+                        lineNumber: 334,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -742,7 +743,7 @@ function CampaignsPage() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 340,
+                        lineNumber: 341,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -755,19 +756,19 @@ function CampaignsPage() {
                         children: "Next"
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                        lineNumber: 343,
+                        lineNumber: 344,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-                lineNumber: 332,
+                lineNumber: 333,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/campaigns/page.tsx",
-        lineNumber: 136,
+        lineNumber: 137,
         columnNumber: 5
     }, this);
 }

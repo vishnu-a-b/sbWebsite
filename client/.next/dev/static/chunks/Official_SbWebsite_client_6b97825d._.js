@@ -16,14 +16,17 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-const API_URL = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5002';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 function DonationsPage() {
     _s();
     const [donations, setDonations] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [filter, setFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         status: '',
-        type: ''
+        type: '',
+        startDate: '',
+        endDate: ''
     });
     const [pagination, setPagination] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         page: 1,
@@ -41,6 +44,12 @@ function DonationsPage() {
                 },
                 ...filter.type && {
                     donationType: filter.type
+                },
+                ...filter.startDate && {
+                    startDate: filter.startDate
+                },
+                ...filter.endDate && {
+                    endDate: filter.endDate
                 }
             });
             const res = await fetch(`${API_URL}/api/donation?${params}`, {
@@ -89,7 +98,7 @@ function DonationsPage() {
                                 children: "All Donations"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 73,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -97,13 +106,13 @@ function DonationsPage() {
                                 children: "View and manage all donation records"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 74,
+                                lineNumber: 77,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                        lineNumber: 72,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -113,20 +122,20 @@ function DonationsPage() {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 77,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             "Export CSV"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                        lineNumber: 76,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                lineNumber: 71,
+                lineNumber: 74,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -147,7 +156,7 @@ function DonationsPage() {
                                     children: "All Status"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -155,7 +164,7 @@ function DonationsPage() {
                                     children: "Success"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -163,7 +172,7 @@ function DonationsPage() {
                                     children: "Pending"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -171,13 +180,13 @@ function DonationsPage() {
                                     children: "Failed"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 96,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                            lineNumber: 85,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -193,7 +202,7 @@ function DonationsPage() {
                                     children: "All Types"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 103,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -201,7 +210,7 @@ function DonationsPage() {
                                     children: "General"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 104,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -209,24 +218,65 @@ function DonationsPage() {
                                     children: "Fellowship"
                                 }, void 0, false, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                            lineNumber: 95,
+                            lineNumber: 98,
                             columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            type: "date",
+                            value: filter.startDate,
+                            onChange: (e)=>setFilter({
+                                    ...filter,
+                                    startDate: e.target.value
+                                }),
+                            className: "px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary",
+                            placeholder: "Start Date"
+                        }, void 0, false, {
+                            fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
+                            lineNumber: 107,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                            type: "date",
+                            value: filter.endDate,
+                            onChange: (e)=>setFilter({
+                                    ...filter,
+                                    endDate: e.target.value
+                                }),
+                            className: "px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary",
+                            placeholder: "End Date"
+                        }, void 0, false, {
+                            fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
+                            lineNumber: 114,
+                            columnNumber: 11
+                        }, this),
+                        (filter.startDate || filter.endDate) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setFilter({
+                                    ...filter,
+                                    startDate: '',
+                                    endDate: ''
+                                }),
+                            className: "px-4 py-2 text-sm text-gray-600 border rounded-lg hover:bg-gray-50",
+                            children: "Clear Dates"
+                        }, void 0, false, {
+                            fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
+                            lineNumber: 122,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                    lineNumber: 84,
+                    lineNumber: 87,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                lineNumber: 83,
+                lineNumber: 86,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -237,7 +287,7 @@ function DonationsPage() {
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                        lineNumber: 110,
+                        lineNumber: 135,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
                         className: "w-full",
@@ -251,7 +301,7 @@ function DonationsPage() {
                                             children: "Donor"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 140,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -259,7 +309,7 @@ function DonationsPage() {
                                             children: "Amount"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 141,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -267,7 +317,7 @@ function DonationsPage() {
                                             children: "Type"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 142,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -275,7 +325,7 @@ function DonationsPage() {
                                             children: "Status"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -283,7 +333,7 @@ function DonationsPage() {
                                             children: "Date"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 144,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -291,18 +341,18 @@ function DonationsPage() {
                                             children: "Actions"
                                         }, void 0, false, {
                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 145,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 139,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 113,
+                                lineNumber: 138,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -319,7 +369,7 @@ function DonationsPage() {
                                                             children: donation.donorName
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 153,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -327,18 +377,18 @@ function DonationsPage() {
                                                             children: donation.email
                                                         }, void 0, false, {
                                                             fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 154,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 152,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 151,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -350,7 +400,7 @@ function DonationsPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 157,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -364,12 +414,12 @@ function DonationsPage() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 161,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 160,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -379,12 +429,12 @@ function DonationsPage() {
                                                     children: donation.paymentStatus
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                    lineNumber: 141,
+                                                    lineNumber: 166,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 165,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -392,7 +442,7 @@ function DonationsPage() {
                                                 children: new Date(donation.createdAt).toLocaleDateString('en-IN')
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 170,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -403,34 +453,34 @@ function DonationsPage() {
                                                         className: "w-4 h-4 text-gray-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 175,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                    lineNumber: 149,
+                                                    lineNumber: 174,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                                lineNumber: 148,
+                                                lineNumber: 173,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, donation._id, true, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 150,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 123,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                        lineNumber: 112,
+                        lineNumber: 137,
                         columnNumber: 11
                     }, this),
                     pagination.pages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -449,7 +499,7 @@ function DonationsPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 162,
+                                lineNumber: 187,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -465,7 +515,7 @@ function DonationsPage() {
                                         children: "Previous"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 191,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Official$2f$SbWebsite$2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -478,35 +528,35 @@ function DonationsPage() {
                                         children: "Next"
                                     }, void 0, false, {
                                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 198,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                                lineNumber: 165,
+                                lineNumber: 190,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                        lineNumber: 161,
+                        lineNumber: 186,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-                lineNumber: 108,
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Official/SbWebsite/client/app/(admin-panel)/admin/donations/page.tsx",
-        lineNumber: 70,
+        lineNumber: 73,
         columnNumber: 5
     }, this);
 }
-_s(DonationsPage, "JP7VVO8naYiYwRH35VOtzMYiabc=");
+_s(DonationsPage, "PLpPESk0ku8CtlAS9scEzqCP7U0=");
 _c = DonationsPage;
 var _c;
 __turbopack_context__.k.register(_c, "DonationsPage");

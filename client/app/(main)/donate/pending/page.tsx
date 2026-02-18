@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import Link from "next/link";
 import { Clock, RefreshCw, Home, Loader2, CheckCircle, XCircle } from "lucide-react";
 
-const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 function PendingContent() {

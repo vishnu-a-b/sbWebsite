@@ -38,7 +38,7 @@ interface Campaign {
   isFeatured: boolean;
 }
 
-const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 
 export default function CampaignDetailPage() {

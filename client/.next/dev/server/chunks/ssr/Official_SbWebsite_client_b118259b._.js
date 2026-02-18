@@ -15,7 +15,7 @@ __turbopack_context__.s([
  *
  * Converts relative paths to full URLs and fixes localhost URLs in production
  */ // Get backend API URL
-const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5001';
+const rawApiUrl = ("TURBOPACK compile-time value", "http://127.0.0.1:5002") || 'http://localhost:5002';
 const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl.slice(0, -4) : rawApiUrl;
 function getImageUrl(url) {
     if (!url) return '';

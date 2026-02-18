@@ -68,6 +68,12 @@
     },
     "00466589239efd0a3cbf165bf63925cd5f8c851bd4": {
       "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "seedBenevityBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -76,6 +82,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
@@ -83,6 +90,12 @@
     },
     "40d61f42768c0b6e00960d54d27739190d1c3a43b0": {
       "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -91,6 +104,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
@@ -98,6 +112,12 @@
     },
     "40f6ba3dddb8e52b6f8bc01b8bbadc68f2eeb42081": {
       "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getBanners",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -106,6 +126,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
@@ -113,6 +134,12 @@
     },
     "40fd4c7ba1d56754a455a081d7e9b070cbdcb7041c": {
       "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -121,6 +148,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
@@ -128,6 +156,12 @@
     },
     "6017c0c14e570d4b0422e2cb988f9d0ef2f75a27c7": {
       "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateBanner",
+          "filename": "Official/SbWebsite/client/app/actions/banner.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -136,6 +170,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/banner.ts",
@@ -278,6 +313,12 @@
     },
     "4052a7d1f46c0a028198c1f37200896feb2d7200a3": {
       "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -286,6 +327,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
@@ -293,6 +335,12 @@
     },
     "60aa0eb5621a561e50a062d75d613a1f94b78cb619": {
       "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -301,6 +349,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
@@ -308,6 +357,12 @@
     },
     "60ffeae8b5dc590ed43163967b5ee0f8cd35297d21": {
       "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -316,6 +371,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
@@ -323,6 +379,12 @@
     },
     "70ec8de4bd180a36f98d47bc35bbc15186253fbf2f": {
       "workers": {
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateProject",
+          "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts"
+        },
         "app/(main)/page": {
           "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/Official/SbWebsite/client/app/actions/service.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/Official/SbWebsite/client/app/actions/campaign.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/Official/SbWebsite/client/app/actions/about.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE5 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE6 => \"[project]/Official/SbWebsite/client/app/actions/cms/awards.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE7 => \"[project]/Official/SbWebsite/client/app/actions/cms/newsEvents.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -331,6 +393,7 @@
         }
       },
       "layer": {
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
         "app/(main)/page": "rsc"
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/projects.ts",
@@ -500,6 +563,85 @@
       },
       "filename": "Official/SbWebsite/client/app/actions/cms/newsEvents.ts",
       "exportedName": "updateNewsEvent"
+    },
+    "007a492ff3da995ffc6fe884c1385881a8b5ab44e9": {
+      "workers": {
+        "app/(admin-panel)/admin/banners/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/banners/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/banner.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/benevity-projects/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/benevity-projects/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/Official/SbWebsite/client/app/actions/cms/projects.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/campaigns/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/campaigns/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/donations/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/donations/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/fellowships/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/fellowships/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/homepage/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/homepage/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        },
+        "app/(admin-panel)/admin/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logout",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/banners/page": "action-browser",
+        "app/(admin-panel)/admin/benevity-projects/page": "action-browser",
+        "app/(admin-panel)/admin/campaigns/page": "action-browser",
+        "app/(admin-panel)/admin/donations/page": "action-browser",
+        "app/(admin-panel)/admin/fellowships/page": "action-browser",
+        "app/(admin-panel)/admin/homepage/page": "action-browser",
+        "app/(admin-panel)/admin/login/page": "action-browser",
+        "app/(admin-panel)/admin/page": "action-browser"
+      },
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts",
+      "exportedName": "logout"
+    },
+    "40d9b2d40016797c5cf1f7686eef478ff12e99b736": {
+      "workers": {
+        "app/(admin-panel)/admin/login/page": {
+          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(admin-panel)/admin/login/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "login",
+          "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(admin-panel)/admin/login/page": "action-browser"
+      },
+      "filename": "Official/SbWebsite/client/app/(admin-panel)/admin/login/actions.ts",
+      "exportedName": "login"
     }
   },
   "edge": {},
