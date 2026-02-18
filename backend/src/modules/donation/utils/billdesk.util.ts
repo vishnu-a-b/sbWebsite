@@ -242,6 +242,8 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
   success: boolean;
   data?: BillDeskOrderResponse;
   error?: string;
+  encodedRequest?: string;
+  encodedResponse?: string;
 }> => {
   const config = getBillDeskConfig();
 
@@ -256,11 +258,13 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
     currency: request.currency || '356', // 356 = INR
     ru: config.returnUrl,
     additional_info: {
-      additional_info1: request.customerName,
-      additional_info2: request.customerEmail,
-      ...(request.customerPhone && { additional_info3: request.customerPhone }),
-      ...(request.additionalInfo?.donationType && { additional_info4: request.additionalInfo.donationType }),
-      ...(request.additionalInfo?.donationId && { additional_info5: request.additionalInfo.donationId }),
+      additional_info1: request.customerName || 'NA',
+      additional_info2: request.customerEmail || 'NA',
+      additional_info3: request.customerPhone || 'NA',
+      additional_info4: request.additionalInfo?.donationType || 'NA',
+      additional_info5: request.additionalInfo?.donationId || 'NA',
+      additional_info6: 'NA',
+      additional_info7: 'NA',
     },
     itemcode: 'DIRECT',
     device: {
@@ -359,6 +363,8 @@ export const createOrder = async (request: BillDeskOrderRequest): Promise<{
     return {
       success: true,
       data: payload as BillDeskOrderResponse,
+      encodedRequest: requestToken,
+      encodedResponse: responseText,
     };
   } catch (error) {
     console.error('Create order error:', error);

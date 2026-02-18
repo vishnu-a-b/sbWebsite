@@ -148,8 +148,10 @@ export const initiateDonation = async (req: Request, res: Response): Promise<voi
       return;
     }
 
-    // Store BillDesk order ID
+    // Store BillDesk order ID and original encoded strings
     donation.bdOrderId = orderResult.data.bdorderid;
+    donation.encodedRequest = orderResult.encodedRequest;
+    donation.encodedResponse = orderResult.encodedResponse;
     await donation.save();
 
     // Log transaction
@@ -316,6 +318,7 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
     donation.authStatus = response.auth_status;
     donation.bankReferenceNumber = response.bank_ref_no;
     donation.gatewayResponse = JSON.stringify(response);
+    donation.encodedResponse = responseToken as string; // Store original encoded response
     donation.checksumVerified = checksumVerified;
     donation.paymentMethod = response.payment_method_type;
 

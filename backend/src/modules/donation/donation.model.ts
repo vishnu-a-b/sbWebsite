@@ -45,6 +45,8 @@ export interface IDonationDocument extends Document {
   // BillDesk Response Data
   authStatus?: string; // BillDesk auth status code
   gatewayResponse?: string; // Full response from BillDesk
+  encodedRequest?: string; // Original encoded JWS/JWE request string
+  encodedResponse?: string; // Original encoded JWS/JWE response string
   checksumVerified?: boolean;
 
   // Offline Payment Workflow
@@ -161,6 +163,12 @@ const DonationSchema = new Schema<IDonationDocument>({
   },
   gatewayResponse: {
     type: String
+  },
+  encodedRequest: {
+    type: String  // Original encoded (JWS/JWE) Create Order request
+  },
+  encodedResponse: {
+    type: String  // Original encoded (JWS/JWE) response string
   },
   checksumVerified: {
     type: Boolean
