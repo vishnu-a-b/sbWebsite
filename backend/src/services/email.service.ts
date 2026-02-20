@@ -80,19 +80,31 @@ class EmailService {
     transactionId: string;
     donationType: string;
     receiptNumber?: string;
+    paymentMethod?: string;
   }): Promise<boolean> {
+    const donationDate = new Date().toLocaleDateString('en-IN', { dateStyle: 'long' });
     const html = `
 <!DOCTYPE html>
 <html>
 <head>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
     .header { background: #2e7d32; color: white; padding: 20px; text-align: center; }
     .content { padding: 20px; background: #f9f9f9; }
-    .details { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    .receipt-box { background: white; padding: 20px; margin: 20px 0; border: 1px solid #ddd; border-radius: 5px; }
+    .receipt-header { text-align: center; border-bottom: 2px solid #2e7d32; padding-bottom: 15px; margin-bottom: 15px; }
+    .receipt-header h2 { margin: 0 0 5px 0; color: #2e7d32; }
+    .receipt-header p { margin: 2px 0; font-size: 13px; color: #555; }
+    .receipt-title { text-align: center; font-size: 18px; font-weight: bold; color: #333; margin: 15px 0; text-transform: uppercase; letter-spacing: 1px; }
+    .receipt-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    .receipt-table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+    .receipt-table td:first-child { font-weight: bold; color: #555; width: 40%; }
+    .amount-row td { font-size: 18px; color: #2e7d32; font-weight: bold; border-bottom: 2px solid #2e7d32; }
+    .tax-notice { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 4px; padding: 12px 15px; margin: 15px 0; font-size: 13px; color: #2e7d32; }
+    .tax-notice strong { display: block; margin-bottom: 5px; }
     .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
-    .amount { font-size: 24px; color: #2e7d32; font-weight: bold; }
+    .org-details { font-size: 12px; color: #777; text-align: center; margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px; }
   </style>
 </head>
 <body>
@@ -102,25 +114,45 @@ class EmailService {
     </div>
     <div class="content">
       <p>Dear ${data.donorName},</p>
-      <p>We are deeply grateful for your generous contribution to Shanthi Bhavan. Your support helps us continue our mission of transforming lives.</p>
+      <p>We are deeply grateful for your generous contribution to Shanthi Bhavan. Your support helps us continue our mission of providing palliative care and transforming lives.</p>
 
-      <div class="details">
-        <h3>Donation Details</h3>
-        <p><strong>Amount:</strong> <span class="amount">${data.currency} ${data.amount.toLocaleString()}</span></p>
-        <p><strong>Transaction ID:</strong> ${data.transactionId}</p>
-        <p><strong>Type:</strong> ${data.donationType}</p>
-        ${data.receiptNumber ? `<p><strong>Receipt Number:</strong> ${data.receiptNumber}</p>` : ''}
-        <p><strong>Date:</strong> ${new Date().toLocaleDateString('en-IN', { dateStyle: 'long' })}</p>
+      <div class="receipt-box">
+        <div class="receipt-header">
+          <h2>Shanthibhavan Palliative Hospital</h2>
+          <p>Golden Hills, P.O, near PMS Dental College, Venkode, Vattappara, Thiruvananthapuram, Kerala 695028</p>
+          <p>PAN: XXXXX0000X | 80G Reg No: XXXXX0000X/80G/XXXX-XX</p>
+        </div>
+
+        <div class="receipt-title">Donation Receipt</div>
+
+        <table class="receipt-table">
+          ${data.receiptNumber ? `<tr><td>Receipt No.</td><td>${data.receiptNumber}</td></tr>` : ''}
+          <tr><td>Date</td><td>${donationDate}</td></tr>
+          <tr><td>Donor Name</td><td>${data.donorName}</td></tr>
+          <tr><td>Donation Type</td><td>${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)}</td></tr>
+          <tr><td>Transaction ID</td><td>${data.transactionId}</td></tr>
+          ${data.paymentMethod ? `<tr><td>Payment Method</td><td>${data.paymentMethod}</td></tr>` : ''}
+          <tr class="amount-row"><td>Amount</td><td>${data.currency} ${data.amount.toLocaleString()}</td></tr>
+        </table>
+
+        <div class="tax-notice">
+          <strong>80G Tax Exemption</strong>
+          This donation is eligible for tax exemption under Section 80G of the Income Tax Act, 1961.
+          Donors are advised to retain this receipt for claiming deduction while filing their Income Tax Return.
+        </div>
+
+        <div class="org-details">
+          Shanthibhavan Palliative Hospital<br>
+          Email: office@shanthibhavan.in
+        </div>
       </div>
 
-      <p>Your donation is eligible for tax exemption under Section 80G of the Income Tax Act.</p>
       <p>If you have any questions, please don't hesitate to contact us.</p>
-
       <p>With gratitude,<br>The Shanthi Bhavan Team</p>
     </div>
     <div class="footer">
-      <p>Shanthi Bhavan Children's Project<br>
-      This is an automated email. Please do not reply directly.</p>
+      <p>Shanthibhavan Palliative Hospital<br>
+      This is an automated receipt. Please do not reply directly.</p>
     </div>
   </div>
 </body>
@@ -128,7 +160,7 @@ class EmailService {
 
     return this.sendEmail({
       to: data.email,
-      subject: `Thank You for Your Donation - ${data.currency} ${data.amount.toLocaleString()}`,
+      subject: `Donation Receipt - ${data.currency} ${data.amount.toLocaleString()} | Shanthi Bhavan`,
       html
     });
   }

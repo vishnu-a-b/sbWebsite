@@ -107,3 +107,8 @@
 [28:00:32.480] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
 [28:00:34.762] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
 [32:48:23.473] Server  LOG     ✓ Finished filesystem cache database compaction in 10.0s
+[50:17:17.184] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[77:30:13.104] Server  LOG     ✓ Finished filesystem cache database compaction in 10.9s
+[94:45:00.642] Server  LOG     ✓ Finished filesystem cache database compaction in 11.5s
+[94:53:11.967] Server  LOG     ✓ Finished filesystem cache database compaction in 11.1s
+[95:42:36.075] Server  LOG     ✓ Finished filesystem cache database compaction in 18.3s

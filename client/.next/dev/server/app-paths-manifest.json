@@ -9,6 +9,7 @@
   "/(admin-panel)/admin/page": "app/(admin-panel)/admin/page.js",
   "/(main)/donate/page": "app/(main)/donate/page.js",
   "/(main)/page": "app/(main)/page.js",
+  "/(main)/privacy-policy/page": "app/(main)/privacy-policy/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/api/stats/route": "app/api/stats/route.js"
 }

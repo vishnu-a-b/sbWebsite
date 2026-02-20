@@ -379,7 +379,8 @@ export const handleBillDeskReturn = async (req: Request, res: Response): Promise
         currency: donation.currency,
         transactionId: response.transactionid || donation.gatewayOrderId || 'N/A',
         donationType: donation.donationType,
-        receiptNumber: donation.receiptNumber
+        receiptNumber: donation.receiptNumber,
+        paymentMethod: donation.paymentMethod
       }).catch(err => console.error('Failed to send success email:', err));
 
       res.redirect(`${frontendUrl}/donate/success?orderId=${response.orderid}&receiptNumber=${donation.receiptNumber}`);
@@ -493,7 +494,8 @@ export const handleBillDeskWebhook = async (req: Request, res: Response): Promis
           currency: donation.currency,
           transactionId: response.transactionid || donation.gatewayOrderId || 'N/A',
           donationType: donation.donationType,
-          receiptNumber: donation.receiptNumber
+          receiptNumber: donation.receiptNumber,
+          paymentMethod: donation.paymentMethod
         }).catch(err => console.error('Failed to send success email:', err));
 
       } else if (isPaymentFailed(response.auth_status)) {
@@ -630,7 +632,8 @@ export const checkTransactionStatus = async (req: Request, res: Response): Promi
         currency: donation.currency,
         transactionId: txnData.transactionid || donation.gatewayOrderId || 'N/A',
         donationType: donation.donationType,
-        receiptNumber: donation.receiptNumber
+        receiptNumber: donation.receiptNumber,
+        paymentMethod: donation.paymentMethod
       }).catch(err => console.error('Failed to send success email:', err));
 
     } else if (isPaymentFailed(txnData.auth_status)) {
