@@ -1,15 +1,5 @@
 {
-  "/(admin-panel)/admin/banners/page": "app/(admin-panel)/admin/banners/page.js",
-  "/(admin-panel)/admin/benevity-projects/page": "app/(admin-panel)/admin/benevity-projects/page.js",
-  "/(admin-panel)/admin/campaigns/page": "app/(admin-panel)/admin/campaigns/page.js",
-  "/(admin-panel)/admin/donations/page": "app/(admin-panel)/admin/donations/page.js",
-  "/(admin-panel)/admin/fellowships/page": "app/(admin-panel)/admin/fellowships/page.js",
-  "/(admin-panel)/admin/homepage/page": "app/(admin-panel)/admin/homepage/page.js",
-  "/(admin-panel)/admin/login/page": "app/(admin-panel)/admin/login/page.js",
-  "/(admin-panel)/admin/page": "app/(admin-panel)/admin/page.js",
-  "/(main)/donate/page": "app/(main)/donate/page.js",
   "/(main)/page": "app/(main)/page.js",
   "/(main)/privacy-policy/page": "app/(main)/privacy-policy/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/stats/route": "app/api/stats/route.js"
+  "/(main)/refund-policy/page": "app/(main)/refund-policy/page.js"
 }

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///media/vishnu/Official/SbWebsite/client/.next-internal/server/app/%28main%29/refund-policy/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {getFooterContent as '0040f44bb1763434ca9f0e480003f6dd703d1b0fb7'} from 'ACTIONS_MODULE0'\nexport {seedFooterContent as '005d6ba2e53522154fc8e82fd6f47a1772c0ee0ca7'} from 'ACTIONS_MODULE0'\nexport {updateFooterContent as '40ad8f9ae8a3a4a13e8e625a7174ed316d63b8939d'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA"}}]
+}

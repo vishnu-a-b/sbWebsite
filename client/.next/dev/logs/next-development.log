@@ -1,114 +1,95 @@
-[00:00:02.034] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.133] Server  LOG     ✓ Ready in 1927ms
-[00:00:21.100] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[00:00:21.688] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[00:32:19.603] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[06:09:58.176] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[06:09:58.550] Server  LOG     getServices: Fetched 9 services
-[06:09:58.651] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[06:09:58.653] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[06:09:59.037] Server  LOG     [Awards] Response status: 200
-[06:09:59.038] Server  LOG     [Awards] Fetched awards count: 4
-[06:09:59.124] Server  LOG     getProjects: Received data count: 3
-[06:09:59.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[06:09:59.698] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[06:09:59.830] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[06:10:02.381] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[25:02:43.217] Server  LOG     ✓ Compiled in 1719ms
-[25:02:46.368] Server  LOG     ✓ Compiled in 67ms
-[25:02:54.056] Server  LOG     ✓ Compiled in 274ms
-[25:38:20.530] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[25:38:20.710] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[25:38:21.065] Server  LOG     getServices: Fetched 9 services
-[25:38:21.134] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[25:38:21.135] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[25:38:21.450] Server  LOG     [Awards] Response status: 200
-[25:38:21.451] Server  LOG     [Awards] Fetched awards count: 4
-[25:38:21.484] Server  LOG     getProjects: Received data count: 3
-[25:38:22.081] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[25:38:22.266] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[25:38:24.672] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[25:38:28.840] Server  ERROR   TimeoutError: The operation was aborted due to timeout
-[25:54:48.481] Server  LOG     Fetching services from: http://127.0.0.1:5002/api/services
-[25:54:48.877] Server  LOG     getServices: Fetched 9 services
-[25:54:48.913] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/projects?showOnFirstFace=true"
-[25:54:48.915] Server  LOG     [Awards] Fetching from: "http://127.0.0.1:5002/api/awards/admin"
-[25:54:49.255] Server  LOG     getProjects: Received data count: 3
-[25:54:49.279] Server  LOG     [Awards] Response status: 200
-[25:54:49.280] Server  LOG     [Awards] Fetched awards count: 4
-[25:54:50.680] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[25:54:50.878] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[25:54:53.395] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[26:36:35.922] Server  LOG     ✓ Finished filesystem cache database compaction in 10.2s
-[26:36:47.727] Server  LOG     ✓ Compiled in 1276ms
-[26:36:53.558] Server  LOG       Reload env: .env.local
-[26:36:54.989] Server  LOG     ✓ Compiled in 1302ms
-[26:36:55.330] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[26:36:55.330] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[26:36:55.330] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Official/SbWebsite/client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[26:36:55.620] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[26:36:56.721] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[26:36:57.126] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[26:36:57.135] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[26:36:58.127] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[26:38:51.223] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
-[26:38:51.344] Server  WARN    motion() is deprecated. Use motion.create() instead.
-[26:38:51.818] Server  LOG     getServices: Fetched 9 services
-[26:38:51.873] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
-[26:38:51.874] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
-[26:38:52.252] Server  LOG     [Awards] Response status: 200
-[26:38:52.261] Server  LOG     getProjects: Received data count: 3
-[26:38:52.263] Server  LOG     [Awards] Fetched awards count: 4
-[26:39:39.743] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[26:39:39.756] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[26:39:49.787] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
-[26:39:49.829] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[26:39:59.834] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
-[26:39:59.857] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[26:39:59.862] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[26:40:09.864] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
-[26:40:09.870] Server  ERROR   Error fetching stats: MongooseError: Operation `payments.countDocuments()` buffering timed out after 10000ms
-[26:40:58.547] Server  LOG       Reload env: .env.local
-[26:40:59.184] Server  LOG     ✓ Compiled in 400ms
-[26:42:19.905] Server  LOG       Reload env: .env.local
-[26:42:20.760] Server  LOG     ✓ Compiled in 445ms
-[26:47:23.652] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[26:48:50.455] Server  LOG     ✓ Finished filesystem cache database compaction in 10.2s
-[26:49:12.107] Server  LOG     ✓ Compiled in 458ms
-[26:49:21.860] Server  LOG     ✓ Finished filesystem cache database compaction in 13.2s
-[26:53:57.163] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[26:54:12.240] Server  LOG     ○ Compiling /admin/banners ...
-[26:54:14.658] Browser WARN    motion() is deprecated. Use motion.create() instead.
-[26:54:17.004] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects/admin"
-[26:54:17.407] Server  LOG     getProjects: Received data count: 3
-[26:54:17.464] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects/admin"
-[26:54:17.775] Server  LOG     getProjects: Received data count: 3
-[26:54:17.809] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects/admin"
-[26:54:18.168] Server  LOG     getProjects: Received data count: 3
-[26:54:18.190] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects/admin"
-[26:54:18.502] Server  LOG     getProjects: Received data count: 3
-[26:55:09.021] Server  LOG       Reload env: .env.local
-[26:56:31.859] Server  LOG     ✓ Finished filesystem cache database compaction in 10.9s
-[26:56:51.817] Server  LOG     getProjects: Fetching from URL: "http://127.0.0.1:5002/api/benevity/projects/admin"
-[26:56:52.254] Server  LOG     getProjects: Received data count: 3
-[26:56:56.082] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[26:57:30.137] Server  LOG     ✓ Finished filesystem cache database compaction in 10.4s
-[27:03:59.918] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[27:04:28.865] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[27:04:31.437] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[27:04:33.933] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[27:04:36.154] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[27:05:59.874] Server  LOG     ✓ Compiled in 696ms
-[27:06:04.351] Server  LOG     ✓ Compiled in 81ms
-[27:06:14.100] Server  LOG     ✓ Compiled in 105ms
-[27:59:44.422] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[28:00:25.678] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[28:00:30.255] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[28:00:32.480] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[28:00:34.762] Server  WARN    MONGODB_URI is not defined in environment variables. Database operations will fail.
-[32:48:23.473] Server  LOG     ✓ Finished filesystem cache database compaction in 10.0s
-[50:17:17.184] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[77:30:13.104] Server  LOG     ✓ Finished filesystem cache database compaction in 10.9s
-[94:45:00.642] Server  LOG     ✓ Finished filesystem cache database compaction in 11.5s
-[94:53:11.967] Server  LOG     ✓ Finished filesystem cache database compaction in 11.1s
-[95:42:36.075] Server  LOG     ✓ Finished filesystem cache database compaction in 18.3s
+[00:00:01.065] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.182] Server  LOG     ✓ Ready in 962ms
+[00:00:04.203] Server  LOG     ○ Compiling / ...
+[00:00:06.666] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:00:06.816] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[00:00:07.091] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:00:07.230] Server  LOG     getServices: Fetched 9 services
+[00:00:07.414] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:00:07.415] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:00:07.674] Server  LOG     getServices: Fetched 9 services
+[00:00:07.751] Server  LOG     getProjects: Received data count: 3
+[00:00:07.797] Server  LOG     [Awards] Response status: 200
+[00:00:07.808] Server  LOG     [Awards] Fetched awards count: 4
+[00:00:08.017] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:00:08.018] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:00:08.353] Server  LOG     [Awards] Response status: 200
+[00:00:08.360] Server  LOG     [Awards] Fetched awards count: 4
+[00:00:08.386] Server  LOG     getProjects: Received data count: 3
+[00:00:08.552] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:00:08.916] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:00:09.079] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:16.339] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:59.597] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:04:14.321] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:04:14.764] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:04:25.863] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:04:26.341] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:04:32.889] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:04:33.332] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:05:51.926] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:05:51.948] Server  LOG     getServices: Fetched 9 services
+[00:05:51.985] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:05:51.987] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:05:51.998] Server  LOG     [Awards] Response status: 200
+[00:05:52.000] Server  LOG     getProjects: Received data count: 3
+[00:05:52.000] Server  LOG     [Awards] Fetched awards count: 4
+[00:05:52.045] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:05:52.055] Server  LOG     getServices: Fetched 9 services
+[00:05:52.068] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:05:52.069] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:05:52.078] Server  LOG     [Awards] Response status: 200
+[00:05:52.079] Server  LOG     getProjects: Received data count: 3
+[00:05:52.079] Server  LOG     [Awards] Fetched awards count: 4
+[00:05:52.118] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:05:52.128] Server  LOG     getServices: Fetched 9 services
+[00:05:52.144] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:05:52.145] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:05:52.155] Server  LOG     [Awards] Response status: 200
+[00:05:52.157] Server  LOG     getProjects: Received data count: 3
+[00:05:52.157] Server  LOG     [Awards] Fetched awards count: 4
+[00:06:07.663] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:06:07.836] Server  WARN    motion() is deprecated. Use motion.create() instead.
+[00:06:08.295] Server  LOG     getServices: Fetched 9 services
+[00:06:08.350] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:06:08.351] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:06:08.711] Server  LOG     [Awards] Response status: 200
+[00:06:08.719] Server  LOG     [Awards] Fetched awards count: 4
+[00:06:08.722] Server  LOG     getProjects: Received data count: 3
+[00:06:08.881] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:06:09.122] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:06:09.287] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:06:09.531] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:19.556] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:06:20.060] Server  LOG     getServices: Fetched 9 services
+[00:06:20.097] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:06:20.098] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:06:20.426] Server  LOG     [Awards] Response status: 200
+[00:06:20.427] Server  LOG     [Awards] Fetched awards count: 4
+[00:06:20.447] Server  LOG     getProjects: Received data count: 3
+[00:06:20.608] Server  ERROR   ⨯ "upstream image response failed for" "https://api.donatebed.palliativeindia.in/public/images/1770461255188-gk8ww6.jpeg" 404
+[00:06:20.913] Browser WARN    motion() is deprecated. Use motion.create() instead.
+[00:06:20.914] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:06:25.196] Browser WARN    Image with src "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1000&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:39.336] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:06:39.354] Server  LOG     getServices: Fetched 9 services
+[00:06:39.388] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:06:39.389] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:06:39.401] Server  LOG     [Awards] Response status: 200
+[00:06:39.405] Server  LOG     getProjects: Received data count: 3
+[00:06:39.405] Server  LOG     [Awards] Fetched awards count: 4
+[00:06:39.475] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:06:39.487] Server  LOG     getServices: Fetched 9 services
+[00:06:39.502] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:06:39.503] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:06:39.511] Server  LOG     [Awards] Response status: 200
+[00:06:39.513] Server  LOG     getProjects: Received data count: 3
+[00:06:39.513] Server  LOG     [Awards] Fetched awards count: 4
+[00:06:39.549] Server  LOG     Fetching services from: https://api.donatebed.palliativeindia.in/api/services
+[00:06:39.559] Server  LOG     getServices: Fetched 9 services
+[00:06:39.573] Server  LOG     getProjects: Fetching from URL: "https://api.donatebed.palliativeindia.in/api/projects?showOnFirstFace=true"
+[00:06:39.574] Server  LOG     [Awards] Fetching from: "https://api.donatebed.palliativeindia.in/api/awards/admin"
+[00:06:39.583] Server  LOG     [Awards] Response status: 200
+[00:06:39.585] Server  LOG     getProjects: Received data count: 3
+[00:06:39.585] Server  LOG     [Awards] Fetched awards count: 4
+[00:07:22.972] Server  LOG     ✓ Compiled in 57ms

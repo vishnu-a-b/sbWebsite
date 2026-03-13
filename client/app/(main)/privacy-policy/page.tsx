@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Shanthibhavan Palliative Hospital",
-  description: "Privacy policy for Shanthibhavan Palliative Hospital website and services.",
+  title: "Privacy Policy | Shanthibhavan Society",
+  description: "Privacy policy for Shanthibhavan Society website and services.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
               <div>
                 <h2 className="text-2xl font-bold text-primary mb-4">Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Shanthibhavan Palliative Hospital (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
+                  Shanthibhavan Society (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
                   This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
                   you visit our website or use our services. Please read this policy carefully to understand our
                   practices regarding your personal data.
@@ -150,8 +150,8 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="bg-slate-50 p-6 rounded-lg">
                   <p className="text-gray-700"><strong>Email:</strong> office@shanthibhavan.in</p>
-                  <p className="text-gray-700"><strong>Phone:</strong> +91 9142653804</p>
-                  <p className="text-gray-700"><strong>Address:</strong> Golden Hills, P.O, near to PMS Dental College, Venkode, Vattappara, Thiruvananthapuram, Kerala 695028</p>
+                  <p className="text-gray-700"><strong>Phone:</strong> 04842626406</p>
+                  <p className="text-gray-700"><strong>Address:</strong> Ashokapuram, Aluva, Kerala 683101</p>
                 </div>
               </div>
             </div>

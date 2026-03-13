@@ -175,7 +175,7 @@ export default function FooterAdminPage() {
                 value={content.phone}
                 onChange={(e) => setContent({ ...content, phone: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="+91 9142653804"
+                placeholder="04842626406"
               />
             </div>
             <div>
@@ -280,7 +280,7 @@ export default function FooterAdminPage() {
                 value={content.whatsapp}
                 onChange={(e) => setContent({ ...content, whatsapp: e.target.value })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="+919142653804 (with country code)"
+                placeholder="04842626406 (with country code)"
               />
             </div>
           </div>

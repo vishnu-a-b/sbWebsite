@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <img src="/logo/logo.png" alt="Shanthibhavan Logo" className="h-16 w-auto" />
             <span className="text-xl font-bold text-primary hidden md:inline-block">
-              Shanthibhavan Palliative Hospital
+              Shanthibhavan
             </span>
             <span className="text-xl font-bold text-primary md:hidden">
               Shanthibhavan

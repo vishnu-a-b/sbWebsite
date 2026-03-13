@@ -50,8 +50,8 @@ interface FooterContent {
 export default async function Footer() {
   const content: FooterContent = await getFooterContent() || {};
 
-  const address = content.address || 'Golden Hills, P.O, near to PMS Dental College, Venkode, Vattappara, Thiruvananthapuram, Kerala 695028';
-  const phone = content.phone || '+91 9142653804';
+  const address = content.address || 'Ashokapuram, Aluva, Kerala 683101';
+  const phone = content.phone || '04842626406';
   const email = content.email || 'office@shanthibhavan.in';
   const description = content.description || 'India\'s first no-bill palliative hospital. Providing compassionate care with dignity and love. A beacon of hope for those in need.';
   const copyrightText = content.copyrightText || 'Shanthibhavan Palliative Hospital. All rights reserved.';
@@ -74,12 +74,12 @@ export default async function Footer() {
               <img src="/logo/logo.png" alt="Shanthibhavan Logo" className="h-16 w-auto" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white leading-tight">Shanthibhavan</span>
-                <span className="text-xs font-semibold text-zinc-500">Palliative Hospital</span>
+                {/* <span className="text-xs font-semibold text-zinc-500">Palliative Hospital</span> */}
               </div>
             </Link>
-            <p className="text-sm">
+            {/* <p className="text-sm">
               {description}
-            </p>
+            </p> */}
           </div>
 
           <div>

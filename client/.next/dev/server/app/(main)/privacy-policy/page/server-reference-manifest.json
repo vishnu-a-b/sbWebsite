@@ -1,49 +1,49 @@
 {
   "node": {
-    "0099f994b742aedb9649744330d515e513bb7ff4dd": {
+    "0040f44bb1763434ca9f0e480003f6dd703d1b0fb7": {
       "workers": {
         "app/(main)/privacy-policy/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "getFooterContent",
-          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+          "filename": "app/actions/footer.ts"
         }
       },
       "layer": {
         "app/(main)/privacy-policy/page": "rsc"
       },
       "exportedName": "getFooterContent",
-      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+      "filename": "app/actions/footer.ts"
     },
-    "00ac8f0731888bb914e0bc2d9b191213cce1218b3a": {
+    "005d6ba2e53522154fc8e82fd6f47a1772c0ee0ca7": {
       "workers": {
         "app/(main)/privacy-policy/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "seedFooterContent",
-          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+          "filename": "app/actions/footer.ts"
         }
       },
       "layer": {
         "app/(main)/privacy-policy/page": "rsc"
       },
       "exportedName": "seedFooterContent",
-      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+      "filename": "app/actions/footer.ts"
     },
-    "403117ed3a07c5b61e812767edfa37a75b378cabaa": {
+    "40ad8f9ae8a3a4a13e8e625a7174ed316d63b8939d": {
       "workers": {
         "app/(main)/privacy-policy/page": {
-          "moduleId": "[project]/Official/SbWebsite/client/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/Official/SbWebsite/client/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/(main)/privacy-policy/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/footer.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "updateFooterContent",
-          "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+          "filename": "app/actions/footer.ts"
         }
       },
       "layer": {
         "app/(main)/privacy-policy/page": "rsc"
       },
       "exportedName": "updateFooterContent",
-      "filename": "Official/SbWebsite/client/app/actions/footer.ts"
+      "filename": "app/actions/footer.ts"
     }
   },
   "edge": {}

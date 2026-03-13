@@ -86,8 +86,8 @@ export default function RefundPolicyPage() {
                 </p>
                 <div className="bg-slate-50 p-6 rounded-lg">
                   <p className="text-gray-700"><strong>Email:</strong> office@shanthibhavan.in</p>
-                  <p className="text-gray-700"><strong>Phone:</strong> +91 9142653804</p>
-                  <p className="text-gray-700"><strong>Address:</strong> Golden Hills, P.O, near to PMS Dental College, Venkode, Vattappara, Thiruvananthapuram, Kerala 695028</p>
+                  <p className="text-gray-700"><strong>Phone:</strong> 04842626406</p>
+                  <p className="text-gray-700"><strong>Address:</strong> Ashokapuram, Aluva, Kerala 683101</p>
                 </div>
               </div>
 

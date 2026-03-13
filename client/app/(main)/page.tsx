@@ -68,7 +68,7 @@ export default async function Home() {
     foundingDate: '1993',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Thiruvananthapuram',
+      addressLocality: 'Aluva',
       addressRegion: 'Kerala',
       addressCountry: 'IN'
     },
